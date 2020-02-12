@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase  /education
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
+
+#too much access causing flood
+deny from 41.203.73.199
+deny from 154.118.55.170
+deny from 197.210.44.26
+deny from 105.112.31.223
+deny from 41.73.14.86
+#end deny
+AddHandler application/x-httpd-php72 .php .php5 .php4 .php3
