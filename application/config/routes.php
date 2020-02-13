@@ -3,6 +3,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+/** imran manzoor */
+$route['global_presence'] = 'home/global_presence';
+$route['history'] = 'home/history';
+$route['mission'] = 'home/mission';
+$route['press_release'] = 'home/press_release';
+$route['team'] = 'home/team';
+$route['training'] = 'home/training';
+$route['why'] = 'home/why';
+$route['certifications'] = 'home/certifications';
+
 
 //$route['view-member'] = 'auth/get_by_userType/'.USER;
 

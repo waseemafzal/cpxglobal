@@ -67,7 +67,7 @@ ul.sf-menu li a:hover {
     border-top-color: #30100;
 }
 .sf-menu ul li a {
-  background: #f30100;
+  background: #f30100;color: #fff;
 }
 .sf-menu ul li a:hover {
   background: #ea2221;
@@ -140,6 +140,10 @@ ul#follow_us li a {
 	color: #000!important;
 	}
 	#main-features{color: #000!important;}
+	.btn-login a {
+    color: #fff;
+}
+ul.sf-menu li a:hover, .current-menu-item a{color: #fff!important;}
 /*# sourceMappingURL=color2.css.map */
 /*# sourceMappingURL=color2.css.map */
 /*# sourceMappingURL=color2.css.map */

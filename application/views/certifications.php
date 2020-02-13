@@ -18,7 +18,7 @@ A CERTIFIED INDIVIDUAL EARNS SALARIES 25% HIGHER THAN THEIR NON-CERTIFIED CO-WOR
             <div class="container">
             <aside class="col-xs-12 col-sm-4 col-md-4 pull-right">
             <div class="thumbnail">
-            <img src="assets/images/certificate.png" class="img-responsive">
+            <img src="frontend/images/certificate.png" class="img-responsive">
             <div class="caption">
           <p>Application Process</p>
         </div>
