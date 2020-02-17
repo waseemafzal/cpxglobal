@@ -73,12 +73,6 @@ public function certifications()
 			$aData['page_title'] = 'certifications';
 			$this->load->view('certifications',$aData);    
 		}			
-public function certifications()
-
-		{
-			$aData['page_title'] = 'certifications';
-			$this->load->view('certifications',$aData);    
-		}			
 
 
 
