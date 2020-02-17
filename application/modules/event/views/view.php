@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Html / Pages   Management
+      Event Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="cms/add" class="btn btn-sm btn-su">Add Page</a></li>
+        <li > <a href="event/add" class="btn btn-sm btn-su">Add Event</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -24,33 +24,45 @@
              <div class="box-body">
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
-    <tr>
-        <th>Page </th>
-        <th>Actions</th>
-    </tr>
+        <tr>
+            <th>Event Title </th>
+            <th>Short Heading </th>
+            <th>Start At </th>
+            <th>End At </th>
+             <th>Start Date</th>
+            <th>Actions</th>
+        </tr>
     </thead>
     <tbody>
+    
+  
     <?php
 	if(!empty($data->result())){
-	foreach ($data->result() as $row){
+	foreach ($data->result() as $row)
+	{
 		
 		?>
-		<tr id="row_<?php echo$row->id;?>">
-        <td><?php echo $row->post_title;?></td>
+		<tr id="row_<?php echo $row->id;?>">
+        <td><?php echo $row->title;?></td>
+         <td><?php echo $row->short_heading;?></td>
+          <td><?php echo $row->start_at;?></td>
+           <td><?php echo $row->end_at;?></td>
+            <td><?php echo $row->on_date;?></td>
        
     <td class="center">
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="cms/edit/<?php echo $row->id;?>">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="event/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
-                Vie/Edit
+                View/Edit
             </a>
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo $row->id;?>','cms');">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo$row->id;?>','event');">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 Delete
             </a>
         </td>
     </tr>
     
-		<?php }
+		<?php 
+		}
 	}
 		
 	?>
