@@ -106,6 +106,10 @@
 
                 </li>
 
+
+
+
+
                 <li class="treeview hidden">
 
                     <a href="#">
@@ -158,6 +162,87 @@
 
                 </li>
 
+              <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Slider Management</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="slider"><i class="fa fa-list"></i> <span>Slider</span></a></li>
+
+                        <li><a href="slider/add"><i class="fa fa-list"></i> <span>Add slider</span></a></li>
+
+                    </ul>
+
+                </li>
+<li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Jobs Management</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="jobs"><i class="fa fa-list"></i> <span>Jobs</span></a></li>
+
+                        <li><a href="jobs/add"><i class="fa fa-list"></i> <span>Add Jobs</span></a></li>
+
+                    </ul>
+
+                </li>
+                   
+                   <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Event</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="event"><i class="fa fa-list"></i> <span>Event</span></a></li>
+
+                        <li><a href="event/add"><i class="fa fa-list"></i> <span>Add Event</span></a></li>
+
+                    </ul>
+
+                </li>
+ 
+                   
+
+
+
                 <li class="treeview hidden">
 
                     <a href="#">
@@ -208,7 +293,7 @@
                
                 <li><a href="cms"><i class="fa fa-list"></i> <span>Pages</span></a></li>
 
-                <li><a href="blogpost"><i class="fa fa-th"></i> <span>News/Articles</span></a></li>
+                <li><a href="blogpost"><i class="fa fa-th"></i> <span>News Management</span></a></li>
 
                 <li class="hidden"><a href="product"><i class="fa fa-list"></i> <span>Products</span></a></li>
 
@@ -224,9 +309,9 @@
 
                 <li><a href="setting/edit"><i class="fa fa-pencil"></i> <span>Setting</span></a></li>
 
-                <!--
+                
 
-<li><a href="extras" ><i class="fa fa-th"></i> <span>Extras</span></a></li>
+<!--<li><a href="extras" ><i class="fa fa-th"></i> <span>Extras</span></a></li>
 
 <li ><a href="order" ><i class="fa fa-th"></i> <span>Order</span></a></li>
 

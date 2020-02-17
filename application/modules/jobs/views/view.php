@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Html / Pages   Management
+      Jobs Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="cms/add" class="btn btn-sm btn-su">Add Page</a></li>
+        <li > <a href="jobs/add" class="btn btn-sm btn-su">Add Jobs</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -25,7 +25,8 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th>Page </th>
+        <th>Job </th>
+        <th>Application received </th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -37,13 +38,14 @@
 		?>
 		<tr id="row_<?php echo$row->id;?>">
         <td><?php echo $row->post_title;?></td>
+         <td>Recceived Application (<a href="#"><?php echo '0';?></a>)</td>
        
     <td class="center">
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="cms/edit/<?php echo $row->id;?>">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="jobs/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
-                Vie/Edit
+                View/Edit
             </a>
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo $row->id;?>','cms');">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo $row->id;?>','jobs');">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 Delete
             </a>

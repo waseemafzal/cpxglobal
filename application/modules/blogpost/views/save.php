@@ -24,12 +24,12 @@ background-color: #fff;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Blog Post Management
+       News Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="blogpost">View Post </a></li>
+        <li > <a href="blogpost">All News </a></li>
       </ol>
     </section>
 
@@ -49,11 +49,12 @@ background-color: #fff;
                     <div class="form-group wrap_form">
                     <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> News  Title</label>
-                        <input type="text" class="form-control" id="post_title"  placeholder="Lorem ipsum post" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
+                        <input type="text" class="form-control" id="post_title"  placeholder="Title" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
                     </div>
                 
-                     
+                     <div class="clearfix">&nbsp;</div> 
+                      <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-3">                      
                     <label>News Type</label>
                     <select class="form-control " id="post_type" name="post_type" onchange="gettype(this.value)">
@@ -90,6 +91,8 @@ background-color: #fff;
                   
                     </select>
                     </div>
+                     <div class="clearfix">&nbsp;</div>
+                      <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-3">                      
                     <label>News Category</label>
                     <select class="form-control " id="category" name="category" >
@@ -112,7 +115,7 @@ background-color: #fff;
                     </div>
                     
             <div class="clearfix">&nbsp;</div>
-            
+             <div class="clearfix">&nbsp;</div>
                   <div class="col-xs-12 col-md-12">
                       <label> News  Content</label>
                         

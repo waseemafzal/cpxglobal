@@ -1,4 +1,6 @@
-<?php getHead(); ?>
+<?php getHead();
+
+ ?>
    <style>
     .box-primary {
 	margin:5px 2px;	
@@ -19,18 +21,17 @@ background-color: #fff;
     top: 10%;
     width: 50%;
 }
-
    </style>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Slider  Management
+        Jobs Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="slider">View Slider </a></li>
+        <li > <a href="jobs">View Jobs </a></li>
       </ol>
     </section>
 
@@ -46,56 +47,69 @@ background-color: #fff;
             <!-- /.box-header -->
             <div class="box-body">
              <form id="form_add_update" name="form_add_update" role="form">
-             <div class="col-xs-12"><div class="alert hidden"></div></div>
+             <div class="alert hidden"></div>
                     <div class="form-group wrap_form">
-                    
-                    
-                  
-                    
-                    
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Title </label>
-                       
-<input  class="form-control" id="title"  placeholder="Title" value="<?php if(isset($row)){ echo $row->title;} ?>" name="title">
-                    </div>
-                     <div class="clearfix">&nbsp;</div>
-                     <!-- <div class="col-xs-12 col-md-6">
-                      <label> Slider Url </label>
-<input  class="form-control " id="url" autocomplete="off"  placeholder="www.publisher.com" value="<?php if(isset($row)){ echo $row->url;} ?>" name="url">
-                    </div>-->
-                    
-            <div class="clearfix">&nbsp;</div>
-                     <div class="col-xs-12 col-md-12">
-                                             <label for="exampleInputEmail1"> Description</label>
-                        <textarea class="form-control" rows="8" id="editor1" name="description"><?php if(isset($row)){ echo $row->description;} ?></textarea>
+                      <label for="exampleInputEmail1"> Job Title</label>
+                        <input type="text" class="form-control" id="post_title"  placeholder="Lorem ipsum post" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
-                     </div>
-                     
-                              
-           </div> 
-      <div class="clearfix">&nbsp;</div>
-      <div class="clearfix">&nbsp;</div>
-      
-      <div class="col-xs-12 col-md-6">
-                      <label>  Image</label>
+                    </div>
+                    
+                     <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1"> Job Heading</label>
+                        <input type="text" class="form-control"   placeholder="Lorem ipsum post" name="short_heading" value="<?php if(isset($row)){ echo $row->short_heading;} ?>">
+
+                    </div>
+                
+                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
+                  <div class="col-xs-12 col-md-12">
+                      <label> Job  Description</label>
+                        
+<textarea class="form-control" rows="10" id="editor1" name="post_description"><?php if(isset($row)){ echo $row->post_description;} ?></textarea>
+
+                    </div>
+                    
+                    <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">Company Location</label>
+                        <input type="text" class="form-control"   placeholder="" name="company_location" value="<?php if(isset($row)){ echo $row->company_location;} ?>">
+
+                    </div>
+                    
+					   <div class="clearfix">&nbsp;</div>
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1"> Company  Logo</label>
                    <input type="file" name="image" id="image"  /><div class="clearfix">&nbsp;</div>
-                    <div class="clearfix">&nbsp;</div>
+                   
                    <?php if(isset($row)){ 
-				   echo '<img src="'.base_url().'uploads/'.$row->image.'" width="50">';
-				   }?> </div> <div class="clearfix">&nbsp;</div>
-                     <div class="clearfix">&nbsp;</div>
-       <div class="col-xs-12 col-md-6">    
-                     <button type="submit" class="btn btn-info">Submit</button>
+				   echo '<img src="'.base_url().'uploads/'.$row->post_banner.'" style="width:50%">';
+				   }?> </div> 
+                   <div class="clearfix">&nbsp;</div>
+                   <div class="clearfix">&nbsp;</div>
+                   
+                    
+                    
+                   
+                   
+                   
+                   
+            </div>
+            <div class="clearfix">&nbsp;</div>
+             <div class="col-xs-12 col-md-12">
+                           <button type="submit" class="btn btn-info">Submit</button>
                         <input type="hidden" id="id"  name="id" value="<?php if(isset($row)){ echo $row->id;} ?>">
-                      </div>
-                      </div>
-                  
+                   </div>
+           </div> 
+
+                    
+                       <div class="clearfix">&nbsp;</div>
                     
                 </form>
+                 <?php //include_once'edit_img_form.php' ?>
                  </div>
-                <div class="clearfix">&nbsp;</div>
-                  <div class="clearfix">&nbsp;</div>
-                
+               
+              
             </div>
           </div>
           
@@ -110,58 +124,40 @@ background-color: #fff;
    
 
   <?php  getFooter(); ?>
-    <script src="bower_components/ckeditor/ckeditor.js"></script>
+  
+  
+ <script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+ <script type="text/javascript">
 
+  $(function () {
+    CKEDITOR.replace('editor1');
+ 
+  
+});
+</script>
   <script>
-    $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    
-  })
-////////////
-
-
-
-	
-	function getNext(val){
-	var formData = new FormData();
-formData.append('val',val); 
-$.ajax({
-        url: "<?php echo base_url().'slider/get_pub_or_doc'; ?>",
-        type: 'POST',
-		 data:formData,
-		 cache: false,
-			contentType: false,
-			processData: false,
-			dataType: 'JSON',
-        success: function(response) {
-		//var obj = 	jQuery.parseJSON(response)
-		
-           $("#resource_data" ).html(response.option);
-           
-           }
-	 });
-}
   /**********************************save************************************/
 	 $('#form_add_update').on("submit",function(e) {
-		e.preventDefault();
-		
+		e.preventDefault();	
 		 var formData = new FormData();
 	var other_data = $('#form_add_update').serializeArray();
     $.each(other_data,function(key,input){
         formData.append(input.name,input.value);
     });   
-	 if($('#image').val()!=''){
-		formData.append("image", document.getElementById('image').files[0]);
-		}
-		
-		//description = CKEDITOR.instances.editor1.getData();
-		//formData.append("description", description);
+		post_description = CKEDITOR.instances.editor1.getData();
+
+			formData.append("post_description", post_description);
+
+			if($('#image').val()!='')
+			{
+				formData.append("image", document.getElementById('image').files[0]);
+				
+			} 
+			
 	// ajax start
 		    $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'slider/save'; ?>",
+			url: "<?php echo base_url().'jobs/save'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,
@@ -184,8 +180,7 @@ $.ajax({
 				setTimeout(function(){
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
-				window.location='slider';
-				},2000);
+				},3000);
             }
            else if (data.status ==0)
             {  
@@ -202,11 +197,11 @@ $.ajax({
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
 				setTimeout(function(){
-				window.location='slider';
+				window.location='jobs';
 				},1000);
             }
 			else if (data.status == "validation_error")
-            {   
+            {   alert(data.status);
 			$(".alert").addClass('alert-warning');
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
@@ -219,5 +214,10 @@ $.ajax({
 	//ajax end    
     });
  
+  /******************************/
+
+
+  
   </script>
+
   

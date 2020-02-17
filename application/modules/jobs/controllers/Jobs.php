@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cms extends MX_Controller {
+class Jobs extends MX_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -10,11 +10,11 @@ class Cms extends MX_Controller {
 		}
 	}
 	public $view = "view";
-	public $tbl = 'cms';
+	public $tbl = 'tbl_jobs';
 	
 	public function index(){  
 
-		$aData['data'] =$this->db->query("SELECT p.* FROM cms as p");
+		$aData['data'] =$this->db->query("SELECT p.* FROM tbl_jobs as p");
 		$this->load->view($this->view,$aData);
 	}
 	public function add(){  
@@ -75,35 +75,7 @@ class Cms extends MX_Controller {
 				$_POST['post_banner'] =$newname ;
 			}
 		}
-		//firstimage secondimage
-		$imageName='';
-		$error='';
-		if(isset($_FILES['firstimage']['name']) &&  !empty($_FILES['firstimage']['name']))
-		{                
-			$info = pathinfo($_FILES['firstimage']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['firstimage']['tmp_name'], $target))
-			{
-				$_POST['firstimage'] =$newname ;
-			}
-		}
 		
-		
-		//$imageName='';
-		//$error='';
-		if(isset($_FILES['secondimage']['name']) && !empty($_FILES['secondimage']['name']))
-		{                
-			$info = pathinfo($_FILES['secondimage']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['secondimage']['tmp_name'], $target))
-			{
-				$_POST['secondimage'] =$newname ;
-			}
-		}
 		
 		
 		/********************upload image end***********************/

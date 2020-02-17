@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Blog/Article   Management
+      News Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="blogpost/add" class="btn btn-sm btn-su">Add Blog/Article</a></li>
+        <li > <a href="blogpost/add" class="btn btn-sm btn-su">Add News</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -25,8 +25,8 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th>Post Title</th>
-       <th>Post Desc</th>
+        <th>News Title</th>
+       <th>News Desc</th>
        
         <th>Type</th>
         <th>img/vido</th>

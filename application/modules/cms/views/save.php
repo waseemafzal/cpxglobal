@@ -75,6 +75,65 @@ background-color: #fff;
                    <?php if(isset($row)){ 
 				   echo '<img src="'.base_url().'uploads/'.$row->post_banner.'" style="width:50%">';
 				   }?> </div> 
+                   <div class="clearfix">&nbsp;</div>
+                   <div class="clearfix">&nbsp;</div>
+                   <h3><em>Sidebar Setting</em></h3>
+                   <hr />
+                   <div class="col-xs-12 col-md-3">                      
+                        <label>Display Sidebar</label>
+                        <select class="form-control " id="displaysidebar" name="displaysidebar">
+                            <option value="">select</option>
+                            <option value="1" <?php if($row->displaysidebar=='1'){?> selected="selected" <?php }?>>YES </option> 
+                            <option value="0" <?php if($row->displaysidebar=='0'){?> selected="selected" <?php }?>>NO</option>               
+                        </select>
+                    </div>
+                   
+               
+                     <div class="col-xs-12 col-md-3">                      
+                        <label>Display Sidebar Location</label>
+                        <select class="form-control " id="sidebar" name="sidebar">  
+                            <option value="">select</option>
+                            <option value="1" <?php if($row->sidebar=='1'){?> selected="selected" <?php }?>>Left Side </option> 
+                            <option value="0" <?php if($row->sidebar=='0'){?> selected="selected" <?php }?>>Right Side</option>               
+                        </select>
+                    </div>
+                   
+                    
+                     <div class="clearfix">&nbsp;</div>
+                   <div class="clearfix">&nbsp;</div>
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">First Image</label>
+                      <input type="file" name="firstimage" id="firstimage"  /><div class="clearfix">&nbsp;</div>
+                   
+					   <?php if(isset($row))
+					   { 
+                       	echo '<img src="'.base_url().'uploads/'.$row->firstimage.'" width="200" height="200">';
+						
+                       }?>
+                  
+                     </br>
+			<input type="text" class="form-control" id="imglinkurl1"  placeholder="URL" name="imglinkurl1" value="<?php if(isset($row)){ echo $row->imglinkurl1;} ?>">
+                    </div>
+                    
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">Second Image</label>
+                      <input type="file" name="secondimage" id="secondimage"  /><div class="clearfix">&nbsp;</div>
+                   
+					   <?php if(isset($row))
+					   { 
+                       	 echo '<img src="'.base_url().'uploads/'.$row->secondimage.'" width="200" height="200">';
+						                        }?>
+                  
+                   <input type="text" class="form-control" id="imglinkurl2"  placeholder="URL" name="imglinkurl2" value="<?php if(isset($row)){ echo $row->imglinkurl2;} ?>"><p>&nbsp;</p>
+                   
+                    </div>
+                    
+                    
+                    
+                   
+                   
+                   
+                   
             </div>
             <div class="clearfix">&nbsp;</div>
              <div class="col-xs-12 col-md-12">
@@ -129,9 +188,24 @@ background-color: #fff;
 
 			formData.append("post_description", post_description);
 
-if($('#image').val()!=''){
-		formData.append("image", document.getElementById('image').files[0]);
-		}
+			if($('#image').val()!='')
+			{
+				formData.append("image", document.getElementById('image').files[0]);
+				
+			} 
+			if($('#firstimage').val()!='')
+			{
+				
+				formData.append("firstimage", document.getElementById('firstimage').files[0]);
+				
+			
+			} 
+			if($('#secondimage').val()!='')
+			{
+				
+				formData.append("secondimage", document.getElementById('secondimage').files[0]);
+			
+			} 
 	// ajax start
 		    $.ajax({
 			type: "POST",
