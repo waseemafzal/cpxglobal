@@ -11,6 +11,24 @@
     <base href="<?=base_url()?>">
     <title>CPPEx Global</title>
     <style data-type="vc_shortcodes-custom-css" type="text/css">
+	#howYou div label{position: relative;
+    top: -9px;
+    margin: 3px 15px 0 5px;
+    text-transform: uppercase;}
+	#howYou span {position: relative;}
+	#howYou input{width: 30px; height: 30px;}
+	.big-checkbox {width: 30px; height: 30px;}
+	.formSection{
+		border-top: 2px solid #5472d2;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 10px 0 0 0;
+    width: 100%;
+		
+		}
+		.fieldNext{ margin-top:5px;}
+		.add_button{ font-size:15px;}
+		.remove_button{font-size:15px;}
     .vc_custom_1488790902404{padding-top: 60px !important;padding-bottom: 60px !important;background: #005b7f url(wp-content/uploads/2016/02/bg_sub-header_2bd12.png?id=211) !important;background-position: 0 0 !important;background-repeat: repeat !important;}.vc_custom_1456394083594{padding-top: 60px !important;padding-bottom: 30px !important;background-color: #fafafa !important;}.vc_custom_1457337405009{padding-top: 40px !important;padding-bottom: 20px !important;}.vc_custom_1461128433854{padding-bottom: 40px !important;}.vc_custom_1464078186411{padding-top: 60px !important;padding-bottom: 60px !important;background: #555555 url(http://demo.vegatheme.com/learn/wp-content/uploads/2016/02/users_bg-2.jpg?id=581) !important;background-position: 0 0 !important;background-repeat: repeat !important;}.vc_custom_1459932152928{margin-bottom: 60px !important;}.vc_custom_1460107674003{margin-bottom: 30px !important;}.vc_custom_1460017483706{margin-bottom: 40px !important;}.vc_custom_1456460058792{padding-top: 20px !important;padding-bottom: 40px !important;}
     </style>
      
@@ -89,6 +107,7 @@
 
  
     <link href='frontend/css/js_composer.min52c7.css?ver=6.0.5' id='js_composer_front-css' media='all' rel='stylesheet' type='text/css'>
+    
     <script src='frontend/css/jquery4a5f.js?ver=1.12.4-wp' type='text/javascript'>
     </script>
     <script src='frontend/css/jquery-migrate.min330a.js?ver=1.4.1' type='text/javascript'>

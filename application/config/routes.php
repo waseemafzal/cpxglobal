@@ -11,9 +11,25 @@ $route['press_release'] = 'home/press_release';
 $route['team'] = 'home/team';
 $route['training'] = 'home/training';
 $route['why'] = 'home/why';
-$route['certifications'] = 'home/certifications';
+/*****membership start*******/
+$route['why_membership'] = 'membership/why_membership';
+$route['membership_categories'] = 'membership/membership_categories';
+$route['membership_List'] = 'membership/membership_List';
+$route['membership_benefits'] = 'membership/membership_benefits';
+$route['associate_membership'] = 'membership/membership_Associate';
+$route['corporate_membership'] = 'membership/membership_corporate';
+$route['individual_membership'] = 'membership/membership_individual';
+$route['student_membership'] = 'membership/student_membership';
 
-
+/*****membership end*******/
+/*****consultancy start*******/
+$route['buseiness_development'] = 'consultancy/buseiness_development';
+$route['product_development'] = 'consultancy/product_development';
+$route['business_innovation'] = 'consultancy/business_innovation';
+$route['process_optimization'] = 'consultancy/process_optimization';
+$route['markete_analysis'] = 'consultancy/markete_analysis';
+$route['partners'] = 'Affiliations/partners';
+$route['customers'] = 'Affiliations/customers';
 //$route['view-member'] = 'auth/get_by_userType/'.USER;
 
 //$route['view-editor'] = 'auth/get_by_userType/'.EDITOR;

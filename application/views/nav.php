@@ -85,10 +85,10 @@
                                             <a href="membership_benefits">MEMBERSHIP BENEFITS</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="membership_form">MEMBERSHIP FORM</a>
+                                            <a href="membership/form">MEMBERSHIP FORM</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="membership_list">MEMBERSHIP LIST</a>
+                                            <a href="membership_List">MEMBERSHIP LIST</a>
                                         </li>
                                       
                                     </ul>
@@ -107,8 +107,26 @@
                                       
                                     </ul>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" >
                                     <a href="awards">AWARDS</a>
+                                    <ul class="sub-menu">
+                                        
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="awards">BEST MACHINE OPERATOR AWARD</a>
+                                        </li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="awards/application">APPLICATION PROCESS</a>
+                                        </li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="awards/eligibility">AWARD ELIGIBILITY</a>
+                                        </li>
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="awards/selection">SELECTION CRITERIA</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="awards/benefits">BENEFITS OF AWARDS</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                     <a href="gallery">GALLARY</a>
