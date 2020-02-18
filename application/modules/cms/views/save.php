@@ -76,6 +76,39 @@ background-color: #fff;
 				   echo '<img src="'.base_url().'uploads/'.$row->post_banner.'" style="width:50%">';
 				   }?> </div> 
                    <div class="clearfix">&nbsp;</div>
+                  <h3><em>SEO Part</em></h3>
+                   <hr />
+
+                   
+                        <div class="col-xs-12 col-md-12">
+                        <label for="exampleInputEmail1">Meta Keyword</label>
+                        <input type="text" class="form-control" id="meta_keyword"  placeholder="Meta keyword" name="meta_keyword" value="<?php if(isset($row)){ echo $row->meta_keyword;} ?>">
+                        
+                        </div>
+                          <div class="clearfix">&nbsp;</div>
+                   <div class="clearfix">&nbsp;</div>
+                 <div class="col-xs-12 col-md-12">
+                      <label for="exampleInputEmail1">Meta Title</label>
+                        <input type="text" class="form-control"   placeholder="Meta title" name="meta_title" value="<?php if(isset($row)){ echo $row->meta_title;} ?>">
+
+                    </div>
+                
+                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
+                  <div class="col-xs-12 col-md-12">
+                      <label> Meta Description</label>
+                        
+<textarea class="form-control" rows="10" name="meta_description"><?php if(isset($row)){ echo $row->meta_description;} ?></textarea>
+
+                    </div>
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   <div class="clearfix">&nbsp;</div>
                    <div class="clearfix">&nbsp;</div>
                    <h3><em>Sidebar Setting</em></h3>
                    <hr />
@@ -83,8 +116,8 @@ background-color: #fff;
                         <label>Display Sidebar</label>
                         <select class="form-control " id="displaysidebar" name="displaysidebar">
                             <option value="">select</option>
-                            <option value="1" <?php if($row->displaysidebar=='1'){?> selected="selected" <?php }?>>YES </option> 
-                            <option value="0" <?php if($row->displaysidebar=='0'){?> selected="selected" <?php }?>>NO</option>               
+                            <option value="1" <?php if(isset($row) and $row->displaysidebar=='1'){?> selected="selected" <?php }?>>YES </option> 
+                            <option value="0" <?php if(isset($row) and $row->displaysidebar=='0'){?> selected="selected" <?php }?>>NO</option>               
                         </select>
                     </div>
                    
@@ -93,45 +126,26 @@ background-color: #fff;
                         <label>Display Sidebar Location</label>
                         <select class="form-control " id="sidebar" name="sidebar">  
                             <option value="">select</option>
-                            <option value="1" <?php if($row->sidebar=='1'){?> selected="selected" <?php }?>>Left Side </option> 
-                            <option value="0" <?php if($row->sidebar=='0'){?> selected="selected" <?php }?>>Right Side</option>               
+                            <option value="1" <?php if(isset($row) and $row->sidebar=='1'){?> selected="selected" <?php }?>>Left Side </option> 
+                            <option value="0" <?php if(isset($row) and $row->sidebar=='0'){?> selected="selected" <?php }?>>Right Side</option>               
                         </select>
                     </div>
+                   <?php 
+				   if(isset($row))
+				   {
+					  $NewID= $row->id;
+				   }
+				   else
+				   {
+					    $NewID = getMaxID('id','cms');  
+					   
+				    } 
+				   
+				?>
                    
-                    
+               <a class="btn btn-info fff pull-right" href="sidebarcontent/add?cms_id=<?php echo $NewID;?>"> <i class="fa fa-plus"></i> Add  sidebar content</a>
                      <div class="clearfix">&nbsp;</div>
                    <div class="clearfix">&nbsp;</div>
-                    <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">First Image</label>
-                      <input type="file" name="firstimage" id="firstimage"  /><div class="clearfix">&nbsp;</div>
-                   
-					   <?php if(isset($row))
-					   { 
-                       	echo '<img src="'.base_url().'uploads/'.$row->firstimage.'" width="200" height="200">';
-						
-                       }?>
-                  
-                     </br>
-			<input type="text" class="form-control" id="imglinkurl1"  placeholder="URL" name="imglinkurl1" value="<?php if(isset($row)){ echo $row->imglinkurl1;} ?>">
-                    </div>
-                    
-                    <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Second Image</label>
-                      <input type="file" name="secondimage" id="secondimage"  /><div class="clearfix">&nbsp;</div>
-                   
-					   <?php if(isset($row))
-					   { 
-                       	 echo '<img src="'.base_url().'uploads/'.$row->secondimage.'" width="200" height="200">';
-						                        }?>
-                  
-                   <input type="text" class="form-control" id="imglinkurl2"  placeholder="URL" name="imglinkurl2" value="<?php if(isset($row)){ echo $row->imglinkurl2;} ?>"><p>&nbsp;</p>
-                   
-                    </div>
-                    
-                    
-                    
-                   
-                   
                    
                    
             </div>
@@ -193,19 +207,7 @@ background-color: #fff;
 				formData.append("image", document.getElementById('image').files[0]);
 				
 			} 
-			if($('#firstimage').val()!='')
-			{
-				
-				formData.append("firstimage", document.getElementById('firstimage').files[0]);
-				
 			
-			} 
-			if($('#secondimage').val()!='')
-			{
-				
-				formData.append("secondimage", document.getElementById('secondimage').files[0]);
-			
-			} 
 	// ajax start
 		    $.ajax({
 			type: "POST",

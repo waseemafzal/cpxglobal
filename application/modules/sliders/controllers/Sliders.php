@@ -88,7 +88,8 @@ class Sliders extends MX_Controller {
 			|File uploading either single or multiple add/update
 			---------------------------------------------------*/
 			//if($_POST['post_type']=='image'){
-			if (!empty($_FILES)){ 
+				
+			if (!empty($_FILES) and (count($_FILES) > 0 )   ){ 
 			$nameArray = $this->crud->upload_files($_FILES);
 			$nameData = explode(',',$nameArray);
 			$c=0;
@@ -97,9 +98,15 @@ class Sliders extends MX_Controller {
 				'image' => $file,
 				'post_id' => $post_id
 				);
-			$result = 	$this->db->insert('slider_images', $file_data);
+					$result = 	$this->db->insert('slider_images', $file_data);
 				$c++;
 				}
+			  }
+			  else
+			  {
+				 $arr = array('status' => 0,'message' => " Choose file");
+					echo json_encode($arr); 
+					exit; 
 			  }
 			//}
 			/*===============================================*/

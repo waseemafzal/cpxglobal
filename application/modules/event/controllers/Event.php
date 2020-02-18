@@ -51,7 +51,7 @@ class Event extends MX_Controller {
 		//`post_title`, `post_date`, `post_type`, `video_url`, `posted_by`
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('title', 'title', 'trim|required');
-		$this->form_validation->set_rules('short_heading', 'Short Heading', 'trim|required');
+	//	$this->form_validation->set_rules('short_heading', 'Short Heading', 'trim|required');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required');
 		//$this->form_validation->set_rules('start_at', 'Start At', 'trim|required');
 		//$this->form_validation->set_rules('end_at', 'End At', 'trim|required');

@@ -9,7 +9,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="sliders/add" class="btn btn-sm btn-su">Add Slider</a></li>
+        <!--<li > <a href="sliders/add" class="btn btn-sm btn-su">Add New</a></li>-->
       </ol>
     </section>
     <!-- Main content -->
