@@ -108,19 +108,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-		function stripepage()
-
-
-
-		{
-
-
-
-			$this->load->view('stripe');
-
-
-
-		}
+		function stripepage(){
+$this->load->view('stripe');
+}
+		function login(){
+$this->load->view('login');
+}
 
 
 
@@ -172,67 +165,6 @@ echo '<br><hr><h2>Result for Sending through noreply@skillsquared.com</h2>';
 
 		}
 
-
-
-		public function becomeafreelancer()
-
-		{
-
-			if(!$this->session->userdata('login')==true){
-				redirect('/', 'refresh');
-			}
-
-			
-
-			$aData['countries'] =$this->db->select('name,id')->from($this->tbl_countries)->order_by("id","desc")->get();
-
-			
-
-			$query =$this->crud->edit( get_session('user_id'),TBL_USER );
-
-			
-
-			$rolerow = $this->crud->edit( get_session('user_id'),$this->freelancers,'user_id');
-
-			
-
-			$rolerows = $rolerow;
-
-			
-
-			$loc_data  =  getuserlocation ($rolerows->location_id);
-
-			
-
-			$aData['loc_data']  = $loc_data; 
-
-			
-
-			$aData['countries'] = $this->db->select('name,id')->from($this->tbl_countries)->order_by("id","desc")->get();
-
-			
-
-			$aData['states'] = $this->db->select('name,id')->from($this->tbl_states)->where('country_id',$loc_data->country )->order_by("id","desc")->get();
-
-			
-
-			$aData['cities'] = $this->db->select('name,id')->from($this->tbl_cities)->where('state_id',$loc_data->state )->order_by("id","desc")->get();
-
-			
-
-			$aData['row']= $query;
-
-			
-
-			$aData['rolerow']=$rolerow;
-
-			$aData['address'] = get_id_by_key('address','id',$this->session->userdata('user_id'),$this->users);
-
-			$this->load->view('become-a-freelancer',$aData);
-
-		  
-
-		}
 
 
 

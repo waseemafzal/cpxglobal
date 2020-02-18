@@ -160,7 +160,7 @@
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">
-                            <a href="my-account/index.html" title="Login / Register"><i class="fa fa-user"></i> Login / Register</a>
+                            <a href="user/login" title="Login / Register"><i class="fa fa-user"></i> Login / Register</a>
                         </div>
                         <ul class="top-nav">
                             <li><i class="fa fa-clock-o"></i> Mon - Fri / 9.00AM - 06.00PM</li>

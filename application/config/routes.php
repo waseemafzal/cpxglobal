@@ -30,6 +30,9 @@ $route['process_optimization'] = 'consultancy/process_optimization';
 $route['markete_analysis'] = 'consultancy/markete_analysis';
 $route['partners'] = 'Affiliations/partners';
 $route['customers'] = 'Affiliations/customers';
+$route['certifications'] = 'home/certifications';
+
+
 //$route['view-member'] = 'auth/get_by_userType/'.USER;
 
 //$route['view-editor'] = 'auth/get_by_userType/'.EDITOR;
