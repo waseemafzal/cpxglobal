@@ -224,11 +224,18 @@ function getServiceImage($id){
 			}
 		}
 		
-		
-		
-		
-		
-		
+		function getMaxID($key,$table)
+		{
+			$CI =& get_instance();
+			$result = $CI->db->query("SELECT MAX(".$key.") AS `maxid` FROM `".$table."` ")->row()->maxid;
+			
+			$data = 1;
+			if(!empty($result))
+			{
+			 	return $data = $result +1;
+			}
+		return $data;
+		}
 		function setUserimage($image)
 		{
 			$file=FCPATH.'uploads/';

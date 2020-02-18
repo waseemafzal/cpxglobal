@@ -161,7 +161,31 @@
                     </ul>
 
                 </li>
+<li class="treeview ">
 
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Customer/Partner Logo</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="sliders"><i class="fa fa-list"></i> <span>View</span></a></li>
+
+                       <!-- <li><a href="sliders/add"><i class="fa fa-list"></i> <span>Add</span></a></li>-->
+
+                    </ul>
+
+                </li>
               <li class="treeview ">
 
                     <a href="#">
@@ -212,6 +236,9 @@
                     </ul>
 
                 </li>
+                   
+                   
+                   
                    
                    <li class="treeview ">
 
@@ -290,7 +317,31 @@
 
                 </li>
 
-               
+               <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Gallery</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="gallery"><i class="fa fa-list"></i> <span>Gallery</span></a></li>
+
+                        <li><a href="gallery/add"><i class="fa fa-list"></i> <span>Add Gallery</span></a></li>
+
+                    </ul>
+
+                </li>
                 <li><a href="cms"><i class="fa fa-list"></i> <span>Pages</span></a></li>
 
                 <li><a href="blogpost"><i class="fa fa-th"></i> <span>News Management</span></a></li>

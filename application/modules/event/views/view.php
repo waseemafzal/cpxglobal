@@ -25,10 +25,10 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
         <tr>
-            <th>Event Title </th>
-            <th>Short Heading </th>
-            <th>Start At </th>
-            <th>End At </th>
+            <th>Course ID </th>
+            <th>Course Title </th>
+           <!-- <th>Start At </th>
+            <th>End At </th>-->
              <th>Start Date</th>
             <th>Actions</th>
         </tr>
@@ -43,10 +43,10 @@
 		
 		?>
 		<tr id="row_<?php echo $row->id;?>">
-        <td><?php echo $row->title;?></td>
-         <td><?php echo $row->short_heading;?></td>
-          <td><?php echo $row->start_at;?></td>
-           <td><?php echo $row->end_at;?></td>
+        <td><?php echo $row->event_id;?></td>
+         <td><?php echo $row->title;?></td>
+          <!--<td><?php //echo $row->start_at;?></td>
+           <td><?php //echo $row->end_at;?></td>-->
             <td><?php echo $row->on_date;?></td>
        
     <td class="center">

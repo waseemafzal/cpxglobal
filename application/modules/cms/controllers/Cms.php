@@ -76,7 +76,7 @@ class Cms extends MX_Controller {
 			}
 		}
 		//firstimage secondimage
-		$imageName='';
+		/*$imageName='';
 		$error='';
 		if(isset($_FILES['firstimage']['name']) &&  !empty($_FILES['firstimage']['name']))
 		{                
@@ -103,7 +103,7 @@ class Cms extends MX_Controller {
 			{
 				$_POST['secondimage'] =$newname ;
 			}
-		}
+		}*/
 		
 		
 		/********************upload image end***********************/

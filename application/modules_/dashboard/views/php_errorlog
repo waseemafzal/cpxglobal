@@ -1,5 +1,0 @@
-[14-Nov-2019 20:25:02 CST6CDT] PHP Fatal error:  Call to undefined function getHead() in /home/customer/www/skillsquared.com/public_html/application/modules/dashboard/views/index.php on line 1
-[17-Dec-2019 17:41:48 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function getHead() in /home/customer/www/skillsquared.com/public_html/application/modules/dashboard/views/index.php:1
-Stack trace:
-#0 {main}
-  thrown in /home/customer/www/skillsquared.com/public_html/application/modules/dashboard/views/index.php on line 1
