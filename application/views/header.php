@@ -11,13 +11,15 @@
     <base href="<?=base_url()?>">
     <title>CPPEx Global</title>
     <style data-type="vc_shortcodes-custom-css" type="text/css">
+	.theme_panel{ display:none}
+
 	#howYou div label{position: relative;
     top: -9px;
     margin: 3px 15px 0 5px;
     text-transform: uppercase;}
 	#howYou span {position: relative;}
-	#howYou input{width: 30px; height: 30px;}
-	.big-checkbox {width: 30px; height: 30px;}
+	#howYou input{width: 20px; height: 20px;}
+	.big-checkbox {width: 20px; height: 20px;}
 	.formSection{
 		border-top: 2px solid #5472d2;
     margin-bottom: 10px;
@@ -29,7 +31,7 @@
 		.fieldNext{ margin-top:5px;}
 		.add_button{ font-size:15px;}
 		.remove_button{font-size:15px;}
-    .vc_custom_1488790902404{padding-top: 60px !important;padding-bottom: 60px !important;background: #005b7f url(wp-content/uploads/2016/02/bg_sub-header_2bd12.png?id=211) !important;background-position: 0 0 !important;background-repeat: repeat !important;}.vc_custom_1456394083594{padding-top: 60px !important;padding-bottom: 30px !important;background-color: #fafafa !important;}.vc_custom_1457337405009{padding-top: 40px !important;padding-bottom: 20px !important;}.vc_custom_1461128433854{padding-bottom: 40px !important;}.vc_custom_1464078186411{padding-top: 60px !important;padding-bottom: 60px !important;background: #555555 url(http://demo.vegatheme.com/learn/wp-content/uploads/2016/02/users_bg-2.jpg?id=581) !important;background-position: 0 0 !important;background-repeat: repeat !important;}.vc_custom_1459932152928{margin-bottom: 60px !important;}.vc_custom_1460107674003{margin-bottom: 30px !important;}.vc_custom_1460017483706{margin-bottom: 40px !important;}.vc_custom_1456460058792{padding-top: 20px !important;padding-bottom: 40px !important;}
+    .vc_custom_1488790902404{padding-top: 60px !important;padding-bottom: 60px !important;background: #005b7f url(wp-content/uploads/2016/02/bg_sub-header_2bd12.png?id=211) !important;background-position: 0 0 !important;background-repeat: repeat !important;}.vc_custom_1456394083594{padding-top: 60px !important;padding-bottom: 30px !important;background-color: #fafafa !important;}.vc_custom_1457337405009{padding-top: 40px !important;padding-bottom: 20px !important;}.vc_custom_1461128433854{padding-bottom: 40px !important;}.vc_custom_1464078186411{padding-top: 60px !important;padding-bottom: 60px !important;background: #555555 url(http://demo.vegatheme.com/learn/wp-content/uploads/2016/02/users_bg-2.jpg?id=581) !important;background-position: 50% 50% !important;background-repeat: no-repeat !important;}.vc_custom_1459932152928{margin-bottom: 60px !important;}.vc_custom_1460107674003{margin-bottom: 30px !important;}.vc_custom_1460017483706{margin-bottom: 40px !important;}.vc_custom_1456460058792{padding-top: 20px !important;padding-bottom: 40px !important;}
     </style>
      
     <style type="text/css">
@@ -45,6 +47,14 @@
        background: none !important;
        padding: 0 !important;
     }
+	.table .success{
+		}
+	.table .warning{
+		}
+	.table .info{
+		}
+	.table .danger{
+		}
     </style>
     <link href='frontend/css/common-skeleton.min8f82.css?ver=4.10' id='tribe-common-skeleton-style-css' media='all' rel='stylesheet' type='text/css'>
     <link href='frontend/css/tooltip.min8f82.css?ver=4.10' id='tribe-tooltip-css' media='all' rel='stylesheet' type='text/css'>
@@ -156,7 +166,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-5">
-                        <a href="index.html"><img alt="" src="frontend/images/logo.png"></a>
+                        <a href="index.php"><img alt="" src="frontend/images/logo.png"></a>
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">

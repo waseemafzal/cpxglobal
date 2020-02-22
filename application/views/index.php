@@ -1,7 +1,132 @@
 <?php 
 include_once"header.php";
 ?>
-        <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
+       <style>
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+.wpb_wrapper h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+</style> 
+
+<section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
            <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -54,7 +179,7 @@ include_once"header.php";
         </section>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
             <div class="container">
-                <h2>WHO WE ARE</h2>
+                <h2 align="center">WHO WE ARE</h2>
                 <p>CPPEx Global (Global Center of Printing & Packaging Excellence) strives for excellence because a training & consultancy provider is only as good as the training and consultancy services it offers. CPPEx Global endeavors to be known as a leader in technical training and consultancy services as an institution of excellence in vocational education throughout USA, operating with regional offices in Europe, South America, Middle East, and South Asia and planning to expand to other countries and continents in near future. 
 </p>
                 <p>CPPEx Global managed by a core team of professional trainers and experts who enable over 5,000 printing industrial professionals to enhance their technical skills in the field of manufacturing printing and packaging materials. We proudly bear the name of the preeminent from the institute's inception and today our experts helps to our global‘s clients to enhance their productivity and business performance by providing latest innovative solutions to keep clients plant at optimum efficiency. We offer a complete range of tailored training services and solutions that maximize your uptime, reduce your costs and help you reach and sustain your desired performance levels.
@@ -173,18 +298,18 @@ include_once"header.php";
             </div>
         </section>
         
+            <div class="container">
+            <h2 style="text-align: center;">Clients Testimonials</h2>
         
+            </div>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1464078186411" id="testimonials">
             <div class="container">
+            
                 <div class="row">
                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8">
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
-                                <div class="wpb_text_column wpb_content_element">
-                                    <div class="wpb_wrapper">
-                                        <h2 style="text-align: center;">WHAT THEY SAY</h2>
-                                    </div>
-                                </div>
+                                
                                 <div class="carousel slide quote-carousel" data-ride="carousel" id="quote-carousel">
                                     <!-- Bottom Carousel Indicators -->
                                     <ol class="carousel-indicators">
@@ -230,5 +355,28 @@ include_once"header.php";
                     </div>
                 </div>
             </div>
-        </section><!-- content close -->
+        </section>
+         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " >
+            <div class="container">
+            
+<div class="wpb_text_column wpb_content_element">
+                                    <div class="wpb_wrapper">
+                                        <h2 style="text-align: center;">Our  Partners</h2>
+                                    </div>
+                                </div>
+                                <div class="clearfix">&nbsp;</div>
+        <section class="customer-logos slider">
+      <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+   </section>
+     </div>
+        </section>
+        
+        <!-- content close -->
 <?php include_once"footer.php"; ?>

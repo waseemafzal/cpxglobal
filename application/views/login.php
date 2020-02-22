@@ -38,8 +38,10 @@ include_once"header.php";
 					<input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember me				</label>
 			</p>
 			<p class="lost_password">
-				<a href="http://demo.vegatheme.com/learn/my-account/lost-password/">Lost your password?</a>
+				<a href="#">Lost your password?</a>
 			</p>
+            
+            
 			<div class="clear"></div>
 
 			

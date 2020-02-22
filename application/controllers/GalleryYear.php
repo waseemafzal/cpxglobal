@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Gallery extends CI_Controller {
+class GalleryYear extends CI_Controller {
 
 
 	  
@@ -10,8 +10,9 @@ class Gallery extends CI_Controller {
 		parent::__construct();
 	}
 	
-	public function index(){
-		$aData['page_title'] ='Gallery';
+	public function view($year){
+		$aData['page_title'] ='Gallery '.$year;
+		$aData['year'] =$year;
 		$this->load->view('gallery',$aData);
 	}
 	

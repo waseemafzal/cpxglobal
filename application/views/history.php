@@ -207,7 +207,7 @@ include_once"header.php";
     <ul class="timeline">
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i><span class="bgPurple"> 2005</span></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bg-info">
             <div class="timeline-heading">
               <h4 class="timeline-title">Training & Consultancy</h4>
               <p><small class="text-muted"></small></p>
@@ -219,7 +219,7 @@ include_once"header.php";
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i><span class="bgGreen"> 2008</span></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bg-danger">
             <div class="timeline-heading">
               <h4 class="timeline-title">Started Certification</h4>
             </div>
@@ -233,7 +233,7 @@ include_once"header.php";
 
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i><span class="bgPurple"> 2010</span></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bg-warning">
             <div class="timeline-heading">
               <h4 class="timeline-title">Started Certificaion</h4>
               <p><small class="text-muted"></small></p>
@@ -245,7 +245,7 @@ include_once"header.php";
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i><span class="bgGreen"> 2015</span></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bg-success">
             <div class="timeline-heading">
               <h4 class="timeline-title">Started Certification</h4>
             </div>
@@ -259,7 +259,7 @@ include_once"header.php";
 
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i><span class="bgPurple"> 2017</span></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bg-success">
             <div class="timeline-heading">
               <h4 class="timeline-title">Best Machine Operator Award</h4>
               <p><small class="text-muted"></small></p>
@@ -271,8 +271,8 @@ include_once"header.php";
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i><span class="bgGreen"> 2021</span></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
+          <div class="timeline-panel bg-info">
+            <div class="timeline-heading ">
               <h4 class="timeline-title">Plan to expand in the market of centeral asia</h4>
             </div>
             <div class="timeline-body">
@@ -282,8 +282,8 @@ include_once"header.php";
         </li>
          <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i><span class="bgPurple"> 2025</span></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
+          <div class="timeline-panel bg-warning">
+            <div class="timeline-heading ">
               <h4 class="timeline-title">Plan to expand in New Zealand & Australia</h4>
               <p><small class="text-muted"></small></p>
             </div>
