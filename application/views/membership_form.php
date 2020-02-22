@@ -5,8 +5,8 @@ include_once"header.php";
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1>MEMBERSHIP APPLICATION
-</h1>
+            <h1>MEMBERSHIP APPLICATION
+            </h1>
 CENTER OF PRINTING AND PACKAGING EXCELLENCE
 </div>
             </div><!-- End row -->
@@ -78,8 +78,8 @@ CENTER OF PRINTING AND PACKAGING EXCELLENCE
 </div>
 </section>
 <section id="PROFESSIONAL" class="formSection">
-<h2>PROFESSIONAL &amp; EDUCATIONAL DETAILS:
-</h2>
+	<h2>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h2>
+
 <div class="col-md-12 col-xs-12">
 <div class="field_wrapper">
     <div>
