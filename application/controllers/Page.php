@@ -22,9 +22,14 @@ $aData['page_title'] ='Services ';
 	
 	public function cms($id){ 
 		$query =$this->crud->edit($id,'cms');
+		$aData['imgdata'] =get_by_where_array(array('cms_id'=>$id),'tbl_sidebarcontent');
 		$aData['row']=$query;
+		$aData['meta_title']=$query->meta_title;
+		$aData['meta_description']=$query->meta_description;
+		$aData['meta_keyword']=$query->meta_keyword;
 		$this->load->view('cms',$aData);
 	}
+	
 public function profile(){
 		$query =$this->crud->edit($this->session->userdata('user_id'),'users');
 		//pre($query);

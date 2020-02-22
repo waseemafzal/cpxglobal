@@ -19,38 +19,77 @@ include_once"header.php";
 <div class="col2-set row" id="customer_login">
 
 
-	<div class="col-md-6">
-
-		<h2>Register</h2>
-
-		<form method="post" class="register">
-
-			
-			
-			<p class="form-row form-row-wide">
-				<label for="reg_email">Email address <span class="required">*</span></label>
-				<input type="email" class="input-text" name="email" id="reg_email" value="">
-			</p>
-
-			
-				<p class="form-row form-row-wide">
-					<label for="reg_password">Password <span class="required">*</span></label>
-					<input type="password" class="input-text" name="password" id="reg_password">
-				</p>
-
-			
-			<!-- Spam Trap -->
-			<div style="left: -999em; position: absolute;"><label for="trap">Anti-spam</label><input type="text" name="email_2" id="trap" tabindex="-1"></div>
-
-			<div class="woocommerce-privacy-policy-text"></div>			
-			<p class="form-row">
-				<input type="hidden" id="_wpnonce" name="_wpnonce" value="364a380d46"><input type="hidden" name="_wp_http_referer" value="/learn/my-account/">				<input type="submit" class="button" name="register" value="Register">
-			</p>
-
-			
-		</form>
-
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3>Have an Account?</h3>
+              </div>
+              <div class="modal-body">
+                <div class="well">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                    <li><a href="#create" data-toggle="tab">Create Account</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="login">
+                      <form class="form-horizontal" action='' method="POST">
+                        <fieldset>
+                          <div id="legend">
+                            <legend class="">Login</legend>
+                          </div>    
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Username</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                            </div>
+                          </div>
+     
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Password</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                            </div>
+                          </div>
+     
+     
+                          <div class="control-group">
+                            <!-- Button -->
+                            <div class="controls">
+                              <button class="btn btn-success">Login</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>                
+                    </div>
+                    <div class="tab-pane fade" id="create">
+                      <form id="tab">
+                        <label>Username</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>First Name</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>Last Name</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>Email</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>Address</label>
+                        <textarea value="Smith" rows="3" class="input-xlarge">
+                        </textarea>
+     
+                        <div>
+                          <button class="btn btn-primary">Create Account</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
 	</div>
+</div>
 
 </div>
 

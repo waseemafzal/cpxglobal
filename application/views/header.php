@@ -9,7 +9,30 @@
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <link href="xmlrpc.php" rel="pingback">
     <base href="<?=base_url()?>">
-    <title>CPPEx Global</title>
+    <title>
+    <?php
+	if(isset($meta_title)){
+		echo $meta_title;
+		}else{
+			echo 'CPPEx Global';
+			}
+	?>
+    </title>
+    <meta name="description" content="<?php
+	if(isset($meta_description)){
+		echo $meta_description;
+		}else{
+			echo 'CPPEx Global';
+			}
+	?>">
+  <meta name="keywords" content="<?php
+	if(isset($meta_keyword)){
+		echo $meta_keyword;
+		}else{
+			echo 'CPPEx Global,trainings';
+			}
+	?>">
+  
     <style data-type="vc_shortcodes-custom-css" type="text/css">
 	.theme_panel{ display:none}
 

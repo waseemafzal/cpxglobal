@@ -17,7 +17,20 @@ public $tbl_notify ="tbl_notify";
      	public function index()
 
 		{
+			$data = $this->db->select('*')->from('slider')->where('status',1)->get();
+		if($data->num_rows()>0){
+$aData['slider'] = $data;
+		}else{
+			$aData['slider'] =0;
+			}
+			$testimonial = $this->db->select('*')->from('testimonial')->get();
+		if($testimonial->num_rows()>0){
+$aData['testimonial'] = $testimonial;
+		}else{
+			$aData['testimonial'] =0;
+			}
 			$aData['page_title'] = 'Home';
+			$aData['partners'] = $this->db->select('*')->from('slider_images')->where('post_id',11)->get();
 			$this->load->view('index',$aData);    
 		}			
 		

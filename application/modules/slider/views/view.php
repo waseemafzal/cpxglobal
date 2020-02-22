@@ -28,9 +28,11 @@
         <th>Title </th>
         <th>Description </th>
         
+        
         <th>Status  </th>
-        <th>Image</th>
-        <!--<th>Slider Url  </th>-->
+        <th>Banner</th>
+        <th>Button Text </th>
+        <th>Url  </th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -71,7 +73,8 @@
 		 ?>
          
          </td>
-         <td><?php echo $row->url;?></td>
+         <td><?php echo $row->btn_text;?></td>
+         <td><?php echo $row->link;?></td>
         <td class="center">
             <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="slider/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>

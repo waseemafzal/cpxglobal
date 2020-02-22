@@ -131,97 +131,46 @@ include_once"header.php";
     letter-spacing: 0px;
     font-weight: 600;
     font-size: 48px;}
-.carousel-caption p{
-	line-height: 48px;
-    font-size: 18px;
-	text-align:center;
-	}
-.caption-animate .item.active .carousel-caption {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.caption-animate  .item.active .carousel-caption.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.caption-animate  .item.active .carousel-caption.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-.caption-animate .item.active .carousel-caption.flipOutX,
-.caption-animate .item.active .carousel-caption.flipOutY,
-.caption-animate .item.active .carousel-caption.bounceIn,
-.caption-animate .item.active .carousel-caption.bounceOut {
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
-}
-.caption-animate .item .carousel-caption.fadeIn,
-.caption-animate .item .carousel-caption.fadeInDown,
-.caption-animate .item .carousel-caption.fadeInDownBig,
-.caption-animate .item .carousel-caption.fadeInLeft,
-.caption-animate .item .carousel-caption.fadeInLeftBig,
-.caption-animate .item .carousel-caption.fadeInRight,
-.caption-animate .item .carousel-caption.fadeInRightBig,
-.caption-animate .item .carousel-caption.fadeInUp,
-.caption-animate .item .carousel-caption.fadeInUpBig{
-  opacity:0;
-}
+.carousel-caption p{line-height: 48px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: 48px;}
 </style> 
 
 <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
-           <div id="myCarousel" class="carousel slide caption-animate" data-ride="carousel">
+           <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-  <?php
-  if($slider!=0){
-	 $sliderCount= count($slider->num_rows());
-	  }
-  ?>
-  <?php
-  for($i=0;$i<$sliderCount;$i++){
-	  $active='';
-	  if($i==0){
-		   $active='active';
-		  }
-  ?>
-    <li data-target="#myCarousel" data-slide-to="<?=$i?>" class="<?=$active?>"></li>
-    <?php } ?>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner " role="listbox">
-  <?php
-  $j=0;
-  foreach($slider->result() as $slide){
-	  $activeClass='';
-	  $sliderimage=base_url().'uploads/'.$slide->image;
-	  if($j==0){
-		   $activeClass='active';
-		  }
-		  {
-  ?>
-    <div class="item <?=$activeClass?> ">
-      <img src="<?=$sliderimage?>"  style="width:100%" alt="<?=$slide->title?>">
-      <div  class="carousel-caption" >
-        <h3><?=$slide->title?></h3>
-        <p><?=$slide->description?>
-        <br>
-        <?php 
-		if($slide->btn_text!='' and $slide->link!=''){?>
-        <a class="btn btn-info" href="<?=$slide->link?>"><?=$slide->btn_text?></a>
-        <?php } ?>
-        </p>
-        
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="frontend/images/slide_1.jpg" alt="New York">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
       </div>
     </div>
-<?php 
-$j++;
-} 
-  }?>
+
+    <div class="item">
+      <img src="frontend/images/slide_5-2.jpg" alt="New York">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="frontend/images/slide_6.jpg" alt="New York">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
+      </div>
+    </div>
   </div>
 
   <!-- Left and right controls -->
@@ -387,52 +336,41 @@ $j++;
                                 <div class="carousel slide quote-carousel" data-ride="carousel" id="quote-carousel">
                                     <!-- Bottom Carousel Indicators -->
                                     <ol class="carousel-indicators">
-                                        <?php
-  if($testimonial!=0){
-	 $testimonialCount= count($testimonial->result());
-	  
-  ?>
-  <?php
-  
-  for($k=0;$k<$testimonialCount;$k++){
-	  $active='';
-	  if($k==0){
-		   $active='active';
-		  }
-  ?>
-    <li data-target="#quote-carousel" data-slide-to="<?=$k?>" class="<?=$active?>"></li>
-    <?php }
-	
-  }?>
-                                        
-                                        
+                                        <li class="active" data-slide-to="0" data-target="#quote-carousel"></li>
+                                        <li class="" data-slide-to="1" data-target="#quote-carousel"></li>
+                                        <li class="" data-slide-to="2" data-target="#quote-carousel"></li>
                                     </ol><!-- Carousel Slides / Quotes -->
                                     <div class="carousel-inner light">
-                                     <?php
-									 $j=0;
-  foreach($testimonial->result() as $slide){
-	  $activeClass='';
-	  $sliderimage=base_url().'uploads/'.$slide->image;
-	  if($j==0){
-		   $activeClass='active';
-		  }
-		  {
-  ?>
-    <div class="item <?=$activeClass?> ">
-  
+                                        <div class="item active">
                                             <blockquote>
                                                 <div class="row">
-                                                    <div class="col-sm-3 text-center"><img alt="" class="img-circle" src="<?=$sliderimage?>"></div>
+                                                    <div class="col-sm-3 text-center"><img alt="" class="img-circle" src="frontend/images/teacher_4_small.jpg"></div>
                                                     <div class="col-sm-9">
-                                                        <p><?=$slide->description?>!</p><small><?=$slide->text?></small>
+                                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p><small>Someone famous</small>
                                                     </div>
                                                 </div>
                                             </blockquote>
                                         </div>
-                                        <?php 
-$j++;
-} 
-  }?>
+                                        <div class="item">
+                                            <blockquote>
+                                                <div class="row">
+                                                    <div class="col-sm-3 text-center"><img alt="" class="img-circle" src="frontend/images/teacher_3_small.jpg"></div>
+                                                    <div class="col-sm-9">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p><small>Someone famous</small>
+                                                    </div>
+                                                </div>
+                                            </blockquote>
+                                        </div>
+                                        <div class="item">
+                                            <blockquote>
+                                                <div class="row">
+                                                    <div class="col-sm-3 text-center"><img alt="" class="img-circle" src="frontend/images/teacher_1_small.jpg"></div>
+                                                    <div class="col-sm-9">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.</p><small>Someone famous</small>
+                                                    </div>
+                                                </div>
+                                            </blockquote>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -451,19 +389,15 @@ $j++;
                                 </div>
                                 <div class="clearfix">&nbsp;</div>
         <section class="customer-logos slider">
-        <?php
-		if($partners->num_rows()>0){
-		foreach($partners->result() as $partner){
-		//$arr=	explode('.',$partner->image);
-		//$img=$arr[0].'_thumb'.$arr[1];
-			$img=base_url().'uploads/'.$partner->image;
-		 ?>
-      <div class="slide"><img width="200" height="150" src="<?=$img?>"></div>
-      <?php }
-	  
-		}
-	   ?>
-         </section>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+      <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+   </section>
      </div>
         </section>
         

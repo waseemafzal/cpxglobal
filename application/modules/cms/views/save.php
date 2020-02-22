@@ -50,10 +50,17 @@ background-color: #fff;
              <div class="alert hidden"></div>
                     <div class="form-group wrap_form">
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Page Title</label>
+                      <label for="exampleInputEmail1"> Page Title </label><small>(Usefull in admin only)</small>
                         <input type="text" class="form-control" id="post_title"  placeholder="Lorem ipsum post" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
                     </div>
+					
+					<div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1"> Slug/url </label>
+                        <input type="text" class="form-control disable" id="slug"  name="slug" value="<?php if(isset($slug)){ echo $slug;} ?>">
+
+                    </div>
+					<div class="clearfix">&nbsp;</div>
                  <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Page Heading</label>
                         <input type="text" class="form-control"   placeholder="Lorem ipsum post" name="short_heading" value="<?php if(isset($row)){ echo $row->short_heading;} ?>">
@@ -71,10 +78,11 @@ background-color: #fff;
                     <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Top  Banner</label>
                    <input type="file" name="image" id="image"  /><div class="clearfix">&nbsp;</div>
-                   
+                    <div class="topBanner" style="background-color: rgb(0,0,0,0.7);">
+                    
                    <?php if(isset($row)){ 
-				   echo '<img src="'.base_url().'uploads/'.$row->post_banner.'" style="width:50%">';
-				   }?> </div> 
+				   echo '<img src="'.base_url().'uploads/'.$row->post_banner.'" style="width:300px">';
+				   }?> </div> </div> 
                    <div class="clearfix">&nbsp;</div>
                   <h3><em>SEO Part</em></h3>
                    <hr />
@@ -270,7 +278,13 @@ background-color: #fff;
  
   /******************************/
 
-
+$("#post_title").keyup(function(){
+        var Text = $(this).val();
+        Text = Text.toLowerCase();
+        var regExp = /\s+/g;
+        Text = Text.replace(regExp,'-');
+        $("#slug").val(Text);        
+});
   
   </script>
 

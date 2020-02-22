@@ -58,6 +58,7 @@ background-color: #fff;
                        
 <input  class="form-control" id="title"  placeholder="Title" value="<?php if(isset($row)){ echo $row->title;} ?>" name="title">
                     </div>
+                     
                      <div class="clearfix">&nbsp;</div>
                      <!-- <div class="col-xs-12 col-md-6">
                       <label> Slider Url </label>
@@ -75,6 +76,16 @@ background-color: #fff;
            </div> 
       <div class="clearfix">&nbsp;</div>
       <div class="clearfix">&nbsp;</div>
+                     
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1"> Button Text </label>
+                       
+<input  class="form-control"   placeholder="Read More" value="<?php if(isset($row)){ echo $row->btn_text;} ?>" name="btn_text"><div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1"> Button Link / Redirect Page link </label>
+                       
+<input  class="form-control"    value="<?php if(isset($row)){ echo $row->link;} ?>" name="link">
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
       
       <div class="col-xs-12 col-md-6">
                       <label>  Image</label>

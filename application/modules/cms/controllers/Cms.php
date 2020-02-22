@@ -22,7 +22,9 @@ class Cms extends MX_Controller {
 	}
 	public function edit($id){
 		$query =$this->crud->edit($id,$this->tbl);
+		$aData['slug']=$this->db->query("SELECT slug FROM app_routes where resource_id='".$id."'")->row()->slug;
 		$aData['row']=$query;
+		//pre($aData);
 		$this->load->view('save',$aData);
 	}
 	public function delete(){ 
@@ -46,7 +48,8 @@ class Cms extends MX_Controller {
 	function save(){ 
 		extract($_POST);
 		$PrimaryID = $_POST['id'];
-		unset($_POST['action'],$_POST['id']);
+		$slugs = $_POST['slug'];
+		unset($_POST['action'],$_POST['id'],$_POST['slug']);
 		//$_POST['user_id'] =get_session('user_id');
 		//`post_title`, `post_date`, `post_type`, `video_url`, `posted_by`
 		$this->load->library('form_validation');
@@ -112,10 +115,14 @@ class Cms extends MX_Controller {
 			
 		switch($result){
 			case 1:
+			$pageID=$this->db->insert_id();
+			$this->db->insert('app_routes',array('resource_id'=>$pageID,'slug'=>$slugs,'controller'=>'page/cms/'.$pageID,'type'=>'cms'));
 			$arr = array('status' => 1,'message' => "Inserted Succefully !");
 			echo json_encode($arr);
 			break;
 			case 2:
+			$this->db->where(array('resource_id'=>$PrimaryID))->update('app_routes',array('slug'=>$slugs));
+			
 			$arr = array('status' => 2,'message' => "Updated Succefully !");
 			echo json_encode($arr);
 			break;
