@@ -1,20 +1,19 @@
 <?php 
 include_once"header.php";
 ?>
-        
+        <section id="sub-header" style=" background:#f3010087  url(uploads/vision-mission-bannersa.jpg) repeat 0 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <h1>Mission
+</h1>
+To become a leading training &amp; consultancy organization of printing &amp; packaging industries in the world.
+</div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+      </section>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
             <div class="container">
-<p><meta charset="utf-8" /></p>
-
-<p>Vision</p>
-
-<ul>
-	<li>To become a leading training &amp; consultancy organization of printing &amp; packaging industries in the world.</li>
-</ul>
-
-<p id="h.gjdgxs">&nbsp;</p>
-
-<p>Mission</p>
 
 <ul>
 	<li>To empower professionals through training, consultancy and development in a powerful way to achieve business objectives.</li>

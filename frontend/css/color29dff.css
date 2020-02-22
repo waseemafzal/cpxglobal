@@ -19,7 +19,9 @@ nav.top-menu {
 #main-features {
   background: #f30100 url(../images/bg_sub-header_2.png) repeat 0 0;
   color: #fff;
+  background: #f7f7f7 !important
 }
+.theme_panel{ display:none}
 .feature i {
   border: 2px solid #fff;
   color: #1abc9c;
@@ -107,7 +109,7 @@ input.form-control#email_newsletter::-webkit-input-placeholder {
   opacity: 0.5;
 }
 footer {
-  background: #f30100 url(../images/logo_footer.png) no-repeat center 60px;
+  background: #3e4045  no-repeat center 60px;
   color: #fff;
 }
 #nav-footer ul li a {

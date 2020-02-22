@@ -160,23 +160,23 @@ CENTER OF PRINTING AND PACKAGING EXCELLENCE
 </section>
 <section id="MEMBERSHIP_DUESDetail" class="formSection">
 <h2>MEMBERSHIP DUES:</h2>
-<table class="table tale-striped">
-<tr class="success">
+<table class="table tale-striped" style="color: #fff;">
+<tr bgcolor="#9900FF">
     <td><input name="corporte_membership" class="big-checkbox" value="1000" type="checkbox"></td>
     <td>Annual Dues - Corporate Membership:</td>
     <td>$1,000.00</td>
 </tr>
-<tr class="warning">
+<tr bgcolor="#990000">
     <td><input name="associate_membership" class="big-checkbox" value="500" type="checkbox"></td>
     <td>Annual Dues – Associate Membership: </td>
     <td>$ 5,00.00</td>
 </tr>
-<tr class="info">
+<tr bgcolor="#993366">
     <td><input name="Individual_membership" class="big-checkbox" value="1,000.00" type="checkbox"></td>
     <td>Annual Dues - Individual Membership:</td>
     <td>$250.00</td>
 </tr>
-<tr class="success">
+<tr bgcolor="#0033FF">
     <td><input name="Student_membership" class="big-checkbox" value="100.00" type="checkbox"></td>
     <td>Annual Dues - Student Membership:</td>
     <td>$1,000.00</td>
@@ -185,8 +185,10 @@ CENTER OF PRINTING AND PACKAGING EXCELLENCE
 
 <section id="PaymentDetail" class="formSection">
 <h2>PAYMENT METHOD:</h2>
+<div class="col-md-6">
 <img src="frontend/images/paypal.jpg" class="img-responsive">
 
+</div>
 </section>
 </section>
 </form>

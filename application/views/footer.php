@@ -1,26 +1,11 @@
         <footer>
             <div class="top-footer">
                 <div class="container">
+                
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <img alt="" src="frontend/images/logo_footer.png"> 
-                            <script type="text/javascript">
-                            (function() {
-                            if (!window.mc4wp) {
-                             window.mc4wp = {
-                                 listeners: [],
-                                 forms    : {
-                                     on: function (event, callback) {
-                                         window.mc4wp.listeners.push({
-                                             event   : event,
-                                             callback: callback
-                                         });
-                                     }
-                                 }
-                             }
-                            }
-                            })();
-                            </script><!-- MailChimp for WordPress v3.1.8 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+                            
+                         
                             <form class="mc4wp-form mc4wp-form-20" data-id="20" data-name="Newsletter" id="mc4wp-form-1" method="post" name="mc4wp-form-1">
                                 <div class="mc4wp-form-fields">
                                     <div class="form-inline">
@@ -142,12 +127,7 @@
            } )( document.body );
     </script> 
     </script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:600" media="all" property="stylesheet" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-           var c = document.body.className;
-           c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-           document.body.className = c;
-    </script> 
+   
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <script type="text/javascript">
@@ -456,3 +436,41 @@
     </style> 
 </body>
 </html>
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+       
+<script type="text/javascript" >
+
+
+$(document).ready(function(){
+
+	setTimeout(function(){
+		$(".theme_panel").hide();
+	},3000);  
+});
+</script>
