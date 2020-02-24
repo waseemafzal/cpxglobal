@@ -53,6 +53,14 @@ class Contact extends CI_Controller {
         $this->load->view('contact', $data);
     }
     
+	
+	public function feedback(){
+		$this->load->view('feedback', $data);
+    }
+  public function complaint(){
+		$this->load->view('complaint', $data);
+    }
+    
     private function sendEmail($mailData){
         
         
