@@ -193,7 +193,24 @@
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">
-                            <a href="user/login" title="Login / Register"><i class="fa fa-user"></i> Login / Register</a>
+                        <?php 
+						
+						if(!empty($this->session->userdata('userlogin')) and  !empty($this->session->userdata('user_id')))
+						{
+						?>
+							<a href="<?php echo base_url();?>auth/userlogout" title="auth/userlogout"><i class="fa fa-user"></i> Logout</a>
+						<?php 
+						
+						}
+						else
+						{
+						?>
+							<a href="<?php echo base_url();?>user/login" title="Login"><i class="fa fa-user"></i> Login / Register</a>	
+						<?php 	
+						}
+						
+						?>
+                           
                         </div>
                         <ul class="top-nav">
                             <li><i class="fa fa-clock-o"></i> Mon - Fri / 9.00AM - 06.00PM</li>

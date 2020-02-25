@@ -147,19 +147,19 @@
     </script> 
     <script type='text/javascript'>
     /* <![CDATA[ */
-    var wpcf7 = {"apiSettings":{"root":"http:\/\/demo.vegatheme.com\/learn\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+   // var wpcf7 = {"apiSettings":{"root":"http:\/\/demo.vegatheme.com\/learn\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
     /* ]]> */
     </script> 
     <script src='frontend/css/scriptsc6ac.js?ver=5.1.5' type='text/javascript'>
     </script> 
-    <script src='frontend/css/core.mine899.js?ver=1.11.4' type='text/javascript'>
-    </script> 
+   <!-- <script src='frontend/css/core.mine899.js?ver=1.11.4' type='text/javascript'>
+    </script> -->
     <script src='frontend/css/widget.mine899.js?ver=1.11.4' type='text/javascript'>
     </script> 
     <script src='frontend/css/tabs.mine899.js?ver=1.11.4' type='text/javascript'>
     </script> 
-    <script src='frontend/css/user-dashboard.min2c00.js?ver=1.9.2' type='text/javascript'>
-    </script> 
+   <!-- <script src='frontend/css/user-dashboard.min2c00.js?ver=1.9.2' type='text/javascript'>
+    </script> -->
     <script src='frontend/css/js.cookie.min6b25.js?ver=2.1.4' type='text/javascript'>
     </script> 
      
@@ -255,6 +255,10 @@
            }
                
        });
+	   
+	   
+	   
+	
 
        });
 
@@ -280,6 +284,32 @@
         </div>
     </div>
     <style type="text/css">
+		.page-alert .error 
+		{
+			color: #fff;
+			margin: 0px;
+			background: #C04848;
+			font-weight: bold;
+			font-size: 12px;
+			padding:2px 0px 2px 10px;
+			width: 100%;
+			font-style: italic;
+		}
+		.page-alert .success   {
+			
+			color: #fff;
+			margin: 0px;
+			background: #00a65a;
+			font-weight: bold;
+			font-size: 12px;
+			padding: 2px 0px 2px 10px;
+			width: 100%;
+			font-style: italic;
+			
+		}
+
+
+    
        .theme_panel {
            direction: ltr;
            position: fixed;

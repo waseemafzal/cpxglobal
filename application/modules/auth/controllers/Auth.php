@@ -711,6 +711,7 @@ class Auth extends CI_Controller {
 	public function userlogin() // arslan
 
 	{
+      
      
 		if($this->session->userdata('userlogin')==1)
  
@@ -744,20 +745,13 @@ class Auth extends CI_Controller {
 				
 				if (!$this->ion_auth->is_admin()) 
 				{ 
-				    $aUserinfo =  get_id_by_key('freelancer_title,type','user_id',$this->session->userdata('user_id'),$this->freelancers,true); 
+				  
 					
 					
 					$this->db->where('id', $this->session->userdata('user_id'));
                     $this->db->update('users', array('online'=>1));
-					if(empty($aUserinfo->freelancer_title) AND ($aUserinfo->type=='normal'))
-					{
-						 echo json_encode(array('status'=>'special','message'=>'Login successfull'));exit;
-						
-					}
-					else
-					{
-						 echo json_encode(array('status'=>1,'message'=>'Login successfull'));exit;
-					}
+					echo json_encode(array('status'=>1,'message'=>'Login successfull'));exit;
+					
 					
 				}
 
@@ -1707,8 +1701,9 @@ class Auth extends CI_Controller {
 
 	/********************************************************************************************************************/
      public function createaccount()
-		
-	   {	
+		{
+			
+			
 		extract($_POST);
 		$nameArray='';
 		$error='';
@@ -1739,12 +1734,11 @@ class Auth extends CI_Controller {
 		else
 		{
 			 // just  confgiure it
-			//$this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[' . $tables['users'] . '.email]|required');
-			//$this->form_validation->set_message('is_unique', 'This email address is associated with an existing account');
+			$this->form_validation->set_rules('email', 'email', 'valid_email|is_unique[' . $tables['users'] . '.email]|required');
+			$this->form_validation->set_message('is_unique', 'This email address is associated with an existing account');
 		}
 		
-
-		$this->form_validation->set_rules('password', 'password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[confirm-password]');
+			$this->form_validation->set_rules('password', 'password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[confirm-password]');
 		$this->form_validation->set_rules('confirm-password','password confirm' , 'required');
 		$this->form_validation->set_rules('phone','Phone','required|max_length[12]');
 		$this->form_validation->set_rules('countryid','Country','required');
@@ -1772,8 +1766,7 @@ class Auth extends CI_Controller {
 				'user_type' =>2,
 				'name'=>$name,
 				'phone'=>$phone, // arslan
-				'viewpw'=>trim($password), // arslan
-				'currency_id'=>$countryid,
+				'country'=>$countryid,
 				'activation_code' => $activation_code,
 				'active' => 1,
 				'referal_code'=>time().str_replace('=',rand(),base64_encode(time())).uniqid()
@@ -1788,69 +1781,8 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				
-				$imgcheck = false;
-				if (isset($_FILES['identityfile']['name']) and !empty($_FILES['identityfile']['name'])) 
-				{
-					$imgcheck = true;
-					$info = pathinfo($_FILES['identityfile']['name']);
-					$ext = $info['extension']; // get the extension of the file
-					
-					 if(in_array($ext,array('pdf','docs','rtf','jpg','png')))
-					 {	
-						$newname = rand(5, 3456) * date(time()) . "." . $ext;
-						$target = 'uploads/users/docs/' . $newname;
-						if (move_uploaded_file($_FILES['identityfile']['tmp_name'], $target)) 
-						{
-							$image = $newname;
-						}
-						
-						$additional_data = array_merge(array('cnic'=>$image),$additional_data);
-					 }
-					 else
-					 {
-						$arr = array("status"=>"validation_error" ,"message"=> 'Invaild File type.');
-						echo json_encode($arr);
-						exit;  
-					 }	
-				}
-			
-			    if(! empty($this->input->post('lang')))
-				{
-				  $additional_data = array_merge(array('lang'=>$this->input->post('lang')),$additional_data);	
-				}
-			    
 				$result =  $this->ion_auth->register($identity, $password, $email, $additional_data);
-				$userid = $this->db->insert_id();
-				
-					// arslan
-				
-				if( ! empty($refferal_key) AND $refferal_key!='undefined')
-				{ 	 
-				  // refferal_key get referal id
-				  
-					$refferal_id =  get_id_by_key('id','referal_code',trim($refferal_key),$this->users); // check the service status
-					$arefferal = array('refferal_id'=>$refferal_id,'reffered_id'=>$userid,'created_date'=>NOW);
-					$this->db->insert($this->tbl_referals, $arefferal); // done	
-				}
-			    
-				$freelancertype = 'buyer';
-				$aFreelancer =  array();
-				if(isset($become_freelancer) AND  ($become_freelancer==1))
-				{
-					 $freelancertype  = 'normal';
-					 $aFreelancer =  array_merge(
-					 					array('username'=>str_replace('_','-',str_replace(' ','-',$name)).rand()),
-										$aFreelancer);
-				}
-				
-				if(!empty($userid))
-				{ 
-				 	$aFreelancer =  array_merge(array('type'=>$freelancertype,'user_id'=>$userid),$aFreelancer);
-				 	createbuyer( $aFreelancer);
-				} 
-				
-			 }
+			}
              
 			 switch($result){
 

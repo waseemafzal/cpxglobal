@@ -21,6 +21,14 @@ define('STRIPE_SECRETE_KEY','sk_test_Q1KSSdOwBRbawECSTP5nknMB00PHzjk8q3');
  define('DEVELOPER_PORTAL', 'https://developer.paypal.com');
 /*****Paypal adaptive constant******/
 
+define('PACKAGE_1',250);
+
+define('PACKAGE_2',500);
+define('PACKAGE_3',750);
+define('PACKAGE_4',1000);
+
+
+
 
 //define('STRIPE_PUBLISH_KEY','pk_live_VkGtyj9QwUIFZaMDjPKAbV9jd');
 //define('STRIPE_SECRETE_KEY','sk_live_wFv5YmaPolya55J7CVbvjaljd');
