@@ -6,13 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /** imran manzoor */
 
 
-$route['global_presence'] = 'home/global_presence';
+//$route['global_presence'] = 'home/global_presence';
 $route['history'] = 'home/history';
-$route['mission'] = 'home/mission';
+//$route['mission'] = 'home/mission';
 $route['press_release'] = 'home/press_release';
 $route['team'] = 'home/team';
 $route['training'] = 'home/training';
-$route['why'] = 'home/why';
+//$route['why'] = 'home/why';
 /*****membership start*******/
 $route['why_membership'] = 'membership/why_membership';
 $route['membership_categories'] = 'membership/membership_categories';
@@ -25,7 +25,7 @@ $route['student_membership'] = 'membership/student_membership';
 
 /*****membership end*******/
 /*****consultancy start*******/
-$route['buseiness_development'] = 'consultancy/buseiness_development';
+//$route['buseiness_development'] = 'consultancy/buseiness_development';
 $route['product_development'] = 'consultancy/product_development';
 $route['business_innovation'] = 'consultancy/business_innovation';
 $route['process_optimization'] = 'consultancy/process_optimization';

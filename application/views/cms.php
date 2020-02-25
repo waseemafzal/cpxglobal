@@ -11,7 +11,11 @@ include_once"header.php";
 if($row->short_heading!=''){
 	echo $row->short_heading;
 	}
-} ?>
+} 
+//echo '<pre>';
+ //print_r($row);exit;
+?>
+
 </div>
             </div><!-- End row -->
         </div><!-- End container -->
@@ -20,7 +24,9 @@ if($row->short_heading!=''){
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
             <?php if(isset($row)){ 
+               $mainContainer='col-xs-12 col-sm-12 col-md-12';
 			if($row->displaysidebar==1){
+			    $mainContainer='col-xs-12 col-sm-8 col-md-8';
 			$sidebarPosition=	$row->sidebar;
 			if($sidebarPosition==0){
 				$positionClass='pull-right';
@@ -44,7 +50,7 @@ if($row->short_heading!=''){
             <?php } ?>
             </aside>
             <?php } }?>
-            <div class="col-xs-12 col-sm-8 col-md-8 ">
+            <div class="<?=$mainContainer?> ">
 
 <?php if(isset($row)){ echo $row->post_description;} ?>
 

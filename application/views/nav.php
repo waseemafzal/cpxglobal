@@ -51,19 +51,19 @@
                                     <ul class="sub-menu">
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="buseiness_development">Business Development</a>
+                                            <a href="business-development">Business Development</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="product_development">New Product Development</a>
+                                            <a href="product-development">New Product Development</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="business_innovation">Business Innovation</a>
+                                            <a href="business-innovation">Business Innovation</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="process_optimization">Process Optimization</a>
+                                            <a href="process-optimization">Process Optimization</a>
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="markete_analysis">Market Analysis</a>
+                                            <a href="markete-analysis">Market Analysis</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -74,13 +74,13 @@
                                     <ul class="sub-menu">
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="why_membership">Why Ouer Membership</a>
+                                            <a href="why-membership">Why Ouer Membership</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="membership_categories">Membership Categories</a>
+                                            <a href="membership-categories">Membership Categories</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="membership_benefits">Membership Benefits</a>
+                                            <a href="membership-benefits">Membership Benefits</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership/form">Membership Form</a>
