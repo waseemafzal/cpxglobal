@@ -9,7 +9,10 @@ include_once"header.php";
     font-size: 20px;
 	clear:both;
 	}
-	
+	input.form-control, textarea.form-control{height: auto;
+    margin: 0;
+    padding: 5px 10px;}
+	.table td{ margin:0; padding:0}
 </style>
         <section id="sub-header" style="background:url(frontend/feedback.jpg)">
         <div class="container">
@@ -30,33 +33,41 @@ include_once"header.php";
 </h3>
 <div class="col-md-12"><p>Name to appear on the certificate, please provide correct and clearly
 </p></div>
-<div class="col-md-4 col-xs-12">
-<label> Name:*</label>
-<input class="form-control" required name="Name" />
-</div>
+<div class="col-md-12">
+<div class="table-responsive">
+<table class="table" style="width:100%">
+<thead>
+<tr>
+ <th>#</th>
+ <th>Name</th>
+ <th>Email</th>
+ <th>Job Title</th>
+ <th>Phone</th>
+ <th>ID No</th>
+ <th>Nationality </th>
+ <th><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a>
+</th>
+</tr>
 
-<div class="col-md-4 col-xs-12">
-<label>Email</label>
-<input class="form-control" type="email" required name="email" />
-</div>
-<div class="col-md-4 col-xs-12">
-<label>Job Title:*</label>
-<input class="form-control" required name="company" />
-</div>
-<div class="col-md-4 col-xs-12">
-<label>Phone</label>
-<input type="text" class="form-control"  required="required" name="phone" />
-</div>
-<div class="col-md-4 col-xs-6" >
-<label >ID no </label> 
-<input  class="form-control"  required name="idno" /> -  
-</div>
+</thead>
+<tbody class="field_wrapper">
+<tr>
+<th>1</th>
+ <td><input   class="form-control"required name="Name[]" /></td>
+ <td><input   class="form-control"type="email" required name="email[]" /></td>
+ <td><input   class="form-control"required name="company[]" /></td>
+ <td><input class="form-control" type="text"    required="required" name="phone" /></td>
+ <td><input   class="form-control"  required name="idno[]" /></td>
+ <td><input   class="form-control"required name="nationality[]" /></td>
+ <td>&nbsp;</td>
+</tr>
+<tr>
 
-<div class="col-md-4 col-xs-12">
-<label> Nationality</label>
-<input class="form-control" required name="nationality" />
-</div>
+</tbody>
+</table>
 
+</div>
+</div>
 <h3>Company detail</h3>
 <div class="col-md-4 col-xs-12">
 <label>Company</label>
@@ -91,7 +102,43 @@ include_once"header.php";
 <label>Position</label>
 <input type="text" class="form-control"  required="required" name="depPosition" />
 </div>
-<section id="PaymentDetail" class="formSection" style="display:none;">
+<div class="clearfix">&nbsp;</div>
+<table style="text-align:center" align="center" class="table  table-border">
+<thead>
+	<tr >
+    <th  bgcolor="#CCCCCC" colspan="2" style="text-align:center" >COURSE FEES: SAR 4,000</th>
+    </tr>
+    <tr>
+    <th style="text-align:center"  colspan="2" align="center">
+Group Discount
+</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>2-4 Delegates
+</td>
+<td>
+15%
+Discount
+</td>
+</tr>
+<tr>
+<td>2-4 Delegates
+</td>
+<td>
+25%
+Discount
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2">All discounts to group discount are given on original course fee excluding VAT.</td>
+</tr>
+</tfoot>
+</table>
+<section id="PaymentDetail" class="formSection" >
                 <h2>PAYMENT METHOD:</h2>
                     <div class="col-md-6">
                         <img src="frontend/images/paypal.jpg" class="img-responsive">
@@ -183,5 +230,29 @@ CPPEx Global</p>
 
 	//ajax end    
     });
-
+ var x = 2; //Initial field counter is 1
+   
+$(document).ready(function(){
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper 
+     //New input field html 
+    
+    //Once add button is clicked
+    $(addButton).click(function(){
+        //Check maximum number of input fields
+		var fieldHTML = '<tr id="row_'+x+'"><th>'+x+'</th><td><input   class="form-control"required name="Name[]" /></td><td><input class="form-control"type="email" required name="email[]" /></td><td><input   class="form-control"required name="company[]" /></td><td><input type="text" class="form-control"   required="required" name="phone" /></td><td><input   class="form-control"  required name="idno[]" /></td><td><input   class="form-control"required name="nationality[]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+    
+    
+});	
+function hideme(id){
+		$('#row_'+id).remove();
+		x--;
+		}
+    
 </script>

@@ -519,7 +519,7 @@ margin-left: 14%;
 
 <script>
 $(document).ready(function(){
-    $('.customer-logos').slick({
+/*    $('.customer-logos').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,
@@ -539,7 +539,7 @@ $(document).ready(function(){
             }
         }]
     });
-});
+*/});
 </script>
        
 <script type="text/javascript" >
