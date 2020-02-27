@@ -77,56 +77,29 @@ box-shadow:0px 1px 4px -1px #f30100;
 <div class="container">
 
 <div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="frontend/team/1.jfif" alt="Alixhan Ahmed" style="width:100%">
-      <div class="containerCard">
-        <h2>Alixhan Ahmed</h2>
-        <p class="title">Finance Director</p>
+  <?php 
+ 	if($aTeams->num_rows()>0)
+   {
+	
+	  foreach($aTeams->result() as $team)
+	  {
+		  $img  = base_url().'uploads/'.$team->post_banner;
+		  
+  ?>
+        <div class="column">
+        <div class="card">
+          <img src="<?php echo $img;?>" alt="<?php echo $team->title;?>" style="width:100%">
+          <div class="containerCard">
+            <h2><?php echo $team->title;?></h2>
+            <p class="title"><?php echo $team->designation;?></p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="frontend/team/ProfAtifRasheed.jpg" alt="ProfAtifRasheed" style="width:100%">
-      <div class="containerCard">
-        <h2>Prof Atif Rasheed</h2>
-        <p class="title">Color Management Expert</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="frontend/team/david.jfif" alt="Dr. David R. Nelson" style="width:100%">
-      <div class="containerCard">
-        <h2>Dr. David R. Nelson</h2>
-        <p class="title">
-Paperboard Expert</p>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <img src="frontend/team/ProfAtifRasheed.jpg" alt="ProfAtifRasheed" style="width:100%">
-      <div class="containerCard">
-        <h2>Prof Atif Rasheed</h2>
-        <p class="title">Color Management Expert</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="frontend/team/david.jfif" alt="Dr. David R. Nelson" style="width:100%">
-      <div class="containerCard">
-        <h2>Dr. David R. Nelson</h2>
-        <p class="title">
-Paperboard Expert</p>
-      </div>
-    </div>
-  </div>
+  <?php
+	 }
+  }
+  ?>
   
 </div>
 </div>

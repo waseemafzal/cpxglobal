@@ -7,15 +7,20 @@
                             
                          
                             <form class="mc4wp-form mc4wp-form-20" data-id="20" data-name="Newsletter" id="mc4wp-form-1" method="post" name="mc4wp-form-1">
+                             
+
                                 <div class="mc4wp-form-fields">
                                     <div class="form-inline">
-                                        <h3>Subscribe to our Newsletter for latest news.</h3><input class="form-control" id="email_newsletter" name="EMAIL" placeholder="Your Email" required type="email"> <input class=" button_outline" id="submit-newsletter" type="submit" value="Subscribe">
+                                        <h3>Subscribe to our Newsletter for latest news.</h3> 
+                                        <input class="form-control sbcriber_id" id="email_newsletter" name="EMAIL" placeholder="Your Email" required type="email"> 
+                                        <input class=" button_outline" id="submit-newsletter" type="button" value="Subscribe" onclick="subscribe__()">
                                     </div>
                                     <div style="display: none;">
                                         <input autocomplete="off" name="_mc4wp_honeypot" tabindex="-1" type="text" value="">
                                     </div><input name="_mc4wp_timestamp" type="hidden" value="1579334215"><input name="_mc4wp_form_id" type="hidden" value="20"><input name="_mc4wp_form_element_id" type="hidden" value="mc4wp-form-1">
                                 </div>
                                 <div class="mc4wp-response"></div>
+                              
                             </form><!-- / MailChimp for WordPress Plugin -->
                         </div>
                     </div>
@@ -198,6 +203,41 @@
     </script> 
      </script> 
     <script type="text/javascript">
+	 function subscribe__()
+   {
+	
+	  $(".sbcriber_id").removeClass('br_red');
+	  if($(".sbcriber_id").val() =='')
+	  {
+		//$(".sbcriber_id").addClass('br_red');
+		alert('Email can\'t be empty');
+		return false;  
+	  }
+	  $(".mc4wp-response").hide();
+	  	  $(".mc4wp-response").html('');
+
+	   var sbcriber_id = $(".sbcriber_id").val();
+	   
+       $('#loader').removeClass('hidden');
+		jQuery.ajax({
+			method:"POST",    
+			url :'<?php echo base_url();?>Subscriber',
+			data:{'sbcriber':sbcriber_id},
+			success: function(response)
+			{
+				$('#loader').addClass('hidden');
+				if(response!='')
+				{ 
+					$(".mc4wp-response").show();
+					$(".mc4wp-response").append(response);
+				}
+				
+			}
+		});	
+	}
+	
+	
+	
     (function() {function addEventListener(element,event,handler) {
        if(element.addEventListener) {
            element.addEventListener(event,handler, false);
@@ -284,6 +324,14 @@
         </div>
     </div>
     <style type="text/css">
+	.sbcmssuc{ color:yellowgreen !important;}
+	.mc4wp-response p {
+   color: red;
+font-size: 13px;
+margin-bottom: 3px;
+margin-bottom: 0px;
+margin-left: 14%;
+}
 		.page-alert .error 
 		{
 			color: #fff;

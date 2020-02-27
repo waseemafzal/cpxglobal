@@ -26,12 +26,12 @@ background-color: #fff;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Event Management
+      Training Course Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="event">View Event </a></li>
+        <li > <a href="trainings">View  </a></li>
       </ol>
     </section>
 
@@ -52,11 +52,15 @@ background-color: #fff;
                     <div class="form-group wrap_form">
                     
                     
-                    
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">Course ID</label>
+                        <input type="text" class="form-control" id="event_id"  placeholder="CG0019" name="event_id" value="<?php if(isset($row)){ echo $row->event_id;} ?>">
+
+                    </div>
                      <div class="clearfix">&nbsp;</div>
                       <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Event Title</label>
+                      <label for="exampleInputEmail1"> Training Title</label>
                         <input type="text" class="form-control" id="title"  placeholder="Title" name="title" value="<?php if(isset($row)){ echo $row->title;} ?>">
 
                     </div>
@@ -73,26 +77,26 @@ background-color: #fff;
          <div class="clearfix">&nbsp;</div>
               
                    <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1"> Event Start</label>
+                      <label for="exampleInputEmail1"> Registration Start</label>
                         <input type="text" class="form-control" id="start_at"  placeholder="00:00PM" name="start_at" value="<?php if(isset($row)){ echo $row->start_at;} ?>">
 
                     </div>
                     
                     <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1"> Event Closed</label>
+                      <label for="exampleInputEmail1"> Registration Closed</label>
                         <input type="text" class="form-control" id="end_at"  placeholder="00:00PM" name="end_at" value="<?php if(isset($row)){ echo $row->end_at;} ?>">
 
                     </div>
-                    <div class="col-xs-12 col-md-1"> OR</div>
+                   <!-- <div class="col-xs-12 col-md-1"> OR</div>
                     <div class="col-xs-12 col-md-3">
                       <label for="exampleInputEmail1"> All Day</label>
                         <input type="text" class="form-control" id="all_day"  placeholder="All Day" name="all_day" value="<?php if(isset($row)){ echo $row->all_day ;} ?>">
 
-                    </div>
+                    </div>-->
                        
                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
                       <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1">Event Date</label>
+                      <label for="exampleInputEmail1">Training Date</label>
                         <input type="text" class="form-control" id="on_date"  placeholder="09-02-2020" name="on_date" value="<?php if(isset($row)){ echo $row->on_date;} ?>">
 
                     </div>
@@ -107,14 +111,14 @@ background-color: #fff;
                     
                     <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
                   <div class="col-xs-12 col-md-12">
-                      <label>Description</label>
+                      <label> Course  Description</label>
                         
 <textarea class="form-control" rows="10" id="editor1" name="description"><?php if(isset($row)){ echo $row->description;} ?></textarea>
 
                     </div>
 					   <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">   Banner</label>
+                      <label for="exampleInputEmail1"> Course  Banner</label>
                    <input type="file" name="image" id="image"  /><div class="clearfix">&nbsp;</div>
                    
                    <?php if(isset($row)){ 
@@ -182,7 +186,7 @@ if($('#image').val()!=''){
 	// ajax start
 		    $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'event/save'; ?>",
+			url: "<?php echo base_url().'trainings/save'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,
@@ -222,7 +226,7 @@ if($('#image').val()!=''){
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
 				setTimeout(function(){
-				window.location='event';
+				window.location='trainings';
 				},1000);
             }
 			else if (data.status == "validation_error")

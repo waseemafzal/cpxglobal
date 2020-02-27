@@ -65,11 +65,12 @@ public function press_detail($id)
 			$this->load->view('news-detail',$aData);    
 		}			
 
-public function team()
-
+		public function team()
+		
 		{
 			$aData['page_title'] = 'team';
-			$this->load->view('team',$aData);    
+			$aData['aTeams'] = $this->db->select('*')->from('tbl_team')->get();
+			$this->load->view('team',$aData); 
 		}			
 
 public function training()

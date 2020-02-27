@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Event extends MX_Controller {
+ class Trainings extends MX_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -10,9 +10,8 @@ class Event extends MX_Controller {
 		}
 	}
 	public $view = "view";
-	public $tbl = 'tbl_event';
-	public $controllerName = 'Event';
-	
+	public $tbl = 'tbl_training';
+	public $controllerName = 'trainings';
 	
 	public function index(){  
 

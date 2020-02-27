@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Event Management
+      Training Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="event/add" class="btn btn-sm btn-su">Add Event</a></li>
+        <li > <a href="event/add" class="btn btn-sm btn-su">Add New Training Course</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -25,10 +25,10 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
         <tr>
-          
-            <th>Event Title </th>
-            <th>Start At </th>
-            <th>End At </th>
+            <th>Course ID </th>
+            <th>Course Title </th>
+           <!-- <th>Start At </th>
+            <th>End At </th>-->
              <th>Start Date</th>
             <th>Actions</th>
         </tr>
@@ -43,10 +43,10 @@
 		
 		?>
 		<tr id="row_<?php echo $row->id;?>">
-       
+        <td><?php echo $row->event_id;?></td>
          <td><?php echo $row->title;?></td>
-          <td><?php echo $row->start_at;?></td>
-           <td><?php echo $row->end_at;?></td>
+          <!--<td><?php //echo $row->start_at;?></td>
+           <td><?php //echo $row->end_at;?></td>-->
             <td><?php echo $row->on_date;?></td>
        
     <td class="center">
