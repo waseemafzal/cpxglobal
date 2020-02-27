@@ -8,7 +8,6 @@ include_once"header.php";
                 <div class="col-md-10 col-md-offset-1 text-center">
             <h1>MEMBERSHIP APPLICATION
             </h1>
-CENTER OF PRINTING AND PACKAGING EXCELLENCE
 </div>
             </div><!-- End row -->
         </div><!-- End container -->
@@ -82,7 +81,7 @@ CENTER OF PRINTING AND PACKAGING EXCELLENCE
                  </section>
                     <section id="PROFESSIONAL" class="formSection">
                         <h2>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h2>
-                            university 	degree 	diploma 	other 	job_detail 
+                            university 	degree 	diploma 	other 	job detail 
                         <div class="col-md-12 col-xs-12">
                             <div class="field_wrapper">
                             <div>

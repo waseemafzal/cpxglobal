@@ -60,6 +60,9 @@ class Contact extends CI_Controller {
   public function complaint(){
 		$this->load->view('complaint', $data);
     }
+  public function registration(){
+		$this->load->view('registration', $data);
+    }
     
     private function sendEmail($mailData){
         
