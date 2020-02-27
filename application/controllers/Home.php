@@ -55,8 +55,14 @@ public function mission()
 public function press_release()
 
 		{
-			$aData['page_title'] = 'press_release';
+			$aData['page_title'] = 'press release';
 			$this->load->view('press_release',$aData);    
+		}			
+public function press_detail($id)
+
+		{
+			$aData['page_title'] = 'press_release';
+			$this->load->view('news-detail',$aData);    
 		}			
 
 public function team()

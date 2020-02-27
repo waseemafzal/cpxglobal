@@ -1,7 +1,7 @@
 <?php 
 include_once"header.php";
 ?>
-        <section id="sub-header">
+        <section id="sub-header" style="background:url('frontend/registration.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">

@@ -198,6 +198,16 @@ include_once"header.php";
 	margin-top:10px;
 	}
         </style>
+        <section id="sub-header" style="background:url(frontend/history.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+            <h1>History
+            </h1>
+</div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+      </section>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
             
 <div class="container">

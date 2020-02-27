@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Blogs Management
+      News Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="blogpost/add" class="btn btn-sm btn-su">Add Blog</a></li>
+        <li > <a href="pressRelease/add" class="btn btn-sm btn-su">Add News</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -25,8 +25,8 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th>Blog Title</th>
-       <th>Blog Desc</th>
+        <th>News Title</th>
+       <th>News Desc</th>
        
         <th>Type</th>
         <th>img/vido</th>
@@ -92,7 +92,7 @@ if (strlen($post_description) > 10)
           <td class="center"><?php echo $row->created_on ?></td>
             
     <td class="center">
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="blogpost/edit/<?php echo $row->id;?>">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="pressRelease/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 Edit
             </a>

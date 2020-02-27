@@ -27,13 +27,13 @@ include_once"header.php";
                                     <div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="assets/images/news1.jpg"></a>
+                                                <a href="home/press_detail/1"><img alt="" src="assets/images/news1.jpg"></a>
                                                 
                                             </div>
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
+                                                        <h4 class="black-color"><a href="home/press_detail/1">EuPIA Updates Suitability </a></h4>
                                                         <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
                                                         
                                                         <div class="price pull-right">
@@ -48,13 +48,13 @@ include_once"header.php";
                                     <div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="assets/images/news2.jpg"></a>
+                                                <a href="home/press_detail/1"><img alt="" src="assets/images/news2.jpg"></a>
                                                 
                                             </div>
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Industrial Wax Market Worth </a></h4>
+                                                        <h4 class="black-color"><a href="home/press_detail/1">Industrial Wax Market Worth </a></h4>
                                                         <p>According to a study analysis by Persistence Market Research, ever-expanding end-use industries will give a push to the industrial wax market. </p>
                                                         
                                                         <div class="price pull-right">
@@ -69,13 +69,13 @@ include_once"header.php";
                                     <div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="assets/images/news3.jpg"></a>
+                                                <a href="home/press_detail/1"><img alt="" src="assets/images/news3.jpg"></a>
                                                 
                                             </div>
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
+                                                        <h4 class="black-color"><a href="home/press_detail/1">EuPIA Updates Suitability </a></h4>
                                                         <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
                                                         
                                                         <div class="price pull-right">
@@ -90,13 +90,13 @@ include_once"header.php";
                                     <div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="assets/images/news4.jpg"></a>
+                                                <a href="home/press_detail/1"><img alt="" src="assets/images/news4.jpg"></a>
                                                 
                                             </div>
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Sun Chemical owner to buy BASF pigments business </a></h4>
+                                                        <h4 class="black-color"><a href="home/press_detail/1">Sun Chemical owner to buy BASF pigments business </a></h4>
                                                         <p>DIC Corporation is to acquire BASF’s global pigments business and integrate it into subsidiary Sun Chemical in a deal worth €1.15bn (£1.04bn).</p>
                                                         
                                                         <div class="price pull-right">
@@ -111,7 +111,7 @@ include_once"header.php";
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                     <center>  <a class="button_medium_outline " href="news-detail.php">View all News</a></center> 
+                                     
                                     </div>
                                 </div>
                             </div>

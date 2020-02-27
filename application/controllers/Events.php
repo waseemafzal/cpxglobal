@@ -13,7 +13,7 @@ class Events extends CI_Controller {
 	public function view($year){
 		$aData['page_title'] ='Events '.$year;
 		$aData['year'] =$year;
-		$this->load->view('gallery',$aData);
+		$this->load->view('events',$aData);
 	}
 	
 }

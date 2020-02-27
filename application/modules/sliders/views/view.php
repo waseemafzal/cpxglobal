@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-        Sliders Management
+        Customers & Partners Management
         
       </h1>
       <ol class="breadcrumb">
@@ -26,7 +26,7 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th>Slider  Name</th>
+        <th>Module  Name</th>
         <th>Status</th>
         
         <th>Actions</th>
@@ -75,7 +75,7 @@
              <?php echo ucwords(this_lang('Images ')); ?>
               <i class="fa fa<?php echo$row->id;?> fa-plus"></i>
             </a> 
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info " href="sliders/edit/<?php echo $row->id;?>">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info hidden" href="sliders/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 Edit
             </a>

@@ -2,16 +2,20 @@
              <div class="alert hidden"></div>
  
   <div id="add_images_wrap" class="col-xs-12 col-md-12 " >                      
-<div class="col-xs-12 col-md-3">
+<div class="col-xs-12 col-md-4">
 <label>Add  images </label> (<small>You could select multiple images</small>)
                      <input type="file" name="file[]" class=" file"  id="file" accept=".png,.PNG,.JPG,.jpg,.jpeg,.JPEG,.gif" multiple >
                    
-</div>  <div class="col-xs-12 col-md-9">                 
-					<input type="submit" class="btn btn-info " value="Upload Image" style="
+</div>  <div class="col-xs-12 col-md-8">                 
+					<input type="submit" class="btn btn-info " value="Upload Images" style="
     margin:  15px 0 0 0;
     width: 150px;
 ">
-          </div>      <div class="clearfix">&nbsp;</div>   
+          </div>  
+          <div class="clearfix">&nbsp;</div>   
+              
+          <div style="border-bottom:2px solid"> &nbsp;</div>
+                      <div class="clearfix">&nbsp;</div>   
                      <?php
 			if(isset($post_id)){		
 					

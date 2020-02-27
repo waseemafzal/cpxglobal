@@ -12,6 +12,7 @@ class Eblogs extends CI_Controller {
 	
 	public function index(){
 		$aData['page_title'] ='blogs';
+		$aData['data'] =get_table('blogpost');
 		$this->load->view('blogs',$aData);
 	}
 	public function detail(){

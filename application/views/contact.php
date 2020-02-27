@@ -1,7 +1,7 @@
 <?php 
 include_once"header.php";
 ?>
-        <section id="sub-header">
+        <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -11,10 +11,30 @@ include_once"header.php";
             </div><!-- End row -->
         </div><!-- End container -->
       </section>
-      <div class="clearfix">&nbsp;</div>
-<section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
-            <div class="container">
-            <form id="form1" name="form1" method="post" action="">
+     
+<section style="padding-top: 0px !important;" class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
+     
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.2825426358527!2d-75.02054198526999!3d39.485534219667585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c732633a6b5ea5%3A0x76467bbc01e883c8!2s807%20E%20Landis%20Ave%2C%20Vineland%2C%20NJ%2008360%2C%20USA!5e0!3m2!1sen!2s!4v1582635745886!5m2!1sen!2s" width="600" height="250" frameborder="0" style="border:0;" class="col-xs-12 col-md-12" allowfullscreen=""></iframe>
+        <div class="container">
+            
+           <div class="col-md-4 col-xs-12">
+           <div class="wpb_wrapper">
+			<h3>Address USA</h3>
+<ul id="contact-info">
+<li><i class="icon-home"></i> 807 E Landis Ave.Vineland, 08360 New JERSEY-USA</li>
+<li><i class="icon-phone"></i> (856) 839-2373</li>
+<li><i class="icon-fax"></i> (856) 839-2374</li>
+<li><i class="icon-mobile"></i> 0016092712476</li>
+<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+</ul>
+<hr>
+
+		</div>
+           </div>
+           <div class="col-md-8 col-xs-12 " >
+           <div class="box_style_2" id="contactform" >
+
+           <form id="form1" name="form1" method="post" action="">
 <section id="personalDetail" class="formSection">
 <h2>CONTACT US</h2>
 <div class="col-md-4 col-xs-12">
@@ -39,7 +59,7 @@ include_once"header.php";
 </div>
 <div class="col-md-4 col-xs-12">
 <label>What is your industry?</label>
-<select name="industry">
+<select class="form-control" name="industry">
 <option value="Printing Industry">Printing Industry</option>
 <option value="Paints Industry">Paints Industry</option>
 <option value="Printing Ink Industry">Printing Ink Industry</option>
@@ -52,9 +72,10 @@ include_once"header.php";
 <option value="Educational Industry">Educational Industry</option>
 </select>
 </div>
+<div class="clearfix">&nbsp;</div>
 <div class="col-md-4 col-xs-12">
 <label>Job role</label>
-<select class="form-control" name="Jobrole">
+<select class="form-control"  name="Jobrole">
 <option value="Cheif Executive">Cheif Executive Officer</option>
 <option value="Owner">Owner</option>
 <option value="General Manager">General Manager</option>
@@ -85,9 +106,9 @@ include_once"header.php";
 <option value="Awards">Awards</option>
 <option value="Others">Others</option>
 </select>
-</div>
+</div><div class="clearfix">&nbsp;</div>
 <div class="col-md-4 col-xs-12">
-<label>What is your level of interest *</label>
+<label>What is your level of interest</label>
 <select class="form-control" name="levelofinterest">
 <option value="Ready to register">Ready to register</option>
 <option value="Ready to buy">Ready to buy</option>
@@ -104,19 +125,23 @@ include_once"header.php";
 <option value="9-12 Month">9-12 Month</option>
 </select>
 </div>
-<div class="col-md-12 col-xs-12">
+<div class="col-md-4 col-xs-12">
 <label>Attached file .....</label>
 <input class="form-control" type="file" name="attachment"> 
 </div>
+<div class="clearfix">&nbsp;</div>
+
 <div class="col-md-12 col-xs-12">
 <textarea class="form-control" name="message"></textarea>
-<p> <input type="checkbox">I read, understand and agreed with all terms and conditions!
+<p> <input type="checkbox" width="30"> I read, understand and agreed with all terms and conditions!
 </p>
 </div>
 <input type="submit" name="btnSubmit" class="btn btn-info pull-right" value="Submit">
 </section>
 </form>
-            </div>
+           </div>
+           </div>
+           </div>
         </section>
         
         

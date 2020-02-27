@@ -53,6 +53,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li><a href="sliders"><i class="fa fa-image"></i> <span>Customer/partner</span></a></li>
 
             <li class="treeview hidden">
 
@@ -344,7 +345,8 @@
                 </li>
                 <li><a href="cms"><i class="fa fa-list"></i> <span>Pages</span></a></li>
 
-                <li><a href="blogpost"><i class="fa fa-th"></i> <span>News Management</span></a></li>
+                <li><a href="blogpost"><i class="fa fa-th"></i> <span>Blogs</span></a></li>
+                <li><a href="pressRelease"><i class="fa fa-th"></i> <span>News </span></a></li>
 
                 <li class="hidden"><a href="product"><i class="fa fa-list"></i> <span>Products</span></a></li>
 

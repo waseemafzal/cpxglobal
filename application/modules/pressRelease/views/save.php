@@ -24,12 +24,12 @@ background-color: #fff;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Blog Management
+       News Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="blogpost">All Blogs </a></li>
+        <li > <a href="blogpost">All News </a></li>
       </ol>
     </section>
 
@@ -48,7 +48,7 @@ background-color: #fff;
              <div class="alert hidden"></div>
                     <div class="form-group wrap_form">
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">   Title</label>
+                      <label for="exampleInputEmail1"> News  Title</label>
                         <input type="text" class="form-control" id="post_title"  placeholder="Title" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
                     </div>
@@ -56,7 +56,7 @@ background-color: #fff;
                      <div class="clearfix">&nbsp;</div> 
                       <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-3">                      
-                    <label> Type</label>
+                    <label>News Type</label>
                     <select class="form-control " id="post_type" name="post_type" onchange="gettype(this.value)">
                     <option value="0">select</option>
                    <?php 
@@ -94,7 +94,7 @@ background-color: #fff;
                      <div class="clearfix">&nbsp;</div>
                       <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-3">                      
-                    <label> Category</label>
+                    <label>News Category</label>
                     <select class="form-control " id="category" name="category" >
                    <?php 
 				   $op= array('Technology'=>'Technology','Social Media'=>'Social Media','World'=>'World','Science'=>'Science');
@@ -117,7 +117,7 @@ background-color: #fff;
             <div class="clearfix">&nbsp;</div>
              <div class="clearfix">&nbsp;</div>
                   <div class="col-xs-12 col-md-12">
-                      <label>   Content</label>
+                      <label> News  Content</label>
                         
                         <textarea class=" textarea" id="editor1"  placeholder="Lorem ipsum post" name="post_description"><?php if(isset($row)){ echo $row->post_description;} ?></textarea>
 
@@ -297,7 +297,7 @@ background-color: #fff;
 	// ajax start
 		    $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'blogpost/save'; ?>",
+			url: "<?php echo base_url().'pressRelease/save'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,
@@ -380,7 +380,7 @@ background-color: #fff;
 	// ajax start
 		    $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'blogpost/update_image'; ?>",
+			url: "<?php echo base_url().'pressRelease/update_image'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,

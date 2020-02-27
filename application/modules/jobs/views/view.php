@@ -27,6 +27,7 @@
     <tr>
         <th>Job </th>
         <th>Application received </th>
+        <th>Status </th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -39,7 +40,29 @@
 		<tr id="row_<?php echo$row->id;?>">
         <td><?php echo $row->post_title;?></td>
          <td>Recceived Application (<a href="#"><?php echo '0';?></a>)</td>
-       
+       <td class="center">
+                    	<?PHP 
+                        if($row->status==0)
+                        {
+                            $class="label-danger";
+                            $text='Inactive';
+                        }
+                        else
+                        {
+                            $class="label-success";
+                            $text='Active';
+                        } 
+                        
+                        ?> 
+                        
+                        <span id="div_status_<?PHP echo $row->id;?>">
+                            <a id="anchor_<?PHP echo $row->id;?>" href="javascript:void(0);"  
+                            onclick="changeStatus('<?PHP echo $row->id;?>','<?PHP echo $row->status;?>','tbl_jobs');" >
+                            	<span class="label <?PHP echo $class;?>"><?PHP echo $text;?></span>
+                            </a>
+                        </span>   
+                    </td> 
+                 
     <td class="center">
             <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="jobs/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>

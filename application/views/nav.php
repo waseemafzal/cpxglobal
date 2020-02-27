@@ -1,12 +1,23 @@
+<style>
+.sf-menu ul li ul  { }
+.sf-menu ul li ul li a {
+    background: #f30100;
+    color: #fff;
+    padding: 2px 10px;
+}.sf-menu ul li a:hover {
+    background: #922d2d;
+    color: #111;
+}
+</style>
 <nav class="top-menu">
             <div class="nav-inner">
-                <div class="container">
+                <div class="container" >
                     <div class="row">
                         <div class="col-md-12">
                             <div id="mobnav-btn"></div>
                             <ul class="sf-menu" data-breakpoint="800" id="menu-main-menu">
                                 
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-253" id="menu-item-253">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page  "  >
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-332" id="menu-item-332">
@@ -39,7 +50,98 @@
                                     <ul class="sub-menu">
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246" id="menu-item-246">
-                                            <a href="certifications">Certifications</a>
+                                            <a href="javascript:void(0)">Training</a>
+    <ul class="sub-menu">
+    
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="cylinder-quality-management"><?=ucfirst(str_replace('-', ' ','cylinder-quality-management'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="doctor-blade-print-management
+"><?=ucfirst(str_replace('-', ' ','doctor-blade-print-management
+'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="eco-printing-by-pollution-prevention
+"><?=ucfirst(str_replace('-', ' ','eco-printing-by-pollution-prevention
+'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="effective-colors-management
+"><?=ucfirst(str_replace('-', ' ','effective-colors-management
+'))?></a>
+    </li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="excellence-in-lean-print-manufacturing
+"><?=ucfirst(str_replace('-', ' ','excellence-in-lean-print-manufacturing
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="excellence-in-flexographic-printing
+"><?=ucfirst(str_replace('-', ' ','excellence-in-flexographic-printing
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="excellence-in-gravure-printing
+"><?=ucfirst(str_replace('-', ' ','excellence-in-gravure-printing
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="excellence-in-offset-printing
+"><?=ucfirst(str_replace('-', ' ','excellence-in-offset-printing
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="flexoplate-quality-management
+"><?=ucfirst(str_replace('-', ' ','flexoplate-quality-management
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="food-safety-packaging-materials
+"><?=ucfirst(str_replace('-', ' ','food-safety-packaging-materials
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="graphic-design-for-non-designer
+"><?=ucfirst(str_replace('-', ' ','graphic-design-for-non-designer
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="hazardous-chemicals-management"><?=ucfirst(str_replace('-', ' ','hazardous-chemicals-management'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="paper-quality-management"><?=ucfirst(str_replace('-', ' ','paper-quality-management'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="prepress-and-packaging-design
+"><?=ucfirst(str_replace('-', ' ','prepress-and-packaging-design
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="print-automation-and-digitalization"><?=ucfirst(str_replace('-', ' ','print-automation-and-digitalization'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="print-quality-management"><?=ucfirst(str_replace('-', ' ','print-quality-management'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="printing-process-equipment-validation
+"><?=ucfirst(str_replace('-', ' ','printing-process-equipment-validation
+'))?></a></li>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="uht-processing-and-aseptic-packaging"><?=ucfirst(str_replace('-', ' ','uht-processing-and-aseptic-packaging'))?></a></li>
+    
+    
+    </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246" id="menu-item-246">
+                                            <a href="javascript:void(0)">Certifications</a>
+                                             <ul class="sub-menu">
+    
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="certifications-overview"><?=ucfirst(str_replace('-', ' ','certifications-overview'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="certification-process"><?=ucfirst(str_replace('-', ' ','certification-process'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="certifications-benefits"><?=ucfirst(str_replace('-', ' ','certifications-benefits'))?></a>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="eligibility-requirments"><?=ucfirst(str_replace('-', ' ','eligibility-requirments'))?></a>
+    </li> <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="application-payment"><?=ucfirst(str_replace('-', ' ','application-payment'))?></a>
+    </li><li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    <a href="complaint-process"><?=ucfirst(str_replace('-', ' ','complaint-process'))?></a>
+    </li>
+    </ul>
                                         </li>
                                         
                                     </ul>
@@ -74,7 +176,7 @@
                                     <ul class="sub-menu">
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="why-membership">Why Ouer Membership</a>
+                                            <a href="why-membership">Why Our Membership</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership-categories">Membership Categories</a>
@@ -156,6 +258,7 @@
                                     </ul>
                                 </li>  
                                
+                                 
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-255" >
                                     <a href="contact">Contact</a>
                                     <ul class="sub-menu">
@@ -163,6 +266,7 @@
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246" >
                                             <a href="contact/feedback">Feedback</a>
                                         </li>
+                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246">
                                             <a href="contact/complaint">Complaint</a>
                                         </li>
@@ -172,6 +276,7 @@
                                         
                                     </ul>
                                 </li>
+                                
                             </ul>
                             <!-- End search -->
                         </div>

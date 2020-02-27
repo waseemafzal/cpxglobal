@@ -35,7 +35,23 @@
   
     <style data-type="vc_shortcodes-custom-css" type="text/css">
 	.theme_panel{ display:none}
-
+	.sf-menu a {
+    /*padding: 10px 15px !important;*/
+	}
+	.sf-arrows .sf-with-ul:after {
+    right: 0px!important;
+	}
+#sub-header {
+    padding: 110px 0 110px 0;
+	background-size: 100%;
+	background-position: 50%;
+}
+#sub-header h1{
+   background: #f301008c;
+    display: inline-block;
+    padding: 1% 5%;
+    font-size: 50px;
+}
 	#howYou div label{position: relative;
     top: -9px;
     margin: 3px 15px 0 5px;
@@ -193,6 +209,11 @@
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">
+                        <a href="eblogs">Blogs</a>
+                                      <a href="career"><i class="fa fa-briefcase"></i> Career</a>
+                           
+                                    
+
                         <?php 
 						
 						if(!empty($this->session->userdata('userlogin')) and  !empty($this->session->userdata('user_id')))

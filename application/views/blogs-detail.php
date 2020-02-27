@@ -15,20 +15,12 @@ include_once"header.php";
 <section id="main_content">
 
     <div class="container">
-
-        <ol class="breadcrumb"><li><a rel="v:url" property="v:title" href="http://demo.vegatheme.com/learn/">Home</a></li><li><a rel="v:url" property="v:title" href="http://demo.vegatheme.com/learn/category/student/">Student</a></li><li class="active">Cum sociis natoque penatibus et magnis dis parturient montes</li></ol>
-        <div class="row">
+  <div class="row">
 
             <aside class="col-md-4">
                 	<div id="sidebar" class="sidebar box_style_1">
-	<div id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="search-form input-group" action="http://demo.vegatheme.com/learn/">  
-    	      <input class="form-control" type="text" value="" name="s" id="s" placeholder="Search...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="icon-search"></i></button>
-            </span>
-            </form></div><div id="text-6" class="widget widget_text"><h4 class="widget_title">TEXT WIDGET</h4>			<div class="textwidget"><p>Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-</div>
-		</div><div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent Posts</h4>
+	<div id="search-2" class="widget widget_search">
+    </div><div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent Posts</h4>
     <ul>
 
         

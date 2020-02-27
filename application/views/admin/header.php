@@ -239,8 +239,9 @@
 
                 </div>
 
+                            
                 <div class="pull-right">
-
+                              
                   <a href="auth/logout" class="btn btn-default btn-flat">Sign out</a>
 
                 </div>

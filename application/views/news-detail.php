@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1>NEW DETAIL</h1>
+                    <h1>NEWS DETAIL</h1>
                     </div>
             </div><!-- End row -->
         </div><!-- End container -->
@@ -15,27 +15,27 @@
 
     <div class="container">
 
-        <ol class="breadcrumb"><li><a rel="v:url" property="v:title" href="../index.html">Home</a></li><li><a rel="v:url" property="v:title" href="../category/education/index.html">Education</a></li><li class="active">Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida</li></ol>
+        
         <div class="row">
 
             <aside class="col-md-4">
                 	<div id="sidebar" class="sidebar box_style_1">
-	<div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent Posts</h4>
+	<div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent News</h4>
     <ul>
 
         
         <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="index.html">Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida</a></div>
+            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="">Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida</a></div>
         </li>
         
         
         <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="../cum-sociis-natoque-penatibus-et-magnis-dis-parturient-montes/index.html">Cum sociis natoque penatibus et magnis dis parturient montes</a></div>
+            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="">Cum sociis natoque penatibus et magnis dis parturient montes</a></div>
         </li>
         
         
         <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="../at-50-center-for-the-education-of-women-celebrates-a-wider-mission/index.html">At 50, Center for the Education of Women celebrates a wider mission</a></div>
+            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="">At 50, Center for the Education of Women celebrates a wider mission</a></div>
         </li>
         
         
@@ -55,7 +55,7 @@
                   <div class="post-left">
                     <ul>
                       <li><i class="icon-calendar-empty"></i>On <span>August 3, 2015</span></li>
-                      <li><i class="icon-user"></i>By <a href="../author/admin/index.html" title="Posts by John Smith" rel="author">John Smith</a></li>
+                      <li><i class="icon-user"></i>By <a href="" title="Posts by John Smith" rel="author">John Smith</a></li>
                      </ul>
                   </div>
                 </div>
