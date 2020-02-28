@@ -16,18 +16,23 @@ include_once"header.php";
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
             <h2><?=$year?></h2>
-            <a class="fancybox" rel="gallery1" href="http://farm2.staticflickr.com/1669/23976340262_a5ca3859f6_b.jpg" title="Twilight Memories (doraartem)">
-	<img src="http://farm2.staticflickr.com/1669/23976340262_a5ca3859f6_m.jpg" alt="" />
+           <?php
+	if($data!=0){
+	foreach ($data->result() as $row){
+	$src=	base_url().'uploads/'.$row->image;
+		
+		?>
+        <div class="col-md-2 col-xs-6 col-sm-4">
+        <div class="thumbnail">
+            <a class="fancybox" rel="gallery1" href="<?=$src?>" title="<?=$row->title?>">
+	<img src="<?=$src?>" style="height:200px !important"   alt="<?=$row->title?>" />
 </a>
-<a class="fancybox" rel="gallery1" href="http://farm2.staticflickr.com/1459/23610702803_83655c7c56_b.jpg" title="Electrical Power Lines and Pylons disappear over t.. (pautliubomir)">
-	<img src="http://farm2.staticflickr.com/1459/23610702803_83655c7c56_m.jpg" alt="" />
-</a>
-<a class="fancybox" rel="gallery1" href="http://farm2.staticflickr.com/1617/24108587812_6c9825d0da_b.jpg" title="Morning Godafoss (Brads5)">
-	<img src="http://farm2.staticflickr.com/1617/24108587812_6c9825d0da_m.jpg" alt="" />
-</a>
-<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3691/10185053775_701272da37_b.jpg" title="Vertical - Special Edition! (cedarsphoto)">
-	<img src="http://farm4.staticflickr.com/3691/10185053775_701272da37_m.jpg" alt="" />
-</a>
+</div>
+</div>
+<?php } }else{
+	echo '<p>No Gallery Found!</p>';
+	}?>
+
 <div class="hrhrow">&nbsp;</div>
             </div>
         </section>

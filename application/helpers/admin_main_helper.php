@@ -236,6 +236,22 @@ function getServiceImage($id){
 			}
 		return $data;
 		}
+		function getGalleryYear()
+		{
+			$CI =& get_instance();
+			$data='';
+			$result = $CI->db->query("SELECT year FROM `tbl_gallery` GROUP by year");
+			if($result->num_rows()>0){
+				foreach ($result->result() as $row){
+				$data.='<li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                            <a href="GalleryYear/view/'.$row->year.'">'.$row->year.'</a>
+                                        </li>';
+				}
+				}
+		return $data;
+		}
+		
+		
 		function setUserimage($image)
 		{
 			$file=FCPATH.'uploads/';

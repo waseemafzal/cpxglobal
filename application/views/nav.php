@@ -138,7 +138,8 @@
     <a href="eligibility-requirments"><?=ucfirst(str_replace('-', ' ','eligibility-requirments'))?></a>
     </li> <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="application-payment"><?=ucfirst(str_replace('-', ' ','application-payment'))?></a>
-    </li><li class="menu-item menu-item-type-post_type menu-item-object-page ">
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="complaint-process"><?=ucfirst(str_replace('-', ' ','complaint-process'))?></a>
     </li>
     </ul>
@@ -210,8 +211,22 @@
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" >
                                     <a href="awards">Awards</a>
                                     <ul class="sub-menu">
-                                        
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+<li class="menu-item menu-item-type-post_type menu-item-object-page ">
+<a href="best-machine-operator-award"><?=ucfirst(str_replace('-', ' ','best-machine-operator-award'))?></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page ">
+<a href="award-eligibility"><?=ucfirst(str_replace('-', ' ','award-eligibility'))?></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page ">
+<a href="selection-criteria"><?=ucfirst(str_replace('-', ' ','selection-criteria'))?></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page ">
+<a href="benefits-of-awards"><?=ucfirst(str_replace('-', ' ','benefits-of-awards'))?></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page ">
+<a href="application-process"><?=ucfirst(str_replace('-', ' ','application-process'))?></a>
+</li>
+                              <!--          <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="awards">
                                             Best Machine Opertor Award
                                             </a>
@@ -227,20 +242,22 @@
                                         </li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="awards/benefits"> Benefits of Awards</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </li>
                               
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" >
                                     <a href="#">Gallery</a>
                                     <ul class="sub-menu">
-                                        
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                        <?php 
+										 echo getGalleryYear();
+										?>
+                                       <!-- <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="GalleryYear/view/2019">2019</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="GalleryYear/view/2020">2020</a>
-                                        </li>
+                                        </li>-->
                                       
                                     </ul>
                                 </li>
