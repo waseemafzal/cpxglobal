@@ -1,5 +1,6 @@
 <?php 
 include_once"header.php";
+
 ?>
         <section id="sub-header">
         <div class="container">
@@ -23,39 +24,23 @@ include_once"header.php";
     </div><div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent Posts</h4>
     <ul>
 
-        
+        <?php 
+		foreach($recentPost->result() as $rpost){
+		?>
         <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="http://demo.vegatheme.com/learn/morbi-rutrum-massa-eget-mi-gravida-sit-amet-mollis-magna-gravida/">Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida</a></div>
+            <i class="icon-calendar-empty"></i> <?=date('F , j Y',strtotime($rpost->created_on))?>            <div><a href="<?=$rpost->id?>"><?=$rpost->post_title?></a></div>
         </li>
-        
-        
-        <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="http://demo.vegatheme.com/learn/cum-sociis-natoque-penatibus-et-magnis-dis-parturient-montes/">Cum sociis natoque penatibus et magnis dis parturient montes</a></div>
-        </li>
-        
-        
-        <li>
-            <i class="icon-calendar-empty"></i> 03rd Aug, 2015            <div><a href="http://demo.vegatheme.com/learn/at-50-center-for-the-education-of-women-celebrates-a-wider-mission/">At 50, Center for the Education of Women celebrates a wider mission</a></div>
-        </li>
-        
+        <?php } ?>
+       
         
     </ul>
     </div>
 
-<div id="tag_cloud-2" class="widget widget_tag_cloud"><h4 class="widget_title">TAGS</h4><div class="tagcloud"><a href="http://demo.vegatheme.com/learn/tag/book/" class="tag-cloud-link tag-link-26 tag-link-position-1" style="font-size: 8pt;" aria-label="book (1 item)">book</a>
-<a href="http://demo.vegatheme.com/learn/tag/design/" class="tag-cloud-link tag-link-10 tag-link-position-2" style="font-size: 8pt;" aria-label="design (1 item)">design</a>
-<a href="http://demo.vegatheme.com/learn/tag/education/" class="tag-cloud-link tag-link-15 tag-link-position-3" style="font-size: 8pt;" aria-label="education (1 item)">education</a>
-<a href="http://demo.vegatheme.com/learn/tag/gallery/" class="tag-cloud-link tag-link-19 tag-link-position-4" style="font-size: 8pt;" aria-label="gallery (1 item)">gallery</a>
-<a href="http://demo.vegatheme.com/learn/tag/learn/" class="tag-cloud-link tag-link-17 tag-link-position-5" style="font-size: 8pt;" aria-label="learn (1 item)">learn</a>
-<a href="http://demo.vegatheme.com/learn/tag/library/" class="tag-cloud-link tag-link-27 tag-link-position-6" style="font-size: 8pt;" aria-label="library (1 item)">library</a>
-<a href="http://demo.vegatheme.com/learn/tag/snow/" class="tag-cloud-link tag-link-29 tag-link-position-7" style="font-size: 8pt;" aria-label="snow (1 item)">snow</a>
-<a href="http://demo.vegatheme.com/learn/tag/unit/" class="tag-cloud-link tag-link-31 tag-link-position-8" style="font-size: 8pt;" aria-label="unit (1 item)">unit</a>
-<a href="http://demo.vegatheme.com/learn/tag/wordpress/" class="tag-cloud-link tag-link-14 tag-link-position-9" style="font-size: 8pt;" aria-label="wordpress (1 item)">wordpress</a></div>
-</div>	</div>
+	</div>
             </aside>
 
                         <div class="col-md-8">
-              <div class="post single-post">
+              <!--<div class="post single-post">
                 
                                                                                                                                                           <img src="http://demo.vegatheme.com/learn/wp-content/uploads/2015/08/blog-1-1.jpg" alt="">
                                                             
@@ -78,13 +63,48 @@ include_once"header.php";
 <p>Curabitur libero diam, lacinia a eros a, molestie lobortis magna. Duis pulvinar mattis diam, ac condimentum felis euismod eu. Proin libero felis, malesuada eget fringilla ut, dapibus ut tellus. Nulla facilisi. Quisque hendrerit aliquet commodo. Nullam placerat commodo varius. Morbi egestas iaculis bibendum. Donec mauris felis, consectetur pulvinar est eu, accumsan auctor nunc. Pellentesque semper mi non est auctor, vel viverra risus dictum. Nulla nec ligula vitae ipsum</p>
 
                 
-              </div>
+              </div>-->
           
               
-	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
-		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://demo.vegatheme.com/learn/at-50-center-for-the-education-of-women-celebrates-a-wider-mission/" rel="prev"><span aria-hidden="true">Previous Post</span> <span class="screen-reader-text">Previous post:</span> </a></div><div class="nav-next"><a href="http://demo.vegatheme.com/learn/morbi-rutrum-massa-eget-mi-gravida-sit-amet-mollis-magna-gravida/" rel="next"><span aria-hidden="true">Next Post</span> <span class="screen-reader-text">Next post:</span> </a></div></div>
-	</nav>
+	<div class="post post-single">
+      <?php 
+		if($row->post_type=='video'){
+		?>
+        <video id="my-video" controls preload="auto"  style="width:250px;"
+  poster="<?php echo base_url().'uploads/'.$row->thumbnail; ?>" data-setup="{}">
+    <source src="<?php echo base_url().'uploads/'.$row->video_url; ?>" type='video/mp4'>
+   
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      
+    </p>
+  </video>
+		<?php }
+		else if($row->post_type=='image'){
+		$src=base_url().'uploads/'.$row->image;
+				echo '<img src="'.$src.'"  class="img-responsive" >';
+				
+		}
+		else if($row->post_type=='embed url'){
+		$arr = explode('=',$row->video_url);
+		
+		 ?>
+         <iframe width="250" height="100" src="https://www.youtube.com/embed/<?php echo $arr[1]; ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<?php } ?>              
+       
+    <div class="post_info clearfix">
+      <div class="post-left">
+        <ul>
+          <li><i class="icon-calendar-empty"></i>On <span><?=date('F , j Y',strtotime($row->created_on))?></span></li>
+<!--          <li><i class="icon-user"></i>By <a href="" title="Posts by John Smith" rel="author">Admin</a></li>
+-->      </div>
+      <div class="post-right"><i class="icon-comment"></i>0 comment</div>
+    </div>
+    <h2><?php echo $row->post_title;?></h2><br>
+    <?php 
+		echo $row->post_description;	
+		?>
+  </div>
               <hr>
 
               <h4></h4>

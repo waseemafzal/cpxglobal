@@ -110,7 +110,7 @@ class Blogpost extends MX_Controller {
 				$insrtID = $this->db->insert_id();
 				// save into slug
 				$slug = str_replace(' ','-',$post_title);
-				$appRout=array('slug'=>$slug,'type'=>'blogpost','controller'=>'blog/detail/'.$insrtID);
+				$appRout=array('slug'=>$slug,'type'=>'blogpost','controller'=>'eblog/detail/'.$insrtID);
 				if($this->db->insert('app_routes',$appRout)){
 					$slug_id = $this->db->insert_id();
 					$arrayUpdate=array('slug_id'=>$slug_id);

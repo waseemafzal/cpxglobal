@@ -81,8 +81,9 @@ include_once"header.php";
                  </section>
                     <section id="PROFESSIONAL" class="formSection">
                         <h2>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h2>
-                            university 	degree 	diploma 	other 	job detail 
+                            
                         <div class="col-md-12 col-xs-12">
+                        <p>University 	degree 	diploma 	other 	job detail </p>
                             <div class="field_wrapper">
                             <div>
                             <input type="text" placeholder="Company Name" name="job_detail[cname][]" value=""/>
@@ -162,22 +163,22 @@ include_once"header.php";
                     <section id="MEMBERSHIP_DUESDetail" class="formSection">
                         <h2>MEMBERSHIP DUES:</h2>
                         <table class="table tale-striped" style="color: #fff;">
-                        <tr bgcolor="#9900FF">
+                        <tr bgcolor="#f30100">
                             <td><input name="membership_type" class="big-checkbox" value="4" type="radio"></td>
                             <td>Annual Dues - Corporate Membership:</td>
                             <td>$1,000.00</td>
                         </tr>
-                        <tr bgcolor="#990000">
+                        <tr bgcolor="#999999">
                             <td><input name="membership_type" class="big-checkbox" value="3" type="radio"></td>
                             <td>Annual Dues – Associate Membership: </td>
                             <td>$ 5,00.00</td>
                         </tr>
-                        <tr bgcolor="#993366">
+                        <tr bgcolor="#f30100">
                             <td><input name="membership_type" class="big-checkbox" value="2" type="radio"></td>
                             <td>Annual Dues - Individual Membership:</td>
                             <td>$250.00</td>
                         </tr>
-                        <tr bgcolor="#0033FF">
+                        <tr bgcolor="#999999">
                             <td><input name="membership_type" class="big-checkbox" value="1" type="radio"></td>
                             <td>Annual Dues - Student Membership:</td>
                             <td>$1,000.00</td>
@@ -185,7 +186,7 @@ include_once"header.php";
                         </table>
                         <input type="hidden" id="mmmbershipID" name="mmmbershipID" value="" />
                          <input type="hidden" id="packageprice" name="packageprice" value="" />
-                 <button class="btn btn-success pull-right pubservice__42das8672878" type="submit">Registered</button>
+                 <button class="btn btn-info pull-right pubservice__42das8672878" type="submit">Registered</button>
                    </section>  
                 </div>    
             </form>

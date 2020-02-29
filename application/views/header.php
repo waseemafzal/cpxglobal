@@ -43,8 +43,8 @@
 	}
 #sub-header {
     padding: 110px 0 110px 0;
-	background-size: 100%;
-	background-position: 50%;
+	background-size: 100%!important;
+	background-position: 50% 50%!important;
 }
 #sub-header h1{
    background: #f301008c;
@@ -52,6 +52,28 @@
     padding: 1% 5%;
     font-size: 50px;
 }
+.btn-info,.btn-success {
+    color: #fff;
+    background-color: #f30100 !important;
+    border-color: #332b2b !important;
+}
+select.form-control{
+	 border-radius: 1px;
+    border-color: #a4a4a44f;
+	}
+	.button_outline {
+    border-color:#fff!important;
+    background: #f4524d!important;
+    color: #fff!important;
+	}
+.btn:hover{
+	color: #fff;
+	background-color:#f30100	
+	}
+.btn{    border: 1px solid #f30100;
+    padding: 5px 25px;
+    color: #000;}
+
 	#howYou div label{position: relative;
     top: -9px;
     margin: 3px 15px 0 5px;
@@ -235,8 +257,8 @@
                         </div>
                         <ul class="top-nav">
                             <li><i class="fa fa-clock-o"></i> Mon - Fri / 9.00AM - 06.00PM</li>
-                            <li class="hidden-info"><i class="fa fa-map-marker"></i> 100 Mainstreet Center, Sydney</li>
-                            <li><i class="fa fa-phone"></i> Whatsapp: +1(609) 271 2476</li>
+                            <li class="hidden-info"><i class="fa fa-map-marker"></i> 807 E Landis Ave.Vineland,USA</li>
+                            <li><i class="fa fa-phone"></i> Whatsapp: +0016092712476</li>
                         </ul>
                     </div>
                 </div>

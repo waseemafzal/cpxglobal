@@ -2,19 +2,21 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{color: #000!important;
+.Section>h3{    color: #000!important;
     text-align: center;
-    background: #9CC2E5;
+    background: #f30100;
     padding: 7px 6px;
     font-size: 20px;
-	clear:both;
+    clear: both;
+    display: inline-block;
+    width: 100%;
 	}
 	input.form-control, textarea.form-control{height: auto;
     margin: 0;
     padding: 5px 10px;}
 	.table td{ margin:0; padding:0}
 </style>
-        <section id="sub-header" style="background:url(frontend/feedback.jpg)">
+        <section id="sub-header" style="background:url(frontend/registration.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -138,7 +140,25 @@ Discount
 </tr>
 </tfoot>
 </table>
-<section id="PaymentDetail" class="formSection" >
+<div class="col-md-12 Section" style="border:1px solid;margin: 0 0 10px 0;padding: 10px 10px;">
+
+<h3>Payment Terms:
+</h3>
+<ul>
+	<li>100% payment of the amount in maximum 15 days upon the receipt of invoice.</li>
+	<li>The payment shall be conducted in credit card, cash or direct bank transfer excluding VAT.</li>
+	<li>All cancellation shall be done in written form</li>
+	<li>No cancellation fees shall be liable if the cancellation is done 15 days earlier of the training session.</li>
+	<li>50% cancellation fees shall be liable if the cancellation is done 07 days earlier of the training session.</li>
+	<li>100% cancellation fees shall be liable if the cancellation is filed 03 days earlier of the training session.</li>
+	<li>If the training session is cancelled by ------- due to some unforeseen circumstance, the paid amount will be 100% returned to clients back within 48 working hours or customer can use this fees for next coming any training session.</li>
+	<li>Selection of trainer, course contents and venue shall be at the discretion of &hellip;&hellip;&hellip;&hellip;&hellip;.. Or details mentioned in the marketing materials.</li>
+	<li>Complaints related to trainer, contents, venue or services shall be accepted in written form and handle by &hellip;.complaints management team.</li>
+</ul>
+
+<div class="col-xs-12"><input type="checkbox"> I have read, understand and agreed to the above</div>
+</div>
+<section id="PaymentDetail" class="formSection" style="display:none" >
                 <h2>PAYMENT METHOD:</h2>
                     <div class="col-md-6">
                         <img src="frontend/images/paypal.jpg" class="img-responsive">
