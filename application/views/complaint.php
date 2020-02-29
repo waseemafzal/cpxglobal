@@ -1,7 +1,7 @@
 <?php 
 include_once"header.php";
 ?>
-        <section id="sub-header">
+        <section id="sub-header" style="background:url(frontend/complaint.jpg);background-size: 100%;background-position: 50% 50%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -89,7 +89,7 @@ include_once"header.php";
 </div>
 <div class="col-md-12 col-xs-12">
 
-<input  type="button" onClick="showAlert()"  name="file" class="btn btn-info btn-large" />
+<button  onClick="showAlert()"   name="btnComplaint" class="btn btn-info btn-large" >Submit</button>
 </div>
 </section>
 </form>

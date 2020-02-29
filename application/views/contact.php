@@ -6,15 +6,45 @@ label {
     font-weight: normal;
 }
 #slect{
-
-    width: 100%;
-    padding: 8px 5px;
-    border-radius: 5px;
-	
+width: 80%;
+    padding: 12px 5px;
+    float: left;
+    border-radius: 0
 	}
 	.vc_custom_1456124843800 {
     padding-top: 20px !important;
-    background-color: #0cbdaa !important;
+    background-color: #80808066 !important;
+}
+#form1 select
+{width: 100%;
+border-radius:0px!important;
+    color: #a0a0a0;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    font-family: Arial, sans-serif;
+    line-height: 1.428571429;
+    padding: 6px 12px;    border-color: #a4a4a44a;
+}
+
+.register:hover{
+	color: #fff;
+	background-color:#f30100	
+	}
+.register{    border: 1px solid #f30100;
+    padding: 5px 25px;
+    color: #000;}
+.btn {
+    height: 44px;
+    border: none;
+    background-color: #f30100;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+} textarea {
+    height: auto;
 }
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
@@ -44,13 +74,16 @@ label {
            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8"><div class="vc_column-inner">
            <div class="wpb_wrapper">
       <select  onChange="getDirection(this.value)"id="slect" >
+      <option >Select</option>
       <option value="USA">USA</option>
       <option value="EUROPE">Europe</option>
       <option value="SOUTH">South Asia</option>
       <option value="MIDDLE">Middle East</option>
       <option value="AMERICA">South America</option>
       </select>
-  
+  <span class="input-group-btn">
+        <button class="btn" type="submit">GET DIRECTIONS</button>
+      </span>
 <div class="clearfix">&nbsp;</div>
             
   </div>
@@ -61,96 +94,100 @@ label {
            <div class="col-md-4 col-xs-12">
            <div class="wpb_wrapper">
 			<div class="USA ">
-            <h3>Address USA</h3>
+            <h4> USA</h4>
 <ul id="contact-info">
 <li><i class="icon-home"></i> 807 E Landis Ave.Vineland, 08360 New JERSEY-USA</li>
 <li><i class="icon-phone"></i> (856) 839-2373</li>
-<li><i class="icon-fax"></i> (856) 839-2374</li>
+<li><i class="fa fa-fax"></i> (856) 839-2374</li>
 <li><i class="icon-mobile"></i> 0016092712476</li>
-<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+<li><i class=" icon-email"></i> <a href="#">info@cppexglobal.org</a></li>
 </ul>
             </div>
             <div class="AMERICA hidden">
-            <h3>Address South America</h3>
+            <h4> South America</h4>
 <ul id="contact-info">
 <li><i class="icon-home"></i> Rua Tereza de Jesus Pinto.170. Sorocaba, Sao Paulo - Brazil.</li>
 <li><i class="icon-mobile"></i> +55 1598 173 0421</li>
-<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+<li><i class=" icon-email"></i> <a href="#">info@cppexglobal.org</a></li>
 </ul>
             </div>
             <div class="EUROPE hidden">
-            <h3>Address EUROPE</h3>
+            <h4> EUROPE</h4>
 <ul id="contact-info">
 <li><i class="icon-home"></i> Longvic City- 21600, Dijon - France</li>
 <li><i class="icon-mobile"></i> +33 (0) 68 100 4157</li>
-<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+<li><i class=" icon-email"></i> <a href="#">info@cppexglobal.org</a></li>
 </ul>
             </div>
             <div class="SOUTH hidden" >
-            <h3>Address South Asia</h3>
+            <h4> South Asia</h4>
 <ul id="contact-info">
 <li><i class="icon-home"></i> 92-J 1 Sunflower Society, Johar Town, Lahore –Pakistan</li>
 <li><i class="icon-phone"></i> +92 42 3705 8294</li>
 <li><i class="icon-mobile"></i>+92 300 846 4155</li>
-<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+<li><i class=" icon-email"></i> <a href="#">info@cppexglobal.org</a></li>
 </ul>
             </div>
             <div class="MIDDLE hidden" >
-            <h3>Address Middle East & Africe 
-</h3>
+            <h4> Middle East & Africe 
+</h4>
 <ul id="contact-info">
 <li><i class="icon-home"></i> Royal Business centre-Al Abbas Building 2, Bank Street Burjuman, Dubai
 
 </li>
 <li><i class="icon-phone"></i> +97 155 523 3367</li>
 <li><i class="icon-mobile"></i>+966 59 747 1130</li>
-<li><i class=" icon-email"></i> <a href="#">enquiry@cppexglobal.org</a></li>
+<li><i class=" icon-email"></i> <a href="#">info@cppexglobal.org</a></li>
 </ul>
             </div>
 <hr>
-<h3>Follow us</h3>
-<p>For continous updates you can follow us on social media.</p>
+<h4>Follow us</h4>
+<p>Connect, follow and have a conversation with us for latest News, articles, blogs, customer service, industry insight, career opportunities, working life, education, expert advice and corporate values on social medial.
+</p>
 <ul id="follow_us_contacts">
-<li><a href="#"><i class="icon-facebook"></i>fb.com/username</a></li>
-<li><a href="#"><i class="icon-twitter"></i>twitter.com/#username</a></li>
-<li><a href="#"><i class=" icon-google"></i>googleplus.com/username</a></li>
+<li><a href="httpss://fb.com/CPPExGlobal"><i class="icon-facebook"></i>fb.com/CPPEx Global</a></li>
+<li><a href="httpss://twitter.com/CPPExGlobal"><i class="icon-twitter"></i>twitter.com/CPPEx Global</a></li>
+<li><a href="httpss://googleplus.com/CPPExGlobal"><i class=" icon-google"></i>googleplus.com/CPPEx Global</a></li>
+<li><a href="httpss://linkedin.com/CPPExGlobal"><i class=" icon-linkedin"></i>linkedin.com/CPPEx Global</a></li>
+<li><a href="httpss://youtube.com/CPPExGlobal"><i class=" icon-youtube"></i>youtube.com/CPPEx Global</a></li>
 </ul>
 <hr>
-<h3>Apply for a course</h3>
+<h4>Apply for a course</h4>
 <p>CPPEx Global offers a comprehensive certification program for professional associated with printing, packaging and associated industries.</p>
 <p><a class="register" href="contact/registration">Apply</a></p>
 
 		</div>
            </div>
            <div class="col-md-8 col-xs-12 " >
-           <div class="box_style_2" id="contactform" >
+           <div class="" id="contactform" >
 
            <form id="form1" name="form1" method="post" action="">
-<section id="personalDetail" class="formSection">
-<h2>CONTACT US</h2>
+<section id="personalDetail" >
+<div class="col-md-12 col-xs-12"><h4>CONTACT US</h4></div>
 <div class="col-md-4 col-xs-12">
-<label>Name</label>
+<label>First Name <span class="text-danger">*</span></label>
 <input class="form-control"  required="required" name="name" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Last Name</label>
+<label>Last Name <span class="text-danger">*</span></label>
 <input class="form-control" required name="name" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Email</label>
+<label>Email <span class="text-danger">*</span></label>
 <input class="form-control" type="email" required name="email" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Company</label>
+<label>Company <span class="text-danger">*</span></label>
 <input class="form-control" required name="mobile" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Business Phone</label>
+<label>Business Phone <span class="text-danger">*</span></label>
 <input class="form-control" required name="mobile" />
 </div>
 <div class="col-md-4 col-xs-12">
 <label>What is your industry?</label>
-<select class="form-control" name="industry">
+<select  name="industry">
+<option>----</option>
 <option value="Printing Industry">Printing Industry</option>
 <option value="Paints Industry">Paints Industry</option>
 <option value="Printing Ink Industry">Printing Ink Industry</option>
@@ -163,10 +200,11 @@ label {
 <option value="Educational Industry">Educational Industry</option>
 </select>
 </div>
-<div class="clearfix">&nbsp;</div>
 <div class="col-md-4 col-xs-12">
 <label>Job role</label>
-<select class="form-control"  name="Jobrole">
+
+<select   name="Jobrole">
+<option>----</option>
 <option value="Cheif Executive">Cheif Executive Officer</option>
 <option value="Owner">Owner</option>
 <option value="General Manager">General Manager</option>
@@ -177,7 +215,8 @@ label {
 </div>
 <div class="col-md-4 col-xs-12">
 <label>Product | Services *</label>
-<select class="form-control" name="Jobrole">
+<select  name="Jobrole">
+<option>----</option>
 <option value="Training">Training</option>
 <option value="Consultancy">Consultancy</option>
 <option value="Certifications">Certifications</option>
@@ -188,7 +227,8 @@ label {
 </div>
 <div class="col-md-4 col-xs-12">
 <label>Product Mode *</label>
-<select class="form-control" name="ProductMode">
+<select  name="ProductMode">
+<option>----</option>
 <option value="On-site Training">On-site Training</option>
 <option value="On-site Conusultancy">On-site Conusultancy</option>
 <option value="On-site Certifications">On-site Certifications</option>
@@ -197,37 +237,19 @@ label {
 <option value="Awards">Awards</option>
 <option value="Others">Others</option>
 </select>
-</div><div class="clearfix">&nbsp;</div>
-<div class="col-md-4 col-xs-12">
-<label>What is your level of interest</label>
-<select class="form-control" name="levelofinterest">
-<option value="Ready to register">Ready to register</option>
-<option value="Ready to buy">Ready to buy</option>
-<option value="Requesting a quote">Requesting a quote </option>
-<option value="Job">Job</option>
-</select>
 </div>
-<div class="col-md-4 col-xs-12">
-<label>Expected timeframe *</label>
-<select class="form-control" name="timeframe">
-<option value="1-3 Month">1-3 Month</option>
-<option value="3-6 Month">3-6 Month</option>
-<option value="6-9 Month">6-9 Month</option>
-<option value="9-12 Month">9-12 Month</option>
-</select>
-</div>
-<div class="col-md-4 col-xs-12">
+<div class="col-md-12 col-xs-12">
 <label>Attached file .....</label>
 <input class="form-control" type="file" name="attachment"> 
 </div>
-<div class="clearfix">&nbsp;</div>
 
 <div class="col-md-12 col-xs-12">
-<textarea class="form-control" name="message"></textarea>
+<label>Message</label>
+<textarea class="form-control"  rows="5" name="message"></textarea>
 <p> <input type="checkbox" width="30"> I read, understand and agreed with all terms and conditions!
 </p>
 </div>
-<input type="submit" name="btnSubmit" class="btn btn-info pull-right" value="Submit">
+<input type="submit" name="btnSubmit" class="register pull-right" value="Submit">
 </section>
 </form>
            </div>
@@ -240,8 +262,10 @@ label {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 function getDirection(val){
+	if(val!=''){
 	$('.USA,.EUROPE,.SOUTH,.MIDDLE,.AMERICA').addClass('hidden');
 	$('.'+val).removeClass('hidden');
+	}
 	}
 	
 </script>

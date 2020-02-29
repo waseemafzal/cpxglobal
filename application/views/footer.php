@@ -27,24 +27,27 @@
                 </div>
                 <hr>
             </div>
-            <div class="container" id="nav-footer">
+            <div class="container " id="nav-footer">
                 <div class="row text-left">
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-2">
-                            <h4>BROWSE</h4>
+                            <h4>About</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
-                                        <a href="prices-and-plans/index.html">Prices</a>
+                                        <a href="why">Why CPPEx Global</a>
                                     </li>
                                     <li>
-                                        <a href="courses-grid/index.html">Courses</a>
+                                        <a href="history">History</a>
                                     </li>
                                     <li>
-                                        <a href="blog/index.html">Blog</a>
+                                        <a href="mission">Mission</a>
                                     </li>
                                     <li>
-                                        <a href="contact/index.html">Contacts</a>
+                                            <a href="team"> Our Team</a>
+                                        </li>
+                                    <li>
+                                        <a href="contact">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -52,20 +55,22 @@
                     </div><!-- end col-lg-3 -->
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-3">
-                            <h4>Next Courses</h4>
+                            <h4> Membership</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
-                                        <a href="course/12-principles/index.html">Biology</a>
+                                        <a href="why-membership">why our membership</a>
                                     </li>
                                     <li>
-                                        <a href="course/poetry-course/index.html">Management</a>
+                                        <a href="membership-categories">Membership categories</a>
                                     </li>
                                     <li>
-                                        <a href="course/poetry-course/index.html">History</a>
+                                        <a href="membership-benefits">Membership benefits</a>
                                     </li>
                                     <li>
-                                        <a href="course/custom-item-prize/index.html">Litterature</a>
+                                        <a href="membership_List">Membership list</a>
+                                    </li><li>
+                                        <a href="membership/form">Membership Form</a>
                                     </li>
                                 </ul>
                             </div>
@@ -73,20 +78,20 @@
                     </div><!-- end col-lg-3 -->
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-4">
-                            <h4>ABOUT LEARN</h4>
+                            <h4>CONTACT</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
-                                        <a href="about-us/index.html">About Us</a>
+                                        <a href="contact/registration">Registration</a>
                                     </li>
                                     <li>
-                                        <a href="contact/index.html">Apply</a>
+                                        <a href="contact/feedback">Feedback</a>
                                     </li>
                                     <li>
-                                        <a href="#">Terms and conditions</a>
+                                        <a href="contact/complaint">Complaint</a>
                                     </li>
                                     <li>
-                                        <a href="my-account/index.html">Register</a>
+                                        <a href="contact/index">Contact us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -97,19 +102,19 @@
                             <div class="textwidget">
                                 <ul id="follow_us">
                                     <li>
-                                        <a href="https://www.facebook.com/oceanthemes"><i class="icon-facebook"></i></a>
+                                        <a href="https://www.facebook.com/CPPExGlobal"><i class="icon-facebook"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/oceanthemes2014"><i class="icon-twitter"></i></a>
+                                        <a href="https://twitter.com/CPPExGlobal"><i class="icon-twitter"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://plus.google.com/105412463811657994584"><i class=" icon-google"></i></a>
+                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-google"></i></a>
                                     </li>
                                 </ul>
                                 <ul>
-                                    <li><strong class="phone">+0034 43244 44</strong><br>
+                                    <li><strong class="phone">+(856) 839-2373</strong><br>
                                     <small>Mon - Fri / 9.00AM - 6.00PM</small></li>
-                                    <li>Questions? <a href="#">questions@learn.com</a>
+                                    <li>Questions? <a href="mailto:info@cppexglobal.org">info@cppexglobal.org</a>
                                     </li>
                                 </ul>
                             </div>
@@ -118,7 +123,7 @@
                 </div><!-- End row -->
             </div>
             <div id="copy_right">
-                © Learn 1998 - 2018 - All rights reserved.
+                © CPPExGlobal 1998 - <?=date('Y')?> - All rights reserved.
             </div>
         </footer>
         <div id="toTop">

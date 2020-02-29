@@ -2,12 +2,14 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{color: #000!important;
+.Section>h3{    color: #000!important;
     text-align: center;
-    background: #9CC2E5;
+    background: #f30100;
     padding: 7px 6px;
     font-size: 20px;
-	clear:both;
+    clear: both;
+    display: inline-block;
+    width: 100%;
 	}
 	
 </style>

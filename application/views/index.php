@@ -362,7 +362,7 @@ $j++;
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                     <center>  <a class="button_medium_outline " href="news-detail.php">View all News</a></center> 
+                                     <center>  <a class="button_medium_outline " href="press_release">View all News</a></center> 
                                     </div>
                                 </div>
                             </div>

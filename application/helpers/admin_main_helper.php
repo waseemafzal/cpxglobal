@@ -244,7 +244,7 @@ function getServiceImage($id){
 			if($result->num_rows()>0){
 				foreach ($result->result() as $row){
 				$data.='<li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="GalleryYear/view/'.$row->year.'">'.$row->year.'</a>
+                                            <a href="GalleryYear/view/'.$row->year.'">Gallery-'.$row->year.'</a>
                                         </li>';
 				}
 				}

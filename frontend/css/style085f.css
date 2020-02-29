@@ -288,12 +288,14 @@ a#logo {
   z-index:999;
 }
 #sub-header{
-  padding:30px 0 60px 0;
+  padding:110px 0 110px 0;
   color:#fff;
   position:relative;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
   width:100%;
   background:#0cbdaa url(../frontend/images/bg_sub-header.png) repeat 0 0;
+      background-size: 100%;
+    background-position: 50%;
 }
 .sub-header_pattern_1{
   padding:30px 0 60px 0;
@@ -1916,8 +1918,7 @@ ul#follow_us_contacts  li a:hover i{
    margin:0;
     font-weight:400;
   -moz-appearance: window;
-    -webkit-appearance: none;
-    cursor: pointer;
+     cursor: pointer;
     color:#999;
    }
 .styled-select {
@@ -1942,7 +1943,7 @@ ul#follow_us_contacts  li a:hover i{
 .error_message { color:#F33; font-weight:600; margin-bottom:4px;}
 
 .input-group { margin-bottom:20px;}
-.form-control {height: 38px; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; }
+.form-control {height: 38px; box-shadow: none;  }
 .form-control.style-2 {height: 45px; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; border:none;  background-color:#fff; }
 
 
