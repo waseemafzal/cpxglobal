@@ -6,7 +6,7 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-        Order Management
+        Feedback Management
         
       </h1>
       <ol class="breadcrumb">
@@ -27,67 +27,55 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        
-        <th>Name</th>
+
+        <th>ID</th>
+        <th>Employee</th>
         <th>Email</th>
-        <th>Phone</th>
-        <th> Date</th>
-        <th> Amount</th>
-        <th> OrderNo</th>
-        <th>Status</th>
+        <th>Mobile</th>
+         <th>Time</th>
+        <th>Job Title</th>
+        <th>Company Name</th>
         <th>Actions</th>
     </tr>
     </thead>
     <tbody id="order_body">
     <?php
 	if(!empty($data->result())){
+		//"date":"2020-02-28","start":"03:03","end":"02:02","email":"a@yahoo.com","employee_name":"dasd","job_title":"asd","mobile":"31231231231","company_name":"dsadasdsadasdasdadas sadasdsadasd"
 	foreach ($data->result() as $row){
+		 $qparticpient_detail = json_decode($row->particpient_detail);
+		/* echo $row->particpient_detail;
+		stdClass Object
+(
+    [date] => 2020-02-28
+    [start] => 03:03
+    [end] => 02:02
+    [email] => a@yahoo.com
+    [employee_name] => dasd
+    [job_title] => asd
+    [mobile] => 31231231231
+    [company_name] => dsadasdsadasdasdadas sadasdsadasd
+)
+		
+		 echo "<pre>";
+		  print_r($qparticpient_detail);
+		 echo "</pre>";*/
+		
 		?>
-		<tr id="row_<?php echo$row->id;?>">
-        <td class="center"><?php echo $row->name ?></td>
-        <td class="center"><?php echo $row->email ?></td>
-        <td><?php echo $row->phone;?></td>  
-        <td class="center"><?php echo date('Y-m-d',strtotime($row->created_on)); ?></td>
-        <td class="center"><?php echo $row->amount.' $' ?></td>
-        <td class="center"><?php echo $row->orderNo ?></td>
-        <td class="center">
-        <?PHP 
-		$class='label-warning';
-		$text=$row->status;
-		if($row->status_id==3)
-		{
-        $class="label-success";
-        }else if($row->status_id==2){
-        $class="label-danger";
-        } 
-        ?> 
-        <span id="div_status_<?PHP echo $row->id;?>">
-        <a id="anchor_<?PHP echo $row->id;?>" href="javascript:void(0);">
-        <span class="label <?PHP echo $class;?>"><?PHP echo $text;?></span>
-        </a>
-        </span>   
-        </td> 
-        <td>
-         <?php
-        if($row->watched==0){
-		echo '<div id="thisUnread_'.$row->id.'" style="position:relative;margin: -25px 0 0  0;float:  right;text-transform: uppercase;"><span class="labael label-success" style="
-    position:  absolute;
-    right:  2%;
-    padding:  5px;
-    border-radius:  29px;
-    font-size: 10px;
-    top: 10px;
-    border: 1px solid #000;
-">Unread</span></div>';
-		}
-		?>   
-        <a  class="btn btn-info orderDetail btn-xs" onclick="getOrderDetail('<?PHP echo $row->id;?>')"><i class="fa fa-eye"></i>
-        View Detail</a>
-        <a  class="btn btn-success btn-xs" href="order/edit/<?PHP echo $row->id;?>"><i class="fa fa-pencil"></i>
-        Change Status</a>
-             
-        
-        </td>
+		<tr id="row_<?php echo $row->id;?>">
+         <td class="center"><?php echo $row->id;?></td>
+        <td class="center"><?php echo $qparticpient_detail->employee_name; ?></td>
+        <td class="center"><?php echo $qparticpient_detail->email; ?></td>
+        <td class="center"><?php echo $qparticpient_detail->mobile; ?></td>
+         <td class="center"><?php echo $qparticpient_detail->start.' - '.$qparticpient_detail->end; ?></td>
+        <td class="center"><?php echo $qparticpient_detail->job_title; ?></td>
+        <td class="center"><?php echo $qparticpient_detail->company_name; ?></td>
+            <td>
+                <a  class="btn btn-info orderDetail btn-xs" onclick="getFeedbackDetail('<?PHP echo $row->id;?>')">
+                    <i class="fa fa-eye"></i>
+                    View Detail
+                </a>
+           </td>
     </tr>
     
 		<?php }
@@ -143,7 +131,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Order Detail</h4>
+        <h4 class="modal-title">Package Detail <span id="lblstatus"></span></h4>
       </div>
      
       <div id="printable_container" >
@@ -188,26 +176,29 @@ function getInfo(id){
 		});
 }
 
-function getOrderDetail(id){
- $.ajax({
-        url: "<?php echo base_url().'order/getOrderDetail'; ?>",
-        type: 'POST',
-		 data: {id:id},
+  function getFeedbackDetail(id)
+  {
+	$('#ProductModal').modal('show');
+	$('#ProductDetaBody').html('<i class="fa fa-cog fa-spin" style="font-size:24px"></i>');
+	
+	  $.ajax({
+		url: "<?php echo base_url().'Feedbacks/getFeedbackDetail'; ?>",
+		type: 'POST',
+		data: {id:id},
 		dataType : "json",
-        success: function(response) {
+        success: function(response) 
+		{
 		   if(response.status == 1){
 			   //CardModal
-			   $('#ProductModal').modal('show');
+			 
+			   //$("#lblstatus").html($("#div_status_"+id).html());
 			   $('#ProductDetaBody').html(response.data);
 			   $("#unreadCounter").text(response.unreadCounter);
 			   $("#thisUnread_"+id).remove();
-			   
-			   
-			   
-			  }
-			  else{
-				 showAlert('No info !','Alert','red')
-				 }
+			}
+			else{
+				showAlert('No info !','Alert','red')
+			}
 			}
 		});
 }

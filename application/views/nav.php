@@ -184,9 +184,20 @@
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership-benefits">Membership Benefits</a>
                                         </li>
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="membership/form">Membership Form</a>
-                                        </li>
+                                        <?php 
+                                        if(!empty($this->session->userdata('userlogin')) and  !empty($this->session->userdata('user_id')))
+										{
+											if(is_exist('','','tbl_membershippackage',
+											array('user_id'=>$this->session->userdata('user_id'),'payment_status'=>1))==0)
+											{
+										?>	
+                                               <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                                    <a href="membership/form">Membership Form</a>
+                                                </li>
+                                       <?php 
+											}
+									   }
+									   ?> 
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership_List">Membership List</a>
                                         </li>

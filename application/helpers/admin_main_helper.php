@@ -746,13 +746,25 @@ WHERE U.id = ".$user_id."")->row();
 
 	  
 	   // is exist
-	  function is_exist($key,$value,$table)
+	  function is_exist($key,$value,$table,$aWhere='')
 	  {
 		  
 		    $adata = array();
 			$CI =& get_instance();
+			if(is_array($aWhere) and count($aWhere)>0)
+			{
+			  
+			  $result  = $CI->db->select('*')->from($table)->where($aWhere)->get();	 	
+				
+			}
+			else
+			{
+			  $result  = $CI->db->select('*')->from($table)->where($key,$value)->get();		
+				
+			}
 			
-			$result  = $CI->db->select('*')->from($table)->where($key,$value)->get();	
+			
+			
 			$data = 0;
 			if ($result->num_rows()>0)
 			{

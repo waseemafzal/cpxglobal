@@ -2,6 +2,8 @@
 
 class Contact extends CI_Controller {
     
+    public $tbl_feedback='tbl_feedback';
+   
     function __construct() {
         parent::__construct();
         
@@ -64,6 +66,98 @@ class Contact extends CI_Controller {
 		$this->load->view('registration', $data);
     }
     
+	  public   function saveFeedback()
+	  { 
+		pre($_POST);
+		
+		extract($_POST);
+		$result=0;
+	    $PrimaryID = base64_decode($_POST['id']);
+		unset($_POST['action'],$_POST['id']);
+		
+
+		
+				$aFeedBack = array(
+					//'user_id'=>$this->session->userdata('user_id'),
+					'particpient_detail'=>json_encode($particpient_detail),
+					'product_detail'=>json_encode($product_detail), 
+					'instruction_training'=>json_encode($instruction_training),
+					'instruction_department'=>json_encode($instruction_department),
+					'instruction_venue_procedure'=>json_encode($instruction_venue_procedure),
+					'like_and_suggestion'=>json_encode($like_and_suggestion),
+				);
+				/*********Email tempalate***************/
+				/*$aparticpient_detail = 	json_decode($particpient_detail);
+				$aproduct_detail = 	json_decode($product_detail);
+				$ainstruction_training = 	json_decode($instruction_training);
+				$ainstruction_department = 	json_decode($instruction_department);
+				$ainstruction_venue_procedure = 	json_decode($instruction_venue_procedure);
+				$alike_and_suggestion = 	json_decode($like_and_suggestion);*/
+				
+				/*$htmlContent .= '
+					<h2>Particpient Detail</h2>
+					<p><b>Name: </b>'.$aparticpient_detail->name.'</p>
+					<p><b>Start: </b>'.$aparticpient_detail->start.'</p>
+					<p><b>end: </b>'.$aparticpient_detail->end.'</p>
+					<p><b>Email: </b>'.$aparticpient_detail->email.'</p>
+					<p><b>Employee Name: </b>'.$aparticpient_detail->employee_name.'</p>
+					<p><b>Job Title: </b>'.$aparticpient_detail->job_title.'</p>
+					<p><b>Mobile: </b>'.$aparticpient_detail->mobile.'</p>
+					<p><b>Company Name: </b>'.$aparticpient_detail->company_name.'</p>
+				';
+				
+				$htmlContent .= '</hr>
+					<h2>Product Detail</h2>
+					<p><b>Product Service: </b>'.$aparticpient_detail->product_service.'</p>
+					<p><b>Trainer Name: </b>'.$aparticpient_detail->trainer_name.'</p>
+					<p><b>Subject: </b>'.$aparticpient_detail->subject.'</p>
+					
+				';
+				
+				$htmlContent .= '</hr>
+					<h2>Instruction Training</h2>
+					<p><b>The training met my expectations: </b>'.$aparticpient_detail->product_service.'</p>
+					<p><b>I will be able to apply the knowledge learned: </b>'.$aparticpient_detail->trainer_name.'</p>
+					<p><b>The training objectives for each topic were identified and followed: </b>'.$aparticpient_detail->subject.'</p>
+					<p><b>The curriculum content was organized and easy to follow: </b>'.$aparticpient_detail->subject.'</p>
+					<p><b>The materials distributed were pertinent and useful. : </b>'.$aparticpient_detail->subject.'</p>*/
+					
+				/*********Email tempalate***************/
+				
+				
+				
+				  	
+				if( $this->crud->saveRecord( '',$aFeedBack,$this->tbl_feedback ))
+				{
+				 $result=1;	
+				}
+				
+				
+			
+			
+			switch($result){
+			case 1:
+			$arr = array('status' => 1,'message' => "Your feedback have been received us successfully.");
+			echo json_encode($arr);
+			break;
+			case 2:
+			$arr = array('status' => 2,'message' => "Your services has been  Updated Succefully !");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	 }
+	 
+	
+	
+	
     private function sendEmail($mailData){
         
         
