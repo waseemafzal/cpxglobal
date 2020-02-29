@@ -68,7 +68,7 @@ class Contact extends CI_Controller {
     
 	  public   function saveFeedback()
 	  { 
-		pre($_POST);
+		//pre($_POST);
 		
 		extract($_POST);
 		$result=0;
