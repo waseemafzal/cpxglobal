@@ -2,6 +2,18 @@
 
 include_once"header.php";
 ?>
+<style>
+#membsrshipcreate h4 {
+    color: #000!important;
+    text-align: center;
+    background: #f30100;
+    padding: 7px 6px;
+    font-size: 20px;
+    clear: both;
+    display: inline-block;
+    width: 100%;
+}
+</style>
         <section id="sub-header">
         <div class="container">
             <div class="row">
@@ -13,15 +25,18 @@ include_once"header.php";
         </div><!-- End container -->
       </section>
       <div class="clearfix">&nbsp;</div>
+            
      <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
+             <h4>Online Membership form</h4>
+     
               <form id="membsrshipcreate" name="form_add_update" role="form" enctype="multipart/form-data">
                 <div class="page-alert" style="display: block;"> </div>
                	<div id="registrationDetail" style="display:block;">
                 	<section id="personalDetail" class="formSection">
-        <h2>Personal Detail</h2>
+        <h4>Personal Detail</h4>
         <div class="col-md-4 col-xs-12">
-        <label>Name</label>
+        <label>Name <span class="text-danger">*</span></label>
         <input class="form-control"  required="required" name="name" /> 	
         </div>
         <div class="col-md-4 col-xs-12">
@@ -29,15 +44,15 @@ include_once"header.php";
         <input class="form-control" name="middle_name" />
         </div>
         <div class="col-md-4 col-xs-12">
-        <label>Last Name</label>
+        <label>Last Name <span class="text-danger">*</span></label>
         <input class="form-control" required name="last_name" />
         </div>
         <div class="col-md-4 col-xs-12">
-        <label>Email</label>
+        <label>Email <span class="text-danger">*</span></label>
         <input class="form-control" type="email" required name="email" />
         </div>
         <div class="col-md-4 col-xs-12">
-        <label>Mobile</label>
+        <label>Mobile <span class="text-danger">*</span></label>
         <input class="form-control" required name="mobile" />
         </div>
         <div class="col-md-4 col-xs-12">
@@ -51,7 +66,7 @@ include_once"header.php";
         </section>
                     <section id="companySection" class="formSection">
                              
-                        <h2>Company Detail</h2>
+                        <h4>Company Detail</h4>
                         
                         <div class="col-md-4 col-xs-12">
                         <label>Company Name</label>
@@ -80,7 +95,7 @@ include_once"header.php";
                         </div>
                  </section>
                     <section id="PROFESSIONAL" class="formSection">
-                        <h2>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h2>
+                        <h4>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h4>
                             
                         <div class="col-md-12 col-xs-12">
                         <p>University 	degree 	diploma 	other 	job detail </p>
@@ -113,7 +128,7 @@ include_once"header.php";
                         </div>
         </section>
                     <section id="personalDetail" class="formSection">
-                        <h2>REFERRED BY:</h2>
+                        <h4>REFERRED BY:</h4>
                         <div class="col-md-4 col-xs-12">
                         <label>Name</label>
                         <input class="form-control"  required="required" name="refferby_detail[reffredName]" />
@@ -161,9 +176,9 @@ include_once"header.php";
                         </div>
                 </section>
                     <section id="MEMBERSHIP_DUESDetail" class="formSection">
-                        <h2>MEMBERSHIP DUES:</h2>
-                        <table class="table tale-striped" style="color: #fff;">
-                        <tr bgcolor="#f30100">
+                        <h4>MEMBERSHIP DUES:</h4>
+                        <table class="table tale-striped" style="color: #fff; border:1px solid #999;">
+                        <tr bgcolor="#CCCCCC">
                             <td><input name="membership_type" class="big-checkbox" value="4" type="radio"></td>
                             <td>Annual Dues - Corporate Membership:</td>
                             <td>$1,000.00</td>
@@ -173,7 +188,7 @@ include_once"header.php";
                             <td>Annual Dues – Associate Membership: </td>
                             <td>$ 5,00.00</td>
                         </tr>
-                        <tr bgcolor="#f30100">
+                        <tr bgcolor="#CCCCCC">
                             <td><input name="membership_type" class="big-checkbox" value="2" type="radio"></td>
                             <td>Annual Dues - Individual Membership:</td>
                             <td>$250.00</td>
@@ -186,12 +201,12 @@ include_once"header.php";
                         </table>
                         <input type="hidden" id="mmmbershipID" name="mmmbershipID" value="" />
                          <input type="hidden" id="packageprice" name="packageprice" value="" />
-                 <button class="btn btn-info pull-right pubservice__42das8672878" type="submit">Registered</button>
+                 <button class="btnCustom pull-right pubservice__42das8672878" type="submit">Registered</button>
                    </section>  
                 </div>    
             </form>
             <section id="PaymentDetail" class="formSection" style="display:none;">
-                <h2>PAYMENT METHOD:</h2>
+                <h4>PAYMENT METHOD:</h4>
                     <div class="col-md-6">
                         <img src="frontend/images/paypal.jpg" class="img-responsive">
                          <div id="paypal-button"></div>

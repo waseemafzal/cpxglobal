@@ -11,7 +11,21 @@ include_once"header.php";
     display: inline-block;
     width: 100%;
 	}
+input[type="radio"], input[type="checkbox"] {
 	
+   width: 22px;
+    height: 23px;
+}	
+.counters{
+	width: 30px;
+	text-align:center;
+   
+	}
+	.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid lightgray;
+}
 </style>
         <section id="sub-header" style="background:url(frontend/feedback.jpg)">
         <div class="container">
@@ -26,6 +40,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
+            <h4>Online feedback form</h4>
             <form id="form_add_update" name="form_add_update" method="post" action="">
             
 <section id="personalDetail" class="Section">
@@ -41,15 +56,15 @@ include_once"header.php";
             <input width="30"  type="time" required name="particpient_detail[end]" />
         </div>
             <div class="col-md-4 col-xs-12">
-            	<label>Email</label>
+            	<label>Email <span class="text-danger">*</span></label>
             	<input class="form-control" type="email" required name="particpient_detail[email]" />
             </div>
         <div class="col-md-4 col-xs-12">
-            <label>Employee’s Name:*</label>
+            <label>Employee’s Name:<span class="text-danger">*</span></label>
             <input class="form-control" required name="particpient_detail[employee_name]" />
         </div>
         <div class="col-md-4 col-xs-12">
-            <label>Job Title:*</label>
+            <label>Job Title:<span class="text-danger">*</span></label>
             <input class="form-control" required name="particpient_detail[job_title]" />
         </div>
         <div class="col-md-4 col-xs-12">
@@ -64,6 +79,7 @@ include_once"header.php";
         <div class="col-md-4 col-xs-12">
         <label>Product Services</label>
         <select class="form-control" name="product_detail[product_service]">
+            <option >-------</option>
             <option value="Training">Training</option>
             <option value="Consultancy">Consultancy</option>
             <option value="Certification">Certification</option>
@@ -81,15 +97,16 @@ include_once"header.php";
         </div>
  <h3>Instructions</h3>
 
-<p>Please indicate your impressson of the items listed below, if it was highly favourable, choose 5. If not so favorable, give your opinion-choose from 4 to 1</p>
+<p style="font-style:italic">Please indicate your impressson of the items listed below, if it was highly favourable, choose 5. If not so favorable, give your opinion-choose from 4 to 1</p>
  <!--<h3>Training Materials </h3>-->
 <table class="table">
 <tr>
-    <th>Training Materials</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
+    <th>TRAINING MATERIALS</th>
+    <th class="counters">1</th>
+    <th class="counters">2</th>
+    <th class="counters">3</th>
+    <th class="counters">4</th>
+    <th class="counters">5</th>
 </tr>
 <tr>
     <td>The training met my expectations.</td>
@@ -97,6 +114,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_training[expectations]" value="2"></td>
     <td><input type="radio" name="instruction_training[expectations]" value="3"></td>
     <td><input type="radio" name="instruction_training[expectations]" value="4"></td>
+    <td><input type="radio" name="instruction_training[expectations]" value="5"></td>
 </tr>
 <tr>
     <td>I will be able to apply the knowledge learned.</td>
@@ -104,6 +122,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_training[learned]" value="2"></td>
     <td><input type="radio" name="instruction_training[learned]" value="3"></td>
     <td><input type="radio" name="instruction_training[learned]"  value="4"></td>
+    <td><input type="radio" name="instruction_training[learned]"  value="5"></td>
 </tr>
 <tr>
     <td>The training objectives for each topic were identified and followed.</td>
@@ -111,6 +130,7 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_training[identified]" value="2"></td>
     <td><input type="radio"  name="instruction_training[identified]" value="3"></td>
     <td><input type="radio"  name="instruction_training[identified]" value="4"></td>
+    <td><input type="radio"  name="instruction_training[identified]" value="5"></td>
 </tr>
 <tr>
     <td>The curriculum content was organized and easy to follow.</td>
@@ -118,6 +138,7 @@ include_once"header.php";
     <td><input type="radio"   name="instruction_training[content]" value="2"></td>
     <td><input type="radio"   name="instruction_training[content]" value="3"></td>
     <td><input type="radio"  name="instruction_training[content]"  value="4"></td>
+    <td><input type="radio"  name="instruction_training[content]"  value="5"></td>
 </tr>
 <tr>
     <td>The materials distributed were pertinent and useful.
@@ -126,15 +147,17 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_training[useful]" value="2"></td>
     <td><input type="radio"   name="instruction_training[useful]" value="3"></td>
     <td><input type="radio"   name="instruction_training[useful]" value="4"></td>
+    <td><input type="radio"   name="instruction_training[useful]" value="5"></td>
 </tr>
 </table>
 <table class="table">
 <tr>
     <th>DEPARTMENT | INSTRUCTOR</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
+    <th class="counters">1</th>
+    <th class="counters">2</th>
+    <th class="counters">3</th>
+    <th class="counters">4</th>
+    <th class="counters">5</th>
 </tr>
 <tr>
     <td>The presenters were knowledgeable about the topics.
@@ -143,6 +166,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_department[knowledgeable]" value="2"></td>
     <td><input type="radio" name="instruction_department[knowledgeable]" value="3"></td>
     <td><input type="radio" name="instruction_department[knowledgeable]"  value="4"></td>
+    <td><input type="radio" name="instruction_department[knowledgeable]"  value="5"></td>
 </tr>
 <tr>
     <td>The presentations were interesting and practical.</td>
@@ -150,6 +174,7 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_department[presentations]"  value="2"></td>
     <td><input type="radio" name="instruction_department[presentations]"  value="3"></td>
     <td><input type="radio"  name="instruction_department[presentations]" value="4"></td>
+    <td><input type="radio"  name="instruction_department[presentations]" value="5"></td>
 </tr>
 <tr>
     <td>The presenters met the training objectives & address attendees concerns.
@@ -158,6 +183,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_department[concerns]"  value="2"></td>
     <td><input type="radio" name="instruction_department[concerns]"  value="3"></td>
     <td><input type="radio" name="instruction_department[concerns]"  value="4"></td>
+    <td><input type="radio" name="instruction_department[concerns]"  value="5"></td>
 </tr>
 <tr>
     <td> Class participation and interaction were encouraged.</td>
@@ -165,6 +191,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_department[encouraged]" value="2"></td>
     <td><input type="radio" name="instruction_department[encouraged]" value="3"></td>
     <td><input type="radio" name="instruction_department[encouraged]" value="4"></td>
+    <td><input type="radio" name="instruction_department[encouraged]" value="5"></td>
 </tr>
 <tr>
     <td>Adequate time was provided for attendee questions.
@@ -173,15 +200,17 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_department[adequatetime]" value="2"></td>
     <td><input type="radio"  name="instruction_department[adequatetime]" value="3"></td>
     <td><input type="radio"  name="instruction_department[adequatetime]" value="4"></td>
+    <td><input type="radio"  name="instruction_department[adequatetime]" value="5"></td>
 </tr>
 </table>
 <table class="table">
 <tr>
     <th>VENUE, PROCEDURE & INFORMATION</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
+    <th class="counters">1</th>
+    <th class="counters">2</th>
+    <th class="counters">3</th>
+    <th class="counters">4</th>
+    <th class="counters">5</th>
 </tr>
 <tr>
     <td>Did you receive timely, advance training information?
@@ -190,6 +219,7 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_venue_procedure[timelyinformation]" value="2"></td>
     <td><input type="radio"  name="instruction_venue_procedure[timelyinformation]" value="3"></td>
     <td><input type="radio"  name="instruction_venue_procedure[timelyinformation]" value="4"></td>
+    <td><input type="radio"  name="instruction_venue_procedure[timelyinformation]" value="5"></td>
 </tr>
 <tr>
     <td>The time allotted for the training was sufficient.</td>
@@ -197,6 +227,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_venue_procedure[training]"  value="2"></td>
     <td><input type="radio" name="instruction_venue_procedure[training]"   value="3"></td>
     <td><input type="radio" name="instruction_venue_procedure[training]"   value="4"></td>
+    <td><input type="radio" name="instruction_venue_procedure[training]"   value="5"></td>
 </tr>
 <tr>
     <td>Was adequate time allowed for breaks and meals?
@@ -205,6 +236,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_venue_procedure[timeforbreaks]"  value="2"></td>
     <td><input type="radio" name="instruction_venue_procedure[timeforbreaks]"  value="3"></td>
     <td><input type="radio" name="instruction_venue_procedure[timeforbreaks]"   value="4"></td>
+    <td><input type="radio" name="instruction_venue_procedure[timeforbreaks]"   value="5"></td>
 </tr>
 <tr>
     <td> The meeting room and facilities were adequate & comfortable?</td>
@@ -212,6 +244,7 @@ include_once"header.php";
     <td><input type="radio" name="instruction_venue_procedure[roomfacilities]" value="2"></td>
     <td><input type="radio" name="instruction_venue_procedure[roomfacilities]" value="3"></td>
     <td><input type="radio" name="instruction_venue_procedure[roomfacilities]"  value="4"></td>
+    <td><input type="radio" name="instruction_venue_procedure[roomfacilities]"  value="5"></td>
 </tr>
 <tr>
     <td>This training is worthwhile and should be conducted on a regular basis.
@@ -220,18 +253,19 @@ include_once"header.php";
     <td><input type="radio"  name="instruction_venue_procedure[regulartraining]" value="2"></td>
     <td><input type="radio"  name="instruction_venue_procedure[regulartraining]" value="3"></td>
     <td><input type="radio"  name="instruction_venue_procedure[regulartraining]"  value="4"></td>
+    <td><input type="radio"  name="instruction_venue_procedure[regulartraining]"  value="5"></td>
 </tr>
 </table>
 <div class="col-md-6 col-xs-12">
-    <label>What did you like most about this training?</label>
+    <label>What did you like most about this training? <span class="text-danger">*</span></label>
     <input class="form-control"  required="required" name="like_and_suggestion[mostlike]" />
 </div>
 <div class="col-md-6 col-xs-12">
-    <label>What aspects of the training could be improved?</label>
+    <label>What aspects of the training could be improved? <span class="text-danger">*</span></label>
     <input class="form-control"  required="required" name="like_and_suggestion[improvementneeded]"/>
 </div>
 <div class="col-md-12 col-xs-12">
-    <label>What additional technical training would you like to have in the future?
+    <label>What additional technical training would you like to have in the future? <span class="text-danger">*</span>
 </label>
     <input class="form-control"  required="required"  name="like_and_suggestion[futuretraining]" />
      </br>
@@ -240,7 +274,7 @@ include_once"header.php";
 </div>
 <div class="col-md-12 col-xs-12">
 
-<center><input type="submit" class="btn btn-info" value="Submit"></center>
+<center><input type="submit" class="btnCustom" value="Submit"></center>
 </div>
 </section>
 

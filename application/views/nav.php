@@ -36,7 +36,7 @@
                                             <a href="team"> Our Team</a>
                                         </li>
                                       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-537" id="menu-item-537">
-                                            <a href="global_presence"> Our Global Presence</a>
+                                            <a href="contact"> Our Global Presence</a>
                                         </li>
                                       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-537" id="menu-item-537">
                                             <a href="press_release"> Press Release</a>
@@ -54,69 +54,69 @@
     <ul class="sub-menu">
     
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="cylinder-quality-management"><?=ucfirst(str_replace('-', ' ','cylinder-quality-management'))?></a>
+    <a href="cylinder-quality-management"><?=ucwords(str_replace('-', ' ','cylinder-quality-management'))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="doctor-blade-print-management
-"><?=ucfirst(str_replace('-', ' ','doctor-blade-print-management
+"><?=ucwords(str_replace('-', ' ','doctor-blade-print-management
 '))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="eco-printing-by-pollution-prevention
-"><?=ucfirst(str_replace('-', ' ','eco-printing-by-pollution-prevention
+"><?=ucwords(str_replace('-', ' ','eco-printing-by-pollution-prevention
 '))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="effective-colors-management
-"><?=ucfirst(str_replace('-', ' ','effective-colors-management
+"><?=ucwords(str_replace('-', ' ','effective-colors-management
 '))?></a>
     </li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="excellence-in-lean-print-manufacturing
-"><?=ucfirst(str_replace('-', ' ','excellence-in-lean-print-manufacturing
+"><?=ucwords(str_replace('-', ' ','excellence-in-lean-print-manufacturing
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="excellence-in-flexographic-printing
-"><?=ucfirst(str_replace('-', ' ','excellence-in-flexographic-printing
+"><?=ucwords(str_replace('-', ' ','excellence-in-flexographic-printing
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="excellence-in-gravure-printing
-"><?=ucfirst(str_replace('-', ' ','excellence-in-gravure-printing
+"><?=ucwords(str_replace('-', ' ','excellence-in-gravure-printing
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="excellence-in-offset-printing
-"><?=ucfirst(str_replace('-', ' ','excellence-in-offset-printing
+"><?=ucwords(str_replace('-', ' ','excellence-in-offset-printing
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="flexoplate-quality-management
-"><?=ucfirst(str_replace('-', ' ','flexoplate-quality-management
+"><?=ucwords(str_replace('-', ' ','flexoplate-quality-management
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="food-safety-packaging-materials
-"><?=ucfirst(str_replace('-', ' ','food-safety-packaging-materials
+"><?=ucwords(str_replace('-', ' ','food-safety-packaging-materials
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="graphic-design-for-non-designer
-"><?=ucfirst(str_replace('-', ' ','graphic-design-for-non-designer
+"><?=ucwords(str_replace('-', ' ','graphic-design-for-non-designer
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="hazardous-chemicals-management"><?=ucfirst(str_replace('-', ' ','hazardous-chemicals-management'))?></a></li>
+    <a href="hazardous-chemicals-management"><?=ucwords(str_replace('-', ' ','hazardous-chemicals-management'))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="paper-quality-management"><?=ucfirst(str_replace('-', ' ','paper-quality-management'))?></a></li>
+    <a href="paper-quality-management"><?=ucwords(str_replace('-', ' ','paper-quality-management'))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="prepress-and-packaging-design
-"><?=ucfirst(str_replace('-', ' ','prepress-and-packaging-design
+"><?=ucwords(str_replace('-', ' ','prepress-and-packaging-design
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="print-automation-and-digitalization"><?=ucfirst(str_replace('-', ' ','print-automation-and-digitalization'))?></a></li>
+    <a href="print-automation-and-digitalization"><?=ucwords(str_replace('-', ' ','print-automation-and-digitalization'))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="print-quality-management"><?=ucfirst(str_replace('-', ' ','print-quality-management'))?></a></li>
+    <a href="print-quality-management"><?=ucwords(str_replace('-', ' ','print-quality-management'))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="printing-process-equipment-validation
-"><?=ucfirst(str_replace('-', ' ','printing-process-equipment-validation
+"><?=ucwords(str_replace('-', ' ','printing-process-equipment-validation
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="uht-processing-and-aseptic-packaging"><?=ucfirst(str_replace('-', ' ','uht-processing-and-aseptic-packaging'))?></a></li>
+    <a href="uht-processing-and-aseptic-packaging"><?=ucwords(str_replace('-', ' ','uht-processing-and-aseptic-packaging'))?></a></li>
     
     
     </ul>
@@ -126,21 +126,21 @@
                                              <ul class="sub-menu">
     
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="certifications-overview"><?=ucfirst(str_replace('-', ' ','certifications-overview'))?></a>
+    <a href="certifications-overview"><?=ucwords(str_replace('-', ' ','certifications-overview'))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="certification-process"><?=ucfirst(str_replace('-', ' ','certification-process'))?></a>
+    <a href="certification-process"><?=ucwords(str_replace('-', ' ','certification-process'))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="certifications-benefits"><?=ucfirst(str_replace('-', ' ','certifications-benefits'))?></a>
+    <a href="certifications-benefits"><?=ucwords(str_replace('-', ' ','certifications-benefits'))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="eligibility-requirments"><?=ucfirst(str_replace('-', ' ','eligibility-requirments'))?></a>
+    <a href="eligibility-requirments"><?=ucwords(str_replace('-', ' ','eligibility-requirments'))?></a>
     </li> <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="application-payment"><?=ucfirst(str_replace('-', ' ','application-payment'))?></a>
+    <a href="application-payment"><?=ucwords(str_replace('-', ' ','application-payment'))?></a>
     </li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="complaint-process"><?=ucfirst(str_replace('-', ' ','complaint-process'))?></a>
+    <a href="complaint-process"><?=ucwords(str_replace('-', ' ','complaint-process'))?></a>
     </li>
     </ul>
                                         </li>
@@ -197,8 +197,12 @@
                                                 </li>
                                        <?php 
 											}
-									   }
+									   }else{
 									   ?> 
+                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                                    <a href="membership/form">Membership Form</a>
+                                                </li>
+                                       <?php }?>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership_List">Membership List</a>
                                         </li>
@@ -223,19 +227,19 @@
                                     <a href="awards">Awards</a>
                                     <ul class="sub-menu">
 <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-<a href="best-machine-operator-award"><?=ucfirst(str_replace('-', ' ','best-machine-operator-award'))?></a>
+<a href="best-machine-operator-award"><?=ucwords(str_replace('-', ' ','best-operator-award'))?></a>
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-<a href="award-eligibility"><?=ucfirst(str_replace('-', ' ','award-eligibility'))?></a>
+<a href="award-eligibility"><?=ucwords(str_replace('-', ' ','award-eligibility'))?></a>
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-<a href="selection-criteria"><?=ucfirst(str_replace('-', ' ','selection-criteria'))?></a>
+<a href="selection-criteria"><?=ucwords(str_replace('-', ' ','selection-criteria'))?></a>
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-<a href="benefits-of-awards"><?=ucfirst(str_replace('-', ' ','benefits-of-awards'))?></a>
+<a href="benefits-of-awards"><?=ucwords(str_replace('-', ' ','benefits-of-awards'))?></a>
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-<a href="application-process"><?=ucfirst(str_replace('-', ' ','application-process'))?></a>
+<a href="application-process"><?=ucwords(str_replace('-', ' ','application-process'))?></a>
 </li>
                               <!--          <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="awards">
@@ -277,10 +281,10 @@
                                     <ul class="sub-menu">
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="events/view/2019">2019</a>
+                                            <a href="events/view/2019">Calender-2019</a>
                                         </li>
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                            <a href="events/view/2020">2020</a>
+                                            <a href="events/view/2020">Calender-2020</a>
                                         </li>
                                       
                                     </ul>

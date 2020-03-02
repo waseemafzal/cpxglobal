@@ -29,38 +29,37 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
+            <h4>Online registration form</h4>
             <form id="form_add_update" name="form_add_update" method="post" action="">
 <section id="personalDetail" class="Section">
-<h3>Personal Detail
+<h3>Personal Detail <span>Name to appear on the certificate, please provide correct and clearly</span>
 </h3>
-<div class="col-md-12"><p>Name to appear on the certificate, please provide correct and clearly
-</p></div>
 <div class="col-md-12">
 <div class="table-responsive">
 <table class="table" style="width:100%">
 <thead>
 <tr>
- <th>#</th>
- <th>Name</th>
- <th>Email</th>
- <th>Job Title</th>
- <th>Phone</th>
- <th>ID No</th>
- <th>Nationality </th>
- <th><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a>
-</th>
+ <td>#</td>
+ <td>Name</td>
+ <td>Email</td>
+ <td>Job Title</td>
+ <td>Phone</td>
+ <td>ID No</td>
+ <td>Nationality </td>
+ <td><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a>
+</td>
 </tr>
 
 </thead>
 <tbody class="field_wrapper">
 <tr>
-<th>1</th>
- <td><input   class="form-control"required name="Name[]" /></td>
- <td><input   class="form-control"type="email" required name="email[]" /></td>
- <td><input   class="form-control"required name="company[]" /></td>
- <td><input class="form-control" type="text"    required="required" name="phone" /></td>
- <td><input   class="form-control"  required name="idno[]" /></td>
- <td><input   class="form-control"required name="nationality[]" /></td>
+<td>1</td>
+ <td><input   class="form-control"required name="Name[]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"type="email" required name="email[]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"required name="company[]" /><span class="text-danger">*</span></td>
+ <td><input class="form-control" type="text"    required="required" name="phone" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"  required name="idno[]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"required name="nationality[]" /><span class="text-danger">*</span></td>
  <td>&nbsp;</td>
 </tr>
 <tr>
@@ -72,11 +71,11 @@ include_once"header.php";
 </div>
 <h3>Company detail</h3>
 <div class="col-md-4 col-xs-12">
-<label>Company</label>
+<label>Company <span class="text-danger">*</span></label>
 <input type="text" class="form-control"  required="required" name="Company" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Phone</label>
+<label>Phone <span class="text-danger">*</span></label>
 <input type="text" class="form-control"  required="required" name="Subject" />
 </div>
 <div class="col-md-4 col-xs-12">
@@ -105,15 +104,15 @@ include_once"header.php";
 <input type="text" class="form-control"  required="required" name="depPosition" />
 </div>
 <div class="clearfix">&nbsp;</div>
-<table style="text-align:center" align="center" class="table  table-border">
+<table style="text-align:center;border: 1px solid lightgray;" align="center" class="table  table-border">
 <thead>
 	<tr >
-    <th  bgcolor="#CCCCCC" colspan="2" style="text-align:center" >COURSE FEES: SAR 4,000</th>
+    <th  bgcolor="#CCCCCC" colspan="2" style="text-align:center" >COURSE FEES: $4,000</td>
     </tr>
     <tr>
     <th style="text-align:center"  colspan="2" align="center">
 Group Discount
-</th>
+</td>
     </tr>
 </thead>
 <tbody>
@@ -126,7 +125,7 @@ Discount
 </td>
 </tr>
 <tr>
-<td>2-4 Delegates
+<td>5-10 Delegates
 </td>
 <td>
 25%
@@ -136,11 +135,11 @@ Discount
 </tbody>
 <tfoot>
 <tr>
-<td colspan="2">All discounts to group discount are given on original course fee excluding VAT.</td>
+<td colspan="2" style="font-style:italic">All discounts to group discount are given on original course fee excluding VAT.</td>
 </tr>
 </tfoot>
 </table>
-<div class="col-md-12 Section" style="border:1px solid;margin: 0 0 10px 0;padding: 10px 10px;">
+<div class="col-md-12 Section" style="border:1px solid lightgray;margin: 0 0 10px 0;padding: 10px 10px;">
 
 <h3>Payment Terms:
 </h3>
@@ -151,9 +150,9 @@ Discount
 	<li>No cancellation fees shall be liable if the cancellation is done 15 days earlier of the training session.</li>
 	<li>50% cancellation fees shall be liable if the cancellation is done 07 days earlier of the training session.</li>
 	<li>100% cancellation fees shall be liable if the cancellation is filed 03 days earlier of the training session.</li>
-	<li>If the training session is cancelled by ------- due to some unforeseen circumstance, the paid amount will be 100% returned to clients back within 48 working hours or customer can use this fees for next coming any training session.</li>
-	<li>Selection of trainer, course contents and venue shall be at the discretion of &hellip;&hellip;&hellip;&hellip;&hellip;.. Or details mentioned in the marketing materials.</li>
-	<li>Complaints related to trainer, contents, venue or services shall be accepted in written form and handle by &hellip;.complaints management team.</li>
+	<li>If the training session is cancelled by CPPEx Global due to some unforeseen circumstance, the paid amount will be 100% returned to clients back within 48 working hours or customer can use this fees for next coming any training session.</li>
+	<li>Selection of trainer, course contents and venue shall be at the discretion of CPPEx Global Or details mentioned in the marketing materials.</li>
+	<li>Complaints related to trainer, contents, venue or services shall be accepted in written form and handle by CPPEx Global complaints management team.</li>
 </ul>
 
 <div class="col-xs-12"><input type="checkbox"> I have read, understand and agreed to the above</div>
@@ -168,7 +167,7 @@ Discount
             </section>
 
 <div class="col-md-12 col-xs-12">
-<center><input type="submit" class="btn btn-info" value="Submit"></center>
+<center><input type="submit" class="btnCustom" value="Submit"></center>
 </div>
 </section>
 
@@ -261,7 +260,7 @@ $(document).ready(function(){
     //Once add button is clicked
     $(addButton).click(function(){
         //Check maximum number of input fields
-		var fieldHTML = '<tr id="row_'+x+'"><th>'+x+'</th><td><input   class="form-control"required name="Name[]" /></td><td><input class="form-control"type="email" required name="email[]" /></td><td><input   class="form-control"required name="company[]" /></td><td><input type="text" class="form-control"   required="required" name="phone" /></td><td><input   class="form-control"  required name="idno[]" /></td><td><input   class="form-control"required name="nationality[]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
+		var fieldHTML = '<tr id="row_'+x+'"><td>'+x+'</td><td><input   class="form-control"required name="Name[]" /></td><td><input class="form-control"type="email" required name="email[]" /></td><td><input   class="form-control"required name="company[]" /></td><td><input type="text" class="form-control"   required="required" name="phone" /></td><td><input   class="form-control"  required name="idno[]" /></td><td><input   class="form-control"required name="nationality[]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
         if(x < maxField){ 
             x++; //Increment field counter
             $(wrapper).append(fieldHTML); //Add field html

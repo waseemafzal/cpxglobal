@@ -46,6 +46,10 @@
 	background-size: 100%!important;
 	background-position: 50% 50%!important;
 }
+#main-features label {
+    font-weight: normal;
+	margin-left:2px;
+}
 #sub-header h1{
    background: #f301008c;
     display: inline-block;
@@ -82,7 +86,7 @@ select.form-control{
 	#howYou input{width: 20px; height: 20px;}
 	.big-checkbox {width: 20px; height: 20px;}
 	.formSection{
-		border-top: 2px solid #5472d2;
+		/*border-top: 2px solid #5472d2;*/
     margin-bottom: 10px;
     display: inline-block;
     padding: 10px 0 0 0;
@@ -116,6 +120,16 @@ select.form-control{
 		}
 	.table .danger{
 		}
+		
+		.btnCustom:hover{
+	color: #fff;	
+	}
+.btnCustom{ 
+background-color:#f30100;
+   border: 1px solid #f30100;
+    padding: 5px 25px;
+	font-weight:bold;
+    color: #000;}
     </style>
     <link href='frontend/css/common-skeleton.min8f82.css?ver=4.10' id='tribe-common-skeleton-style-css' media='all' rel='stylesheet' type='text/css'>
     <link href='frontend/css/tooltip.min8f82.css?ver=4.10' id='tribe-tooltip-css' media='all' rel='stylesheet' type='text/css'>
@@ -231,9 +245,10 @@ select.form-control{
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">
-                        <a href="eblogs">Blogs</a>
-                                      <a href="career"><i class="fa fa-briefcase"></i> Career</a>
-                           
+                        <ul class="top-nav" style="margin:0">
+                     <li>   <a href="eblogs">Blogs</a> </li>
+                               <li>       <a href="career"><i class="fa fa-briefcase"></i> Career</a>
+                           </li>
                                     
 
                         <?php 
@@ -241,24 +256,24 @@ select.form-control{
 						if(!empty($this->session->userdata('userlogin')) and  !empty($this->session->userdata('user_id')))
 						{
 						?>
-							<a href="<?php echo base_url();?>auth/userlogout" title="auth/userlogout"><i class="fa fa-user"></i> Logout</a>
+							<li><a href="<?php echo base_url();?>auth/userlogout" title="auth/userlogout"><i class="fa fa-user"></i> Logout</a></li>
 						<?php 
 						
 						}
 						else
 						{
 						?>
-							<a href="<?php echo base_url();?>user/login" title="Login"><i class="fa fa-user"></i> Login / Register</a>	
+						<li>	<a href="<?php echo base_url();?>user/login" title="Login"><i class="fa fa-user"></i> Login / Register</a>	</li>
 						<?php 	
 						}
 						
 						?>
-                           
+                           </ul>
                         </div>
                         <ul class="top-nav">
-                            <li><i class="fa fa-clock-o"></i> Mon - Fri / 9.00AM - 06.00PM</li>
+                            <li><i class="fa fa-clock-o"></i>Mon - Fri / 9:00AM – 05:00PM</li>
                             <li class="hidden-info"><i class="fa fa-map-marker"></i> 807 E Landis Ave.Vineland,USA</li>
-                            <li><i class="fa fa-phone"></i> Whatsapp: +0016092712476</li>
+                            <li><i class="fa fa-phone"></i> Whatsapp: ( +001 609 271 2476 ) </li>
                         </ul>
                     </div>
                 </div>

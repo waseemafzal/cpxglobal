@@ -30,10 +30,13 @@ border-radius:0px!important;
 
 .register:hover{
 	color: #fff;
-	background-color:#f30100	
+		
 	}
-.register{    border: 1px solid #f30100;
+.register{ 
+background-color:#f30100;
+   border: 1px solid #f30100;
     padding: 5px 25px;
+	font-weight:bold;
     color: #000;}
 .btn {
     height: 44px;
@@ -46,6 +49,9 @@ border-radius:0px!important;
 } textarea {
     height: auto;
 }
+form label{
+	margin-left:2px;
+	}
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">

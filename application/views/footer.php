@@ -113,7 +113,7 @@
                                 </ul>
                                 <ul>
                                     <li><strong class="phone">+(856) 839-2373</strong><br>
-                                    <small>Mon - Fri / 9.00AM - 6.00PM</small></li>
+                                    <small>Mon - Fri / 9:00AM – 05:00PM</small></li>
                                     <li>Questions? <a href="mailto:info@cppexglobal.org">info@cppexglobal.org</a>
                                     </li>
                                 </ul>

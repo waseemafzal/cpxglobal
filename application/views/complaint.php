@@ -15,34 +15,35 @@ include_once"header.php";
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
             <form id="form1" name="form1" method="post" action="">
-<section id="personalDetail" class="formSection">
+<section id="personalDetail" >
 <div class="alert hidden">Thank you very much for completing this form. We will be in touch with you shortly.</div>
+<h4>Online Complaint Form</h4>
 <p>We are sorry that you are unhappy with our products or services. Letting us know means we can record your complaint and work with you to understand what’s happened and how we can put things right. You can complete our Online Complaint form and we will contact you by email, phone or post to resolve your Complaint:</p>
 <p>This form is designed to capture your complaint as quickly and as easily as possible and will be passed directly to our Complaints Team to investigate your issue and try to put things right. There are some key pieces of information we need in order to do this – Please complete the following fields in the form to submit your complaints and note all fields marked with * must be completed.
 </p>
 <p><i class="fa fa-lock"></i> This is a secure form and will be passed directly to our Complaints Team</p>
 <div class="col-md-4 col-xs-12">
-<label>Title</label>
+<label>Title <span class="text-danger">*</span></label>
 <input class="form-control"  required="required" name="Title" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Fist Name</label>
+<label>Fist Name <span class="text-danger">*</span></label>
 <input class="form-control"  required="required" name="fname" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Last Name</label>
+<label>Last Name <span class="text-danger">*</span></label>
 <input class="form-control" required name="lname" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Address</label>
+<label>Address <span class="text-danger">*</span></label>
 <input class="form-control" required name="sddress" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>City</label>
+<label>City <span class="text-danger">*</span></label>
 <input class="form-control" required name="city" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>State</label>
+<label>State <span class="text-danger">*</span></label>
 <input class="form-control" required name="state" />
 </div>
 <div class="col-md-4 col-xs-12">
@@ -50,19 +51,19 @@ include_once"header.php";
 <input class="form-control" required name="zipcode" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Email</label>
+<label>Email <span class="text-danger">*</span></label>
 <input class="form-control" type="email" required name="email" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Phone</label>
+<label>Phone <span class="text-danger">*</span></label>
 <input class="form-control" required name="Phone" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Product / service involved</label>
+<label>Product / service involved </label>
 <input class="form-control"  name="fax" />
 </div>
 <div class="col-md-4 col-xs-12">
-<label>Date of training/consultancy/award</label>
+<label>Date of training/consultancy/award </label>
 <input class="form-control" type="date" required name="dob" />
 </div>
 <div class="col-md-4 col-xs-12">
@@ -83,13 +84,13 @@ include_once"header.php";
 <div class="col-md-6 col-xs-12">
 <label>Choose file
 </label>
-<input class="form-control" type="file"  name="file" /><br>
+<input class="form-control" type="file"  name="file" />
 
-<input type="checkbox">I understand and agree with all terms and conditions of CPPEx Global complaints handling policy.
+
 </div>
 <div class="col-md-12 col-xs-12">
-
-<button  onClick="showAlert()"   name="btnComplaint" class="btn btn-info btn-large" >Submit</button>
+<input type="checkbox"> I understand and agree with all terms and conditions of CPPEx Global complaints handling policy.
+<button  onClick="showAlert()"   name="btnComplaint" class="btnCustom pull-right" >Submit</button>
 </div>
 </section>
 </form>
