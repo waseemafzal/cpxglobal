@@ -3,6 +3,10 @@
 class Contact extends CI_Controller {
     
     public $tbl_feedback='tbl_feedback';
+	public $tbl_contacts='tbl_contacts';
+	public $tbl_complaints='tbl_complaints';
+	
+	
    
     function __construct() {
         parent::__construct();
@@ -36,8 +40,8 @@ class Contact extends CI_Controller {
                     $formData = array();
                     
                     $data['status'] = array(
-                        'type' => 'success',
-                        'msg' => 'Your contact request has been submitted successfully.'
+                         'type' => 'success',
+                         'msg' => 'Your contact request has been submitted successfully.'
                     );
                 }else{
                     $data['status'] = array(
@@ -158,7 +162,152 @@ class Contact extends CI_Controller {
 	
 	
 	
-    private function sendEmail($mailData){
+	  
+	  public   function saveContactForm()
+	  { 
+		extract($_POST);
+		$result=0;
+	    $PrimaryID = base64_decode($_POST['id']);
+		unset($_POST['action'],$_POST['id']);
+		
+
+
+		$aContactUs['firstname'] =$_POST['firstname'];
+		$aContactUs['lastname'] =$_POST['lastname'];
+		$aContactUs['email'] =$_POST['email'];
+		$aContactUs['otherinfo'] =json_encode($_POST['otherinfo']);
+		$aContactUs['message'] =$_POST['message'];
+				
+				if (isset($_FILES['image']['name']) and !empty($_FILES['image']['name'])) 
+				{
+				$imgcheck = true;
+				$info = pathinfo($_FILES['image']['name']);
+				$ext = $info['extension']; // get the extension of the file
+				if(in_array($ext,array('pdf','docs','rtf','jpg','png')))
+					{
+						$newname = rand(5, 3456) * date(time()) . "." . $ext;
+						$target = 'uploads/' . $newname;
+						if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) 
+						{
+							$image = $newname;
+						}
+						$aContactUs = array_merge(array('userfile'=>$image),$aContactUs);
+					
+					}
+					else
+					{
+					
+						$arr = array("status"=>'0' ,"message"=> 'Invaild file type');
+						echo json_encode($arr); 
+						exit; 
+					
+					}
+				}
+				
+				
+				  	
+				if( $this->crud->saveRecord( '',$aContactUs,$this->tbl_contacts ))
+				{
+				 $result=1;	
+				}
+				
+				
+			
+			
+			switch($result){
+			case 1:
+			$arr = array('status' => 1,'message' => "Your information have been received us successfully.");
+			echo json_encode($arr);
+			break;
+			case 2:
+			$arr = array('status' => 2,'message' => "Your services has been  Updated Succefully !");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	 }
+	 
+	  
+	  
+	   public   function saveComplaintForm()
+	   { 
+	   
+	    
+		extract($_POST);
+		$result=0;
+	    $PrimaryID = base64_decode($_POST['id']);
+		unset($_POST['action'],$_POST['id']);
+		
+
+
+
+				$_POST['other_address'] =  json_encode($_POST['other_address']);
+				if (isset($_FILES['image']['name']) and !empty($_FILES['image']['name'])) 
+				{
+				$imgcheck = true;
+				$info = pathinfo($_FILES['image']['name']);
+				$ext = $info['extension']; // get the extension of the file
+				if(in_array($ext,array('pdf','docs','rtf','jpg','png')))
+					{
+						$newname = rand(5, 3456) * date(time()) . "." . $ext;
+						$target = 'uploads/' . $newname;
+						if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) 
+						{
+							$image = $newname;
+						}
+						$_POST = array_merge(array('userfile'=>$image),$_POST);
+					
+					}
+					else
+					{
+					
+						$arr = array("status"=>'0' ,"message"=> 'Invaild file type');
+						echo json_encode($arr); 
+						exit; 
+					
+					}
+				}
+				
+				
+				  	
+				if( $this->crud->saveRecord( '',$_POST,$this->tbl_complaints ))
+				{
+				 $result=1;	
+				}
+				
+				
+			
+			
+			switch($result){
+			case 1:
+			$arr = array('status' => 1,'message' => "Your Complaint have been received us successfully.");
+			echo json_encode($arr);
+			break;
+			case 2:
+			$arr = array('status' => 2,'message' => "Your services has been  Updated Succefully !");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	 }
+	
+      
+	  
+	  private function sendEmail($mailData){
         
         
         // Load the email library
