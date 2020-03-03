@@ -7,7 +7,7 @@ include_once"header.php";
     border: 1px solid #f30100;}
 </style>
 <link href='fancybox/jquery.fancybox.css' media='all' rel='stylesheet' type='text/css'>
-        <section id="sub-header">
+        <section id="sub-header" style="background:url(frontend/gallery.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">

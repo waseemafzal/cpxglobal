@@ -15,44 +15,39 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container"> 
+<h4>Membersip List</h4>
 
-
-<table class="table table-striped">
+<table class="table table-bordered " style="border:1px solid #ccc" >
 	<tbody>
-		<tr>
-			<td colspan="1" rowspan="1">
+		<tr style="background-color:#f30100 !important; color:#fff">
+			<th colspan="1" rowspan="1">
 			 Sr. No 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Membership ID 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Customer ID 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Membership Class 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Organization 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Representative 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Email 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			<th colspan="1" rowspan="1">
 			 Location 
-			</td>
-			<td colspan="1" rowspan="1">
-			 Date Start 
-			</td>
-			<td colspan="1" rowspan="1">
-			 Expire Date 
-			</td>
-			<td colspan="1" rowspan="1">
+			</th>
+			
+			<th colspan="1" rowspan="1">
 			 More Details 
-			</td>
+			</th>
 		</tr>
 		<tr>
 			<td colspan="1" rowspan="1">
@@ -79,49 +74,39 @@ include_once"header.php";
 			<td colspan="1" rowspan="1">
 			 USA 
 			</td>
-			<td colspan="1" rowspan="1">
-			 01- Jan-2020 
-			</td>
-			<td colspan="1" rowspan="1">
-			 31-Dec-2020 
-			</td>
-			<td colspan="1" rowspan="1">
-			 + 
+			
+			<td align="center" colspan="1" rowspan="1">
+			<a ><i class="fa fa-plus"></i></a>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
-			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
-			</td>
-			<td colspan="1" rowspan="1">
-			 &nbsp; 
+			
+			<td colspan="1" rowspan="1">&nbsp;
+			  
 			</td>
 		</tr>
 	</tbody>

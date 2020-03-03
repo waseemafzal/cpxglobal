@@ -14,6 +14,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
+
               
               <form id="form1" name="form_add_update" method="post" action="">
                		 <section id="personalDetail" class="formSection">
@@ -102,6 +103,9 @@ include_once"header.php";
                 </div>
                 </section>
                 </form>
+
+          
+
             </div>
         </section>
         

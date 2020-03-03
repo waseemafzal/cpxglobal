@@ -23,7 +23,7 @@ include_once"header.php";
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " >
 
             <div class="container">
-            <h2>Our  Customers</h2>
+            <h4>Our Global Customers</h4>
        
 
   

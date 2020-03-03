@@ -11,6 +11,7 @@ width: 80%;
     float: left;
     border-radius: 0
 	}
+
 	.vc_custom_1456124843800 
 	{
 		padding-top: 20px !important;
@@ -56,6 +57,49 @@ width: 80%;
 		{
 			height: auto;
 		}
+
+	.vc_custom_1456124843800 {
+    padding-top: 20px !important;
+    background-color: #80808066 !important;
+}
+#form1 select
+{width: 100%;
+border-radius:0px!important;
+    color: #a0a0a0;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    font-family: Arial, sans-serif;
+    line-height: 1.428571429;
+    padding: 6px 12px;    border-color: #a4a4a44a;
+}
+
+.register:hover{
+	color: #fff;
+		
+	}
+.register{ 
+background-color:#f30100;
+   border: 1px solid #f30100;
+    padding: 5px 25px;
+	font-weight:bold;
+    color: #000;}
+.btn {
+    height: 44px;
+    border: none;
+    background-color: #f30100;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+} textarea {
+    height: auto;
+}
+form label{
+	margin-left:2px;
+	}
+
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">

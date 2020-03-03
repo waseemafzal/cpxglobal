@@ -16,7 +16,7 @@ include_once"header.php";
 
     <div class="container">
 
-        <ol class="breadcrumb"><li><a rel="v:url" property="v:title" href="http://demo.vegatheme.com/learn/">Home</a></li><li class="active">Learn Blog</li></ol>
+        <ol class="breadcrumb"><li><a rel="v:url" property="v:title" href="">Home</a></li><li class="active"> Blog</li></ol>
         <div class="row">
 
             <aside class="col-md-4">
@@ -31,7 +31,8 @@ include_once"header.php";
 		foreach($recentPost->result() as $rpost){
 		?>
         <li>
-            <i class="icon-calendar-empty"></i> <?=date('F , j Y',strtotime($rpost->created_on))?>            <div><a href="<?=$rpost->id?>"><?=$rpost->post_title?></a></div>
+            <i class="icon-calendar-empty"></i> <?=date('F , j Y',strtotime($rpost->created_on))?>       
+                 <div><a href="<?=$rpost->id?>"><?=$rpost->post_title?></a></div>
         </li>
         <?php } ?>
        
@@ -96,7 +97,7 @@ if($data->num_rows()>0){
 if (strlen($post_description) > 10)
    echo substr($post_description, 0, 150) . '...';		
 		?></p>
-    <a href="eblogs/detail/<?=$row->id;?>" class="button_medium ">Read more</a>
+    <a href="eblogs/detail/<?=$row->id;?>" class="btnCustom ">Read more</a>
   </div>
 </div>
 <!-- end post -->
