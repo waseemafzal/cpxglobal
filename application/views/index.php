@@ -1,5 +1,6 @@
 <?php 
 include_once"header.php";
+
 ?>
        <style>
 
@@ -170,6 +171,28 @@ include_once"header.php";
 .caption-animate .item .carousel-caption.fadeInUpBig{
   opacity:0;
 }
+ #HomeRoe {
+	 } 
+ #HomeRoe .topTitle{
+	 text-align: center;
+    text-transform: uppercase;
+    color: #d8000b;
+	 } 
+  #HomeRoe  .bottomTitle{
+	  }        
+   #HomeRoe  .info{
+	  border-left: 10px solid #d8000b;
+    border-right: 10px solid #d8000b;
+    margin: 0;
+	   }
+	   .prev{ lef:0;}
+	   .next{right:0;}
+	   .slider-callback_nav{
+		   position: absolute;
+    top: 50%;
+    z-index: 3;
+		   }       
+		   #slider4 li img{ height:200px !important;}                         
 </style> 
 
 <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
@@ -262,6 +285,177 @@ $j++;
 </p>
             </div>
         </section>
+        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" id="main_content_gray">
+            <div class="container">
+                <div class="row">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                            <div class="wpb_wrapper">
+                                <div class="wpb_text_column wpb_content_element vc_custom_1460107674003">
+                                    <div class="wpb_wrapper">
+                                        <h2 style="text-align: center;">ALL PAGES</h2>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row" id="HomeRoe">
+                                    <div class="col-md-3 col-course">
+                                    <h4 class="topTitle">Who we are</h4>
+                                        
+                                        <div class="col-item">
+                                            <div class="photo">
+                                               <div class="responsive-slider">
+    <ul class="rslides" id="slider4">
+        <li><img src="frontend/images/news1.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/4.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/5.jpg" alt="">
+           </li>
+        
+    </ul>
+</div>
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <p class="bottomTitle">Center of Printing and 
+packaging Excellence ..</p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="row" id="HomeRoe">
+                                    <div class="col-md-3 col-course">
+                                    <h4 class="topTitle">Cylinder Quality Management</h4>
+                                        
+                                        <div class="col-item">
+                                            <div class="photo">
+                                               <div class="responsive-slider">
+    <ul class="rslides" id="slider4">
+        <li><img src="frontend/images/news1.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/4.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/5.jpg" alt="">
+           </li>
+        
+    </ul>
+</div>
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="row" id="HomeRoe">
+                                    <div class="col-md-3 col-course">
+                                    <h4 class="topTitle">Who we are</h4>
+                                        
+                                        <div class="col-item">
+                                            <div class="photo">
+                                               <div class="responsive-slider">
+    <ul class="rslides" id="slider4">
+        <li><img src="frontend/images/news1.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/4.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/5.jpg" alt="">
+           </li>
+        
+    </ul>
+</div>
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="row" id="HomeRoe">
+                                    <div class="col-md-3 col-course">
+                                    <h4 class="topTitle">Who we are</h4>
+                                        
+                                        <div class="col-item">
+                                            <div class="photo">
+                                               <div class="responsive-slider">
+    <ul class="rslides" id="slider4">
+        <li><img src="frontend/images/news1.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/4.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/5.jpg" alt="">
+           </li>
+        
+    </ul>
+</div>
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="row" id="HomeRoe">
+                                    <div class="col-md-3 col-course">
+                                    <h4 class="topTitle">Who we are</h4>
+                                        
+                                        <div class="col-item">
+                                            <div class="photo">
+                                               <div class="responsive-slider">
+    <ul class="rslides" id="slider4">
+        <li><img src="frontend/images/news1.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/4.jpg" alt="">
+           </li>
+        <li><img src="frontend/images/5.jpg" alt="">
+           </li>
+        
+    </ul>
+</div>
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" id="main_content_gray">
             <div class="container">
                 <div class="row">
@@ -469,3 +663,43 @@ $j++;
         
         <!-- content close -->
 <?php include_once"footer.php"; ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+<script src="frontend/slider/responsiveslides.js"></script>
+<script>
+	$(function() {
+		$("#slider4").responsiveSlides({
+			auto : true,
+			pager : false,
+			nav : false,
+			speed : 500,
+			namespace : "slider-callback",
+			maxwidth : "550px"
+		});
+
+	});
+</script>

@@ -192,6 +192,7 @@ background-color:#f30100;
 
  
     <link href='frontend/css/js_composer.min52c7.css?ver=6.0.5' id='js_composer_front-css' media='all' rel='stylesheet' type='text/css'>
+    <link href='frontend/slider/responsiveslides.css'  rel='stylesheet' type='text/css'>
     
     <script src='frontend/css/jquery4a5f.js?ver=1.12.4-wp' type='text/javascript'>
     </script>
