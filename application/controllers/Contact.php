@@ -17,63 +17,7 @@ class Contact extends CI_Controller {
     
     public function index(){
 		
-			$imagesDirectory = "uploads/test";
 			
-			if(is_dir($imagesDirectory))
-			{
-			$opendirectory = opendir($imagesDirectory);
-			
-			$counter = 1;
-			$jpg=1; $jpeg=1; $png=1;
-			while (($image = readdir($opendirectory)) !== false)
-			{
-			if(($image == '.') || ($image == '..'))
-			{
-			continue;
-			}
-			
-			$imgFileType = pathinfo($image,PATHINFO_EXTENSION);
-			
-			
-			
-			
-			if((($imgFileType == 'jpg') || ($imgFileType == 'jpeg') || ($imgFileType == 'JPG')) || (($imgFileType == 'png') || ($imgFileType == 'PNG')
-			|| ($imgFileType == 'gif') || ($imgFileType == 'GIF')))  
-			{
-			
-			if(strpos($image, '_thumb') !== false){
-			// do nothing
-			} 
-			else
-			{
-			 echo $this->crud->_createThumbnail($image,'uploads/test/',200,170);
-				//echo $counter.'--' .$image;
-				//echo '</br>';
-			
-			}
-			
-			}
-			else
-			{
-				  /*  echo '</br>';echo '</br>';
-				 	echo 'not-'.$image;
-					 echo '</br>';*/
-			}
-			
-			}
-			
-			
-			
-			closedir($opendirectory);
-			
-			}
-		
-		echo 'totla==>'.$counter;
-		//echo $this->crud->_createThumbnail('t.JPG','uploads/test/',200,170);
-		
-		
-		die();
-		
 		
         $data = $formData = array();
          // pre($this->input->post());
