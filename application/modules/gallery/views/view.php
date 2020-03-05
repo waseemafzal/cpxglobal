@@ -61,7 +61,7 @@
         </td>
        <td class="center ">
 		<?php 
-		$src=base_url().'uploads/'.$row->image;
+		$src=base_url().'uploads/'.get_thumbnail($row->image);
 		if(empty($row->image)){
 		$src=base_url().'uploads/noimg.png';
 		

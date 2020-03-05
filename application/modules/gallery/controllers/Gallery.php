@@ -98,15 +98,15 @@ echo json_encode($arr);
 					echo json_encode($arr);exit;
 					}
 					else{
-					$upload_data = $this->upload->data();
-					$_POST['image']= $upload_data['file_name'];
+					  $upload_data = $this->upload->data();
+					  $_POST['image'] = $upload_data['file_name'];
 					}
 					
 					
 				}else{
 					unset($_POST['image']);
 				}
-			
+			$this->crud->_createThumbnail($_POST['image'],'uploads/',200,170);
 			/*===============================================*/
 			$result = $this->crud->saveRecord($PrimaryID,$_POST,$this->tbl);
 			

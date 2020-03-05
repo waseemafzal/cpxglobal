@@ -24,12 +24,13 @@ include_once"header.php";
            <?php
 	if($data!=0){
 	foreach ($data->result() as $row){
-	$src=	base_url().'uploads/'.$row->image;
+	$src=	base_url().'uploads/'.get_thumbnail($row->image);
+	$srcL =	base_url().'uploads/'.$row->image;
 		
 		?>
         <div class="col-md-2 col-xs-6 col-sm-4">
         <div class="thumbnail">
-            <a class="fancybox" rel="gallery1" href="<?=$src?>" title="<?=$row->title?>">
+            <a class="fancybox" rel="gallery1" href="<?=$srcL?>" title="<?=$row->title?>">
 	<img src="<?=$src?>"  class="img-responsive"   alt="<?=$row->title?>" />
 </a>
 </div>
