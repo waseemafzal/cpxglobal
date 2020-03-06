@@ -356,23 +356,7 @@ class Auth extends CI_Controller {
 			$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;	
 			$uri='';
 				
-			if(isset($_GET['usertype'])  and !empty($_GET['usertype']))
-			{
-				$aPagenumber = explode('/',$_GET['usertype']);
-				$start_index = 0;
-				$and ='';
-				if(count($aPagenumber)==2)
-				{
-				 $start_index = $aPagenumber[1];	
-				}
-				
-				$and  = 'AND (SELECT F.type FROM `freelancers` AS F WHERE U.id = F.user_id)='.'"normal"'; 
-				if($_GET['usertype']=='buyer')
-				{
-					 $and  = 'AND (SELECT F.type FROM `freelancers` AS F WHERE U.id = F.user_id)='.'"buyer"'; 
-				}
-				$uri = '?usertype='.$_GET['usertype'].'/';
-			}
+			
 			  $searchby = '';
 			  if(isset($_POST['usersearch']) AND !empty($_POST['usersearch']))
 			  {
@@ -393,11 +377,8 @@ class Auth extends CI_Controller {
 				
 				
 				
-				$data = $this->db->query("SELECT U.*,
-				(SELECT type FROM `freelancers` AS F WHERE U.id = F.user_id) As usertype, 
-				(SELECT count(TS.id) FROM `tbl_services` AS TS WHERE U.id = TS.user_id) As total_sevices,
+				$data = $this->db->query("SELECT U.*
 				
-				(SELECT TRF.refferal_id FROM `tbl_referals` AS TRF WHERE U.id = TRF.reffered_id) As refferal_person_id 
 				FROM `".$this->users."` AS U WHERE U.`user_type` = '2'  ".$and."  ".$searchby." LIMIT ".$start_index." ,".$limit_per_page."  " );
 				//lq();
 				$config['base_url'] = base_url() . 'auth/view_users'.$uri;
