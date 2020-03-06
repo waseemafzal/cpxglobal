@@ -24,10 +24,10 @@
             <!-- /.box-header -->
             <div class="box-body">
             
-                <table id="post_table" class="table table-striped table-bordered   responsive">
+                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
     <thead>
     <tr>
-
+        <th><input type="checkbox" id="checkAll" value="2222"></th>
         <th>ID</th>
         <th>Username</th>
        
@@ -38,7 +38,7 @@
         <th>Actions</th>
     </tr>
     </thead>
-    <tbody id="order_body">
+    <tbody >
     <?php
 	if(!empty($data->result())){
 	foreach ($data->result() as $row){
@@ -48,6 +48,9 @@
         } 
 		?>
 		<tr id="row_<?php echo $row->id;?>">
+        <td class="center">
+        	<input type="checkbox" class="checkItem" name="idss[]" value="<?php echo $row->id ?>">
+        </td>
         <td class="center"><?php echo $row->id; ?></td>
         <td class="center"><?php echo $row->username; ?></td>
         <td class="center"><?php echo $pstatus ?></td>
@@ -99,8 +102,8 @@
     </tbody>
     </table>
                     
-                    
-                
+                 
+            
           </div>
                 
           

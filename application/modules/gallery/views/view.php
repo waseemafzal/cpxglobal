@@ -109,7 +109,12 @@
    
 
   <?php  getFooter(); ?>
-<script>
+  
+  <script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+ <script type="text/javascript">
+
+  
+
 $('#post_table').dataTable( {
   "ordering": false
 } );

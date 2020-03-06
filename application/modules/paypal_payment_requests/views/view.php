@@ -22,7 +22,7 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th><input type="checkbox" id="checkAll" ></th>
+        <th><input type="checkbox" id="checkAll"></th>
         <th>Paypal ID/Email</th>
         <th>Name</th>
         
@@ -46,7 +46,7 @@
 		  if($row->status ==PENDING)
 		  {
 		  ?>
-         	<input type="checkbox" class="checkItem" name="paypal_ids[]" value="<?php echo $row->id ?>"></td>
+         	 <input type="checkbox" class="checkItem" name="paypal_ids[]" value="<?php echo $row->id ?>"></td>
          <?php 
 		  }
 		 ?>
