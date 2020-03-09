@@ -38,10 +38,15 @@ public function membership_benefits(){
 	$aData['page_title'] ='membership benefits';
 		$this->load->view('membership_benefits',$aData);	
 	}
-public function membership_List(){
-	$aData['page_title'] ='membership_List';
+	
+	public function membership_List()
+	{
+		$aData['page_title'] ='membership_List';
+		$aData['membershipList'] = $this->crud->getMembershipData( );
 		$this->load->view('membership_List',$aData);	
 	}
+	
+	
 public function membership_Associate(){
 	$aData['page_title'] =' Associate Membership';
 		$this->load->view('membership_Associate',$aData);	
@@ -86,6 +91,7 @@ public function student_membership(){
 		//{   
 		    $adata = array(
 				'user_id'=>$this->session->userdata('user_id'),
+				'membership_id'=>rand(),
 				'hear_about'=>json_encode($hear_about),
 				'membership_type'=>$membership_type,
 				'hear_about'=>json_encode($hear_about),
