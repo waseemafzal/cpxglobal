@@ -3,7 +3,7 @@
 /*============================================================================================*/
 /* HEADER*/
 header.top-header {
-  background-color: #f30100;
+  background-color: #d8000b;
   border-bottom: 1px solid #006188;
 }
 ul.top-nav li,
@@ -17,7 +17,7 @@ nav.top-menu {
   background-color: #fff;
 }
 #main-features {
-  background: #f30100 url(../images/bg_sub-header_2.png) repeat 0 0;
+  background: #d8000b url(../images/bg_sub-header_2.png) repeat 0 0;
   color: #fff;
   background: #f7f7f7 !important
 }
@@ -44,7 +44,7 @@ nav.top-menu {
 }
 #sub-header {
   color: #fff;
-  background: #f3010087  url(../images/bg_sub-header.png) repeat 0 0;
+  background: #d8000b87  url(../images/bg_sub-header.png) repeat 0 0;
 }
 
 .single-course #sub-header {
@@ -54,7 +54,7 @@ nav.top-menu {
 .sb-icon-search,
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
-  background: #f30100;
+  background: #d8000b;
 }
 ul.sf-menu .mega-menu-container {
   background: #003f58;
@@ -63,13 +63,13 @@ ul.sf-menu li a:hover {
   color: #fff;
 }
 .sf-menu ul li {
-  background: #f30100;
+  background: #d8000b;
 }
 .sf-with-ul:after {
     border-top-color: #30100;
 }
 .sf-menu ul li a {
-  background: #f30100;color: #fff;
+  background: #d8000b;color: #fff;
 }
 .sf-menu ul li a:hover {
   background: #ea2221;
@@ -122,12 +122,12 @@ ul#follow_us li a {
   border: 2px solid #fff;
 }
 #copy_right {
-  background-color: #f30100;
+  background-color: #d8000b;
   color: #fff;
 }
 /* COMMON*/
 #directions {
-  background-color: #f30100;
+  background-color: #d8000b;
 }
 .bggrey{
 	background-color:#f7f7f7 ;

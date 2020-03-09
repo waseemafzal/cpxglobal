@@ -53,6 +53,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li><a href="homeboxes"><i class="fa fa-image"></i> <span>Home Boxes</span></a></li>
             <li><a href="sliders"><i class="fa fa-image"></i> <span>Customer/partner</span></a></li>
 
             <li class="treeview hidden">
