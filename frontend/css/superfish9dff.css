@@ -121,7 +121,7 @@ ul.sf-menu li a:hover,
   width: 0;
   /* order of following 3 rules important for fallbacks to work */
   border: 5px solid transparent;
-  border-top-color: #f30100;
+  border-top-color: #d8000b;
   /* edit this to suit design (no rgba in IE8) */
   
 }

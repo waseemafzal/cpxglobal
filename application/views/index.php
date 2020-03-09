@@ -131,11 +131,14 @@ include_once"header.php";
 .carousel-caption h3{line-height: 48px;
     letter-spacing: 0px;
     font-weight: 600;
-    font-size: 48px;}
+    font-size: 48px;
+	color: #fff !important;
+	}
 .carousel-caption p{
 	line-height: 48px;
     font-size: 18px;
 	text-align:center;
+	color: #fff !important;
 	}
 .caption-animate .item.active .carousel-caption {
   -webkit-animation-duration: 1s;
@@ -181,9 +184,12 @@ include_once"header.php";
   #HomeRoe  .bottomTitle{
 	  }        
    #HomeRoe  .info{
-	  border-left: 10px solid #d8000b;
+	 border-left: 10px solid #d8000b;
     border-right: 10px solid #d8000b;
     margin: 0;
+    padding: 5px 5px;
+    display: inline-block;
+    width: 100%;
 	   }
 	   .prev{ lef:0;}
 	   .next{right:0;}
@@ -192,7 +198,9 @@ include_once"header.php";
     top: 50%;
     z-index: 3;
 		   }       
-		   #slider4 li img{ height:200px !important;}                         
+		   #slider4 li img{ height:200px !important;}         
+		   .sTitle{}
+  .sDesc{}                
 </style> 
 
 <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
@@ -227,11 +235,12 @@ include_once"header.php";
 		  }
 		  {
   ?>
+  
     <div class="item <?=$activeClass?> ">
       <img src="<?=$sliderimage?>"  style="width:100%" alt="<?=$slide->title?>">
       <div  class="carousel-caption" >
-        <h3><?=$slide->title?></h3>
-        <p><?=$slide->description?>
+        <h3 class="sTitle"><?=$slide->title?></h3>
+        <p class="sDesc"><?=$slide->description?>
         <br>
         <?php 
 		if($slide->btn_text!='' and $slide->link!=''){?>
@@ -274,7 +283,7 @@ $j++;
                 </div>
             </div>
         </section>
-        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
+        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 hidden" id="main-features">
             <div class="container">
                 <h2 align="center">WHO WE ARE</h2>
                 <p>CPPEx Global (Global Center of Printing & Packaging Excellence) strives for excellence because a training & consultancy provider is only as good as the training and consultancy services it offers. CPPEx Global endeavors to be known as a leader in technical training and consultancy services as an institution of excellence in vocational education throughout USA, operating with regional offices in Europe, South America, Middle East, and South Asia and planning to expand to other countries and continents in near future. 
@@ -293,163 +302,40 @@ $j++;
                             <div class="wpb_wrapper">
                                 <div class="wpb_text_column wpb_content_element vc_custom_1460107674003">
                                     <div class="wpb_wrapper">
-                                        <h2 style="text-align: center;">ALL PAGES</h2>
+                                        <!--<h2 style="text-align: center;">ALL PAGES</h2>-->
                                         
                                     </div>
                                 </div>
                                 <div class="row" id="HomeRoe">
-                                    <div class="col-md-3 col-course">
-                                    <h4 class="topTitle">Who we are</h4>
+                                <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","NEWS") ;
+  foreach($cat as $key=>$cat){
+  ?>
+ <div class="col-md-3 col-course">
+                                    <h4 class="topTitle"><?=$cat?></h4>
                                         
                                         <div class="col-item">
                                             <div class="photo">
                                                <div class="responsive-slider">
-    <ul class="rslides" id="slider4">
-        <li><img src="frontend/images/news1.jpg" alt="">
+    <ul class="rslides"  >
+    <?php
+	$inner = get_by_where_array(array('status'=>1,'category'=>$cat),'homeboxes');
+	foreach($inner->result() as $rsslides){
+		$src=base_url().'uploads/'.$rsslides->image;
+	?>
+        <li><img src="<?=$src?>" alt="<?=$rsslides->title?>">
+        <p class="info"><?=$rsslides->title?></p>
            </li>
-        <li><img src="frontend/images/4.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/5.jpg" alt="">
-           </li>
-        
+        <?php } ?>
     </ul>
 </div>
                                             </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <p class="bottomTitle">Center of Printing and 
-packaging Excellence ..</p>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
+                                            
                                         </div>
                                     </div>
+  <?php } ?>
+                                    
                                </div>
-                                <div class="row" id="HomeRoe">
-                                    <div class="col-md-3 col-course">
-                                    <h4 class="topTitle">Cylinder Quality Management</h4>
-                                        
-                                        <div class="col-item">
-                                            <div class="photo">
-                                               <div class="responsive-slider">
-    <ul class="rslides" id="slider4">
-        <li><img src="frontend/images/news1.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/4.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/5.jpg" alt="">
-           </li>
-        
-    </ul>
-</div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                                <div class="row" id="HomeRoe">
-                                    <div class="col-md-3 col-course">
-                                    <h4 class="topTitle">Who we are</h4>
-                                        
-                                        <div class="col-item">
-                                            <div class="photo">
-                                               <div class="responsive-slider">
-    <ul class="rslides" id="slider4">
-        <li><img src="frontend/images/news1.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/4.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/5.jpg" alt="">
-           </li>
-        
-    </ul>
-</div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                                <div class="row" id="HomeRoe">
-                                    <div class="col-md-3 col-course">
-                                    <h4 class="topTitle">Who we are</h4>
-                                        
-                                        <div class="col-item">
-                                            <div class="photo">
-                                               <div class="responsive-slider">
-    <ul class="rslides" id="slider4">
-        <li><img src="frontend/images/news1.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/4.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/5.jpg" alt="">
-           </li>
-        
-    </ul>
-</div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                                <div class="row" id="HomeRoe">
-                                    <div class="col-md-3 col-course">
-                                    <h4 class="topTitle">Who we are</h4>
-                                        
-                                        <div class="col-item">
-                                            <div class="photo">
-                                               <div class="responsive-slider">
-    <ul class="rslides" id="slider4">
-        <li><img src="frontend/images/news1.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/4.jpg" alt="">
-           </li>
-        <li><img src="frontend/images/5.jpg" alt="">
-           </li>
-        
-    </ul>
-</div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <p class="bottomTitle">EuPIA Updates Suitability </p>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                                
-                            </div>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -692,7 +578,7 @@ $(document).ready(function(){
 <script src="frontend/slider/responsiveslides.js"></script>
 <script>
 	$(function() {
-		$("#slider4").responsiveSlides({
+		$(".rslides").responsiveSlides({
 			auto : true,
 			pager : false,
 			nav : false,

@@ -222,6 +222,7 @@ background-color:#f30100;
     .col-item .info .rating{
        color: #FC0;
     }
+	p{color:#595959 !important;}
     </style><noscript>
     
      
