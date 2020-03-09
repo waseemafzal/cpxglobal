@@ -61,7 +61,7 @@
         </td>
        <td class="center ">
 		<?php 
-		$src=base_url().'uploads/'.$row->image;
+		$src=base_url().'uploads/'.get_thumbnail($row->image);
 		if(empty($row->image)){
 		$src=base_url().'uploads/noimg.png';
 		
@@ -109,7 +109,12 @@
    
 
   <?php  getFooter(); ?>
-<script>
+  
+  <script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+ <script type="text/javascript">
+
+  
+
 $('#post_table').dataTable( {
   "ordering": false
 } );

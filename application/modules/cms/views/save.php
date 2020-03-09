@@ -50,7 +50,7 @@ background-color: #fff;
              <div class="alert hidden"></div>
                     <div class="form-group wrap_form">
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Page Title </label><small>(Usefull in admin only)</small>
+                      <label for="exampleInputEmail1"> Page Title </label>
                         <input type="text" class="form-control" id="post_title"  placeholder="Lorem ipsum post" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
                     </div>
@@ -59,8 +59,8 @@ background-color: #fff;
                         <input type="text" class="form-control disable" id="slug"  name="slug" value="<?php if(isset($slug)){ echo $slug;} ?>">
 
                     </div>
-					
 					<div class="clearfix">&nbsp;</div>
+                    <div class="clearfix">&nbsp;</div>
                  <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Page Heading</label>
                         <input type="text" class="form-control"   placeholder="Lorem ipsum post" name="short_heading" value="<?php if(isset($row)){ echo $row->short_heading;} ?>">
@@ -71,7 +71,8 @@ background-color: #fff;
                   <div class="col-xs-12 col-md-12">
                       <label> Post  Description</label>
                         
-<textarea class="form-control" rows="10" id="editor1" name="post_description"><?php if(isset($row)){ echo $row->post_description;} ?></textarea>
+						<textarea class="form-control" rows="10" id="editor1" name="post_description">
+						<?php if(isset($row)){ echo $row->post_description;} ?></textarea>
 
                     </div>
 					   <div class="clearfix">&nbsp;</div>
@@ -108,13 +109,6 @@ background-color: #fff;
 <textarea class="form-control" rows="10" name="meta_description"><?php if(isset($row)){ echo $row->meta_description;} ?></textarea>
 
                     </div>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
                    
                    <div class="clearfix">&nbsp;</div>
                    <div class="clearfix">&nbsp;</div>
@@ -187,16 +181,7 @@ background-color: #fff;
 
   <?php  getFooter(); ?>
   
-  
- <script src="assets/bower_components/ckeditor/ckeditor.js"></script>
- <script type="text/javascript">
 
-  $(function () {
-    CKEDITOR.replace('editor1');
- 
-  
-});
-</script>
   <script>
   /**********************************save************************************/
 	 $('#form_add_update').on("submit",function(e) {

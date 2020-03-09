@@ -16,6 +16,9 @@ class Contact extends CI_Controller {
     }
     
     public function index(){
+		
+			
+		
         $data = $formData = array();
          // pre($this->input->post());
         // If contact request is submitted

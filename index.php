@@ -1,6 +1,6 @@
 <?php
 			
-//die('Website is currently under maintenance. We apologize for any inconvenience and will be be back shortly');
+
 /**
  * CodeIgniter
  *

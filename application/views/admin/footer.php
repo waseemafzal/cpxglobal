@@ -593,10 +593,124 @@ function checkOrder(){
 	 });
 }
 
+ 
+$(document).ready(function(e) {
+		var BTN = '<button type="button" class="btn btn-primary btnemailbtn" data-toggle="modal" data-target="#emailSender">Send Email</button>  ';
+			$( ".email_templating" ).after( BTN );
+			$("#checkAll").click(function(){
+			$('.checkItem:checkbox').not(this).prop('checked', this.checked);
+			
+		});
+
+		$('#emailSubmitButton').click(function (){
+		
+				var checkedfilter = $("#post_table tbody input:checkbox:checked").map(function(){
+				return $(this).val();
+				}).get(); 
+				
+				
+				if(checkedfilter!='')
+				{
+					sendEmailTempalatetoUser(checkedfilter);
+				}
+				else
+				{
+					alert('select atleast 1 checkbox to continue');	
+				}
+				return false;
+	})
+
+ });
+ 
+ /**********************************************/
+   
+   	
+	function sendEmailTempalatetoUser(checkedfilter)
+	{
+	
+			
+			var formData = new FormData();
+			var other_data = $('#emailsenderform').serializeArray();
+			$.each(other_data,function(key,input){
+			formData.append(input.name,input.value);
+			});   
+			rawHTML = CKEDITOR.instances.rawHTML.getData();
+			formData.append("rawHTML", rawHTML);
+
+			if($('#attachmentt').val()!='')
+			{
+				formData.append("attachmentt", document.getElementById('attachmentt').files[0]);
+				
+			} 
+			formData.append("checkedids", checkedfilter);
+	
+		    $.ajax({
+			type: "POST",
+			url: "<?php echo base_url().'crud/sendEmailTempalatetoUser'; ?>",
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			dataType: 'JSON',
+			beforeSend: function() {
+			$('#loader').removeClass('hidden');
+		
+			},
+			success: function(data) {
+			$('#loader').addClass('hidden');
+				if (data.status == 1)
+				{   
+					getMsg('success',data.message);
+				}
+				else if (data.status ==0)
+				{  
+					getMsg('error',data.message);
+				}
+				else if (data.status == "validation_error")
+				{   
+					getMsg('error',data.message);
+				
+				}
+			
+           }
+	 });
+
+	
+    }
+ 
+ 
+ function getMsg(type,msg)
+	{
+			var msgg = '<div class="message '+type+'">'+msg+'</div>';
+			$(".pagealert").show();
+			$(".pagealert").addClass('error');
+			$(".pagealert").html(msgg);
+			$(".pagealert").focus();
+			setTimeout(function()
+			{
+				$(".pagealert").fadeOut().html('');
+			},5000);	
+	}
+ 
+
+ 
 </script>
 
-</script>
+<!------------------------>
 
+  
+		<script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript">
+        
+			$(function () 
+			{
+				CKEDITOR.replace('rawHTML');
+			});
+        </script>
+       
+          <?php echo emailSenderEvent();?>
+          
+<!------------------------>
 </body>
 
 </html>

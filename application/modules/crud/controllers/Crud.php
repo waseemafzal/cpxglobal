@@ -661,7 +661,11 @@ class Crud extends MX_Controller {
 
 
 
-
+   public function sendEmailTempalatetoUser()
+   {
+	   
+	  $this->crud->sendEmailTempalatetoUser();   
+   }
 
 	
 

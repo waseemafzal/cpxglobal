@@ -62,20 +62,7 @@ class Crud_Model extends CI_model
 	private $order_files = 'order_files';
 
 	private $tbl_removed_request_by_sellers = 'tbl_removed_request_by_sellers';
-
-	private $tbl_seller_payment_account = 'tbl_seller_payment_account';
-
-	private $tbl_seller_balance = 'tbl_seller_balance';
-
-	private $tbl_wishlist = 'tbl_wishlist';
-
-	private $tbl_currency = 'tbl_currency';
-
-	private $tbl_dispute_issues_titles = 'tbl_dispute_issues_titles';
-
-	private $tbl_dispute = 'tbl_dispute';
-
-	private $tbl_dispute_conversation = 'tbl_dispute_conversation';
+    private $tbl_personal_detail='tbl_personal_detail';
 
 	
 
@@ -4065,7 +4052,7 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
 
     
 
-    function send_mail($to, $from, $from_heading, $subject, $htmlContent)
+    function send_mail($to, $from, $from_heading, $subject, $htmlContent,$attachment='')
 
     {
 
@@ -4084,6 +4071,17 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
         $this->email->initialize($config);
 
         $this->email->from($from, $from_heading);
+         
+		 if(!empty($attachment))
+		 {
+			
+			$this->email->attach($attachment);	 
+			 
+		 }
+
+
+
+
 
         $this->email->to($to);
 
@@ -6720,6 +6718,68 @@ public function setEmailTemplate($userName,$activationLink){
 		return $template;
 		}
 
+	
+	
+	public function sendEmailTempalatetoUser()
+	 {
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('checkedids', 'IDs', 'trim|required');
+		$this->form_validation->set_rules('email_subject', 'Subject', 'trim|required');
+		if ($this->form_validation->run()==false)
+		{
+			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
+			echo json_encode($arr);
+		}
+		else
+		{
+
+			if(!empty($_POST['checkedids']))
+			{
+			
+				$query  = $this->db->query("SELECT email  FROM `".$this->tbl_personal_detail."` AS TPD 
+				WHERE TPD.memship_id IN (".$_POST['checkedids'].")");
+				$aEmail = array();
+				if (count($query->result()) > 0 ) {
+				
+					foreach ($query->result() as $row) 
+					{
+					  $aEmail[]= $row->email;
+					
+					}
+				}
+				
+				if(isset($_FILES['attachmentt']['name']) and !empty($_FILES['attachmentt']['name']))
+				{                
+					$info = pathinfo($_FILES['attachmentt']['name']);
+					$ext = $info['extension']; 
+					$newname = rand(5,3456)*date(time()).".".$ext; 
+					$target = 'uploads/'.$newname;
+					if(move_uploaded_file( $_FILES['attachmentt']['tmp_name'], $target))
+					{
+						$_POST['attachmentt_email'] =$newname ;
+					}
+				}
+				
+				$attachment = $_SERVER["DOCUMENT_ROOT"]."/uploads/".$_POST['attachmentt_email'];
+				
+				$htmlData = '';
+				$htmlData.='Dear User<br>';
+				$htmlData.=$_POST['rawHTML'];
+				$htmlData.='<br><br><br><br><a href="" target="_blank">Cppex global Team </a>';
+				$subject= $_POST['email_subject'];
+				if( $this->crud->send_mail($aEmail,FROM,HEADING,$subject,$htmlData,$attachment)):
+				
+					$arr = array('status' => 1,'message' => "Email send sucessfully");
+					echo json_encode($arr);
+					else:
+					$arr = array('status' => 0,'message' => "Process Fail");
+					echo json_encode($arr);
+					
+				endif;
+			}
+		}
+	 }
+	
 	
 
     /*******************************************************************************************************/

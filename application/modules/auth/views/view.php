@@ -66,8 +66,8 @@
                         <tr >
 
                             <th>ID</th>
-                            <th style="width: 3%;"><?php echo ucwords('R. By');?></th>
-                            <th><?php echo ucwords(this_lang('NAME')).'-Services';?></th>
+                           
+                            <th><?php echo ucwords(this_lang('NAME'))?></th>
 
                             <th style="width: 3%;"><?php echo ucwords(this_lang('EMAIL'));?></th>
                             <?php
@@ -91,11 +91,11 @@ if(end($this->uri->segment_array())!='admins'){
                     <?php
 
                     foreach ($users as $user):
-						$refferal_person_name = '--';
+						/*$refferal_person_name = '--';
 						if(! empty($user->refferal_person_id))
 						{
 							$refferal_person_name = get_id_by_key('name','id',$user->refferal_person_id,$this->users);
-						}
+						}*/
 					?>
 
                     <tr id="row_<?PHP echo $user->id;?>" class="user_type<?php echo $user->user_type; 
@@ -103,8 +103,8 @@ if(end($this->uri->segment_array())!='admins'){
                     ?>">
 
                     <td><?php echo htmlspecialchars($user->id,ENT_QUOTES,'UTF-8');?></td>
-                     <td><?php echo $refferal_person_name;?></td>
-                    <td><?php echo htmlspecialchars($user->name,ENT_QUOTES,'UTF-8').' (<a href="'.base_url().'services/?id='.$user->id.'" target="_blank">'.$user->total_sevices.'</a>)';?>
+                    
+                    <td><?php echo htmlspecialchars($user->name,ENT_QUOTES,'UTF-8')?>
                      <?php 
 					if(! empty($user->usertype))
 					{

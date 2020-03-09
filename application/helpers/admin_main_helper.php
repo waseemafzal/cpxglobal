@@ -3951,7 +3951,105 @@ WHERE O.status = '".ACTIVE."' AND TSOTR.seller_id = '".$seller_id."'")->row()->t
 			return $script;
 		}
  
-
+     
+	 
+	   function emailSenderEvent()
+	   {
+		     
+		   
+		   
+		   $html .= '<div class="modal fade" id="emailSender">
+					  <div class="modal-dialog">
+						<div class="modal-content">
+					
+						 
+							 <div class="modal-header">
+							<h4 class="modal-title">Send Email</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						  </div>
+					
+						  
+							  <div class="modal-body">
+							  
+							   <form id="emailsenderform" name="emailsenderform" role="form">
+							      
+								   <div class="alert hidden"></div>
+										<div class="form-group wrap_form">
+										<div class="col-xs-12 col-md-12">
+										  <label for="exampleInputEmail1"> Subject </label>
+											<input type="text" class="form-control" id="email_subject"  placeholder="Subject" name="email_subject" value="">
+					
+										</div>
+										
+									
+										  <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
+									  <div class="col-xs-12 col-md-12">
+										  <label>RAW HTML</label>
+											
+											<textarea class="form-control" rows="10" id="rawHTML" name="rawHTML"></textarea>
+											
+					
+										</div>
+										   <div class="clearfix">&nbsp;</div>
+										<div class="col-xs-12 col-md-6">
+										  <label for="exampleInputEmail1"> Add  Attachment</label>
+										   <input type="file" name="attachmentt" id="attachmentt"  /><div class="clearfix">&nbsp;</div>
+										   <div class="topBanner" style="background-color: rgb(0,0,0,0.7);">
+										</div>
+										 </div> 
+										 <div class="clearfix">&nbsp;</div>
+										 <div class="pagealert" style="display: block;"> </div>
+									 </div>
+							   
+										<div class="col-xs-12 col-md-12">
+											<button type="button" class="btn btn-info btnemail" id="emailSubmitButton">Submit</button>
+										</div>
+										<div class="clearfix">&nbsp;</div>
+										
+									</form>
+							  </div>
+							 <style type="text/css">
+							   .btnemail{float: right;margin-right: 12%;}
+							 </style>
+					
+						</div>
+					  </div>
+			  </div>
+			   <style>
+		    .btnemailbtn{ float:right; margin-right:15%;margin-top: 2%;}
+			.pagealert .error 
+			{
+				color: #fff;
+				margin: 0px;
+				background: #C04848;
+				font-weight: bold;
+				font-size: 12px;
+				padding:2px 0px 2px 10px;
+				width: 100%;
+				font-style: italic;
+			}
+			.pagealert .success   
+			{
+				color: #fff;
+				margin: 0px;
+				background: #00a65a;
+				font-weight: bold;
+				font-size: 12px;
+				padding: 2px 0px 2px 10px;
+				width: 100%;
+				font-style: italic;
+			}
+			.pagealert p{ margin-bottom:0px;}
+			
+          </style>';
+		   
+		   return $html;
+		      
+		   
+       }
+	 
+	 
+	 
 	/*
 
 
