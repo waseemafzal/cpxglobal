@@ -295,6 +295,33 @@
 
                 </li>
 
+ 
+ <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Trainer</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="trainer"><i class="fa fa-list"></i> <span>Trainer</span></a></li>
+
+                        <li><a href="trainer/add"><i class="fa fa-list"></i> <span>Add Trainer</span></a></li>
+
+                    </ul>
+
+                </li>
+
 <li class="treeview ">
 
                     <a href="#">
