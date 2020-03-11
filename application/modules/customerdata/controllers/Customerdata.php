@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Jobs extends MX_Controller {
+class Customerdata extends MX_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -10,18 +10,14 @@ class Jobs extends MX_Controller {
 		}
 	}
 	public $view = "view";
-	public $tbl = 'tbl_jobs';
+	public $tbl = 'customerdata';
+	public $controllerName = 'Customerdata';
+	
 	
 	public function index(){  
 
-		$aData['data'] =$this->db->query("SELECT p.* FROM tbl_jobs as p");
+		$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p");
 		$this->load->view($this->view,$aData);
-	}
-	public function viewCvs($id){  
-
-		$aData['data'] =$this->db->query("SELECT a.* from tbl_jobs_applicant as a where job_id='".$id."'");
-		$aData['post_title'] =$this->db->query("SELECT post_title from tbl_jobs where id='".$id."'")->row()->post_title;
-		$this->load->view('applications',$aData);
 	}
 	public function add(){  
 		$this->load->view('save');
@@ -51,41 +47,36 @@ class Jobs extends MX_Controller {
 	}
 	function save(){ 
 		extract($_POST);
+		extract($_POST);
 		$PrimaryID = $_POST['id'];
 		unset($_POST['action'],$_POST['id']);
-		//$_POST['user_id'] =get_session('user_id');
-		//`post_title`, `post_date`, `post_type`, `video_url`, `posted_by`
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('post_title', 'page content', 'trim|required');
+		$this->form_validation->set_rules('company_name', 'Company name', 'trim|required');
+		$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('description', 'Description', 'trim|required');
+		
 		if ($this->form_validation->run()==false){
 			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
 			echo json_encode($arr);
 		}else{
 			
-			/*echo "<pre>";
-			 print_r($_FILES);
-			echo "</pre>";
-			die();*/
+			
 			//pre($_POST);
 			/********************upload image start***********************/
 		$imageName='';
 		$error='';
-		if(isset($_FILES['image']['name']))
-		{                
-			$info = pathinfo($_FILES['image']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['image']['tmp_name'], $target))
-			{
-				$_POST['post_banner'] =$newname ;
-			}
+		if(isset($_FILES['image']['name'])){                
+		$info = pathinfo($_FILES['image']['name']);
+		$ext = $info['extension']; // get the extension of the file
+		$newname = rand(5,3456)*date(time()).".".$ext; 
+		$target = 'uploads/event/'.$newname;
+		if(move_uploaded_file( $_FILES['image']['tmp_name'], $target)){
+		$_POST['post_banner'] =$newname ;
 		}
-		
-		
-		
+		}
 		/********************upload image end***********************/
-	    $result = $this->crud->saveRecord($PrimaryID,$_POST,$this->tbl);
+			$result = $this->crud->saveRecord($PrimaryID,$_POST,$this->tbl);
 		//	lq();
 			
 		switch($result){

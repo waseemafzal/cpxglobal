@@ -47,4 +47,62 @@ public function detail($id){
 		$this->load->view('career_detail',$aData);
 	}
 /*******end of api ***********/	
+	function saveApplication(){ 
+		extract($_POST);
+		if($this->session->userdata('login')==true){
+			$_POST['user_id']=get_session('user_id');
+		}
+	//	pre($_POST);
+		//$_POST['user_id'] =get_session('user_id');
+		//`post_title`, `post_date`, `post_type`, `video_url`, `posted_by`
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('purposal', 'Purposal', 'trim|required');
+		if ($this->form_validation->run()==false){
+			$arr = array("status"=>0 ,"message"=> validation_errors());
+			echo json_encode($arr);exit;
+		}else{
+			
+			/*echo "<pre>";
+			 print_r($_FILES);
+			echo "</pre>";
+			die();*/
+			//pre($_POST);
+			/********************upload image start***********************/
+		$imageName='';
+		$error='';
+		if(isset($_FILES['file']['name']))
+		{                
+			$info = pathinfo($_FILES['file']['name']);
+			$ext = $info['extension']; // get the extension of the file
+			$newname = rand(5,3456)*date(time()).".".$ext; 
+			$target = 'uploads/'.$newname;
+			if(move_uploaded_file( $_FILES['file']['tmp_name'], $target))
+			{
+				$_POST['file'] =$newname ;
+			}
+		}
+		
+		
+		
+		/********************upload image end***********************/
+	    $result = $this->crud->saveRecord('',$_POST,'tbl_jobs_applicant');
+		//	lq();
+			
+		switch($result){
+			case 1:
+			$arr = array('status' => 1,'message' => "Congrats: Applied  Succefully!");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	}	
+}
+
 }

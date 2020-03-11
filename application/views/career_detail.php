@@ -56,16 +56,127 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
                 } 
                 ?>
           <div class="clearfix">&nbsp;</div>
-<a id="" class="btn btn-info pull-right">APPLY NOW</a>
+<a id="btnApply" class="btn btn-info pull-right">APPLY NOW</a>
               </div>
         </section>
         
         
 <?php include_once"footer.php"; ?>
+<!-- Latest compiled and minified CSS -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 
 	$('table').addClass('table table-striped'); 
 });
 
+
+$('#btnApply').click(function() {
+    $('#ApplyModal').modal('show');
+});
+/**********************************save************************************/
+ 
+</script>
+<div id="ApplyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="padding-left:3%">Apply on job</h4>
+      </div>
+           <form id="form_add_update" method="post" name="form_add_update" role="form">
+        
+      <div class="modal-body">
+       
+             <div class="col-xs-12"><div class="alert hidden"></div></div>
+        <div class="col-xs-12 col-md-12">
+        
+                      <label > Please Explain Yourself: <span class="text-danger">*</span> </label>
+                       
+<textarea class="form-control" rows="8" id="purposal" name="purposal"></textarea>                    </div>
+      <div class="clearfix">&nbsp;</div>
+      
+      <div class="col-xs-12 col-md-12">
+                      <label>  Attach your CV <span class="text-danger">*</span></label>
+                   <input type="file" name="file" id="file"  />
+                   <input type="hidden" name="job_id" value="<?=end($this->uri->segment_array());?>"  />
+                   
+                   
+                  
+</div>
+ <div class="clearfix">&nbsp;</div>
+        
+      </div>
+      <div class="modal-footer">
+                             <button type="button"  onClick="return mySubmitFunction(event)"  class="btnCustom pull-right">Submit <span class="btn_au hidden"><i class="fa fa-cog fa-spin" style="font-size:24px"></i></span></button>
+
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+function mySubmitFunction(e){
+
+		e.preventDefault();
+		
+		 var formData = new FormData();
+	var other_data = $('#form_add_update').serializeArray();
+    $.each(other_data,function(key,input){
+        formData.append(input.name,input.value);
+    });   
+	 if($('#file').val()!=''){
+		formData.append("file", document.getElementById('file').files[0]);
+		}
+		
+	// ajax start
+		    $.ajax({
+			type: "POST",
+			url: "<?php echo base_url().'career/saveApplication'; ?>",
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			dataType: 'JSON',
+			beforeSend: function() {
+			//$('#loader').removeClass('hidden');
+			$('#form_add_update .btn_au').removeClass('hidden');
+			
+			},
+			success: function(data) {
+			$('#form_add_update .btn_au').addClass('hidden');
+			  if (data.status == 1)
+            {   
+				$(".alert").addClass('alert-success');
+				$(".alert").html(data.message);
+				$(".alert").removeClass('hidden');
+				setTimeout(function(){
+				$(".alert").addClass('hidden');
+				$('#form_add_update')[0].reset();
+				$('#ApplyModal').modal('hide');
+				
+				//window.location=data.redirect;
+				},5000);
+            }
+           else if (data.status ==0)
+            {  
+			$(".alert").addClass('alert-danger');
+				$(".alert").html(data.message);
+				$(".alert").removeClass('hidden');
+				setTimeout(function(){
+				$(".alert").addClass('hidden');
+				},3000);
+            }
+			
+			
+           }
+	 });
+
+	//ajax end    
+    
+	}
 </script>
