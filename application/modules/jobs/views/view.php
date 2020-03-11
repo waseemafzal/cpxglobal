@@ -39,7 +39,7 @@
 		?>
 		<tr id="row_<?php echo$row->id;?>">
         <td><?php echo $row->post_title;?></td>
-         <td>Recceived Application (<a href="#"><?php echo '0';?></a>)</td>
+         <td>Recceived Application (<a href="jobs/viewCvs/<?php echo$row->id;?>"><?php echo count_tbl_where('tbl_jobs_applicant','id',$row->id);?></a>)</td>
        <td class="center">
                     	<?PHP 
                         if($row->status==0)

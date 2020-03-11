@@ -170,11 +170,7 @@
     </script> 
    <!-- <script src='frontend/css/user-dashboard.min2c00.js?ver=1.9.2' type='text/javascript'>
     </script> -->
-    <script src='frontend/css/js.cookie.min6b25.js?ver=2.1.4' type='text/javascript'>
-    </script> 
-     
-    <script src='frontend/css/woocommerce.min7e2e.js?ver=3.8.1' type='text/javascript'>
-    </script> 
+  
     <script src='http://maps.googleapis.com/maps/api/js?v=3.exp&amp;hl=en&amp;sensor=true&amp;ver=5.3.2' type='text/javascript'>
     </script> 
     <script src='frontend/css/bootstrap.min9dff.js?ver=5.3.2' type='text/javascript'>
@@ -519,7 +515,6 @@ margin-left: 14%;
     </style> 
 </body>
 </html>
- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
        
 <script type="text/javascript" >
 
