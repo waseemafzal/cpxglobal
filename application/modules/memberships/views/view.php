@@ -34,6 +34,7 @@
         <th> Payment</th>
          <th>Package Type</th>
         <th> Buy on</th>
+         <th> Add Note</th>
        
         <th>Actions</th>
     </tr>
@@ -54,6 +55,7 @@
         <td class="center"><?php echo $row->id; ?></td>
         <td class="center"><?php echo $row->username; ?></td>
         <td class="center"><?php echo $pstatus ?></td>
+        
         <td class="center">
         <?PHP 
 		
@@ -83,6 +85,13 @@
         </td>
         <td class="center"><?php echo date('Y-m-d',strtotime($row->created_date)); ?></td>
         
+        <td>
+        <span style="display:none" id="notee_<?PHP echo $row->id;?>"><?PHP echo $row->package_info_admin;?></span>
+        <a  class="btn btn-info  btn-xs" onclick="addNote('<?PHP echo $row->id;?>')"><i class="fa fa-plus"></i>
+        Add Note</a>
+       
+        
+        </td>
          
         
         <td>
@@ -139,7 +148,38 @@
   </div>
 </div>
 
+ <div id="NoteModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Note <span id="lblstatus"></span></h4>
+      </div>
+     
+      <div id="printable_container" >
+      <div class="modal-body " id="NoteModeBody">
+        <div>
+         <textarea id="textNote" placeholder="Add note" ></textarea>
+        </div>
+        <div>
+           <input type="hidden" id="rowID" value="">
+         
+          
+        </div>
+        
+      </div>
+      </div>
+      <div class="modal-footer">
+      <span id="btnnn"></span>
+        <input type="button" value="submit" id="btnn" class="btn btn-default btn-success" onclick="saveNote();">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 <div id="ProductModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -156,8 +196,7 @@
       </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="printJS({ printable: 'printable_container', type: 'html', header: '' ,
-	    css: 'css/print.css' })"  class="btn btn-info pull-left" ><i class="fa fa-print"></i>Print</button>
+       
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -191,7 +230,51 @@ function getInfo(id){
 			}
 		});
 }
-
+  
+  
+  function addNote(id)
+  {
+	$('#NoteModel').modal('show');
+	$("#rowID").val(id);
+	$("#textNote").val($("#notee_"+id).html());
+	
+  }
+  
+  function saveNote()
+  {
+	
+	 if($("#textNote").val()=='')
+	 {
+	  alert('Note can\'t be empty.');	
+	  return false; 
+	 }
+	 var textNote = $("#textNote").val();
+	 var rowID = $("#rowID").val();
+	 
+	 $('#btnnn').html('<i class="fa fa-cog fa-spin" style="font-size:24px"></i>');
+	 $.ajax({
+		url: "<?php echo base_url().'memberships/addNote'; ?>",
+		type: 'POST',
+		data: {id:rowID,note:textNote},
+		dataType : "json",
+        success: function(response) 
+		{
+		   
+				if(response == 1){
+					$('#btnnn').html('');
+					$("#notee_"+rowID).html(textNote);
+					
+					alert('updated successfully');
+					$('#NoteModel').modal('hide');
+				}
+				else{
+					alert('Updation Failed.');
+					//showAlert('No info !','Alert','red')
+				}
+			}
+		});
+  }
+  
   function getPackageDetail(id)
   {
 	$('#ProductModal').modal('show');
@@ -239,6 +322,11 @@ function getInfo(id){
 
 </script>
   
-  
+ <style type="text/css">
+  #textNote{border: 1px solid #ddd;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;}
+ </style> 
   
   

@@ -63,6 +63,11 @@ class Crud_Model extends CI_model
 
 	private $tbl_removed_request_by_sellers = 'tbl_removed_request_by_sellers';
     private $tbl_personal_detail='tbl_personal_detail';
+	 private $tbl_membershippackage='tbl_membershippackage';
+	  private $tbl_company_detail='tbl_company_detail';
+	
+	
+	 
 
 	
 
@@ -6780,7 +6785,67 @@ public function setEmailTemplate($userName,$activationLink){
 		}
 	 }
 	
-	
+	    
+		// get memebershipdata
+		public function getMembershipData()
+		{
+		  // Membership ID 
+		  // Customer ID 
+		  // package type
+		  // company  okok
+		  // username ok 
+		  // email ok 
+		  // address okok
+			$query = $this->db->query("SELECT id,user_id,membership_id,membership_type,package_info_admin FROM ".$this->tbl_membershippackage." ");	
+				$aMembershipData  = array();
+				$aOutput = array();
+				if($query->num_rows() > 0 )
+				{
+					
+					foreach($query->result() as $mems)
+					{
+						$aMembershipData['id'] = $mems->id;
+						$aMembershipData['user_id'] = $mems->user_id;
+						$aMembershipData['package_info_admin'] = $mems->package_info_admin;
+						$aMembershipData['membership_id'] = $mems->membership_id;
+						$aMembershipData['membership_type'] = $mems->membership_type;
+						$aMembershipData['personal_data'] = $this->getPersonalData( $mems->id);
+						$aMembershipData['company_data'] = $this->getCompanyData( $mems->id);
+					    $aOutput[] = (object)$aMembershipData;
+					}
+				} 
+				
+				return  $aOutput;
+		
+		}
+		
+		public function getPersonalData($id)
+		{
+		 	$query = $this->db->query("SELECT name,email FROM ".$this->tbl_personal_detail." WHERE memship_id = '".$id."'");	
+			if($query->num_rows() > 0 )
+			{
+			    $data =  $query->row();
+				$aObjj   = json_encode(array('name'=>$data->name,'email'=>$data->email));
+			 
+			}
+			
+			return $aObjj;
+		}
+		
+		public function getCompanyData($id)
+		{
+		 	$query = $this->db->query("SELECT company_name,address FROM ".$this->tbl_company_detail." WHERE memship_id = '".$id."'");	
+			if($query->num_rows() > 0 )
+			{
+			    $data =  $query->row();
+			 	$aObjj   = json_encode(array('organization'=>$data->company_name,'address'=>$data->address));
+			 
+			}
+			return $aObjj;
+		}
+		
+		
+		
 
     /*******************************************************************************************************/
 

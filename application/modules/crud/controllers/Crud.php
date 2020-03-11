@@ -7,7 +7,7 @@
 class Crud extends MX_Controller {
 
 
-
+  
 
 
 	public function __construct()
@@ -29,8 +29,7 @@ class Crud extends MX_Controller {
 
 
 
-
-
+    
 	
 
 

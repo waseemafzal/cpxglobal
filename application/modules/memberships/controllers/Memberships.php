@@ -40,10 +40,16 @@ class Memberships extends MX_Controller {
 	
 	
 	
+	public function addNote()
+	{
+	 
+	  extract($_POST);
+	  $data = array('id'=>$id,'package_info_admin'=>$note);
+	  	echo $result =$this->crud->update_where($id,'tbl_membershippackage',$data);
+	}
 
-
-function getPackageDetail()
-{
+  public function getPackageDetail()
+  {
 	
 	
 	
