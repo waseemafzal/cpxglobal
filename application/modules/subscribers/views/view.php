@@ -22,9 +22,10 @@
             <!-- /.box-header -->
                         <div class="box-body">
 
-                <table id="post_table" class="table table-striped table-bordered   responsive">
+                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
     <thead>
     <tr>
+        <th><input type="checkbox" id="checkAll" value="2222"></th>
         <th>Email</th>
         
         <th>Actions</th>
@@ -43,6 +44,9 @@
 		*/
 		?>
 		<tr id="row_<?php echo$row->id;?>">
+        <td class="center">
+        	<input type="checkbox" class="checkItem" name="idss[]" value="<?php echo $row->id; ?>">
+        </td>
         <td><?php echo $row->email;?></td>
        
         <td class="center">

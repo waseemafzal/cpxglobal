@@ -5,7 +5,8 @@
 <section class="content-header">
       <h1>
       Customerdata Management
-        
+     
+       
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -22,10 +23,10 @@
             </div>
             <!-- /.box-header -->
              <div class="box-body">
-                <table id="post_table" class="table table-striped table-bordered   responsive">
+                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
     <thead>
         <tr>
-           
+           <th><input type="checkbox" id="checkAll" value="2222"></th>
             <th>Company Name </th>
             <th>Business </th>
             <th>Phone </th>
@@ -44,7 +45,9 @@
 		
 		?>
 		<tr id="row_<?php echo $row->id;?>">
-       
+       <td class="center">
+        	<input type="checkbox" class="checkItem" name="idss[]" value="<?php echo $row->id ?>">
+        </td>
          <td><?php echo $row->company_name;?></td>
           <td><?php echo $row->business;?></td>
            <td><?php echo $row->phone;?></td>
@@ -68,7 +71,7 @@
 	}
 		
 	?>
-    
+         
     </tbody>
     </table>
                   </div>  
@@ -90,6 +93,7 @@
 
   <?php  getFooter(); ?>
 <script>
+
 $('#post_table').dataTable( {
   "ordering": true
 } );

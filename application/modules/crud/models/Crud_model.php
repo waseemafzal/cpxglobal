@@ -45,11 +45,8 @@ class Crud_Model extends CI_model
     private $tbl_cities = 'tbl_cities'; 
 	private $tbl_states = 'tbl_states'; 
 
-    private $skills = 'skills';
+    
 
-    private $tbl_seller_offer_to_request = 'tbl_seller_offer_to_request';
-
-    private $tbl_freelancer_skill = 'tbl_freelancer_skill';
 
 	private $tbl_order_payments = 'tbl_order_payments';
 
@@ -57,14 +54,17 @@ class Crud_Model extends CI_model
 
 	private $order = 'order';
 
-	private $tbl_custom_buyer_request = 'tbl_custom_buyer_request';
+	
 
-	private $order_files = 'order_files';
-
-	private $tbl_removed_request_by_sellers = 'tbl_removed_request_by_sellers';
-    private $tbl_personal_detail='tbl_personal_detail';
-	 private $tbl_membershippackage='tbl_membershippackage';
-	  private $tbl_company_detail='tbl_company_detail';
+	private $tbl_personal_detail='tbl_personal_detail';
+	private $tbl_membershippackage='tbl_membershippackage';
+	private $tbl_company_detail='tbl_company_detail';
+	private $customerdata='customerdata';
+	private $tbl_subscriber='tbl_subscriber';
+	   
+	   
+	
+	
 	
 	
 	 
@@ -6727,8 +6727,11 @@ public function setEmailTemplate($userName,$activationLink){
 	
 	public function sendEmailTempalatetoUser()
 	 {
+		//pre($_POST);
+		extract($_POST);
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('checkedids', 'IDs', 'trim|required');
+		$this->form_validation->set_rules('sendtotype', 'Send Type', 'trim|required');
 		$this->form_validation->set_rules('email_subject', 'Subject', 'trim|required');
 		if ($this->form_validation->run()==false)
 		{
@@ -6737,50 +6740,98 @@ public function setEmailTemplate($userName,$activationLink){
 		}
 		else
 		{
-
+         
 			if(!empty($_POST['checkedids']))
 			{
-			
-				$query  = $this->db->query("SELECT email  FROM `".$this->tbl_personal_detail."` AS TPD 
-				WHERE TPD.memship_id IN (".$_POST['checkedids'].")");
-				$aEmail = array();
-				if (count($query->result()) > 0 ) {
+	
+                
 				
-					foreach ($query->result() as $row) 
+				if($sendtotype=='subscribers')
+				{
+				
+					$query  = $this->db->query("SELECT email  FROM `".$this->tbl_subscriber."` AS TPD 
+					WHERE TPD.id IN (".$_POST['checkedids'].")");
+					$aEmail = array();
+					if (count($query->result()) > 0 ) 
 					{
-					  $aEmail[]= $row->email;
+						
+						foreach ($query->result() as $row) 
+						{
+							$aEmail[]= $row->email;
+						}
+					} 
 					
-					}
+				
+				}
+				else
+				if($sendtotype=='customerdata')
+				{
+				
+					$query  = $this->db->query("SELECT email  FROM `".$this->customerdata."` AS TPD 
+					WHERE TPD.id IN (".$_POST['checkedids'].")");
+					$aEmail = array();
+					if (count($query->result()) > 0 ) 
+					{
+						
+						foreach ($query->result() as $row) 
+						{
+							$aEmail[]= $row->email;
+						}
+					} 
+				
+				}
+				else
+				if($sendtotype=='Memberships')
+				{
+				
+						$query  = $this->db->query("SELECT email  FROM `".$this->tbl_personal_detail."` AS TPD 
+						WHERE TPD.memship_id IN (".$_POST['checkedids'].")");
+						$aEmail = array();
+						if (count($query->result()) > 0 ) {
+						
+							foreach ($query->result() as $row) 
+							{
+								$aEmail[]= $row->email;
+							
+							}
+						}
 				}
 				
-				if(isset($_FILES['attachmentt']['name']) and !empty($_FILES['attachmentt']['name']))
-				{                
-					$info = pathinfo($_FILES['attachmentt']['name']);
-					$ext = $info['extension']; 
-					$newname = rand(5,3456)*date(time()).".".$ext; 
-					$target = 'uploads/'.$newname;
-					if(move_uploaded_file( $_FILES['attachmentt']['tmp_name'], $target))
-					{
-						$_POST['attachmentt_email'] =$newname ;
-					}
+				
+				if(count($aEmail) > 0)
+				{
+				
+						if(isset($_FILES['attachmentt']['name']) and !empty($_FILES['attachmentt']['name']))
+						{                
+							$info = pathinfo($_FILES['attachmentt']['name']);
+							$ext = $info['extension']; 
+							$newname = rand(5,3456)*date(time()).".".$ext; 
+							$target = 'uploads/'.$newname;
+							if(move_uploaded_file( $_FILES['attachmentt']['tmp_name'], $target))
+							{
+								$_POST['attachmentt_email'] =$newname ;
+							}
+						}
+						
+							$attachment = $_SERVER["DOCUMENT_ROOT"]."/uploads/".$_POST['attachmentt_email'];
+							$htmlData = '';
+							$htmlData.='Dear User<br>';
+							$htmlData.=$_POST['rawHTML'];
+							$htmlData.='<br><br><br><br><a href="" target="_blank">Cppex global Team </a>';
+							$subject= $_POST['email_subject'];
+							  
+							  for($index = 0 ; $index < count($aEmail);$index++)
+							  {
+								$result = $this->crud->send_mail($aEmail[$index],FROM,HEADING,$subject,$htmlData,$attachment);
+							  }
+								if(($result)):
+									$arr = array('status' => 1,'message' => "Email send sucessfully");
+										echo json_encode($arr);
+									else:
+										$arr = array('status' => 0,'message' => "Process Fail");
+									echo json_encode($arr);
+								endif;
 				}
-				
-				$attachment = $_SERVER["DOCUMENT_ROOT"]."/uploads/".$_POST['attachmentt_email'];
-				
-				$htmlData = '';
-				$htmlData.='Dear User<br>';
-				$htmlData.=$_POST['rawHTML'];
-				$htmlData.='<br><br><br><br><a href="" target="_blank">Cppex global Team </a>';
-				$subject= $_POST['email_subject'];
-				if( $this->crud->send_mail($aEmail,FROM,HEADING,$subject,$htmlData,$attachment)):
-				
-					$arr = array('status' => 1,'message' => "Email send sucessfully");
-					echo json_encode($arr);
-					else:
-					$arr = array('status' => 0,'message' => "Process Fail");
-					echo json_encode($arr);
-					
-				endif;
 			}
 		}
 	 }
