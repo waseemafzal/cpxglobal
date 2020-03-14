@@ -53,6 +53,110 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            
+            <li class="header">Master Table Software</li>
+            <li><a href="memberships"><i class="fa fa-list"></i> <span>Membership Data</span></a></li>
+            <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Training Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="trainings"><i class="fa fa-list"></i> <span>Trainings</span></a></li>
+
+                        <li><a href="trainings/add"><i class="fa fa-list"></i> <span>Add Trainings</span></a></li>
+
+                    </ul>
+
+                </li>
+                <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-user"></i>
+
+                        <span>Customer Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="customerdata"><i class="fa fa-list"></i> <span>view Customer Data</span></a></li>
+
+                        <li><a href="customerdata/add"><i class="fa fa-list"></i> <span>Add Customer data</span></a></li>
+
+                    </ul>
+
+                </li>
+                <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Trainer Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="trainer"><i class="fa fa-list"></i> <span>Trainer</span></a></li>
+
+                        <li><a href="trainer/add"><i class="fa fa-list"></i> <span>Add Trainer</span></a></li>
+
+                    </ul>
+
+                </li>
+                <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Complain Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="complaints"><i class="fa fa-list"></i> <span>Complaints</span></a></li>
+
+                        <li><a href="contactus"><i class="fa fa-list"></i> <span>Contactus</span></a></li>
+                         <li><a href="feedbacks"><i class="fa fa-list"></i> <span>Feedbacks</span></a></li>
+
+                    </ul>
+
+                </li>
             <li><a href="homeboxes"><i class="fa fa-image"></i> <span>Home Boxes</span></a></li>
             <li><a href="sliders"><i class="fa fa-image"></i> <span>Customer/partner</span></a></li>
 
@@ -267,111 +371,14 @@
                     </ul>
 
                 </li>
-                <li class="treeview ">
-
-                    <a href="#">
-
-                        <i class="fa fa-user"></i>
-
-                        <span>Customer Data</span>
-
-                        <span class="pull-right-container">
-
-              <i class="fa fa-angle-left pull-right"></i>
-
-            </span>
-
-                    </a>
-
-                    <ul class="treeview-menu">
-
-                        <li><a href="customerdata"><i class="fa fa-list"></i> <span>view Customer Data</span></a></li>
-
-                        <li><a href="customerdata/add"><i class="fa fa-list"></i> <span>Add Customer data</span></a></li>
-
-                    </ul>
-
-                </li>
+                
  
-                   <li class="treeview ">
-
-                    <a href="#">
-
-                        <i class="fa fa-laptop"></i>
-
-                        <span>Contact Form</span>
-
-                        <span class="pull-right-container">
-
-              <i class="fa fa-angle-left pull-right"></i>
-
-            </span>
-
-                    </a>
-
-                    <ul class="treeview-menu">
-
-                        <li><a href="complaints"><i class="fa fa-list"></i> <span>Complaints</span></a></li>
-
-                        <li><a href="contactus"><i class="fa fa-list"></i> <span>Contactus</span></a></li>
-                         <li><a href="feedbacks"><i class="fa fa-list"></i> <span>Feedbacks</span></a></li>
-
-                    </ul>
-
-                </li>
+                   
 
  
- <li class="treeview ">
+ 
 
-                    <a href="#">
 
-                        <i class="fa fa-laptop"></i>
-
-                        <span>Trainer</span>
-
-                        <span class="pull-right-container">
-
-              <i class="fa fa-angle-left pull-right"></i>
-
-            </span>
-
-                    </a>
-
-                    <ul class="treeview-menu">
-
-                        <li><a href="trainer"><i class="fa fa-list"></i> <span>Trainer</span></a></li>
-
-                        <li><a href="trainer/add"><i class="fa fa-list"></i> <span>Add Trainer</span></a></li>
-
-                    </ul>
-
-                </li>
-
-<li class="treeview ">
-
-                    <a href="#">
-
-                        <i class="fa fa-laptop"></i>
-
-                        <span>Training</span>
-
-                        <span class="pull-right-container">
-
-              <i class="fa fa-angle-left pull-right"></i>
-
-            </span>
-
-                    </a>
-
-                    <ul class="treeview-menu">
-
-                        <li><a href="trainings"><i class="fa fa-list"></i> <span>Trainings</span></a></li>
-
-                        <li><a href="trainings/add"><i class="fa fa-list"></i> <span>Add Trainings</span></a></li>
-
-                    </ul>
-
-                </li>
 
                 <li class="treeview hidden">
 
@@ -447,8 +454,7 @@
                 </li>
                 <li><a href="cms"><i class="fa fa-list"></i> <span>Pages</span></a></li>
                  <li><a href="imageurl"><i class="fa fa-th"></i> <span> Get Image URL</span></a></li>
-                  <li><a href="memberships"><i class="fa fa-list"></i> <span>Membership</span></a></li>
-            
+                  
 
                 <li><a href="blogpost"><i class="fa fa-th"></i> <span>Blogs</span></a></li>
                 <li><a href="pressRelease"><i class="fa fa-th"></i> <span>News </span></a></li>

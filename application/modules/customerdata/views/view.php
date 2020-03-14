@@ -32,7 +32,7 @@
             <th>Phone </th>
              <th>City</th>
              <th>Country</th>
-            <th>Actions</th>
+            <th class="no-sort">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -95,7 +95,11 @@
 <script>
 
 $('#post_table').dataTable( {
-  "ordering": true
+  "ordering": true,
+  columnDefs: [{
+      orderable: false,
+      targets: "no-sort"
+    }]
 } );
 </script>
   

@@ -34,9 +34,9 @@
         <th> Payment</th>
          <th>Package Type</th>
         <th> Buy on</th>
-         <th> Add Note</th>
+         <th class="no-sort"> Add Note</th>
        
-        <th>Actions</th>
+        <th class="no-sort">Actions</th>
     </tr>
     </thead>
     <tbody >
@@ -209,7 +209,11 @@
 
  
 $('#post_table').dataTable( {
-  "ordering": false
+  "ordering": true,
+  columnDefs: [{
+      orderable: false,
+      targets: "no-sort"
+    }]
 } );
 
 function getInfo(id){

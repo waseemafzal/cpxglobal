@@ -30,7 +30,7 @@
            <!-- <th>Start At </th>
             <th>End At </th>-->
              <th>Start Date</th>
-            <th>Actions</th>
+            <th class="no-sort">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -89,7 +89,11 @@
   <?php  getFooter(); ?>
 <script>
 $('#post_table').dataTable( {
-  "ordering": false
+  "ordering": true,
+  columnDefs: [{
+      orderable: false,
+      targets: "no-sort"
+    }]
 } );
 </script>
   
