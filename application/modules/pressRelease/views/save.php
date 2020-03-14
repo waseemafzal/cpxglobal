@@ -29,7 +29,7 @@ background-color: #fff;
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="blogpost">All News </a></li>
+        <li > <a href="pressRelease">All News </a></li>
       </ol>
     </section>
 
@@ -337,7 +337,7 @@ background-color: #fff;
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
 				setTimeout(function(){
-				window.location='blogpost';
+				window.location='pressRelease';
 				},1000);
             }
 			else if (data.status == "validation_error")

@@ -323,7 +323,7 @@ $j++;
 		$src=base_url().'uploads/'.$rsslides->image;
 	?>
         <li><img src="<?=$src?>" alt="<?=$rsslides->title?>">
-        <p class="info"><?=$rsslides->title?></p>
+        <p class="info"><a href="<?=$rsslides->url?>"><?=$rsslides->title?></a></p>
            </li>
         <?php } ?>
     </ul>
@@ -549,6 +549,10 @@ $j++;
         
         <!-- content close -->
 <?php include_once"footer.php"; ?>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
 <script>
