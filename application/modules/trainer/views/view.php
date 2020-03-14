@@ -4,13 +4,12 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
       <h1>
-      Customerdata Management
-     
-       
+      	Trainer Management
+        
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="customerdata/add" class="btn btn-sm btn-su">Add Data</a></li>
+        <li > <a href="trainer/add" class="btn btn-sm btn-su">Add New Trainer</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -23,36 +22,36 @@
             </div>
             <!-- /.box-header -->
              <div class="box-body">
-                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
-    <thead>
-        <tr>
-           <th><input type="checkbox" id="checkAll" value="2222"></th>
-            <th>Company Name </th>
-            <th>Business </th>
-            <th>Phone </th>
-             <th>City</th>
-             <th>Country</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+                <table id="post_table" class="table table-striped table-bordered   responsive">
+                    <thead>
+                        <tr>
+                           <th>Trainer ID </th>
+                            <th>Name </th>
+                            <th>Speciality </th>
+                            <th>Phone </th>
+                            <th>Email </th>
+                            <th>Country-City</th>
+                            <th>Recommended</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+   				 <tbody>
     
   
     <?php
 	if(!empty($data->result())){
 	foreach ($data->result() as $row)
 	{
-		
-		?>
-		<tr id="row_<?php echo $row->id;?>">
-       <td class="center">
-        	<input type="checkbox" class="checkItem" name="idss[]" value="<?php echo $row->id ?>">
-        </td>
-         <td><?php echo $row->company_name;?></td>
-          <td><?php echo $row->business;?></td>
-           <td><?php echo $row->phone;?></td>
-            <td><?php echo $row->city;?></td>
-            <td><?php echo $row->country;?></td>
+	?>
+ 
+        <tr id="row_<?php echo $row->id;?>">
+            <td><?php echo $row->trainer_id;?></td>
+            <td><?php echo $row->name;?></td>
+            <td><?php echo $row->speciality;?></td>
+            <td><?php echo $row->phone;?></td>
+            <td><?php echo $row->email;?></td>
+            <td><?php echo $row->country.'-'.$row->city;?></td>
+            <td><?php echo $row->recommended_by;?></td>
        
     <td class="center">
             <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="<?php echo $this->controllerName;?>/edit/<?php echo $row->id;?>">
@@ -71,7 +70,7 @@
 	}
 		
 	?>
-         
+    
     </tbody>
     </table>
                   </div>  
@@ -93,10 +92,11 @@
 
   <?php  getFooter(); ?>
 <script>
-
 $('#post_table').dataTable( {
-  "ordering": true
+  "ordering": false
 } );
 </script>
+  
+  
   
   

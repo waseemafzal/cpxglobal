@@ -3953,12 +3953,11 @@ WHERE O.status = '".ACTIVE."' AND TSOTR.seller_id = '".$seller_id."'")->row()->t
  
      
 	 
-	   function emailSenderEvent()
+	   function emailSenderEvent($sendto='')
 	   {
 		     
-		   
-		   
-		   $html .= '<div class="modal fade" id="emailSender">
+		 
+		   $html .= ' <div class="modal fade" id="emailSender">
 					  <div class="modal-dialog">
 						<div class="modal-content">
 					
@@ -3968,11 +3967,11 @@ WHERE O.status = '".ACTIVE."' AND TSOTR.seller_id = '".$seller_id."'")->row()->t
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						  </div>
 					
-						  
 							  <div class="modal-body">
 							  
 							   <form id="emailsenderform" name="emailsenderform" role="form">
 							      
+						  <input type="hidden"  id="sendtotype" name="sendtotype" value="'.$sendto.'">
 								   <div class="alert hidden"></div>
 										<div class="form-group wrap_form">
 										<div class="col-xs-12 col-md-12">
@@ -4042,6 +4041,9 @@ WHERE O.status = '".ACTIVE."' AND TSOTR.seller_id = '".$seller_id."'")->row()->t
 			.pagealert p{ margin-bottom:0px;}
 			
           </style>';
+		   
+		 
+		   
 		   
 		   return $html;
 		      

@@ -603,6 +603,7 @@ $(document).ready(function(e) {
 		});
 
 		$('#emailSubmitButton').click(function (){
+			
 		
 				var checkedfilter = $("#post_table tbody input:checkbox:checked").map(function(){
 				return $(this).val();
@@ -708,7 +709,7 @@ $(document).ready(function(e) {
 			});
         </script>
        
-          <?php echo emailSenderEvent();?>
+          <?php echo emailSenderEvent(uri_string());?>
           
 <!------------------------>
 </body>
