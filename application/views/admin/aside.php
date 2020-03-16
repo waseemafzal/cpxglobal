@@ -114,7 +114,7 @@
 
                         <i class="fa fa-user"></i>
 
-                        <span>Customer Data</span>
+                        <span>Certificate Data</span>
 
                         <span class="pull-right-container">
 
@@ -126,9 +126,9 @@
 
                     <ul class="treeview-menu">
 
-                        <li><a href="customerdata"><i class="fa fa-list"></i> <span>view Customer Data</span></a></li>
+                        <li><a href="certificatedata"><i class="fa fa-list"></i> <span>view Certificate Data</span></a></li>
 
-                        <li><a href="customerdata/add"><i class="fa fa-list"></i> <span>Add Customer data</span></a></li>
+                        <li><a href="certificatedata/add"><i class="fa fa-list"></i> <span>Add Certificate Data</span></a></li>
 
                     </ul>
 
