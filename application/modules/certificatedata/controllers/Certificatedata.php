@@ -60,7 +60,7 @@ class Certificatedata extends MX_Controller {
 		$this->form_validation->set_rules('applicant_name', 'Applicant Name', 'trim|required');
 		$this->form_validation->set_rules('customer_id', 'Customer ID', 'trim|required');
 		$this->form_validation->set_rules('company_name', 'Customer Name', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('city', 'City', 'trim|required');
 		$this->form_validation->set_rules('country', 'Country', 'trim|required');
 		$this->form_validation->set_rules('trainer', 'Trainer', 'trim|required');

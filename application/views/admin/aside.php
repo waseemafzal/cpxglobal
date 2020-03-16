@@ -81,7 +81,34 @@
                     </ul>
 
                 </li>
+                
                 <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-user"></i>
+
+                        <span>Customer Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="customerdata"><i class="fa fa-list"></i> <span>view Customer Data</span></a></li>
+
+                        <li><a href="customerdata/add"><i class="fa fa-list"></i> <span>Add Customer data</span></a></li>
+
+                    </ul>
+
+                </li>
+               
+               <li class="treeview ">
 
                     <a href="#">
 
