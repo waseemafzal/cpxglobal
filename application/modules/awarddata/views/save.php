@@ -27,12 +27,12 @@ background-color: #fff;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Certificate Data Management
+       Award Data Management
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url() ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li > <a href="customerdata">View Certificate Data </a></li>
+        <li > <a href="awarddata">View awarddata Data </a></li>
       </ol>
     </section>
 
@@ -51,11 +51,23 @@ background-color: #fff;
              <form id="form_add_update" name="form_add_update" role="form">
              <div class="alert hidden"></div>
                     <div class="form-group wrap_form">
-                   
+               <!-- /*   application_no
+certificate_name
+applicant_name
+customer_id
+
+membership
+mobile
+email
+trainer
+city
+country
+year*/
+                      <-->
                       <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Certificate ID</label>
-                        <input type="text" class="form-control" id="certificate_id"   name="certificate_id" value="<?php if(isset($row)){ echo $row->certificate_id;} ?>">
+                      <label for="exampleInputEmail1">Application No</label>
+                        <input type="text" class="form-control" id="application_no"   name="application_no" value="<?php if(isset($row)){ echo $row->application_no;} ?>">
 
                     </div>
                     <div class="col-xs-12 col-md-6">
@@ -109,30 +121,20 @@ background-color: #fff;
                     </div>
                   </div>
 
+ <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">Membership</label>
+                        <input type="text" class="form-control" id="membership" name="membership" value="<?php if(isset($row)){ echo $row->membership;} ?>">
+
+                    </div>
               <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1">Trainer</label>
                         <input type="text" class="form-control" id="trainer" name="trainer" value="<?php if(isset($row)){ echo $row->trainer;} ?>">
 
                     </div>
-                   <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Fees</label>
-                        <input type="text" class="form-control" id="fees"  name="fees" value="<?php if(isset($row)){ echo $row->fees;} ?>">
-
-                    </div>
+                   
                      <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Duration</label>
-                        <input type="text" class="form-control" id="duration"  name="duration" value="<?php if(isset($row)){ echo $row->duration;} ?>">
-
-                    </div>
-                    
-                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Issuance Date</label>
-                        <input type="text" class="form-control" id="issuance_date"  name="issuance_date" value="<?php if(isset($row)){ echo $row->issuance_date;} ?>" placeholder="YYYY-MM-DD">
-
-                    </div>
-                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1">Expiration Date</label>
-                        <input type="text" class="form-control" id="expiration_date"  name="expiration_date" value="<?php if(isset($row)){ echo $row->expiration_date;} ?>" placeholder="YYYY-MM-DD">
+                      <label for="exampleInputEmail1">Year</label>
+                        <input type="text" class="form-control" id="year"  name="year" value="<?php if(isset($row)){ echo $row->year;} ?>" placeholder="YYYY">
 
                     </div>
                     <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
@@ -188,7 +190,7 @@ background-color: #fff;
 	$('#userdatablock').html('<i class="fa fa-cog fa-spin" style="font-size:24px"></i>');
 	
 	  $.ajax({
-		url: "<?php echo base_url().'Certificatedata/getCustomerData'; ?>",
+		url: "<?php echo base_url().'Awarddata/getCustomerData'; ?>",
 		type: 'POST',
 		data: {id:vald},
 		dataType : "json",
@@ -225,7 +227,7 @@ background-color: #fff;
 	// ajax start
 		    $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'certificatedata/save'; ?>",
+			url: "<?php echo base_url().'awarddata/save'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,
@@ -265,7 +267,7 @@ background-color: #fff;
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
 				setTimeout(function(){
-				window.location='certificatedata';
+				window.location='awarddata';
 				},1000);
             }
 			else if (data.status == "validation_error")

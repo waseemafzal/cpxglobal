@@ -61,6 +61,8 @@ class Crud_Model extends CI_model
 	private $tbl_company_detail='tbl_company_detail';
 	private $customerdata='customerdata';
 	private $tbl_subscriber='tbl_subscriber';
+	private $tbl_certificate_data='tbl_certificate_data';
+	
 	   
 	   
 	
@@ -6745,7 +6747,24 @@ public function setEmailTemplate($userName,$activationLink){
 			{
 	
                 
+				if($sendtotype=='certificatedata')
+				{
 				
+					$query  = $this->db->query("SELECT email  FROM `".$this->tbl_certificate_data."` AS TPD 
+					WHERE TPD.id IN (".$_POST['checkedids'].")");
+					$aEmail = array();
+					if (count($query->result()) > 0 ) 
+					{
+						
+						foreach ($query->result() as $row) 
+						{
+							$aEmail[]= $row->email;
+						}
+					} 
+					
+				
+				}
+				else
 				if($sendtotype=='subscribers')
 				{
 				
