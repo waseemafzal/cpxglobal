@@ -11,7 +11,7 @@ class Customerdata extends MX_Controller {
 	}
 	public $view = "view";
 	public $tbl = 'customerdata';
-	public $controllerName = 'Customerdata';
+	public $controllerName = 'customerdata';
 	
 	
 	public function index(){  
