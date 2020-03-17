@@ -62,35 +62,8 @@ class Crud_Model extends CI_model
 	private $customerdata='customerdata';
 	private $tbl_subscriber='tbl_subscriber';
 	private $tbl_certificate_data='tbl_certificate_data';
+	private $tbl_awarddata='tbl_awarddata';
 	
-	   
-	   
-	
-	
-	
-	
-	 
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	 
-
 	
 
     /*||||||||Courses crasula module||||||||*/
@@ -6747,6 +6720,23 @@ public function setEmailTemplate($userName,$activationLink){
 			{
 	
                 
+				if($sendtotype=='awarddata')
+				{
+				
+					$query  = $this->db->query("SELECT email  FROM `".$this->tbl_awarddata."` AS TPD 
+					WHERE TPD.id IN (".$_POST['checkedids'].")");
+					$aEmail = array();
+					if (count($query->result()) > 0 ) 
+					{
+						
+						foreach ($query->result() as $row) 
+						{
+							$aEmail[]= $row->email;
+						}
+					} 
+					
+				
+				}
 				if($sendtotype=='certificatedata')
 				{
 				
