@@ -81,6 +81,7 @@
                     </ul>
 
                 </li>
+                
                 <li class="treeview ">
 
                     <a href="#">
@@ -102,6 +103,58 @@
                         <li><a href="customerdata"><i class="fa fa-list"></i> <span>view Customer Data</span></a></li>
 
                         <li><a href="customerdata/add"><i class="fa fa-list"></i> <span>Add Customer data</span></a></li>
+
+                    </ul>
+
+                </li>
+               
+               <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-user"></i>
+
+                        <span>Certificate Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="certificatedata"><i class="fa fa-list"></i> <span>view Certificate Data</span></a></li>
+
+                        <li><a href="certificatedata/add"><i class="fa fa-list"></i> <span>Add Certificate Data</span></a></li>
+
+                    </ul>
+
+                </li>
+                
+                <li class="treeview ">
+
+                    <a href="#">
+
+                        <i class="fa fa-user"></i>
+
+                        <span>Award Data</span>
+
+                        <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+            </span>
+
+                    </a>
+
+                    <ul class="treeview-menu">
+
+                        <li><a href="awarddata"><i class="fa fa-list"></i> <span>view Awarddata Data</span></a></li>
+
+                        <li><a href="awarddata/add"><i class="fa fa-list"></i> <span>Add Awarddata Data</span></a></li>
 
                     </ul>
 
