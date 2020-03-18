@@ -3912,11 +3912,11 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
 
             'protocol' => 'smtp',
 
-            'smtp_host' => 'ssl://mail.skillsquared.com',
+            'smtp_host' => 'ssl://mail.cppexglobal.org',
 
             'smtp_port' => 465,
 
-            'smtp_user' => 'noreply@skillsquared.com',
+            'smtp_user' => 'noreply@cppexglobal.org',
 
             'smtp_pass' => 'P@ssword123',
 
@@ -3934,7 +3934,7 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
 
         $this->email->to($to);
 
-        $this->email->from('noreply@skillsquared.com', $from_heading);
+        $this->email->from('noreply@cppexglobal.org', $from_heading);
 
         $this->email->subject($subject);
 
@@ -3980,11 +3980,11 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
 
             'protocol' => 'smtp',
 
-            'smtp_host' => 'ssl://mail.skillsquared.com',
+            'smtp_host' => 'ssl://mail.cppexglobal.org',
 
             'smtp_port' => 465,
 
-            'smtp_user' => 'support@skillsquared.com',
+            'smtp_user' => 'support@cppexglobal.org',
 
             'smtp_pass' => 'P@ssword123',
 
@@ -4006,7 +4006,7 @@ WHERE status = " . $this->active . " AND TS.user_id = '" . $userid . "'");
 
         $this->email->to($to);
 
-        $this->email->from('support@skillsquared.com', $from_heading);
+        $this->email->from('support@cppexglobal.org', $from_heading);
 
         $this->email->subject($subject);
 
@@ -6625,7 +6625,7 @@ public function setEmailTemplate($userName,$activationLink){
                                                             <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Hi '.$userName.', </td>
                                                          </tr>
                                                          <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Welcome to SkillSquared! </td>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Welcome to cppexglobal! </td>
                                                          </tr>
                                                          <tr>
                                                             <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Please verify your email address so you can get full access to qualified freelancers eager to tackle your project. </td>
@@ -6659,7 +6659,7 @@ public function setEmailTemplate($userName,$activationLink){
                                                          </tr>
                                                          <tr>
                                                             <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:30px">
-                                                               <div style="padding-top:10px">Thanks for your time,<br>The SkillSquared Team</div>
+                                                               <div style="padding-top:10px">Thanks for your time,<br>The cppexglobal Team</div>
                                                             </td>
                                                          </tr>
                                                       </tbody>
@@ -6684,7 +6684,7 @@ public function setEmailTemplate($userName,$activationLink){
                               New York, Canal Road Thokar, USA
                            </div>
                            <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all">
-                              © 2019 SkillSquared Inc.
+                              © 2019 cppexglobal Inc.
                            </div>
                         </td>
                      </tr>

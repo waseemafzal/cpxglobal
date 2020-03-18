@@ -45,84 +45,44 @@ include_once"header.php";
 			More Details
 			</th>
 		</tr>
+          <?php
+	if(!empty($data->result())){
+	foreach ($data->result() as $row)
+	{
+		
+		?>
 		<tr>
 			<td colspan="1" rowspan="1">
-			<p>CG0001</p>
+			<?php echo $row->event_id;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>Print Automation and Digitalization</p>
+			<?php echo $row->title;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>New Jersey- USA</p>
+			<?php echo $row->location;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>24-25 June-2020</p>
+			<?php echo $row->on_date;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>20- May-2020</p>
+			<?php echo $row->start_at;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>15- June- 2020</p>
+			<?php echo $row->end_at;?>
 			</td>
 			<td colspan="1" rowspan="1">
-			<p>-</p>
+			<?php echo $row->fees;?>
 			</td>
 			<td align="center" colspan="1" rowspan="1">
-			<a ><i class="fa fa-plus"></i></a>
+			<a href="events/detail/<?php echo $row->id;?>" ><i class="fa fa-plus"></i></a>
 			</td>
 		</tr>
-        <tr>
-			<td colspan="1" rowspan="1">
-			<p>CG0001</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>Print Automation and Digitalization</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>New Jersey- USA</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>24-25 June-2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>20- May-2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>15- June- 2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>-</p>
-			</td>
-			<td align="center" colspan="1" rowspan="1">
-			<a ><i class="fa fa-plus"></i></a>
-			</td>
-		</tr>
-        <tr>
-			<td colspan="1" rowspan="1">
-			<p>CG0001</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>Print Automation and Digitalization</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>New Jersey- USA</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>24-25 June-2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>20- May-2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>15- June- 2020</p>
-			</td>
-			<td colspan="1" rowspan="1">
-			<p>-</p>
-			</td>
-			<td align="center" colspan="1" rowspan="1">
-			<a ><i class="fa fa-plus"></i></a>
-			</td>
-		</tr>
+        <?php 
+		}
+	}
+		
+	?>
+        
 	</tbody>
 </table>
 </div>

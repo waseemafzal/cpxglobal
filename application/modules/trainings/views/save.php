@@ -101,9 +101,14 @@ background-color: #fff;
 
                     </div>
                       <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
-                      <div class="col-xs-12 col-md-8">
+                      <div class="col-xs-12 col-md-4">
                       <label for="exampleInputEmail1">Location</label>
                         <input type="text" class="form-control"   placeholder="location" name="location" value="<?php if(isset($row)){ echo $row->location;} ?>">
+
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                      <label for="exampleInputEmail1">Fees</label>
+                        <input type="text" class="form-control"   placeholder="location" name="location" value="<?php if(isset($row)){ echo $row->fees;} ?>">
 
                     </div> 
 

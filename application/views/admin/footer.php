@@ -6,7 +6,7 @@
 
     </div>
 
-    <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="#">Admin SkillSquared</a>.
+    <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="#">Admin CPPex</a>.
     </strong> All rights
 
     reserved.

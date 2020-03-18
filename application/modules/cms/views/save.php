@@ -181,7 +181,15 @@ background-color: #fff;
 
   <?php  getFooter(); ?>
   
+<script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
 
+  $(function () {
+    CKEDITOR.replace('editor1');
+ 
+  
+});
+</script>
   <script>
   /**********************************save************************************/
 	 $('#form_add_update').on("submit",function(e) {
