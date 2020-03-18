@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Eblogs extends CI_Controller {
+class Press_release extends CI_Controller {
 
 
 	  
@@ -10,10 +10,10 @@ class Eblogs extends CI_Controller {
 		parent::__construct();
 		$this->load->library("pagination");
 	}
-	public $tbl='blogpost';
+	public $tbl='news';
 	public function index(){
-				$config = array();
-        $config["base_url"] = base_url() . "eblogs/index";
+		$config = array();
+        $config["base_url"] = base_url() . "press_release/index";
         $config["total_rows"] = getcount($this->tbl);
         $config["per_page"] = 3;
         $config["uri_segment"] = 3;
@@ -36,18 +36,18 @@ $config['last_tagl_close'] = "</li>";
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		 $aData['links'] = $this->pagination->create_links();
 	
-		$aData['page_title'] ='blogs';
+		$aData['page_title'] ='Press release';
 		$aData['data'] =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id limit  ".$page." ,".$config["per_page"]."  ");
 		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
-		$this->load->view('blogs',$aData);
+		$this->load->view('press_release',$aData);
 	}
 	
 	public function detail($id){
-		$aData['page_title'] ='blog detail';
-	$q =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id  where b.id='".$id."'");
+		$aData['page_title'] ='Press release';
+		$q =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id  where b.id='".$id."'");
 		$aData['row'] =$q->row();
 		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
-		$this->load->view('blogs-detail',$aData);
+		$this->load->view('press_detail',$aData);
 	}
 	
 }

@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$route['global_presence'] = 'home/global_presence';
 $route['history'] = 'home/history';
 //$route['mission'] = 'home/mission';
-$route['press_release'] = 'home/press_release';
+//$route['press_release'] = 'home/press_release';
 $route['team'] = 'home/team';
 $route['training'] = 'home/training';
 //$route['why'] = 'home/why';

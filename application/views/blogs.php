@@ -108,6 +108,8 @@ if (strlen($post_description) > 10)
  ?>
 
                                     <div class="text-center">
+                                       <center>  <p class="pagination"><?php echo $links; ?></p>
+  
                     <ul class="pagination">
                         
 <!--	<li><span aria-current="page" class="page-numbers current">1</span></li>
