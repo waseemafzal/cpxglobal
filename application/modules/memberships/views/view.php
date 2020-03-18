@@ -43,7 +43,7 @@
     <?php
 	if(!empty($data->result())){
 	foreach ($data->result() as $row){
-		$pstatus="No";
+		$pstatus="Not Paid";
 		if($row->payment_status==1){
           $pstatus="Yes";
         } 
