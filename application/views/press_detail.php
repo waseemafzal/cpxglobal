@@ -110,7 +110,7 @@ include_once"header.php";
               <h4></h4>
 
               
-<div class="commentsform">
+<div class="commentsform hidden">
     <div id="addcomments">
         <div id="respond" class="comment-respond">
                     	<div id="respond" class="comment-respond">

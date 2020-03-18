@@ -355,6 +355,41 @@ $j++;
                                     </div>
                                 </div>
                                 <div class="row">
+                                <?php
+								if($recentNews->num_rows()>0){
+									foreach($recentNews->result() as $news){
+		$src=base_url().'uploads/'.$news->post_banner;
+								?><div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="press_release/detail/<?=$news->id;?>"><img alt="" src="<?=$src?>"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?=$news->post_title;?> </a></h4>
+                                                        <p>
+                                                        <?php 
+		$post_description = strip_tags($news->post_description);
+		//echo mb_substr($post_description,0,115,'UTF-8');
+if (strlen($post_description) > 10)
+   echo substr($post_description, 0, 150) . '...';		
+		?><a href="press_release/detail/<?=$news->id;?>" >Read more </a>
+                                                        </p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <?php }}else{ ?>
+                                    
                                     <div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
@@ -439,6 +474,7 @@ $j++;
                                             </div>
                                         </div>
                                     </div>
+                                    <?php } ?>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">

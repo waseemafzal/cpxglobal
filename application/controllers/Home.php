@@ -17,6 +17,7 @@ public $tbl_notify ="tbl_notify";
      	public function index()
 
 		{
+			$aData['recentNews'] =$this->db->query("select b.* from news  as b order by id desc limit 0,4");
 			$data = $this->db->select('*')->from('slider')->where('status',1)->get();
 		if($data->num_rows()>0){
 $aData['slider'] = $data;

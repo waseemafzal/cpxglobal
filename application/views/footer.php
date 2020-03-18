@@ -31,18 +31,19 @@
                 <div class="row text-left">
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-2">
-                            <h4>About</h4>
+                            <h4>About Us</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
-                                        <a href="why">Why CPPEx Global</a>
-                                    </li>
-                                    <li>
-                                        <a href="history">History</a>
+                                        <a href="why">Who we are</a>
                                     </li>
                                     <li>
                                         <a href="mission">Mission</a>
                                     </li>
+                                    <li>
+                                        <a href="history">History</a>
+                                    </li>
+                                    
                                     <li>
                                             <a href="team"> Our Team</a>
                                         </li>
@@ -55,22 +56,20 @@
                     </div><!-- end col-lg-3 -->
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-3">
-                            <h4> Membership</h4>
+                            <h4> Product & Services</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
-                                        <a href="why-membership">why our membership</a>
+                                        <a href="why-membership">Training</a>
                                     </li>
                                     <li>
-                                        <a href="membership-categories">Membership categories</a>
+                                        <a href="certifications-overview">Certification</a>
                                     </li>
                                     <li>
-                                        <a href="membership-benefits">Membership benefits</a>
+                                        <a href="why-membership">Membership </a>
                                     </li>
                                     <li>
-                                        <a href="membership_List">Membership list</a>
-                                    </li><li>
-                                        <a href="membership/form">Membership Form</a>
+                                        <a href="membership_List">Awards</a>
                                     </li>
                                 </ul>
                             </div>
