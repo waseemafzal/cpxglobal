@@ -10,6 +10,7 @@ define('TBL_SLIDER','slider');
 
 define('ADMIN',1);
 define('USER',2);
+define('STAFF',3);
 //  test data stripe keys
 define('STRIPE_PUBLISH_KEY','pk_test_uXxQFnmq9s8DIdTAPFo6o0Dv00M6BxuxI4');
 define('STRIPE_SECRETE_KEY','sk_test_Q1KSSdOwBRbawECSTP5nknMB00PHzjk8q3');

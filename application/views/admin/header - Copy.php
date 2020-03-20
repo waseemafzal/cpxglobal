@@ -8,9 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title><?php 
-  
-  echo  APP_NAME; ?></title>
+  <title><?php echo  APP_NAME; ?></title>
 
   <base href="<?php echo base_url(); ?>">
 
@@ -128,8 +126,8 @@
         <ul class="nav navbar-nav">
 
         
-<li class=" notifications-menu hidden">
-            <a href="orde r" >
+<li class=" notifications-menu">
+            <a href="order" >
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning" id="unreadCounter"><?php echo  count_tbl_where('order','watched',0); ?></span>
             </a>
@@ -158,13 +156,15 @@
                
               <?php
 			  echo $this->session->userdata('email');  
-			 
+			  if($this->session->userdata('user_type') == 1)
+			  {
 				   	$image = get_id_by_key('image','id',$this->session->userdata('user_id'),'users');  
 					$imag = base_url().'uploads/'.'noimg.png';
 					if(! empty ($image) AND $image!='noimg.png') 
 					{
 						$imag = base_url().'uploads/'.$image;
 					}// noimg.png
+			  } 
 			  ?>
 
               
@@ -267,17 +267,6 @@
     <style>
 
        
-.pad0{
-	padding:0;
-	}
-	.user-menu:hover .dropdown-menu{
-		display:block !important;
-		}
-		.textRole{
-			    color: #fff;
-    margin-top: 14px;
-    display: inline-block;
-	}
 
 .centered {
 
@@ -309,13 +298,4 @@
 
   <!-- Left side column. contains the logo and sidebar -->
 
- <?php 
- 
-
-if($this->session->userdata('user_type')==STAFF){
-	 include"staff_aside.php";
-	 }
-	  if($this->session->userdata('user_type')==ADMIN){
-	 include"aside.php";
-	 }
-  ?>
+ <?php include"aside.php"; ?>

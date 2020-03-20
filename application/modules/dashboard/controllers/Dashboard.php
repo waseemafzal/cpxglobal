@@ -17,7 +17,7 @@ class Dashboard extends MX_Controller {
 			redirect('auth/login', 'refresh');
 
 		}
-		if($this->session->userdata('user_type')!=1){
+		if($this->session->userdata('user_type')!=ADMIN and $this->session->userdata('user_type')!=STAFF){
 
 			redirect('auth/login', 'refresh');
 

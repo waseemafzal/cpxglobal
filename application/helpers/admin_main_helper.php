@@ -118,7 +118,37 @@ get_title($id,$tableName)
   // is_numeric	 
  }
 
-
+function lasturi(){
+	$CI = &get_instance();
+	return end($CI->uri->segment_array());
+	}	
+function prelasturi(){
+	$refrerlink=$_SERVER['HTTP_REFERER'];
+		$link_array = explode('/',$refrerlink);
+		return end($link_array);
+	}	
+	function adminName(){
+		$CI = &get_instance();
+		$row=$CI->db->select('name,email')->where('id',get_session('user_id'))->get(TBL_USER)->row();
+		if($row->name!=''){
+		return ucfirst($row->name);
+		}else{
+		return $row->email;
+		}
+    }  
+	function role(){
+		$CI = &get_instance();
+		return $CI->db->select('group_title as role')->where('id',get_session('user_type'))->get('users_rights')->row()->role;
+    }   
+    function roleID(){
+		$CI = &get_instance();
+		return $CI->db->select('id as role')->where('id',get_session('user_type'))->get('users_rights')->row()->role;
+    }   
+	
+	function hello(){
+		
+		return ("admin/header");
+    }   
 function exchangeRate( $amount, $from, $to)
 {
     switch ($from) {

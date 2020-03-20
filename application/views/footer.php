@@ -69,7 +69,7 @@
                                         <a href="why-membership">Membership </a>
                                     </li>
                                     <li>
-                                        <a href="membership_List">Awards</a>
+                                        <a href="award-eligibility">Awards</a>
                                     </li>
                                 </ul>
                             </div>

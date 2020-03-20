@@ -67,15 +67,61 @@ background-color: #fff;
 
 
                  <div class="form-group">
+<?php
 
-<div class="col-xs-12 col-md-6 col-sm-6">
+ if(lasturi()=='profile'){
+	echo '<input type="hidden" name="user_type" value="'.get_session('user_type').'" >';	
+	 
+}
+if(isset($row->user_type) and $row->user_type==STAFF){
+echo '<input type="hidden" name="user_type" value="'.STAFF.'" >';	
+}
+if(lasturi()=='create_user'){
+	
+	
+?>
+        <div class="col-xs-12 col-md-4 col-sm-4">
+                          <label> <?php echo ucwords(this_lang('Select Account Type')); ?></label>
+                           <select class="form-control" name="user_type">
+                               
+                               
+                           <option value="0"> <?php echo ucwords(this_lang('USER TYPE')); ?></option>
+                           <?php 
+						   $data = get_tbl_users_rights(); ?>
+                           
+                           <?php $c=0; 
+						   foreach ($data->result() as $user):
+						   $c++;
+						      $string = $user->group_title;
+						      
+					if(get_session('user_type')!=SUPER_ADMIN){
+						if($c==2){
+							continue;
+							}
+						
+						}
+						   ?>
+                           
+                           <option <?php if($row->user_type == $user->id) echo "selected='selected'" ?> value="<?php echo  $user->id?>">
+                           <?php 
+						   
+						   echo  $string?>
+                           </option>
+                           <?php endforeach;?>
+                           </select>
+                        </div>
+        <?php
+}
+?>
+	
+<div class="col-xs-12 col-md-4 col-sm-4">
 
     <label><?php echo ucwords(this_lang('Name')); ?></label>
 
     <input id="name" name="name" class="form-control" value="<?php if(isset($row)){ echo $row->name;} ?>" placeholder="John" type="text" required>
 
 </div>
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-4">
 
                         <label> Email</label>
 
@@ -85,7 +131,7 @@ background-color: #fff;
 
                         <div class="clearfix">&nbsp;</div> 
 
-                    <div class="col-md-6 ">
+                     <div class="col-xs-12 col-md-4">
 
                      
                             <label> <?php echo ucwords(this_lang('Password')); ?></label>
@@ -94,7 +140,7 @@ background-color: #fff;
 
                         </div>
 
-                    <div class="col-xs-12 col-md-6 ">
+                   <div class="col-xs-12 col-md-4">
 
                         <label>  <?php echo ucwords(this_lang('Verify Password')); ?></label>
 
@@ -171,8 +217,7 @@ background-color: #fff;
 
                            
 <input type="hidden" id="id"  name="id" value="<?php if(isset($row)){ echo $row->id;} ?>">
-                           <input type="hidden" id="user_type"  name="user_type" value="1">
-
+                         
                             <button type="button" onclick="create_user();" class="btn btn-effect-ripple btn-success pull-right" name="create_user_submit_btn"><i class="fa fa-plus"></i>  <?php echo ucwords(this_lang('Save')); ?></button>
  <div class="clearfix">&nbsp;</div> 
                         </div>
