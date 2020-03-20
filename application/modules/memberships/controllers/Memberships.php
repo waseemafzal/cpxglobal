@@ -34,7 +34,43 @@ class Memberships extends MX_Controller {
 
 	public function index(){  
 	
-		$aData['data'] =$this->db->query('SELECT *,(SELECT name FROM users AS u WHERE u.id = TBMP.user_id) as username FROM `tbl_membershippackage` as TBMP ORDER BY id DESC ');
+	
+	$where  =  'WHERE  1=1  ';
+	 
+		
+			
+			if(isset($_POST['filterbtn']))
+				{
+				if(isset($_POST['paymentstatus']) and !empty($_POST['paymentstatus']))
+				{
+					$sts =0;
+					if($_POST['paymentstatus']==1)
+					{
+						$sts = 1;	
+					}
+						$where .=' AND payment_status='.$sts;
+				}
+				
+				if(isset($_POST['yearwise']) and !empty($_POST['yearwise']))
+				{
+					$yearwise = $_POST['yearwise']; 
+					$where .=' AND YEAR(created_date)='.$yearwise;
+				}
+				
+				if(isset($_POST['monthwise']) and !empty($_POST['monthwise']))
+				{
+					$monthwise = $_POST['monthwise']; 
+					$where .=' AND MONTH(created_date)='.$monthwise;
+				}
+				
+				if(isset($_POST['searchbyname']) and !empty($_POST['searchbyname']))
+				{
+					$searchbyname = $_POST['searchbyname']; 
+					$where .=' AND (SELECT name FROM users AS u WHERE u.id = TBMP.user_id)='.'"'.trim($searchbyname).'"';
+				}
+			}
+		$aData['data'] =$this->db->query('SELECT *,(SELECT name FROM users AS u WHERE u.id = TBMP.user_id) as username 
+		FROM `tbl_membershippackage` as TBMP  '.$where.' ORDER BY id DESC ');
 		$this->load->view($this->view,$aData);
 	}
 	

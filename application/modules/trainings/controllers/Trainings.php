@@ -14,9 +14,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	public $controllerName = 'trainings';
 	
 	public function index(){  
-
-		$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p");
-		$this->load->view($this->view,$aData);
+	
+			$where  =  'WHERE  1=1  ';
+			
+		if(isset($_POST['filterbtn']))
+		 {
+			if(isset($_POST['searchbyid']) and !empty($_POST['searchbyid']))
+			{
+				$searchbyid = $_POST['searchbyid']; 
+				$where .=" AND course_id='".trim($searchbyid)."'";
+			}
+			
+			if(isset($_POST['searchbytitle']) and !empty($_POST['searchbytitle']))
+			{
+				$searchbytitle = $_POST['searchbytitle']; 
+				$where .=" AND title LIKE '%".trim($searchbytitle)."%'";
+			}
+			if(isset($_POST['searchbyondate']) and !empty($_POST['searchbyondate']))
+			{
+				$searchbyondate = $_POST['searchbyondate']; 
+				//.date('Y-m-d,strtotime($searchbytitle))
+				$where .=" AND on_date = '".date('Y-m-d',strtotime($searchbyondate))."'";
+			}
+		}		
+			$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p  ".$where." ");
+			//lq();
+			$this->load->view($this->view,$aData);
 	}
 	public function add(){  
 		$this->load->view('save');
@@ -63,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
 			echo json_encode($arr);
 		}else{
-			
+			$_POST['created_on'] =NOW;
 			
 			//pre($_POST);
 			/********************upload image start***********************/

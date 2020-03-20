@@ -18,13 +18,76 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
+            <div class="box-header" >
+            <h4>Yearly/month/status report</h4>
+            <form action="<?php base_url();?>memberships" method="post">
+              <div class="col-md-2">
+                <select name="yearwise" class="form-control">
+                    <option value="">Select Year</option>
+                    <?php 
+						for($index = 2020; $index>=2000;$index--)
+						{
+						?>
+							<option value="<?php echo $index;?>"  <?php echo (($_POST['yearwise']==$index) ? 'selected="selected"' : '');?>><?php echo $index;?></option>
+						<?php 
+						}
+                    ?>
+                </select>
+               </div> 
+               <div class="col-md-2">
+                <select name="monthwise" class="form-control">
+                    <option value="">Select Month</option>
+                    <?php 
+						for($index = 1; $index<=12;$index++)
+						{
+						?>
+							<option value="<?php echo $index;?>" 
+                             <?php echo (($_POST['monthwise']==$index) ? 'selected="selected"' : '');?>>
+							  <?php 
+							  	$m = $index;	
+							    if($index<10)
+								{
+								 $m = '0'.$index;	
+								} 
+							  
+							  ?>
+							  <?php echo $m;?>
+                             </option>
+						<?php 
+						}
+                    ?>
+                </select>
+               </div> 
+                <div class="col-md-2">
+                    <select name="paymentstatus"  class="form-control">
+                        <option value="">Select Status <?php echo $_POST['paymentstatus'];?></option>
+                        <option value="2" <?php echo (($_POST['paymentstatus']==2) ? 'selected="selected"' : '');?>>Not Paid</option>
+                        <option value="1" <?php echo (($_POST['paymentstatus']==1) ? 'selected="selected"' : '');?>>Paid</option>
+                    </select>
+                 </div>
+                  
+                 <div class="col-md-2">
+                    <input type="text" name="searchbyname" value="" placeholder="Search by Name"  class="form-control "/>
+                 </div>
+                 
+                  <div class="col-md-3">
+                   <input type="submit" name="filterbtn" value="Submit"  class="btn btn-success btn-small "/>
+                   <a href="<?php base_url();?>memberships">
+                   <input type="button" name="filterbtnreset" value="Reset"  class="btn btn-default btn-small "/>
+                   </a>
+                 </div>
+                 
+                 
+                 
+                 
+                 
+              </form>   
               
             </div>
             <!-- /.box-header -->
             <div class="box-body">
             
-                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
+                <table id="" class="table table-striped table-bordered   responsive email_templating">
     <thead>
     <tr>
         <th><input type="checkbox" id="checkAll" value="2222"></th>
@@ -45,7 +108,7 @@
 	foreach ($data->result() as $row){
 		$pstatus="Not Paid";
 		if($row->payment_status==1){
-          $pstatus="Yes";
+          $pstatus="Paid";
         } 
 		?>
 		<tr id="row_<?php echo $row->id;?>">

@@ -121,13 +121,13 @@ background-color: #fff;
                     </div>
                      <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1">Duration</label>
-                        <input type="text" class="form-control" id="duration"  name="duration" value="<?php if(isset($row)){ echo $row->duration;} ?>">
+                        <input type="date" class="form-control" id="duration"  name="duration" value="<?php if(isset($row)){ echo $row->duration;} ?>">
 
                     </div>
                     
                      <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1">Issuance Date</label>
-                        <input type="text" class="form-control" id="issuance_date"  name="issuance_date" value="<?php if(isset($row)){ echo $row->issuance_date;} ?>" placeholder="YYYY-MM-DD">
+                        <input type="date" class="form-control" id="issuance_date"  name="issuance_date" value="<?php if(isset($row)){ echo $row->issuance_date;} ?>" placeholder="YYYY-MM-DD">
 
                     </div>
                      <div class="col-xs-12 col-md-6">

@@ -54,7 +54,7 @@ background-color: #fff;
                     
                     <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1">Course ID</label>
-                        <input type="text" class="form-control" id="event_id"  placeholder="CG0019" name="event_id" value="<?php if(isset($row)){ echo $row->event_id;} ?>">
+                        <input type="text" class="form-control" id="course_id"  placeholder="CG0019" name="course_id" value="<?php if(isset($row)){ echo $row->course_id;} ?>">
 
                     </div>
                      <div class="clearfix">&nbsp;</div>
@@ -78,13 +78,13 @@ background-color: #fff;
               
                    <div class="col-xs-12 col-md-3">
                       <label for="exampleInputEmail1"> Registration Start</label>
-                        <input type="text" class="form-control" id="start_at"  placeholder="00:00PM" name="start_at" value="<?php if(isset($row)){ echo $row->start_at;} ?>">
+                        <input type="time" class="form-control" id="start_at"  placeholder="00:00PM" name="start_at" value="<?php if(isset($row)){ echo $row->start_at;} ?>">
 
                     </div>
                     
                     <div class="col-xs-12 col-md-3">
                       <label for="exampleInputEmail1"> Registration Closed</label>
-                        <input type="text" class="form-control" id="end_at"  placeholder="00:00PM" name="end_at" value="<?php if(isset($row)){ echo $row->end_at;} ?>">
+                        <input type="time" class="form-control" id="end_at"  placeholder="00:00PM" name="end_at" value="<?php if(isset($row)){ echo $row->end_at;} ?>">
 
                     </div>
                    <!-- <div class="col-xs-12 col-md-1"> OR</div>
@@ -97,7 +97,7 @@ background-color: #fff;
                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
                       <div class="col-xs-12 col-md-3">
                       <label for="exampleInputEmail1">Training Date</label>
-                        <input type="text" class="form-control" id="on_date"  placeholder="09-02-2020" name="on_date" value="<?php if(isset($row)){ echo $row->on_date;} ?>">
+                        <input type="date" class="form-control" id="on_date"  placeholder="09-02-2020" name="on_date" value="<?php if(isset($row)){ echo $row->on_date;} ?>">
 
                     </div>
                       <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
