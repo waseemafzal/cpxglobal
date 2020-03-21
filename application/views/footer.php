@@ -1,5 +1,5 @@
 <div class="clearfix">&nbsp;</div>        <footer>
-            <div class="top-footer">
+            <div class="top-footer" style="padding: 0;">
                 <div class="container">
                 
                     <div class="row">
@@ -11,7 +11,7 @@
 
                                 <div class="mc4wp-form-fields">
                                     <div class="form-inline">
-                                        <h3>Subscribe to our Newsletter for latest news.</h3> 
+                                        <h3 style="font-size: 28px;">Subscribe to our Newsletter for latest news.</h3> 
                                         <input class="form-control sbcriber_id" id="email_newsletter" name="EMAIL" placeholder="Your Email" required type="email"> 
                                         <input class=" button_outline" id="submit-newsletter" type="button" value="Subscribe" onclick="subscribe__()">
                                     </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="container " id="nav-footer">
                 <div class="row text-left">
-                    <div class="col-md-3 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 columns">
                         <div class="widget widget_text" id="text-2">
                             <h4>About Us</h4>
                             <div class="textwidget">
@@ -75,7 +75,30 @@
                             </div>
                         </div>
                     </div><!-- end col-lg-3 -->
-                    <div class="col-md-3 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 columns">
+                        <div class="widget widget_text" id="text-4">
+                            <h4>Information</h4>
+                            <div class="textwidget">
+                                <ul>
+                                    <li>
+                                        <a href="press_release">News </a>
+                                    </li>
+                                    <li>
+                                        <a href="eblogs">Blogs</a>
+                                    </li>
+                                    <li>
+                                        <a href="eblogs">Video</a>
+                                    </li>
+                                    <li>
+                                        <a href="GalleryYear/view/2019">Gallery </a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- end col-lg-3 -->
+                    <!-- end col-lg-3 -->
+                    <div class="col-md-2 col-sm-6 columns">
                         <div class="widget widget_text" id="text-4">
                             <h4>CONTACT</h4>
                             <div class="textwidget">
@@ -90,7 +113,10 @@
                                         <a href="contact/complaint">Complaint</a>
                                     </li>
                                     <li>
-                                        <a href="contact/index">Contact us</a>
+                                        <a href="events/view/2020">Events</a>
+                                    </li>
+                                    <li>
+                                        <a href="career">Career</a>
                                     </li>
                                 </ul>
                             </div>
@@ -111,7 +137,7 @@
                                     </li>
                                 </ul>
                                 <ul>
-                                    <li><strong class="phone">+(856) 839-2373</strong><br>
+                                    <li><strong class="phone">+001 609 271 2476</strong><br>
                                     <small>Mon - Fri / 9:00AM – 05:00PM</small></li>
                                     <li>Questions? <a href="mailto:info@cppexglobal.org">info@cppexglobal.org</a>
                                     </li>
