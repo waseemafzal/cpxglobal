@@ -28,7 +28,7 @@ include_once"header.php";
             
      <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-             <h4>Online Membership form</h4>
+             <h4 class="headingform__">Online Membership form</h4>
      
               <form id="membsrshipcreate" name="form_add_update" role="form" enctype="multipart/form-data">
                 <div class="page-alert" style="display: block;"> </div>
@@ -318,6 +318,7 @@ $(document).ready(function(){
 				$("#mmmbershipID").val(aMessage[1]);
 				//alert('mmmbershipID'+$("#mmmbershipID").val());
 				getMsg('success',aMessage[0]);
+				$(".headingform__").hide();
 				$("#registrationDetail").hide();
 				$("#PaymentDetail").slideDown('slow');
 			}

@@ -28,7 +28,7 @@ define('PACKAGE_2',500);
 define('PACKAGE_3',750);
 define('PACKAGE_4',1000);
 
-
+define('COURSE_PRICE',100);
 
 
 //define('STRIPE_PUBLISH_KEY','pk_live_VkGtyj9QwUIFZaMDjPKAbV9jd');

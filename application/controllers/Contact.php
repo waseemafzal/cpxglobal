@@ -5,6 +5,10 @@ class Contact extends CI_Controller {
     public $tbl_feedback='tbl_feedback';
 	public $tbl_contacts='tbl_contacts';
 	public $tbl_complaints='tbl_complaints';
+	public $tbl_registration='tbl_registration';
+	public $tbl_order_payments  = 'tbl_order_payments';
+	public $order  = 'order';
+	
 	
 	
    
@@ -163,7 +167,85 @@ class Contact extends CI_Controller {
 	 }
 	 
 	
+	 
+	 public   function registration_create()
+	 { 
+		
+		extract($_POST);
+		$result=0;
+	    $PrimaryID = base64_decode($_POST['id']);
+		unset($_POST['action'],$_POST['id']);
+		
+		
+		$courseAmount  = COURSE_PRICE;
+		$no_of_persons = count($_POST['personal_detail']['name']); // no of detail
+		$totalPrice = ((int)$no_of_persons * (int)COURSE_PRICE);
+		//no_of_persons 	payment_total 	discounted_price 	personal_detail 	company_detail 	finanace_detail 	created_on
+           
+			$discounted_price  =  0;	
+			if($no_of_persons>=2 and $no_of_persons<=4)
+			{
+				$discounted_price  =  (($totalPrice * 15)/100);
+			}
+			else
+			if($no_of_persons>=5 and $no_of_persons<=10)
+			{
+				$discounted_price  =  (($totalPrice * 25)/100);
+			}
+		
 	
+		   $price_now = ($totalPrice - $discounted_price);		   
+		   $adata = array(
+				'no_of_persons'=>$no_of_persons,
+				'payment_total'=>$totalPrice,
+				'discounted_price'=>$discounted_price,
+				'price_now'=>$price_now,
+				'personal_detail'=>json_encode($personal_detail),
+				'company_detail'=>json_encode($company_detail),
+				'finanace_detail'=>json_encode($finanace_detail),
+				'created_on'=>NOW
+			);
+			
+			$result = $this->crud->saveRecord( '',$adata,$this->tbl_registration );
+			$register_id  = $this->db->insert_id();
+			$price_now  = $price_now;
+			
+				 
+				
+			
+			
+			switch($result){
+			case 1:
+
+
+			//$arr = array('status' => 1,'message' => "Your information have been submit to us, Continue to complete Purchase.".'=='.$price_now);
+			$arr = array(
+			'status' => 1,
+			'message' => "Your information have been submit to us, Continue to complete Purchase.",
+			'bag' => array('register_id'=>$register_id,'price_now'=>$price_now)
+			);
+			
+			echo json_encode($arr);
+			break;
+			case 2:
+			$arr = array('status' => 2,'message' => "Your services has been  Updated Succefully !");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	 
+	 }
+	 
+	 
+	 
+	 
 	
 	  
 	  public   function saveContactForm()
@@ -307,7 +389,123 @@ class Contact extends CI_Controller {
 			break;	
 		}
 	 }
-	
+	   
+	   
+	  	public function paymentprocessing()
+		{
+		
+		  
+		  
+		    if(is_array($this->input->get())  and count($this->input->get()) > 0)
+			{
+				
+			
+				$aSellerbalanceaccount = array();
+				$this->load->library('paypal/paypalexpress','paypalexpress');
+				$paymentresult = $this->paypalexpress->paymentprocess( $this->input->get() );
+				$redirectStr = ''; 
+				
+				
+				if($paymentresult && $paymentresult->state == 'approved')
+				{
+					
+					$id = $paymentresult->id;
+					$state = $paymentresult->state;
+					$payerFirstName = $paymentresult->payer->payer_info->first_name;
+					$payerLastName = $paymentresult->payer->payer_info->last_name;
+					$payerName = $payerFirstName.' '.$payerLastName;
+					$payerEmail = $paymentresult->payer->payer_info->email;
+					$payerID = $paymentresult->payer->payer_info->payer_id;
+					$payerCountryCode = $paymentresult->payer->payer_info->country_code;
+					$paidAmount = $paymentresult->transactions[0]->amount->details->subtotal;
+					$currency = $paymentresult->transactions[0]->amount->currency;
+				    $create_time = str_replace('T',' ', str_replace('Z',' ',$paymentresult->create_time));
+					
+					   $RegisetrKey_43782_noncceekey = $this->input->get('RegisetrKey_43782_noncceekey');
+						$price_now = get_id_by_key('price_now','id',
+						$this->input->get('RegisetrKey_43782_noncceekey'),$this->tbl_registration );
+						
+						$data_array = array('payment_status'=>1);
+						$this->db->where('id', $RegisetrKey_43782_noncceekey);
+						$this->db->update($this->tbl_registration, $data_array);
+						// update payment status 
+						
+						
+				
+					if((int)$price_now >= (int)$paidAmount)
+					{
+					
+						$data = array(
+							'txn_id' => $id,
+							'payment_gross' => $paidAmount,
+							'currency_code' => $currency,
+							'payer_id' => $payerID,
+							'payer_name' => $payerName,
+							'payer_email' => $payerEmail,
+							'payer_country' => $payerCountryCode,
+							'payment_status' => $state,
+							'created' => $create_time
+						);
+						
+						
+						if(!empty($membershipID_43782_noncceekey))
+						{
+						  $data =  array_merge(array('memship_id'=>$RegisetrKey_43782_noncceekey),$data);	
+						}
+						
+						// customorderid
+						
+						$dbExi = $this->db->insert($this->tbl_order_payments,$data);
+						$insert =  $this->db->insert_id(); // get inserted id
+						if(! empty($insert))
+						{
+						    
+							$orderdata  = array (
+									'user_id'=>$this->session->userdata('user_id'),
+									'created_on'=>$create_time,
+									'amount'=> $paidAmount,
+									'status'=>1,
+									'orderNo'=>uniqid(),
+									'payment_id'=>$insert,
+									'payment_method'=>'paypal',
+									'payment_type'=>2, // for resgitration
+									'memship_id'=> $RegisetrKey_43782_noncceekey
+								);
+							 
+							// $orderdata =  array_merge(array('seller_offer_request_id'=>$requestid),$orderdata);	
+							 $aSellerbalanceaccount =  array_merge(array('payment_method'=>PAYPAL),$aSellerbalanceaccount);	 // arslan
+						     $orderinserted  = $this->db->insert($this->order,$orderdata); // order has been inseted... 
+							 $orderid =  $this->db->insert_id(); // get inserted id	 // arslan
+							 $aSellerbalanceaccount =  array_merge(array('order_id'=>$orderid),$aSellerbalanceaccount);	 // arslan
+						}
+						
+						$redirectStr = $insert;
+					}
+					
+					
+					 redirect(base_url().'contact/orderstatus/'.$redirectStr); 
+		    }
+			redirect( base_url()); 
+		 }
+		 
+	  else
+	  exit('Not Valid...!');
+			
+   }
+  
+	 
+	  public function orderstatus($orderid)
+	{
+	     uriv($orderid,'Not received any order...!'); // offerservicedetail	
+		 
+
+		 $data['orderdata'] = $this->db->select('*')->from($this->tbl_order_payments )->where('id',$orderid)->get()->row();
+		 $this->load->view('payment-status',$data);
+		
+	}
+	  
+	   
+	   
       
 	  
 	  private function sendEmail($mailData){

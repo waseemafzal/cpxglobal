@@ -29,9 +29,10 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-            <h4>Online registration form</h4>
-            <form id="form_add_update" name="form_add_update" method="post" action="">
-<section id="personalDetail" class="Section">
+            <h4 class="headingform__">Online registration form</h4>
+            <form id="membsrshipcreate" name="form_add_update" method="post" action="">
+             <div class="page-alert" style="display: block;"> </div>
+				<section id="personalDetail" class="Section">
 <h3>Personal Detail <span>Name to appear on the certificate, please provide correct and clearly</span>
 </h3>
 <div class="col-md-12">
@@ -54,12 +55,12 @@ include_once"header.php";
 <tbody class="field_wrapper">
 <tr>
 <td>1</td>
- <td><input   class="form-control"required name="Name[]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"type="email" required name="email[]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"required name="company[]" /><span class="text-danger">*</span></td>
- <td><input class="form-control" type="text"    required="required" name="phone" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"  required name="idno[]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"required name="nationality[]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"required name="personal_detail[name][]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"type="email" required name="personal_detail[email][]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"required name="personal_detail[job_title][]" /><span class="text-danger">*</span></td>
+ <td><input class="form-control" type="text"    required="required" name="personal_detail[phone][]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"  required name="personal_detail[id_no][]" /><span class="text-danger">*</span></td>
+ <td><input   class="form-control"required name="personal_detail[nationality][]" /><span class="text-danger">*</span></td>
  <td>&nbsp;</td>
 </tr>
 <tr>
@@ -69,45 +70,52 @@ include_once"header.php";
 
 </div>
 </div>
+
+
+
+
 <h3>Company detail</h3>
 <div class="col-md-4 col-xs-12">
 <label>Company <span class="text-danger">*</span></label>
-<input type="text" class="form-control"  required="required" name="Company" />
+<input type="text" class="form-control"  required="required" name="company_detail[name]" />
 </div>
 <div class="col-md-4 col-xs-12">
 <label>Phone <span class="text-danger">*</span></label>
-<input type="text" class="form-control"  required="required" name="Subject" />
+<input type="text" class="form-control"  required="required" name="company_detail[phone]" />
 </div>
 <div class="col-md-4 col-xs-12">
 <label>Address</label>
-<input type="text" class="form-control"  required="required" name="address" />
+<input type="text" class="form-control"  required="required" name="company_detail[address]" />
 </div>
 <div class="col-md-4 col-xs-12">
 <label>Country</label>
-<input type="text" class="form-control"  required="required" name="country" />
+<input type="text" class="form-control"  required="required" name="company_detail[country]" />
 </div>
 <h3>Finance Department detail</h3>
-<div class="col-md-6 col-xs-12">
+<div class="col-md-6 col-xs-12"> 
+
+
+
 <label>Name</label>
-<input type="text" class="form-control"  required="required" name="depName" />
+<input type="text" class="form-control"  required="required" name="finanace_detail[name]" />
 </div>
 <div class="col-md-6 col-xs-12">
 <label>Phone</label>
-<input type="text" class="form-control"  required="required" name="depPhone" />
+<input type="text" class="form-control"  required="required" name="finanace_detail[phone]" />
 </div>
 <div class="col-md-6 col-xs-12">
 <label>Email</label>
-<input type="text" class="form-control"  required="required" name="depEmail" />
+<input type="text" class="form-control"  required="required" name="finanace_detail[email]" />
 </div>
 <div class="col-md-6 col-xs-12">
 <label>Position</label>
-<input type="text" class="form-control"  required="required" name="depPosition" />
+<input type="text" class="form-control"  required="required" name="finanace_detail[position]" />
 </div>
 <div class="clearfix">&nbsp;</div>
 <table style="text-align:center;border: 1px solid lightgray;" align="center" class="table  table-border">
 <thead>
 	<tr >
-    <th  bgcolor="#CCCCCC" colspan="2" style="text-align:center" >COURSE FEES: $4,000</td>
+    <th  bgcolor="#CCCCCC" colspan="2" style="text-align:center" >COURSE FEES: $<?php echo nmf(COURSE_PRICE);?></td>
     </tr>
     <tr>
     <th style="text-align:center"  colspan="2" align="center">
@@ -155,23 +163,31 @@ Discount
 	<li>Complaints related to trainer, contents, venue or services shall be accepted in written form and handle by CPPEx Global complaints management team.</li>
 </ul>
 
-<div class="col-xs-12"><input type="checkbox"> I have read, understand and agreed to the above</div>
+<div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read, understand and agreed to the above</div>
 </div>
-<section id="PaymentDetail" class="formSection" style="display:none" >
-                <h2>PAYMENT METHOD:</h2>
+
+
+<div class="col-md-12 col-xs-12">
+<center>
+
+ <div  style="display:" id="___----nonounc____"></div>
+  <div  style="display:" id="___----nonounc____R"></div>
+<button class="btnCustom pull-right pubservice__42das8672878" type="submit">Submit</button>
+
+</center>
+</div>
+</section>
+
+			 </form>
+             
+             <section id="PaymentDetail" class="formSection" style="display:none;">
+                <h4>PAYMENT METHOD:</h4>
                     <div class="col-md-6">
                         <img src="frontend/images/paypal.jpg" class="img-responsive">
                          <div id="paypal-button"></div>
                     
                     </div>
             </section>
-
-<div class="col-md-12 col-xs-12">
-<center><input type="submit" class="btnCustom" value="Submit"></center>
-</div>
-</section>
-
-</form>
             </div>
         </section>
   
@@ -198,20 +214,57 @@ CPPEx Global</p>
         
 <?php include_once"footer.php"; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script type="text/javascript">
   /**********************************save************************************/
-	 $('#form_add_update').on("submit",function(e) {
-		e.preventDefault();
+
+ var x = 2; //Initial field counter is 1
+   
+$(document).ready(function(){
+    var maxField = 11; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper 
+     //New input field html 
+    
+    //Once add button is clicked
+    $(addButton).click(function(){ 
+
+
+
+
+
+
+        //Check maximum number of input fields
+		var fieldHTML = '<tr id="row_'+x+'"><td>'+x+'</td><td><input   class="form-control"required name="personal_detail[name][]" /></td><td><input class="form-control"type="email" required name="personal_detail[email][]" /></td><td><input   class="form-control"required name="personal_detail[job_title][]" /></td><td><input type="text" class="form-control"   required="required" name="personal_detail[phone][]" /></td><td><input   class="form-control"  required name="personal_detail[id_no][]" /></td><td><input   class="form-control"required name="personal_detail[nationality][]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+    
+       
+	   
+	    
+		<!------------------Form submission -------------------->
+	 $('#membsrshipcreate').on("submit",function(e) {
+			
+			e.preventDefault();
+			var btnc = '.pubservice__42das8672878';
+			$(btnc).prop('disabled',true); 
+			var formData = new FormData();
+			var other_data = $('#membsrshipcreate').serializeArray();
+			$.each(other_data,function(key,input)
+				{
+					formData.append(input.name,input.value);
+				}
+			);   
 		
-		 var formData = new FormData();
-	var other_data = $('#form_add_update').serializeArray();
-    $.each(other_data,function(key,input){
-        formData.append(input.name,input.value);
-    });   
-	// ajax start
-		    $.ajax({
+		
+
+	 
+		   $.ajax({
 			type: "POST",
-			url: "<?php echo base_url().'contact/saveFeedback'; ?>",
+			url: "<?php echo base_url().'Contact/registration_create'; ?>",
 			data: formData,
 			cache: false,
 			contentType: false,
@@ -223,55 +276,144 @@ CPPEx Global</p>
 			},
 			success: function(data) {
 			$('#loader').addClass('hidden');
-			//$('#form_add_update .btn_au').removeClass('hidden');
-			//alert(data.status);
-			//var obj = jQuery.parseJSON(data);
-            if (data.status == 1)
+			$('#form_add_update .btn_au').removeClass('hidden');
+			if (data.status == 1)
             {   
-			$("#Modal").modal('show');
-				setTimeout(function(){
-				$("#Modal").modal('hide');
-				},10000);
-            }
+				$(btnc).prop('disabled',false); 
+				var messsage = data.message;
+				$("#___----nonounc____").html(data.bag.price_now);
+				$("#___----nonounc____R").html(data.bag.register_id);
+				//alert('mmmbershipID'+$("#mmmbershipID").val());
+				getMsg('success',messsage); 
+				$("#personalDetail").hide();
+				$(".headingform__").hide();
+				
+				$("#PaymentDetail").slideDown('slow');
+			}
            else if (data.status ==0)
             {  
-			$(".alert").addClass('alert-success');
-				$(".alert").html(data.message);
-				$(".alert").removeClass('hidden');
-				setTimeout(function(){
-				//window.location=data.redirect;
-				},1000);
-            }
-			
+				$(btnc).prop('disabled',false); 
+				getMsg('success',data.message);
+			}
+			else if (data.status == "validation_error")
+            {    
+			   $(btnc).prop('disabled',false); 
+			    getMsg('error',data.message);
+			}
 			
            }
 	 });
 
 	//ajax end    
     });
- var x = 2; //Initial field counter is 1
-   
-$(document).ready(function(){
-    var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper 
-     //New input field html 
-    
-    //Once add button is clicked
-    $(addButton).click(function(){
-        //Check maximum number of input fields
-		var fieldHTML = '<tr id="row_'+x+'"><td>'+x+'</td><td><input   class="form-control"required name="Name[]" /></td><td><input class="form-control"type="email" required name="email[]" /></td><td><input   class="form-control"required name="company[]" /></td><td><input type="text" class="form-control"   required="required" name="phone" /></td><td><input   class="form-control"  required name="idno[]" /></td><td><input   class="form-control"required name="nationality[]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
-        if(x < maxField){ 
-            x++; //Increment field counter
-            $(wrapper).append(fieldHTML); //Add field html
-        }
-    });
-    
-    
-});	
+	<!-----------------Form sbmissions---------------------->
+	   
+	   
+	   
+});
+function getMsg(type,msg)
+	{
+			var msgg = '<div class="message"><p class="'+type+'">'+msg+'</p></div>';
+			$(".page-alert").show();
+			$(".page-alert").addClass('error');
+			$(".page-alert").html(msgg);
+			$(".page-alert").focus();
+			setTimeout(function()
+			{
+				$(".page-alert").fadeOut().html('');
+			},10000);	
+	}	
 function hideme(id){
 		$('#row_'+id).remove();
 		x--;
 		}
     
+</script>
+<script>
+paypal.Button.render({
+
+    env: 'sandbox',
+
+    client: {
+
+        sandbox: 'AdQJBq4-Cq74TG1-2kIOsfGRNY3DhCo8VHSRc_-qMEnjCmbbKttcVdUuDYn-hoRk0CJoB9_SDAQpNdUo',
+
+        production: 'EMF9Tbm8aGZ-bvWvBCrYXAXXwaXVZaV_h2cRXN5yTbqubIBKrFp9Mqi7lld5MoTonUbk9vvFKlJmUre-'
+
+    },
+
+    // Customize button (optional)
+
+    locale: 'en_US',
+
+    style: {
+
+        size: 'small',
+
+        color: 'gold',
+
+        shape: 'pill',
+
+    },
+
+    // Set up a payment
+
+    payment: function (data, actions) {
+
+        return actions.payment.create({
+
+            transactions: [{
+
+                amount: {
+
+                    total: $("#___----nonounc____").html(),
+
+                    currency: 'USD'
+
+                }
+
+            }]
+
+      });
+
+    },
+
+    // Execute the payment
+
+    onAuthorize: function (data, actions) {
+
+        return actions.payment.execute()
+
+        .then(function () {
+
+            // Show a confirmation message to the buyer
+
+            //window.alert('Thank you for your purchase!');
+
+            
+
+            // Redirect to the payment process page
+
+			
+			var nonucerK = $("#___----nonounc____R").html();
+
+			 window.location = "<?php echo base_url();?>contact/paymentprocessing?paymentID="+data.paymentID+"&token="+data.paymentToken+"&payerID="+data.payerID+"&RegisetrKey_43782_noncceekey="+nonucerK;
+
+		
+
+			
+
+
+        });
+
+    }
+
+}, '#paypal-button');
+
+
+
+
+
+
+
 </script>

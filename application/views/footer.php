@@ -334,7 +334,7 @@ margin-left: 14%;
 }
 		.page-alert .error 
 		{
-			color: #fff;
+			color: #fff !important;
 			margin: 0px;
 			background: #C04848;
 			font-weight: bold;
@@ -345,7 +345,7 @@ margin-left: 14%;
 		}
 		.page-alert .success   {
 			
-			color: #fff;
+			color: #fff !important;
 			margin: 0px;
 			background: #00a65a;
 			font-weight: bold;
