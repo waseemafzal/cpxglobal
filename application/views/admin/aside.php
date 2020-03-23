@@ -206,6 +206,8 @@
 
                         <li><a href="contactus"><i class="fa fa-list"></i> <span>Contactus</span></a></li>
                          <li><a href="feedbacks"><i class="fa fa-list"></i> <span>Feedbacks</span></a></li>
+                          <li><a href="registrationdata"><i class="fa fa-list"></i> <span>Registration</span></a></li>
+                         
 
                     </ul>
 

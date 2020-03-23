@@ -32,65 +32,18 @@ class Registrationdata extends MX_Controller {
 	
 	
 
-	public function index(){  
-	$aData['data'] =$this->db->query('SELECT *
-		FROM `tbl_registration`  ORDER BY id DESC ');
-		
-	$this->load->view($this->view,$aData);
-	}
-	public function _index(){  
+	public function index()
+	{  
 	
-	
-	$where  =  'WHERE  1=1  ';
-	 
-		
-			
-			if(isset($_POST['filterbtn']))
-				{
-				if(isset($_POST['paymentstatus']) and !empty($_POST['paymentstatus']))
-				{
-					$sts =0;
-					if($_POST['paymentstatus']==1)
-					{
-						$sts = 1;	
-					}
-						$where .=' AND payment_status='.$sts;
-				}
-				
-				if(isset($_POST['yearwise']) and !empty($_POST['yearwise']))
-				{
-					$yearwise = $_POST['yearwise']; 
-					$where .=' AND YEAR(created_date)='.$yearwise;
-				}
-				
-				if(isset($_POST['monthwise']) and !empty($_POST['monthwise']))
-				{
-					$monthwise = $_POST['monthwise']; 
-					$where .=' AND MONTH(created_date)='.$monthwise;
-				}
-				
-				if(isset($_POST['searchbyname']) and !empty($_POST['searchbyname']))
-				{
-					$searchbyname = $_POST['searchbyname']; 
-					$where .=' AND (SELECT name FROM users AS u WHERE u.id = TBMP.user_id)='.'"'.trim($searchbyname).'"';
-				}
-			}
-		$aData['data'] =$this->db->query('SELECT *,(SELECT name FROM users AS u WHERE u.id = TBMP.user_id) as username 
-		FROM `tbl_membershippackage` as TBMP  '.$where.' ORDER BY id DESC ');
+		$aData['data'] = $this->db->query('SELECT * FROM `'.$this->tbl.'` as TBMP ORDER BY id DESC ');
 		$this->load->view($this->view,$aData);
 	}
 	
 	
 	
-	public function addNote()
-	{
-	 
-	  extract($_POST);
-	  $data = array('id'=>$id,'package_info_admin'=>$note);
-	  	echo $result =$this->crud->update_where($id,'tbl_membershippackage',$data);
-	}
 
-  public function getPackageDetail()
+
+ public  function getRegistrationDetail()
   {
 	
 	
@@ -98,97 +51,70 @@ class Registrationdata extends MX_Controller {
 	$response=array();
 	$response['status']=0;
 	$html='';
-	$query = $this->db->query("SELECT * FROM ".$this->tbl_personal_detail." AS TPD   WHERE  TPD.id = '".$_POST['id']."'");
+	$query = $this->db->query("SELECT * FROM ".$this->tbl." AS TPD   WHERE  TPD.id = '".$_POST['id']."'");
 	$response = array('status' => 0,'data' => 'No info');
 	if($query->num_rows()>0)
 	{
 		$status = 1;
 		$user = $query->row();
-		$Name =  $user->name.' '.$user->middle_name.' '.$user->last_name;
-		$mobile =$user->mobile;
-		$fax =$user->fax;
-	 
-	
 		
-		$userHtml.='<div id="inner">';
-		$userHtml.='<p style="margin: 0;"   align="center"><b style="font-size:17px;">Personal Detail</b></p>';
-		$userHtml.='<div style="margin: 0;"> <strong>Name:</strong> '.$Name.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Mobile:</strong> '.$mobile.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Fax:</strong> '.$fax.'</div>';
-		$userHtml.='<hr/>';
-		$query = $this->db->query("SELECT * FROM ".$this->tbl_company_detail." AS TPD   WHERE  TPD.id = '".$_POST['id']."'");
-		$user = $query->row();
-		$userHtml.='<p style="margin: 0;"  align="center"><b style="font-size:17px;">Company Detail</b></p>';
-		$userHtml.='<div style="margin: 0;"> <strong>Company Name:</strong> '.$user->company_name.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Principle Bussniss:</strong> '.$user->principle_bussniss.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Number Of Employees:</strong> '.$user->number_of_employees.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Address:</strong> '.$user->address.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Country:</strong> '.$user->country.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Zip:</strong> '.$user->zip.'</div>';
-		$userHtml.='<hr/>';
-		
-		
-		
-		
-		$query = $this->db->query("SELECT * FROM ".$this->tbl_professional_education_detail." AS TPD   WHERE  TPD.id = '".$_POST['id']."'");
-		$user = $query->row();
-		$userHtml.='<p style="margin: 0;"  align="center"><b style="font-size:17px;">Professional Education Detail</b></p>';
-		$userHtml.='<div style="margin: 0;"> <strong>University:</strong> '.$user->university.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Degree:</strong> '.$user->degree.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Diploma:</strong> '.$user->diploma.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Other:</strong> '.$user->other.'</div>';
-		
-		$adata = json_decode($user->job_detail);
-		$userHtml.='<table border="1"  bordercolor="#ddd" width="100%">
+		  $adata = json_decode($user->personal_detail);
+		   $userHtml.='<h3 style="font-size:17px;font-weight:bold;">Personal Detail:</h3>';
+		  
+		   $userHtml.='<table border="1"  bordercolor="#ddd" width="100%">
+		   
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Job Title</th>
+					<th>Phone</th>
+					<th>ID No</th>
+					<th>Nationaliiy</th>
+				</tr>';
+			
+				for($i=0;$i<count($adata->name);$i++)
+				{
+					$userHtml.='
 					<tr>
-					   <th>Company Name</th>
-					   <th>Position</th>
-					   <th>Month & Year</th>
-					</tr>';
+						<td>'.$adata->name[$i].'</td>
+						<td>'.$adata->email[$i].'</td>
+						<td>'.$adata->job_title[$i].'</td>
+						<td>'.$adata->phone[$i].'</td>
+						<td>'.$adata->id_no[$i].'</td>
+						<td>'.$adata->nationality[$i].'</td>
+					</tr>
+					';
+				}
+				$userHtml.='</table>';
+				
+				$acompany_detail = json_decode($user->company_detail);
+					$userHtml.='</br><h3 style="font-size:17px; font-weight:bold;">Company Detail:</h3>';
+				$userHtml.='<div id="inner">';
+				//$userHtml.='<p style="margin: 0;"  align="center"><b style="font-size:17px;">Company Detail</b></p>';
+				$userHtml.='<hr/>';
+				$userHtml.='<div style="margin: 0;"> <strong>Name:</strong> '.$acompany_detail->name.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Phone:</strong> '.$acompany_detail->phone.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Address:</strong> '.$acompany_detail->address.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Country:</strong> '.$acompany_detail->country.'</div>';
+				
+				
+				
+				
+				$afinanace_detail = json_decode($user->finanace_detail);
 					
-			for($i=0;$i<count($adata->cname);$i++)
-			{
-			$userHtml.='<tr>
-						   <td>'.$adata->cname[$i].'</td>
-						   <td>'.$adata->position[$i].'</td>
-						   <td>'.$adata->period[$i].'</td>
-						</tr>';
-	         }
-			$userHtml.='</table>';
-		
-		
-		
-		$userHtml.='<hr/>';
-		$query = $this->db->query("SELECT * FROM ".$this->tbl_reffered_by." AS TPD   WHERE  TPD.id = '".$_POST['id']."'");
-		$user = $query->row();
-		$adata = json_decode($user->refferby_detail);
-		
-		$userHtml.='<p style="margin: 0;"  align="center"><b style="font-size:17px;">Reffered By</b></p>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Name:</strong> '.$adata->reffredName.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Company Name:</strong> '.$adata->reffredCompanyName.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Address:</strong> '.$adata->reffredaddress.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Suburb:</strong> '.$adata->Suburb.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Phone:</strong> '.$adata->reffredPhone.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Email:</strong> '.$adata->reffredEmail.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>State:</strong> '.$adata->State.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Zip:</strong> '.$adata->reffredZip.'</div>';
-		$userHtml.='<div style="margin: 0;"> <strong>Reffred Website:</strong> '.$adata->reffredWebsite.'</div>';
-		
-		
-		
-		$html.=$userHtml;
-	//	$html.='<p>DELIVERY TIME :'.$user->delivery_time.' </p>';
-		
-		
-		$c=1;
-			$html.='<table>';
-			$html.='<tfoot></tfoot>';
+				$userHtml.='</br><h3 style="font-size:17px;font-weight:bold;">Finanace Detail:</h3>';
+				$userHtml.='<div id="inner">';
 			
-			$html.='<tfoot></tfoot>';
-			$html.='</table>'; 
-			
-			
-			$html.='</div>';
+				$userHtml.='<hr/>';
+				$userHtml.='<div style="margin: 0;"> <strong>Name:</strong> '.$afinanace_detail->name.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Phone:</strong> '.$afinanace_detail->phone.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Address:</strong> '.$afinanace_detail->email.'</div>';
+				$userHtml.='<div style="margin: 0;"> <strong>Country:</strong> '.$afinanace_detail->position.'</div>';
+				$userHtml.='<hr/>';
+				
+		
+		
+			$html.=$userHtml;
 			$response = array('status' => 1,'data' => $html);
        }
 	

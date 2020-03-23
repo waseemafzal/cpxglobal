@@ -24,7 +24,7 @@ background-color: #fff;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Order Management
+        Feedback Management
         
       </h1>
       <ol class="breadcrumb">
