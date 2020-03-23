@@ -13,7 +13,7 @@ class Membership extends CI_Controller {
 	public $order  = 'order';
 	
 	
-	  
+	 
 	  function __construct()
 	{
 		parent::__construct();
