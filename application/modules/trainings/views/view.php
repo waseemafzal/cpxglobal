@@ -55,9 +55,10 @@
         <tr>
             <th>Course ID </th>
             <th>Course Title </th>
-            <th>Start At </th>
-            <th>End At </th>
+            <th> Start Time - End Time</th>
+          
              <th>Start Date</th>
+             <th>End Date</th>
             <th class="no-sort">Actions</th>
         </tr>
     </thead>
@@ -73,10 +74,10 @@
 		<tr id="row_<?php echo $row->id;?>">
         <td><?php echo $row->course_id;?></td>
          <td><?php echo $row->title;?></td>
-          <td><?php echo $row->start_at;?></td>
-           <td><?php echo $row->end_at;?></td>
+          <td><?php echo $row->start_at.' - '.$row->end_at;?></td>
+           
             <td><?php echo date('m-d-Y',strtotime($row->on_date));?></td>
-       
+          <td><?php echo date('m-d-Y',strtotime($row->end_date));?></td>
     <td class="center">
             <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="<?php echo $this->controllerName;?>/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>

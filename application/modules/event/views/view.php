@@ -27,8 +27,8 @@
         <tr>
           
             <th>Event Title </th>
-            <th>Start At </th>
-            <th>End At </th>
+            <th>Registration Start</th>
+            <th>Registration Closed </th>
              <th>Start Date</th>
             <th>Actions</th>
         </tr>

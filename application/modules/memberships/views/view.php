@@ -28,7 +28,8 @@
 						for($index = 2020; $index>=2000;$index--)
 						{
 						?>
-							<option value="<?php echo $index;?>"  <?php echo (($_POST['yearwise']==$index) ? 'selected="selected"' : '');?>><?php echo $index;?></option>
+							<option value="<?php echo $index;?>"  
+							<?php echo (($_POST['yearwise']==$index) ? 'selected="selected"' : '');?>><?php echo $index;?></option>
 						<?php 
 						}
                     ?>
@@ -66,8 +67,9 @@
                     </select>
                  </div>
                   
-                 <div class="col-md-2">
-                    <input type="text" name="searchbyname" value="" placeholder="Search by Name"  class="form-control "/>
+                 <div class="col-md-3">
+                    <input type="text" name="searchbynamecounrty" 
+                    value="<?php echo (!empty($_POST['searchbynamecounrty'])) ? $_POST['searchbynamecounrty'] :''; ?>" placeholder="Search by Name/Country"  class="form-control "/>
                  </div>
                  
                   <div class="col-md-3">
@@ -76,9 +78,6 @@
                    <input type="button" name="filterbtnreset" value="Reset"  class="btn btn-default btn-small "/>
                    </a>
                  </div>
-                 
-                 
-                 
                  
                  
               </form>   
@@ -93,10 +92,12 @@
         <th><input type="checkbox" id="checkAll" value="2222"></th>
         <th>ID</th>
         <th>Username</th>
+        
        
         <th> Payment</th>
          <th>Package Type</th>
         <th> Buy on</th>
+         <th>Country</th>
          <th class="no-sort"> Add Note</th>
        
         <th class="no-sort">Actions</th>
@@ -106,6 +107,9 @@
     <?php
 	if(!empty($data->result())){
 	foreach ($data->result() as $row){
+		
+		
+		
 		$pstatus="Not Paid";
 		if($row->payment_status==1){
           $pstatus="Paid";
@@ -128,15 +132,15 @@
 		
 		if($row->membership_type==1)
 		{
-          $Pakacge="Package 1";
+          $Pakacge="Package type 1";
         }else if($row->membership_type==2){
-          $Pakacge="Package 2";
+          $Pakacge="Package type 2";
         } 
 		else if($row->membership_type==3){
-          $Pakacge="Package 3";
+          $Pakacge="Package type 3";
         } 
 		else if($row->membership_type==4){
-           $Pakacge="Package 4";
+           $Pakacge="Package type 4";
         } 
 		
         ?> 
@@ -146,9 +150,12 @@
            		 <span class="label label-success"><?PHP echo $Pakacge;?></span>
                    </span>
         </td>
-        <td class="center"><?php echo date('Y-m-d',strtotime($row->created_date)); ?></td>
+        <td class="center"><?php echo  date('Y-m-d',strtotime($row->created_date)); ?></td>
         
-        <td>
+       
+        <td class="center"><?php echo $row->country; ?></td>
+        <td class="center">
+        
         <span style="display:none" id="notee_<?PHP echo $row->id;?>"><?PHP echo $row->package_info_admin;?></span>
         <a  class="btn btn-info  btn-xs" onclick="addNote('<?PHP echo $row->id;?>')"><i class="fa fa-plus"></i>
         Add Note</a>

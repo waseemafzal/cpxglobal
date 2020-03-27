@@ -242,7 +242,7 @@ $route['disputeconversation/(:num)'] = 'disputeconversation/index/$1';
 
 //$route['default_controller'] = 'home/index';
 
-$route['404_override'] = '';
+$route['404_override'] = 'E404';
 
 $route['translate_uri_dashes'] = FALSE;
 

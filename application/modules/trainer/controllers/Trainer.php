@@ -11,7 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	public $view = "view";
 	public $tbl = 'tbl_trainer';
+	
 	public $controllerName = 'trainer';
+	
 	
 	public function index(){  
 

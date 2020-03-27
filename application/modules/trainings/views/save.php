@@ -96,8 +96,13 @@ background-color: #fff;
                        
                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
                       <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1">Training Date</label>
+                      <label for="exampleInputEmail1">Training Start Date</label>
                         <input type="date" class="form-control" id="on_date"  placeholder="09-02-2020" name="on_date" value="<?php if(isset($row)){ echo $row->on_date;} ?>">
+
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                      <label for="exampleInputEmail1">Training End Date</label>
+                        <input type="date" class="form-control" id="end_date"  placeholder="09-02-2020" name="end_date" value="<?php if(isset($row)){ echo $row->end_date;} ?>">
 
                     </div>
                       <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>  
@@ -108,7 +113,7 @@ background-color: #fff;
                     </div>
                     <div class="col-xs-12 col-md-4">
                       <label for="exampleInputEmail1">Fees</label>
-                        <input type="text" class="form-control"   placeholder="location" name="location" value="<?php if(isset($row)){ echo $row->fees;} ?>">
+                        <input type="text" class="form-control"   placeholder="fees" name="fees" value="<?php if(isset($row)){ echo $row->fees;} ?>">
 
                     </div> 
 

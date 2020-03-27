@@ -119,6 +119,7 @@ $config['enable_hooks'] = FALSE;
 |
 */
 $config['subclass_prefix'] = 'MY_';
+//$route['404_override'] = 'my404';
 
 /*
 |--------------------------------------------------------------------------

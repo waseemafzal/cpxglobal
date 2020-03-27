@@ -1,5 +1,12 @@
 <?php 
-include_once"header.php";
+defined('BASEPATH') OR exit('No direct script access allowed'); 
+//include_once"header.php";
+
+
+
+//$ci =& get_instance();
+//$ci->load->helper('url');
+?>
 ?>
         
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1464078186411" id="testimonials">
@@ -20,4 +27,4 @@ include_once"header.php";
                 </div>
             </div>
         </section>
-<?php include_once"footer.php"; ?>
+<?php //include_once"footer.php"; ?>

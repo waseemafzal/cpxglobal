@@ -22,9 +22,10 @@
             </div>
             <!-- /.box-header -->
              <div class="box-body">
-                <table id="post_table" class="table table-striped table-bordered   responsive">
+                <table id="post_table" class="table table-striped table-bordered   responsive email_templating">
                     <thead>
                         <tr>
+                          <th><input type="checkbox" id="checkAll" value="2222"></th>
                            <th>Trainer ID </th>
                             <th>Name </th>
                             <th>Speciality </th>
@@ -36,15 +37,17 @@
                         </tr>
                     </thead>
    				 <tbody>
-    
-  
-    <?php
-	if(!empty($data->result())){
-	foreach ($data->result() as $row)
+   <?php
+	if(!empty($data->result()))
 	{
+		foreach ($data->result() as $row)
+		{
 	?>
  
         <tr id="row_<?php echo $row->id;?>">
+         <td class="center">
+        	<input type="checkbox" class="checkItem" name="idss[]" value="<?php echo $row->id ?>">
+        </td>
             <td><?php echo $row->trainer_id;?></td>
             <td><?php echo $row->name;?></td>
             <td><?php echo $row->speciality;?></td>

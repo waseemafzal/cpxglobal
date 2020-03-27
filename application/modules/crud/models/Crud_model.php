@@ -63,6 +63,7 @@ class Crud_Model extends CI_model
 	private $tbl_subscriber='tbl_subscriber';
 	private $tbl_certificate_data='tbl_certificate_data';
 	private $tbl_awarddata='tbl_awarddata';
+	private $tbl_trainer = 'tbl_trainer';
 	
 	
 
@@ -6708,6 +6709,8 @@ public function setEmailTemplate($userName,$activationLink){
 		$this->form_validation->set_rules('checkedids', 'IDs', 'trim|required');
 		$this->form_validation->set_rules('sendtotype', 'Send Type', 'trim|required');
 		$this->form_validation->set_rules('email_subject', 'Subject', 'trim|required');
+		$this->form_validation->set_rules('rawHTML', 'Description', 'trim|required');
+		
 		if ($this->form_validation->run()==false)
 		{
 			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
@@ -6719,7 +6722,24 @@ public function setEmailTemplate($userName,$activationLink){
 			if(!empty($_POST['checkedids']))
 			{
 	
-                
+                if($sendtotype=='trainer')
+				{
+				
+					$query  = $this->db->query("SELECT email  FROM `".$this->tbl_trainer."` AS TPD 
+					WHERE TPD.id IN (".$_POST['checkedids'].")");
+					$aEmail = array();
+					if (count($query->result()) > 0 ) 
+					{
+						
+						foreach ($query->result() as $row) 
+						{
+							$aEmail[]= $row->email;
+						}
+					} 
+					
+				
+				}
+				
 				if($sendtotype=='awarddata')
 				{
 				

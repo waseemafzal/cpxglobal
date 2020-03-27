@@ -48,33 +48,39 @@ class Memberships extends MX_Controller {
 					{
 						$sts = 1;	
 					}
-						$where .=' AND payment_status='.$sts;
+						$where .=' AND (TBMP.payment_status='.$sts.')';
 				}
 				
 				if(isset($_POST['yearwise']) and !empty($_POST['yearwise']))
 				{
 					$yearwise = $_POST['yearwise']; 
-					$where .=' AND YEAR(created_date)='.$yearwise;
+					$where .=' AND (YEAR(TBMP.created_date)='.$yearwise.')';
 				}
 				
 				if(isset($_POST['monthwise']) and !empty($_POST['monthwise']))
 				{
 					$monthwise = $_POST['monthwise']; 
-					$where .=' AND MONTH(created_date)='.$monthwise;
+					$where .=' AND (MONTH(TBMP.created_date)='.$monthwise.')';
 				}
-				
-				if(isset($_POST['searchbyname']) and !empty($_POST['searchbyname']))
+				$clause ='';
+				if(isset($_POST['searchbynamecounrty']) and !empty($_POST['searchbynamecounrty']))
 				{
-					$searchbyname = $_POST['searchbyname']; 
-					$where .=' AND (SELECT name FROM users AS u WHERE u.id = TBMP.user_id)='.'"'.trim($searchbyname).'"';
+					$searchbynamecounrty = $_POST['searchbynamecounrty']; 
+					$clause .=' AND (((SELECT name FROM users AS u WHERE u.id = TBMP.user_id)='.'"'.trim($searchbynamecounrty).'" )';
+					$clause .=' OR ';
+					$clause .='  ((SELECT country FROM '.$this->tbl_company_detail.' AS f WHERE TBMP.id = f.memship_id)='.'"'.trim($searchbynamecounrty).'" ))';
+					$where .= $clause;
 				}
 			}
-		$aData['data'] =$this->db->query('SELECT *,(SELECT name FROM users AS u WHERE u.id = TBMP.user_id) as username 
+		$aData['data'] =$this->db->query('SELECT *,
+		(SELECT name FROM users AS u WHERE u.id = TBMP.user_id) as username,
+		(SELECT country FROM '.$this->tbl_company_detail.' AS f WHERE TBMP.id = f.memship_id) as country  
 		FROM `tbl_membershippackage` as TBMP  '.$where.' ORDER BY id DESC ');
+		
 		$this->load->view($this->view,$aData);
 	}
 	
-	
+	  
 	
 	public function addNote()
 	{

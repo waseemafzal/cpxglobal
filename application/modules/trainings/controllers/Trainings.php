@@ -67,11 +67,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			break;	
 		}
 	}
-	function save(){ 
+	 
+	 public function save()
+	 { 
+	
 		extract($_POST);
 		$PrimaryID = $_POST['id'];
 		unset($_POST['action'],$_POST['id']);
-		//$_POST['user_id'] =get_session('user_id');
+		//$_POST['user_id'] = get_session('user_id');
 		//`post_title`, `post_date`, `post_type`, `video_url`, `posted_by`
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('title', 'title', 'trim|required');
