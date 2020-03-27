@@ -25,13 +25,20 @@
                   <div class="col-md-2"> 
                     <input type="text" name="searchbyid" value="<?php echo (!empty($_POST['searchbyid']) ? $_POST['searchbyid'] :'' );?>" placeholder="By Course ID"  class="form-control "/>
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-3">
                     <input type="text" name="searchbytitle" value="<?php echo (!empty($_POST['searchbytitle']) ? $_POST['searchbytitle'] :'' );?>" placeholder="By Course Title"  class="form-control "/>
                  </div>
                  
                  
                   <div class="col-md-2">
                     <input type="date" name="searchbyondate" value="<?php echo (!empty($_POST['searchbyondate']) ? $_POST['searchbyondate'] :'' );?>"  class="form-control "/>
+                    <label>Start Date</label>
+                 </div>
+                 
+                 
+                  <div class="col-md-2">
+                    <input type="date" name="searchbyenddate" value="<?php echo (!empty($_POST['searchbyenddate']) ? $_POST['searchbyenddate'] :'' );?>"  class="form-control "/>
+                     <label>End Date</label>
                  </div>
                  
                   <div class="col-md-3">

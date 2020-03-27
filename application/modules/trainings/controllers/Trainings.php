@@ -36,6 +36,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				//.date('Y-m-d,strtotime($searchbytitle))
 				$where .=" AND on_date = '".date('Y-m-d',strtotime($searchbyondate))."'";
 			}
+			if(isset($_POST['searchbyenddate']) and !empty($_POST['searchbyenddate']))
+			{
+				$searchbyenddate = $_POST['searchbyenddate']; 
+				//.date('Y-m-d,strtotime($searchbytitle))
+				$where .=" AND end_date = '".date('Y-m-d',strtotime($searchbyenddate))."'";
+			}
+			
+			
+			
+			
 		}		
 			$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p  ".$where." ");
 			//lq();
