@@ -73,13 +73,13 @@ background-color: #fff;
          <div class="clearfix">&nbsp;</div>
               
                    <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1"> Event Start</label>
+                      <label for="exampleInputEmail1"> Registration Start</label>
                         <input type="text" class="form-control" id="start_at"  placeholder="00:00PM" name="start_at" value="<?php if(isset($row)){ echo $row->start_at;} ?>">
 
                     </div>
                     
                     <div class="col-xs-12 col-md-3">
-                      <label for="exampleInputEmail1"> Event Closed</label>
+                      <label for="exampleInputEmail1"> Registration Closed</label>
                         <input type="text" class="form-control" id="end_at"  placeholder="00:00PM" name="end_at" value="<?php if(isset($row)){ echo $row->end_at;} ?>">
 
                     </div>
