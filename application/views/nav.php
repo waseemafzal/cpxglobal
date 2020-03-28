@@ -1,10 +1,5 @@
 <style>
-.sf-menu ul li ul  { }
-.sf-menu ul li ul li a {
-    background: #f30100;
-    color: #fff;
-    padding: 2px 10px;
-}.sf-menu ul li a:hover {
+.sf-menu ul li a:hover {
     background: #922d2d;
     color: #111;
 }
@@ -116,7 +111,7 @@
 "><?=ucwords(str_replace('-', ' ','printing-process-equipment-validation
 '))?></a></li>
    <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-    <a href="uht-processing-and-aseptic-packaging"><?=ucwords(str_replace('-', ' ','uht-processing-and-aseptic-packaging'))?></a></li>
+    <a href="uht-processing-and-aseptic-packaging"><?=ucwords(str_replace('-', ' ','UHT-processing-and-aseptic-packaging'))?></a></li>
     
     
     </ul>

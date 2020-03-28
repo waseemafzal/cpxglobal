@@ -85,7 +85,13 @@ if($data->num_rows()>0){
       <div class="post-left">
         <ul>
           <li><i class="icon-calendar-empty"></i>On <span><?=date('F , j Y',strtotime($row->created_on))?></span></li>
-          <li><i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">Admin</a></li>
+          <li><i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">
+          <?php if($row->author!=''){ 
+		  echo $row->author;
+		  }
+		  else{ echo 'Admin';};
+		  ?>
+          </a></li>
           <li><i class="icon-tags"></i>Category  <a  rel="tag"><?php echo $row->category;?></a></li>
       </div>
       <div class="post-right"><i class="icon-comment"></i>0 comment</div>

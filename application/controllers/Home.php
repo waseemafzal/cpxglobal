@@ -31,7 +31,7 @@ $aData['testimonial'] = $testimonial;
 			$aData['testimonial'] =0;
 			}
 			$aData['page_title'] = 'Home';
-			$aData['partners'] = $this->db->select('*')->from('slider_images')->where('post_id',11)->get();
+			$aData['partners'] = $this->db->select('*')->from('slider_images')->where('post_id',1)->get();
 			$this->load->view('index',$aData);    
 		}			
 		

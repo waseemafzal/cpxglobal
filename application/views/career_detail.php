@@ -32,6 +32,11 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
             <div class="jobinfo">
+            <p><b>Job Title </b> :  <?php 
+                if(isset($row)){ 
+                echo $row->post_title;
+                } 
+                ?></p>
             <p><b>Date </b> : <?php 
                 if(isset($row)){ 
                 echo date('F , j ,Y',strtotime($row->created_on));
@@ -43,9 +48,10 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
                 } 
                 ?></p>
             <p><b>Company </b> : CPPEx Global</p>
-            <p><b>Reporting </b> :  <?php 
+            
+            <p><b> Reporting </b> :  <?php 
                 if(isset($row)){ 
-                echo $row->post_title;
+                echo $row->short_heading;
                 } 
                 ?></p>
             </div>

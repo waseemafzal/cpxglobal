@@ -44,7 +44,7 @@ if($data->num_rows()>0){
 	<td><?=$job->id?></td>
     <td><?=$job->post_title?></td>
     <td><?=$job->company_location?></td>
-    <td><?php if($job->created_on!='') echo date('F j y',strtotime($job->created_on))?></td>
+    <td><?php if($job->created_on!='') echo date('F,j,Y',strtotime($job->created_on))?></td>
     <td><?php if($job->created_on!='') 
 	echo date('F j y',strtotime('+30 days',strtotime($job->created_on))) . PHP_EOL;
 	?></td>

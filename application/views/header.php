@@ -224,6 +224,23 @@ background-color:#f30100;
        color: #FC0;
     }
 	p{color:#595959 !important;}
+	ul#top_nav, ul.top-nav {
+    margin: 22px 15px 0 0;
+	float:left;
+   
+}
+.btn-login {
+    margin-top: 21px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.logo{margin-left: 10px;}
+.quote-carousel img {
+    width: auto;
+    height: auto;
+}.quote-carousel .light small, .quote-carousel .light p {
+    color: #fff !important;
+}
     </style><noscript>
     
      
@@ -236,15 +253,20 @@ background-color:#f30100;
     .wpb_animate_when_almost_visible { opacity: 1; }
     </style></noscript>
     <link href="#" id="fullcolor-css" media="all" rel="stylesheet" type="text/css">
-    
+    <style>
+.sf-menu ul li a:hover {
+    background: #fff!important;
+    color: #922d2d !important;
+}
+    </style>
 </head>
 <body class="home page-template page-template-page-templates page-template-template-fullwidth-not-header page-template-page-templatestemplate-fullwidth-not-header-php page page-id-299 theme-learn woocommerce-no-js tribe-no-js wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
     <div class="wrapper">
         <header class="top-header">
-            <div class="container">
+            <div class="">
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-5">
-                        <a href="index.php"><img alt="" src="frontend/images/logo.png"></a>
+                        <a class="logo" href="index.php"><img alt="" src="frontend/images/logo.png"></a>
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">

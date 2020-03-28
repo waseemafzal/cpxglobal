@@ -56,7 +56,7 @@
                     </div><!-- end col-lg-3 -->
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-3">
-                            <h4> Product & Services</h4>
+                            <h4> Services</h4>
                             <div class="textwidget">
                                 <ul>
                                     <li>
@@ -124,6 +124,7 @@
                     </div><!-- end col-lg-3 -->
                     <div class="col-md-3 col-sm-6 columns">
                         <div class="widget widget_text" id="text-5">
+                        <h4>Follow Us </h4>
                             <div class="textwidget">
                                 <ul id="follow_us">
                                     <li>
@@ -134,11 +135,15 @@
                                     </li>
                                     <li>
                                         <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-google"></i></a>
+                                    </li><li>
+                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-linkedin"></i></a>
+                                    </li><li>
+                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-youtube"></i></a>
                                     </li>
                                 </ul>
                                 <ul>
-                                    <li><strong class="phone">+001 609 271 2476</strong><br>
-                                    <small>Mon - Fri / 9:00AM – 05:00PM</small></li>
+                                    <li><strong class="phone"><i class="fa fa-phone"></i> +1 609 271 2476</strong><br>
+                                    <small <i class="fa fa-clock"></i> Mon - Fri / 9:00AM – 05:00PM</small></li>
                                     <li>Questions? <a href="mailto:info@cppexglobal.org">info@cppexglobal.org</a>
                                     </li>
                                 </ul>

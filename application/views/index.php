@@ -184,9 +184,9 @@ include_once"header.php";
   #HomeRoe  .bottomTitle{
 	  }        
    #HomeRoe  .info{
-	 border-left: 10px solid #d8000b;
+	/* border-left: 10px solid #d8000b;
     border-right: 10px solid #d8000b;
-    margin: 0;
+  */  margin: 0;
     padding: 5px 5px;
     display: inline-block;
     width: 100%;
@@ -295,7 +295,7 @@ $j++;
             </div>
         </section>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" id="main_content_gray">
-            <div class="container">
+            <div class="">
                 <div class="row">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner">
@@ -368,7 +368,11 @@ $j++;
                                     </div>
                                 </div>
                                 <div class="row">
-                                <?php
+                                <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                     <?php
 								if($recentNews->num_rows()>0){
 									foreach($recentNews->result() as $news){
 		$src=base_url().'uploads/'.$news->post_banner;
@@ -488,6 +492,133 @@ if (strlen($post_description) > 10)
                                         </div>
                                     </div>
                                     <?php } ?>
+                </div>
+                <div class="item ">
+                     <?php
+								if($recentNews->num_rows()>0){
+									foreach($recentNews->result() as $news){
+		$src=base_url().'uploads/'.$news->post_banner;
+								?><div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="press_release/detail/<?=$news->id;?>"><img alt="" src="<?=$src?>"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?=$news->post_title;?> </a></h4>
+                                                        <p>
+                                                        <?php 
+		$post_description = strip_tags($news->post_description);
+		//echo mb_substr($post_description,0,115,'UTF-8');
+if (strlen($post_description) > 10)
+   echo substr($post_description, 0, 150) . '...';		
+		?><a href="press_release/detail/<?=$news->id;?>" >Read more </a>
+                                                        </p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <?php }}else{ ?>
+                                    
+                                    <div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="news-detail.php"><img alt="" src="frontend/images/news1.jpg"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
+                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price">1 jan 2020 </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="news-detail.php"><img alt="" src="frontend/images/news2.jpg"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="news-detail.php">Industrial Wax Market Worth </a></h4>
+                                                        <p>According to a study analysis by Persistence Market Research, ever-expanding end-use industries will give a push to the industrial wax market. </p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price">3 jan 2020 </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="news-detail.php"><img alt="" src="frontend/images/news3.jpg"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
+                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price">1 jan 2020 </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-course">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <a href="news-detail.php"><img alt="" src="frontend/images/news4.jpg"></a>
+                                                
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="course_info col-md-12 col-sm-12">
+                                                        <h4 class="black-color"><a href="news-detail.php">Sun Chemical owner to buy BASF pigments business </a></h4>
+                                                        <p>DIC Corporation is to acquire BASF’s global pigments business and integrate it into subsidiary Sun Chemical in a deal worth €1.15bn (£1.04bn).</p>
+                                                        
+                                                        <div class="price pull-right">
+                                                            <span class="course-price">1 jan 2020 </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                </div>
+                
+            </div>
+        </div>
+                               
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -501,10 +632,7 @@ if (strlen($post_description) > 10)
             </div>
         </section>
         
-            <div class="container">
-            <h2 style="text-align: center;">Clients Testimonials</h2>
-        
-            </div>
+           
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1464078186411" id="testimonials">
             <div class="container">
             
@@ -512,7 +640,8 @@ if (strlen($post_description) > 10)
                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8">
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
-                                
+                                 <h2 style="text-align: center; color:#fff;font-size: 36px;">Clients Testimonials</h2>
+        
                                 <div class="carousel slide quote-carousel" data-ride="carousel" id="quote-carousel">
                                     <!-- Bottom Carousel Indicators -->
                                     <ol class="carousel-indicators">
@@ -575,7 +704,7 @@ $j++;
             
 <div class="wpb_text_column wpb_content_element">
                                     <div class="wpb_wrapper">
-                                        <h2 style="text-align: center;">Our  Partners</h2>
+                                        <h2 style="text-align: center;">Our global clients</h2>
                                     </div>
                                 </div>
                                 <div class="clearfix">&nbsp;</div>

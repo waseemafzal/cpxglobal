@@ -52,6 +52,11 @@ background-color: #fff;
                         <input type="text" class="form-control" id="post_title"  placeholder="Title" name="post_title" value="<?php if(isset($row)){ echo $row->post_title;} ?>">
 
                     </div>
+                    <div class="col-xs-12 col-md-6">
+                      <label for="exampleInputEmail1">   Author</label>
+                        <input type="text" class="form-control" id="author"  placeholder="Johny" name="author" value="<?php if(isset($row)){ echo $row->author;} ?>">
+
+                    </div>
                 
                      <div class="clearfix">&nbsp;</div> 
                       <div class="clearfix">&nbsp;</div>

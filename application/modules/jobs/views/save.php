@@ -57,7 +57,7 @@ background-color: #fff;
                     
                      <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Job Heading</label>
+                      <label for="exampleInputEmail1"> Reporting</label>
                         <input type="text" class="form-control"   placeholder="Lorem ipsum post" name="short_heading" value="<?php if(isset($row)){ echo $row->short_heading;} ?>">
 
                     </div>
