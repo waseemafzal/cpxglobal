@@ -60,6 +60,9 @@
                             <div class="textwidget">
                                 <ul>
                                     <li>
+                                        <a href="business-development">Consultancy</a>
+                                    </li>
+                                  <li>
                                         <a href="why-membership">Training</a>
                                     </li>
                                     <li>

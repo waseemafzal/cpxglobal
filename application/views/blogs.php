@@ -1,6 +1,7 @@
 <?php 
 include_once"header.php";
 ?>
+
         <section id="sub-header" style="background:url(frontend/blogs.jpg)">
         <div class="container">
             <div class="row">
@@ -103,7 +104,8 @@ if($data->num_rows()>0){
 if (strlen($post_description) > 10)
    echo substr($post_description, 0, 150) . '...';		
 		?></p>
-    <a href="eblogs/detail/<?=$row->id;?>" class="btnCustom ">Read more</a>
+    <a href="eblogs/detail/<?=$row->id;?>" class="btnCustom ">Read more</a><div class="clearfix">&nbsp;</div>
+    
   </div>
 </div>
 <!-- end post -->

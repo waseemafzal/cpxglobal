@@ -241,6 +241,9 @@ background-color:#f30100;
 }.quote-carousel .light small, .quote-carousel .light p {
     color: #fff !important;
 }
+.sf-arrows .sf-with-ul:after {
+    right: 1em !important;
+}
     </style><noscript>
     
      

@@ -148,6 +148,10 @@ class Contact extends CI_Controller {
 			
 			switch($result){
 			case 1:
+			$name=$_POST['particpient_detail']['employee_name'];
+			$email=$_POST['particpient_detail']['email'];
+			$this->sendEmail(array('to'=>$email,'name'=>$name));
+			
 			$arr = array('status' => 1,'message' => "Your feedback have been received us successfully.");
 			echo json_encode($arr);
 			break;
@@ -301,6 +305,9 @@ class Contact extends CI_Controller {
 			
 			switch($result){
 			case 1:
+			$name=$_POST['firstname']. ' '.$_POST['lastname'];
+			$email=$_POST['email'];
+			$this->sendEmail(array('to'=>$email,'name'=>$name));
 			$arr = array('status' => 1,'message' => "Your information have been received us successfully.");
 			echo json_encode($arr);
 			break;
@@ -372,6 +379,9 @@ class Contact extends CI_Controller {
 			
 			switch($result){
 			case 1:
+			$name=$_POST['first_name']. ' '.$_POST['last_name'] ;
+			$email=$_POST['email'];
+			$this->sendEmail(array('to'=>$email,'name'=>$name));
 			$arr = array('status' => 1,'message' => "Your Complaint have been received us successfully.");
 			echo json_encode($arr);
 			break;
@@ -513,23 +523,20 @@ class Contact extends CI_Controller {
         
         // Load the email library
         $this->load->library('email');
-        
+		$subject='Reply from CPPEx Global';
+        if(isset($mailData['subject']) and $mailData['subject']!=''){
+			$subject=$mailData['subject'];
+			}
         // Mail config
-        $to = 'Olebint001@gmail.com';
-        $from = 'support@skillsquared.com';
-        $fromName = 'SkillSquared';
-        $subject = 'Contact  by '.$mailData['name'];
+        $to = $mailData['to'];
+        $from = 'info@cppexglobal.com';
+        $fromName = 'CPPEx Global';
+        $subject = $subject;
         
         // Mail content
-        $htmlContent = '
-            <h2>Below is the detail of the Person who contacted!</h2>
-            <p><b>Name: </b>'.$mailData['name'].'</p>
-            <p><b>Email: </b>'.$mailData['email'].'</p>
-            <p><b>Subject: </b>'.$mailData['subject'].'</p>
-            <p><b>Message: </b>'.$mailData['message'].'</p>
-        ';
+        $htmlContent =$this->setEmailTemplate($mailData['name']);
             
-  if($this->crud->send_smtp_email($to,$from,$fromName,$subject,$htmlContent)
+  if($this->crud->send_mail($to,$from,$fromName,$subject,$htmlContent)
 			){
 				return true;
 				}
@@ -537,4 +544,111 @@ class Contact extends CI_Controller {
         
     }
     
+	public function setEmailTemplate($userName){
+		$template='<table bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tbody>
+      <tr>
+         <td>
+            <div style="max-width:600px;margin:0 auto;font-size:16px;line-height:24px">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td>
+                           <table border="0" cellpadding="0" cellspacing="0"  width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td style="background-color:white;padding-top:30px;padding-bottom:30px">
+                                                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="center" style="padding-top:0;padding-bottom:20px"> <a > <img src="'.base_url().'frontend/images/logo.png" alt="" width="104" height="30" style="vertical-align:middle" class="CToWUd"> </a> </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td  style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:20px">
+                                                               <h3 style="margin-top:0;margin-bottom:0;font-family:"Montserrat",Helvetica,Arial,sans-serif!important;font-weight:700;font-size:20px;line-height:30px;color:#222"></h3>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Hi '.$userName.', </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Welcome to CPPEx Global! </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Thanks for wroting to us. One of our representative will contact you within 3 business days. </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> We\'re thrilled to have you on board! </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:10px">
+                                                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td style="font-size:0;line-height:0">&nbsp;</td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:30px">
+                                                               <table style="text-align:center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td>
+                                                                           <div style="text-align:center;margin:0 auto">   </div>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:30px">
+                                                               <div style="padding-top:10px">Thanks for your time,<br>The CPPEx Global Team</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td align="center" width="100%" style="color:#656565;font-size:12px;line-height:24px;padding-bottom:30px;padding-top:30px"><a href="" style="color:#656565;text-decoration:underline" target="_blank" >Privacy Policy</a> &nbsp; | &nbsp; <a href="" style="color:#656565;text-decoration:underline" target="_blank" >Contact Support</a> 
+                           <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all" >
+                              807 E Landis Ave.Vineland, 08360 New JERSEY-USA
+                           </div>
+                           <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all">
+                              © 2020 CPPEx Global 
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </td>
+      </tr>
+   </tbody>
+</table>';
+		return $template;
+		}
+
+	
+	
 }

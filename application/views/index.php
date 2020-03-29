@@ -338,9 +338,8 @@ $j++;
                                         
                                         <div class="col-item">
                                             <div class="photo">
-                                               <video style="width:100%"  height="200" controls>
-  <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-  <source src="https://www.w3schools.com/html/movie.ogg" type="video/ogg">
+ <video style="width:100%"  height="200" controls>
+  <source src="assets/homevideo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
                                             </div>

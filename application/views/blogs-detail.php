@@ -1,7 +1,7 @@
 <?php 
 include_once"header.php";
 
-?>
+?><script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e7f8e8a8d68960019e41099&product=inline-share-buttons" async="async"></script>
         <section id="sub-header">
         <div class="container">
             <div class="row">
@@ -106,11 +106,12 @@ include_once"header.php";
 		?>
   </div>
               <hr>
-
+<div class="sharethis-inline-share-buttons pull-left"></div>
+  
               <h4></h4>
 
               
-<div class="commentsform">
+<div class="commentsform hidden">
     <div id="addcomments">
         <div id="respond" class="comment-respond">
                     	<div id="respond" class="comment-respond">
