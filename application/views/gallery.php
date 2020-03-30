@@ -37,7 +37,7 @@ include_once"header.php";
 		?>
         <div class="col-md-3 col-xs-6 col-sm-4">
         <div class="thumbnailbox">
-            <a class="fancybox" rel="gallery1" href="<?=$srcL?>" title="<?=$row->title?>">
+            <a onmouseover="bigImg(this)"  class="fancybox hoverClick" rel="gallery1" href="<?=$srcL?>" title="<?=$row->title?>">
 	<img src="<?=$src?>"    alt="<?=$row->title?>" />
 </a>
 </div>
@@ -52,4 +52,10 @@ include_once"header.php";
         
         
 <?php include_once"footer.php"; ?>
+<script>
+function bigImg(e){
+	e.click();
+	}
+	
 
+</script>

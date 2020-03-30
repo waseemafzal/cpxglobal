@@ -2,7 +2,7 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{    color: #fff !important;
+.Section h3{    color: #fff !important;
     text-align: center;
     background: #3f4045;
     padding: 7px 6px;
@@ -15,6 +15,11 @@ include_once"header.php";
     margin: 0;
     padding: 5px 10px;}
 	.table td{ margin:0; padding:0}
+	thead>tr>td{ text-transform:uppercase;}
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+ 
+     border-top: none !important; 
+}
 </style>
         <section id="sub-header" style="background:url(frontend/registration.jpg)">
         <div class="container">
@@ -29,18 +34,18 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-            <h4 class="headingform__"><?php echo strtoupper('Online registration form');?></h4>
+          <div class="col-md-12"> <h4 class="headingform__"><?php echo strtoupper('Online registration form');?></h4></div>
             <form id="membsrshipcreate" name="form_add_update" method="post" action="">
              <div class="page-alert" style="display: block;"> </div>
 				<section id="personalDetail" class="Section">
-<h3>Personal Detail <span>Name to appear on the certificate, please provide correct and clearly</span>
-</h3>
+<div class="col-xs-12"><h3>Personal Detail <span>Name to appear on the certificate, please provide correct and clearly</span>
+</h3></div>
 <div class="col-md-12">
 <div class="table-responsive">
 <table class="table" style="width:100%">
 <thead>
 <tr>
- <td><!--#--></td>
+ 
  <td>Name</td>
  <td>Email</td>
  <td>Job Title</td>
@@ -54,27 +59,27 @@ include_once"header.php";
 </thead>
 <tbody class="field_wrapper">
 <tr>
-<td><!--1--></td> 
- <td><input   class="form-control"required name="personal_detail[name][]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"type="email" required name="personal_detail[email][]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"required name="personal_detail[job_title][]" /><span class="text-danger">*</span></td>
- <td><input class="form-control" type="text"    required="required" name="personal_detail[phone][]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"  required name="personal_detail[id_no][]" /><span class="text-danger">*</span></td>
- <td><input   class="form-control"required name="personal_detail[nationality][]" /><span class="text-danger">*</span></td>
-<td><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a></td>
+
+ <td><input   class="form-control"required name="personal_detail[name][]" /></td>
+ <td><input   class="form-control"type="email" required name="personal_detail[email][]" /></td>
+ <td><input   class="form-control"required name="personal_detail[job_title][]" /></td>
+ <td><input class="form-control" type="text"    required="required" name="personal_detail[phone][]" /></td>
+ <td><input   class="form-control"  required name="personal_detail[id_no][]" /></td>
+ <td><input   class="form-control"required name="personal_detail[nationality][]" /></td>
+
 </tr>
 <tr>
 
 </tbody>
 </table>
-
+<a class="btn btn-info add_button pull-right"><i class="fa fa-plus"></i> Add More</a>
 </div>
 </div>
 
 
 
 
-<h3>Company detail</h3>
+<div class="col-xs-12"><h3>Company detail</h3></div>
 <div class="col-md-4 col-xs-12">
 <label>Company <span class="text-danger">*</span></label>
 <input type="text" class="form-control"  required="required" name="company_detail[name]" />
@@ -91,7 +96,7 @@ include_once"header.php";
 <label>Country</label>
 <input type="text" class="form-control"  required="required" name="company_detail[country]" />
 </div>
-<h3>Finance Department detail</h3>
+<div class="col-xs-12"><h3>Finance Department detail</h3></div>
 <div class="col-md-6 col-xs-12"> 
 
 
@@ -112,6 +117,8 @@ include_once"header.php";
 <input type="text" class="form-control"  required="required" name="finanace_detail[position]" />
 </div>
 <div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-xs-12">
 <table style="text-align:center;border: 1px solid lightgray;" align="center" class="table  table-border">
 <thead>
 	<tr >
@@ -148,9 +155,9 @@ Discount
 </tfoot>
 </table>
 <div class="col-md-12 Section" style="border:1px solid lightgray;margin: 0 0 10px 0;padding: 10px 10px;">
-
+<div class="col-xs-12">
 <h3>Payment Terms:
-</h3>
+</h3></div>
 <ul>
 	<li>100% payment of the amount in maximum 15 days upon the receipt of invoice.</li>
 	<li>The payment shall be conducted in credit card, cash or direct bank transfer excluding VAT.</li>
@@ -170,7 +177,7 @@ Discount
                
                 </div>
 </div>
-
+</div>
 
 <div class="col-md-12 col-xs-12">
 <center>
@@ -186,7 +193,7 @@ Discount
 			 </form>
              
              <section id="PaymentDetail" class="formSection" style="display:none;">
-                <h4>PAYMENT METHOD:</h4>
+            <div class="col-xs-12">    <h4>PAYMENT METHOD:</h4></div>
                     <div class="col-md-6">
                         <img src="frontend/images/paypal.jpg" class="img-responsive">
                          <div id="paypal-button"></div>
@@ -240,7 +247,7 @@ $(document).ready(function(){
 
 
         //Check maximum number of input fields
-		var fieldHTML = '<tr id="row_'+x+'"><td></td><td><input   class="form-control"required name="personal_detail[name][]" /></td><td><input class="form-control"type="email" required name="personal_detail[email][]" /></td><td><input   class="form-control"required name="personal_detail[job_title][]" /></td><td><input type="text" class="form-control"   required="required" name="personal_detail[phone][]" /></td><td><input   class="form-control"  required name="personal_detail[id_no][]" /></td><td><input   class="form-control"required name="personal_detail[nationality][]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
+		var fieldHTML = '<tr id="row_'+x+'"><td><input   class="form-control"required name="personal_detail[name][]" /></td><td><input class="form-control"type="email" required name="personal_detail[email][]" /></td><td><input   class="form-control"required name="personal_detail[job_title][]" /></td><td><input type="text" class="form-control"   required="required" name="personal_detail[phone][]" /></td><td><input   class="form-control"  required name="personal_detail[id_no][]" /></td><td><input   class="form-control"required name="personal_detail[nationality][]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
         if(x < maxField){ 
             x++; //Increment field counter
             $(wrapper).append(fieldHTML); //Add field html
