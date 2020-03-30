@@ -19,7 +19,7 @@ include_once"header.php";
  <h4>Training Details</h4>
 <table class="table   table-bordered ">
 	<tbody>
-		<tr style="background-color:#f30100 !important; color:#fff">
+		<tr style="background-color:#3f4045 !important; color:#fff">
 			<th colspan="1" rowspan="1">
 			Course ID
 			</th>

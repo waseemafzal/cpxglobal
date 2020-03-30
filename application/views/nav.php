@@ -3,12 +3,16 @@
     background: #922d2d;
     color: #111;
 }
+ul.sf-menu>li>a {
+    color: #666;
+    font-size: 13px;
+}
 </style>
 <nav class="top-menu">
             <div class="nav-inner">
                 <div class="container" >
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 menu">
                             <div id="mobnav-btn"></div>
                             <ul class="sf-menu" data-breakpoint="800" id="menu-main-menu">
                                 
@@ -46,7 +50,7 @@
                                         
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246" id="menu-item-246">
                                             <a href="javascript:void(0)">Training</a>
-    <ul class="sub-menu">
+    <ul class="sub-menu training">
     
     <li class="menu-item menu-item-type-post_type menu-item-object-page ">
     <a href="cylinder-quality-management"><?=ucwords(str_replace('-', ' ','cylinder-quality-management'))?></a>

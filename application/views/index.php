@@ -200,7 +200,8 @@ include_once"header.php";
 		   }       
 		   #slider4 li img{ height:200px !important;}         
 		   .sTitle{}
-  .sDesc{}                
+  .sDesc{}   
+          
 </style> 
 
 <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
@@ -308,10 +309,20 @@ $j++;
                                 </div>
                                 <div class="row" id="HomeRoe">
                                 <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","NEWS") ;
+								$box=1;
   foreach($cat as $key=>$cat){
+	  
   ?>
+ 
  <div class="col-md-3 col-course">
-                                    <h4 class="topTitle"><?=$cat?></h4>
+                                    <h4 class="topTitle"><?php
+                                    if($cat=='NEWS'){
+										echo 'CONSULTANCY';
+										}else{
+										echo $cat;
+											
+											}
+									?></h4>
                                         
                                         <div class="col-item">
                                             <div class="photo">
@@ -325,14 +336,22 @@ $j++;
         <li><img src="<?=$src?>" alt="<?=$rsslides->title?>">
         <p class="info"><a href="<?=$rsslides->url?>"><?=$rsslides->title?></a></p>
            </li>
-        <?php } ?>
+        <?php 
+		
+		} ?>
     </ul>
 </div>
                                             </div>
                                             
                                         </div>
                                     </div>
-  <?php } ?>
+  <?php 
+  if($box/4==0){
+	  echo '<div class="clearfix">&nbsp;</div>';
+	  echo '<div class="clearfix">&nbsp;</div>';
+	  }
+  $box++;
+  } ?>
                <div class="col-md-3 col-course">
                                     <h4 class="topTitle">Video</h4>
                                         
@@ -354,7 +373,7 @@ $j++;
             </div>
         </section>
         
-        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" id="main_content_gray">
+        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" style="padding:   0 !important;" id="main_content_gray">
             <div class="container">
                 <div class="row">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -632,14 +651,14 @@ if (strlen($post_description) > 10)
         </section>
         
            
-        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1464078186411" id="testimonials">
+        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1464078186411" style="padding:0 !important" id="testimonials">
             <div class="container">
             
                 <div class="row">
                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8">
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
-                                 <h2 style="text-align: center; color:#fff;font-size: 36px;">Clients Testimonials</h2>
+                                 <h2 style="text-align: center; margin:15px 0 5px 0; color:#fff;font-size: 36px;">Clients Testimonials</h2>
         
                                 <div class="carousel slide quote-carousel" data-ride="carousel" id="quote-carousel">
                                     <!-- Bottom Carousel Indicators -->
@@ -698,7 +717,7 @@ $j++;
                 </div>
             </div>
         </section>
-         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " >
+         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " style="padding:10px 0 0 0 !important;" >
             <div class="container">
             
 <div class="wpb_text_column wpb_content_element">

@@ -9,6 +9,7 @@ $post_banner=base_url().'uploads/'.$row->post_banner;}
 
 #sub-header {
     padding: 110px 0 110px 0;
+	margin-bottom:5px;
 }
 #title{
    background: #f301008c;
@@ -38,8 +39,8 @@ if($row->short_heading!=''){
         </div><!-- End container -->
         </div>
       </section>
-      <div class="clearfix">&nbsp;</div>
-<section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
+     
+<section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features" style="padding-top:20px !important">
             <div class="container">
             <?php if(isset($row)){ 
                $mainContainer='col-xs-12 col-sm-12 col-md-12';

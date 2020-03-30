@@ -225,7 +225,7 @@ background-color:#f30100;
     }
 	p{color:#595959 !important;}
 	ul#top_nav, ul.top-nav {
-    margin: 22px 15px 0 0;
+    margin: 22px 0 0 35px;
 	float:left;
    
 }
@@ -260,6 +260,37 @@ background-color:#f30100;
 .sf-menu ul li a:hover {
     background: #fff!important;
     color: #922d2d !important;
+}
+.training li{}
+.training li a{
+
+    padding: 3px 10px!important;
+   
+
+	}
+	body{ overflow-x:hidden}
+	.sf-arrows ul .sf-with-ul:after {
+   
+    border-left-color: #d8000b !important;
+}
+ul#follow_us li {
+    margin-right: 5px!important;
+}
+td{ color:#595959 !important}
+@media only screen and (min-width: 768px) {
+	#firstF{
+	    margin: 0 0 0 4%;	
+		}
+  .menu {
+    margin: 0 0 0 25px;
+  }
+  nav.top-menu {
+    background-color: #ffffffb3;
+    position: absolute;
+    top: 60px;
+    z-index: 2;
+    width: 100%;
+}
 }
     </style>
 </head>
@@ -301,7 +332,7 @@ background-color:#f30100;
                         <ul class="top-nav">
                             <li><i class="fa fa-clock-o"></i>Mon - Fri / 9:00AM – 05:00PM</li>
                             <li class="hidden-info"><i class="fa fa-map-marker"></i> 807 E Landis Ave.Vineland,USA</li>
-                            <li><i class="fa fa-phone"></i> Whatsapp: ( +001 609 271 2476 ) </li>
+                            <li><i class="fa fa-phone"></i> Whatsapp: ( +1 609 271 2476 ) </li>
                         </ul>
                     </div>
                 </div>

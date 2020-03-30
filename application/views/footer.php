@@ -11,7 +11,7 @@
 
                                 <div class="mc4wp-form-fields">
                                     <div class="form-inline">
-                                        <h3 style="font-size: 28px;">Subscribe to our Newsletter for latest news.</h3> 
+                                        <h3 style="font-size: 28px;">Subscribe to our Newsletter for Latest News.</h3> 
                                         <input class="form-control sbcriber_id" id="email_newsletter" name="EMAIL" placeholder="Your Email" required type="email"> 
                                         <input class=" button_outline" id="submit-newsletter" type="button" value="Subscribe" onclick="subscribe__()">
                                     </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="container " id="nav-footer">
                 <div class="row text-left">
-                    <div class="col-md-2 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 columns" id="firstF">
                         <div class="widget widget_text" id="text-2">
                             <h4>About Us</h4>
                             <div class="textwidget">
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div><!-- end col-lg-3 -->
-                    <div class="col-md-3 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 columns">
                         <div class="widget widget_text" id="text-3">
                             <h4> Services</h4>
                             <div class="textwidget">

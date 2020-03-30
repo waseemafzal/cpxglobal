@@ -4,15 +4,20 @@ include_once"header.php";
 ?>
 <style>
 #membsrshipcreate h4 {
-    color: #000!important;
+    color: #fff!important;
     text-align: center;
-    background: #f30100;
+    background: #3f4045;
     padding: 7px 6px;
     font-size: 20px;
     clear: both;
     display: inline-block;
     width: 100%;
+	text-transform: uppercase;
 }
+label{text-transform: uppercase;}
+
+
+
 </style>
         <section id="sub-header">
         <div class="container">
@@ -28,15 +33,15 @@ include_once"header.php";
             
      <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-             <h4 class="headingform__">Online Membership form</h4>
+             <h4 class="headingform__">ONLINE MEMBERSHIP FORM</h4>
      
               <form id="membsrshipcreate" name="form_add_update" role="form" enctype="multipart/form-data">
                 <div class="page-alert" style="display: block;"> </div>
                	<div id="registrationDetail" style="display:block;">
                 	<section id="personalDetail" class="formSection">
-        <h4>Personal Detail</h4>
+        <div class="col-xs-12"><h4>Personal Detail</h4></div>
         <div class="col-md-4 col-xs-12">
-        <label>Name <span class="text-danger">*</span></label>
+        <label>First Name <span class="text-danger">*</span></label>
         <input class="form-control"  required="required" name="name" /> 	
         </div>
         <div class="col-md-4 col-xs-12">
@@ -66,7 +71,7 @@ include_once"header.php";
         </section>
                     <section id="companySection" class="formSection">
                              
-                        <h4>Company Detail</h4>
+                        <div class="col-xs-12"> <h4>Company Detail</h4></div>
                         
                         <div class="col-md-4 col-xs-12">
                         <label>Company Name</label>
@@ -95,8 +100,8 @@ include_once"header.php";
                         </div>
                  </section>
                     <section id="PROFESSIONAL" class="formSection">
-                        <h4>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h4>
-                            
+                      <div class="col-xs-12">   <h4>PROFESSIONAL &amp; EDUCATIONAL DETAILS: </h4>
+                            </div>
                         <div class="col-md-12 col-xs-12">
                         <p>University 	degree 	diploma 	other 	job detail </p>
                             <div class="field_wrapper">
@@ -128,7 +133,7 @@ include_once"header.php";
                         </div>
         </section>
                     <section id="personalDetail" class="formSection">
-                        <h4>REFERRED BY:</h4>
+                        <div class="col-xs-12"> <h4>REFERRED BY:</h4></div>
                         <div class="col-md-4 col-xs-12">
                         <label>Name</label>
                         <input class="form-control"  required="required" name="refferby_detail[reffredName]" />
@@ -201,7 +206,7 @@ include_once"header.php";
                         </table>
                         <input type="hidden" id="mmmbershipID" name="mmmbershipID" value="" />
                          <input type="hidden" id="packageprice" name="packageprice" value="" />
-                 <button class="btnCustom pull-right pubservice__42das8672878" type="submit">Registered</button>
+                 <button class="btnCustom pull-right pubservice__42das8672878" type="submit">Submit</button>
                    </section>  
                 </div>    
             </form>
