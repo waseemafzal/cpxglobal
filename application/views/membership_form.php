@@ -16,7 +16,11 @@ include_once"header.php";
 }
 label{text-transform: uppercase;}
 
+.eee{position: absolute;
 
+left: 18%;
+
+top: 4%;}
 
 </style>
         <section id="sub-header">
@@ -172,12 +176,12 @@ label{text-transform: uppercase;}
                         </div>
                         <p>How did you hear about CPPEx Global?</p>
                         
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[SocialMedia]"  > Social Media</div>
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Website]" > Website </div>
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Friend]" > Friends </div>
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Emails]" > Emails </div>
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Events]" > Events </div>
-                        <div class="col-xs-2"><input type="checkbox" name="hear_about[others]"  > Others </div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[SocialMedia]"  > <span class="eee">Social Media</span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Website]" ><span class="eee"> Website </span> </div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Friend]" > <span class="eee">Friends </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Emails]" > <span class="eee">Emails </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Events]" > <span class="eee">Events </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[others]"  > <span class="eee">Others</span> </div>
                         
                      
                 </section>
