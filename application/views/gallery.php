@@ -3,10 +3,16 @@ include_once"header.php";
 
 ?>
 <style>
-.thumbnail{background-color: #f30100;
-    border: 1px solid #f30100;}
+.thumbnailbox img{ border-radius: 8px;width: 100%;}
+.thumbnailbox {
+    border: 3px solid #f30100;
+    margin-bottom: 43px;
+    display: inline-block;
+    border-radius: 10px;
+	width: 100%;
+}	
+
 </style>
-<link href='fancybox/jquery.fancybox.css' media='all' rel='stylesheet' type='text/css'>
         <section id="sub-header" style="background:url(frontend/gallery.jpg)">
         <div class="container">
             <div class="row">
@@ -20,7 +26,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-           <div class="col-md-12"> <h4> GALLERY - <?=$year?></h4></div>
+           <div class="col-md-12 "> <h4> GALLERY - <?=$year?></h4></div>
            <?php
 	if($data!=0){
 	foreach ($data->result() as $row){
@@ -28,10 +34,10 @@ include_once"header.php";
 	$srcL =	base_url().'uploads/'.$row->image;
 		
 		?>
-        <div class="col-md-2 col-xs-6 col-sm-4">
-        <div class="thumbnail">
+        <div class="col-md-3 col-xs-6 col-sm-4">
+        <div class="thumbnailbox">
             <a class="fancybox" rel="gallery1" href="<?=$srcL?>" title="<?=$row->title?>">
-	<img src="<?=$src?>"  class="img-responsive"   alt="<?=$row->title?>" />
+	<img src="<?=$src?>"    alt="<?=$row->title?>" />
 </a>
 </div>
 </div>
@@ -45,16 +51,4 @@ include_once"header.php";
         
         
 <?php include_once"footer.php"; ?>
-<script src="fancybox/jquery.fancybox.js"></script>
 
-<script>
-$(document).ready(function() {
-    $("#single_1").fancybox({
-          helpers: {
-              title : {
-                  type : 'float'
-              }
-          }
-      });
-});
-</script>

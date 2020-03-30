@@ -1,7 +1,12 @@
 <?php 
 include_once"header.php";
 ?>
-
+<style>
+.post img {
+    height: 300px;
+    width: 100%;
+}
+</style>
         <section id="sub-header" style="background:url(frontend/blogs.jpg)">
         <div class="container">
             <div class="row">
@@ -25,7 +30,38 @@ include_once"header.php";
 	<div id="search-2" class="widget widget_search">
     </div><div id="text-6" class="widget widget_text">		<div class="textwidget">
 </div>
-		</div><div id="recentpost_widget-2" class="widget widget_recentpost_widget"><h4 class="widget_title">Recent Posts</h4>
+		</div><div id="recentpost_widget-2" class="widget widget_recentpost_widget">
+        
+        <div >                      
+                      <h4 class="widget_title">Filter</h4>
+                      <?php
+					  $query='';
+					  if(isset($_GET['query'])){
+					   $query=$_GET['query'];
+					   }
+					  ?>
+                      
+                    <select class="form-control" onChange="filterblog(this.value)" id="category" name="category" >
+                    <option>--------Filter----------</option>
+                   <?php 
+				   
+				   $op= array('Technology'=>'Technology','Social Media'=>'Social Media','World'=>'World','Science'=>'Science');
+				   
+				   foreach($op as $key=>$val){ 
+				   
+				   $selected ='';
+				  if($query==$val){
+					  	 $selected ='selected="selected"';
+					  	 }
+					   echo ' <option '.$selected .' value="'.$val.'">'.$val.' </option>';
+					}
+					
+						 
+				  ?>
+                  
+                    </select>
+                    </div>
+        <h4 class="widget_title">Recent Posts</h4>
     <ul>
 
         <?php 
@@ -72,7 +108,7 @@ if($data->num_rows()>0){
 		<?php }
 		else if($row->post_type=='image'){
 		$src=base_url().'uploads/'.$row->image;
-				echo '<img src="'.$src.'"   class="img-responsive" >';
+				echo '<img src="'.$src.'"    class="img-responsive" >';
 				
 		}
 		else if($row->post_type=='embed url'){
@@ -86,16 +122,18 @@ if($data->num_rows()>0){
       <div class="post-left">
         <ul>
           <li><i class="icon-calendar-empty"></i>On <span><?=date('F , j Y',strtotime($row->created_on))?></span></li>
-          <li><i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">
+         
+          <li><i class="icon-tags"></i>Category  <a  rel="tag"><?php echo $row->category;?></a></li>
+      </div>
+      <div class="post-right "><!--<i class="icon-comment"></i>0 comment-->
+      
+      <i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">
           <?php if($row->author!=''){ 
 		  echo $row->author;
 		  }
 		  else{ echo 'Admin';};
 		  ?>
-          </a></li>
-          <li><i class="icon-tags"></i>Category  <a  rel="tag"><?php echo $row->category;?></a></li>
-      </div>
-      <div class="post-right"><i class="icon-comment"></i>0 comment</div>
+          </a></div>
     </div>
     <h4><a href="eblogs/detail/<?=$row->id;?>"><?php echo $row->post_title;?></a></h4>
     <p><?php 
@@ -109,10 +147,10 @@ if (strlen($post_description) > 10)
   </div>
 </div>
 <!-- end post -->
-<div class="clearfix">&nbsp;</div>
-<hr>
 <?php }
-}
+}else{
+	echo 'No blog found !';
+	}
  ?>
 
                                     <div class="text-center">
@@ -137,3 +175,8 @@ if (strlen($post_description) > 10)
 </section>        
         
 <?php include_once"footer.php"; ?>
+<script>
+function filterblog(v){
+	window.location="eblogs/index/?query="+v;
+	}
+</script>

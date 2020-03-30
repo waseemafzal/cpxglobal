@@ -36,8 +36,9 @@ regions. Clients across the value chain have come to value our trainings and con
 	  foreach($data->result() as $row){
 		  $src=base_url().'uploads/'.$row->image;
 	  ?>
-      <div class="thumbnail "><img class="img-responsive" src="<?=$src?>"></div>
+      <div class="col-md-4"><img class="img-responsive" src="<?=$src?>"></div>
       <?php  } }?>
+      <div class="clearfix">&nbsp;</div>
    </section>
 
 

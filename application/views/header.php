@@ -70,6 +70,7 @@ select.form-control{
     background: #f4524d!important;
     color: #fff!important;
 	}
+	form label{ text-transform:uppercase;}
 .btn:hover{
 	color: #fff;
 	background-color:#f30100	

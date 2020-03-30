@@ -21,7 +21,15 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1 id="title">Career</h1>
+                    <h1 id="title"><?php 
+                if(isset($row)){ 
+                echo $row->post_title;
+                } 
+                ?><?php 
+                if(isset($row)){ 
+                echo $row->post_title;
+                } 
+                ?></h1>
 
 </div>
             </div><!-- End row -->

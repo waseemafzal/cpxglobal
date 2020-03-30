@@ -99,7 +99,14 @@ background-color:#f30100;
 form label{
 	margin-left:2px;
 	}
-
+.vc_custom_1456124843800 {
+    padding-top: 20px !important;
+    background-color: #80808066 !important;
+    position: absolute;
+    z-index: 2;
+    top: 166px;
+    width: 100%;
+}
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">
@@ -122,8 +129,8 @@ form label{
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.955366164483!2d74.24913471448151!3d31.470413956757334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190225a74496b5%3A0x27c8247117eae3ee!2s92%20J1-%2C%20Block%20J1%20Block%20J%201%20Phase%202%20Johar%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1582889654685!5m2!1sen!2s" height="250" class="col-xs-12 col-md-12 SOUTH hidden"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.4366713143186!2d55.29862301432857!3d25.255892035515945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43254a63a02d%3A0x99a61aee5dd27061!2sBusiness%20Time%20Business%20Center%20Bur%20Dubai!5e0!3m2!1sen!2s!4v1582890094064!5m2!1sen!2s" height="250" class="col-xs-12 col-md-12 hidden MIDDLE  hidden"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            <div class="clearfix">&nbsp;</div>
-           <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456124843800"> 
+            <div style="position:relative">
+            <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456124843800"> 
            <div class="container"><div class="row">
            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8"><div class="vc_column-inner">
            <div class="wpb_wrapper">
@@ -143,6 +150,7 @@ form label{
   </div>
   </div></div></div></div>
   </section>
+            </div>
         <div class="container">
             
            <div class="col-md-4 col-xs-12">
@@ -207,7 +215,11 @@ form label{
 </ul>
 <hr>
 <h4>Apply for a course</h4>
-<p>CPPEx Global offers a comprehensive certification program for professional associated with printing, packaging and associated industries.</p>
+<p>The CPPEx Global helpline offers guidance and advice about the Training & consultancy 
+services. This service is available from 9.30am – 5.00pm (as per local time) Monday to Friday by 
+calling in Head Office or Branch offices. Outside of these hours please complete the form above, 
+or email your questions to enquiry@cppexglobal.org . The CPPEx Global welcomes feedback on 
+any aspects of the operation of training and consultancy services.</p>
 <p><a class="register" href="contact/registration">Apply</a></p>
 
 		</div>
@@ -294,14 +306,18 @@ form label{
                 </select>
                 </div>
                 <div class="col-md-12 col-xs-12">
-                <label>Attached file .....</label>
+                <label>Attachment .....</label>
                 <input class="form-control" type="file" name="image" id="image"> 
                 </div>
                 
                 <div class="col-md-12 col-xs-12">
                 <label>Message</label>
                 <textarea class="form-control"  rows="5" name="message"></textarea>
-                <p> <input type="checkbox" width="30"> I read, understand and agreed with all terms and conditions!
+                <p> <input type="checkbox" width="30" style="
+    margin: 3px 8px 0 0px;
+    display: inline-block;
+    float: left;
+"> I read, understand and agreed with all terms and conditions!
                 </p>
                  </br>
                     <div class="page-alert" style="display: block;"></div>

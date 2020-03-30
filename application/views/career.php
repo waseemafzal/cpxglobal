@@ -27,13 +27,13 @@ include_once"header.php";
 <p align="center" style="
     text-align: center;
 ">With offices all around the world, we're constantly hiring.</p><table class="table table-bordered " style="border:1px solid #ccc" >
-		<tr style="background-color:#f30100 !important; color:#fff">
-	<td>Sr No</td>
-    <td>Position</td>
-    <td>Location</td>
-    <td>Date of posting</td>
-    <td>Last date</td>
-    <td>Detail</td>
+		<tr style="background-color:#3f4045 !important; color:#fff">
+	<th>Sr No</th>
+    <th>Position</th>
+    <th>Location</th>
+    <th>Date of posting</th>
+    <th>Last date</th>
+    <th>Detail</th>
     
 </tr>
 <?php
