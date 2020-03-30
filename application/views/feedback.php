@@ -2,9 +2,9 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{    color: #000!important;
+.Section>h3{    color: #fff !important;
     text-align: center;
-    background: #f30100;
+    background: #3f4045;
     padding: 7px 6px;
     font-size: 20px;
     clear: both;
@@ -40,7 +40,7 @@ input[type="radio"], input[type="checkbox"] {
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-            <h4>Online feedback form</h4>
+            <h4> <?php echo strtoupper('Online feedback form');?></h4>
             <form id="form_add_update" name="form_add_update" method="post" action="">
             
 <section id="personalDetail" class="Section">

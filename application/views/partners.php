@@ -23,11 +23,11 @@ include_once"header.php";
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " >
 
             <div class="container">
-            <h4>Our Global  Partners</h4>
-<p>As the global leader in technical training and consulting, we have provided insights and increased bottom
+            <h4> <?php echo strtoupper('Our Global  Partners');?></h4>
+<!--<p>As the global leader in technical training and consulting, we have provided insights and increased bottom
 line growth more than 1,000 leading printing, packaging and associated companies in more than five
 regions. Clients across the value chain have come to value our trainings and consulting services.
-</p>         
+</p>   -->      
 
   
           <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">

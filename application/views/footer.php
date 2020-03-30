@@ -218,10 +218,10 @@
     </script> 
     <script src='frontend/css/classie9dff.js?ver=5.3.2' type='text/javascript'>
     </script> 
-    <script src='frontend/css/jquery.fancybox.pack9dff.js?ver=5.3.2' type='text/javascript'>
+   <script src='frontend/css/jquery.fancybox.pack9dff.js?ver=5.3.2' type='text/javascript'>
     </script> 
-    <script src='frontend/css/jquery.fancybox-media9dff.js?ver=5.3.2' type='text/javascript'>
-    </script> 
+  <!--   <script src='frontend/css/jquery.fancybox-media9dff.js?ver=5.3.2' type='text/javascript'>
+    </script> -->
     <script src='frontend/css/fancy_func9dff.js?ver=5.3.2' type='text/javascript'>
     </script> 
     <script src='frontend/css/custom9dff.js?ver=5.3.2' type='text/javascript'>

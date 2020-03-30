@@ -3,6 +3,7 @@ include_once"header.php";
 
 ?>
 <style>
+
 .thumbnailbox img{ border-radius: 8px;width: 100%;}
 .thumbnailbox {
     border: 3px solid #f30100;
@@ -17,7 +18,7 @@ include_once"header.php";
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1>GALLERY
+                    <h1>GALLERY 
 </h1>
 </div>
             </div><!-- End row -->

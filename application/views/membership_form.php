@@ -16,7 +16,11 @@ include_once"header.php";
 }
 label{text-transform: uppercase;}
 
+.eee{position: absolute;
 
+left: 18%;
+
+top: 4%;}
 
 </style>
         <section id="sub-header">
@@ -171,14 +175,15 @@ label{text-transform: uppercase;}
                         <input class="form-control"  required name="refferby_detail[reffredWebsite]" />
                         </div>
                         <p>How did you hear about CPPEx Global?</p>
-                        <div id="howYou">
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[SocialMedia]" type="checkbox"><label>Social Media</label></div>
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[Website]" type="checkbox"><label>Website</label></div>
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[Friend]" type="checkbox"><label>Friends</label></div>
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[Emails]" type="checkbox"><label>Emails</label></div>
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[Events]" type="checkbox"><label>Events</label></div>
-                        <div class="col-md-2 col-xs-6"><input name="hear_about[others]" type="checkbox"><label>others</label></div>
-                        </div>
+                        
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[SocialMedia]"  > <span class="eee">Social Media</span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Website]" ><span class="eee"> Website </span> </div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Friend]" > <span class="eee">Friends </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Emails]" > <span class="eee">Emails </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[Events]" > <span class="eee">Events </span></div>
+                        <div class="col-xs-2"><input type="checkbox" name="hear_about[others]"  > <span class="eee">Others</span> </div>
+                        
+                     
                 </section>
                     <section id="MEMBERSHIP_DUESDetail" class="formSection">
                         <h4>MEMBERSHIP DUES:</h4>
@@ -204,6 +209,8 @@ label{text-transform: uppercase;}
                             <td>$1,000.00</td>
                         </tr>
                         </table>
+                        <div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read,
+understand and agreed with all CPPEx Global terms and conditions.</div>
                         <input type="hidden" id="mmmbershipID" name="mmmbershipID" value="" />
                          <input type="hidden" id="packageprice" name="packageprice" value="" />
                  <button class="btnCustom pull-right pubservice__42das8672878" type="submit">Submit</button>

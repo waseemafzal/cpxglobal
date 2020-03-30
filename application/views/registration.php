@@ -2,9 +2,9 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{    color: #000!important;
+.Section>h3{    color: #fff !important;
     text-align: center;
-    background: #f30100;
+    background: #3f4045;
     padding: 7px 6px;
     font-size: 20px;
     clear: both;
@@ -29,7 +29,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-            <h4 class="headingform__">Online registration form</h4>
+            <h4 class="headingform__"><?php echo strtoupper('Online registration form');?></h4>
             <form id="membsrshipcreate" name="form_add_update" method="post" action="">
              <div class="page-alert" style="display: block;"> </div>
 				<section id="personalDetail" class="Section">
@@ -40,28 +40,28 @@ include_once"header.php";
 <table class="table" style="width:100%">
 <thead>
 <tr>
- <td>#</td>
+ <td><!--#--></td>
  <td>Name</td>
  <td>Email</td>
  <td>Job Title</td>
  <td>Phone</td>
  <td>ID No</td>
  <td>Nationality </td>
- <td><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a>
-</td>
+ <!--<td><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a>
+</td>-->
 </tr>
 
 </thead>
 <tbody class="field_wrapper">
 <tr>
-<td>1</td>
+<td><!--1--></td> 
  <td><input   class="form-control"required name="personal_detail[name][]" /><span class="text-danger">*</span></td>
  <td><input   class="form-control"type="email" required name="personal_detail[email][]" /><span class="text-danger">*</span></td>
  <td><input   class="form-control"required name="personal_detail[job_title][]" /><span class="text-danger">*</span></td>
  <td><input class="form-control" type="text"    required="required" name="personal_detail[phone][]" /><span class="text-danger">*</span></td>
  <td><input   class="form-control"  required name="personal_detail[id_no][]" /><span class="text-danger">*</span></td>
  <td><input   class="form-control"required name="personal_detail[nationality][]" /><span class="text-danger">*</span></td>
- <td>&nbsp;</td>
+<td><a class="btn btn-info add_button"><i class="fa fa-plus"></i> Add More</a></td>
 </tr>
 <tr>
 
@@ -163,7 +163,12 @@ Discount
 	<li>Complaints related to trainer, contents, venue or services shall be accepted in written form and handle by CPPEx Global complaints management team.</li>
 </ul>
 
-<div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read, understand and agreed to the above</div>
+<!--<div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read, understand and agreed to the above</div>-->
+<div class="col-md-12 col-xs-12">
+                  <input type="checkbox" required="required" ><span  style="            position: absolute;
+    top: 7%;left: 3%;">  I have read, understand and agreed to the above</span>
+               
+                </div>
 </div>
 
 
@@ -235,7 +240,7 @@ $(document).ready(function(){
 
 
         //Check maximum number of input fields
-		var fieldHTML = '<tr id="row_'+x+'"><td>'+x+'</td><td><input   class="form-control"required name="personal_detail[name][]" /></td><td><input class="form-control"type="email" required name="personal_detail[email][]" /></td><td><input   class="form-control"required name="personal_detail[job_title][]" /></td><td><input type="text" class="form-control"   required="required" name="personal_detail[phone][]" /></td><td><input   class="form-control"  required name="personal_detail[id_no][]" /></td><td><input   class="form-control"required name="personal_detail[nationality][]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
+		var fieldHTML = '<tr id="row_'+x+'"><td></td><td><input   class="form-control"required name="personal_detail[name][]" /></td><td><input class="form-control"type="email" required name="personal_detail[email][]" /></td><td><input   class="form-control"required name="personal_detail[job_title][]" /></td><td><input type="text" class="form-control"   required="required" name="personal_detail[phone][]" /></td><td><input   class="form-control"  required name="personal_detail[id_no][]" /></td><td><input   class="form-control"required name="personal_detail[nationality][]" /></td><td><a href="javascript:void(0);" onClick="hideme('+x+')"> <i class="glyphicon glyphicon-minus"></i></a></td></tr>';
         if(x < maxField){ 
             x++; //Increment field counter
             $(wrapper).append(fieldHTML); //Add field html
