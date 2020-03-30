@@ -1,11 +1,37 @@
 <?php 
 include_once"header.php";
 ?>
+<style>
+.Section>h3,h3{    color: #fff !important;
+    text-align: center;
+    background: #3f4045;
+    padding: 7px 6px;
+    font-size: 20px;
+    clear: both;
+    display: inline-block;
+    width: 100%;
+	}
+input[type="radio"], input[type="checkbox"] {
+	
+   width: 22px;
+    height: 23px;
+}	
+.counters{
+	width: 30px;
+	text-align:center;
+   
+	}
+	.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid lightgray;
+}
+</style>
         <section id="sub-header" style="background:url(frontend/complaint.jpg);background-size: 100%;background-position: 50% 50%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-            <h1>complaint
+            <h1>complaint 
             </h1>
 </div>
             </div><!-- End row -->
@@ -23,7 +49,7 @@ include_once"header.php";
                 <p>This form is designed to capture your complaint as quickly and as easily as possible and will be passed directly to our Complaints Team to investigate your issue and try to put things right. There are some key pieces of information we need in order to do this – Please complete the following fields in the form to submit your complaints and note all fields marked with * must be completed.
                 </p>
                 <p><i class="fa fa-lock"></i> This is a secure form and will be passed directly to our Complaints Team</p>
-                
+                <h3>Personal  Detail</h3>
               
                 <div class="col-md-4 col-xs-12">
                 <label>Title</label>
@@ -89,15 +115,23 @@ include_once"header.php";
                 </label>
                 <input class="form-control" type="file"  name="image" id="image"/><br>
                 
-                <input type="checkbox">I understand and agree with all terms and conditions of CPPEx Global complaints handling policy.
+              
                 
-                </br>
+              
                     <div class="page-alert" style="display: block;"></div>
-                    </br>
-                
+                   
+    
+
+
                 </div>
+                 <div class="col-md-12 col-xs-12">
+                  <input type="checkbox" required="required" ><span  style="            position: absolute;
+    top: 18%;"> I understand and agree with all terms and conditions of CPPEx Global complaints handling policy.</span>
+               
+                </div>
+               
                 <div class="col-md-12 col-xs-12">
-                
+                 <p>&nbsp;</p>
                <!-- <button     name="btnComplaint" class="btn btn-info btn-large" type="submit" >Submit</button>-->
                   <input type="submit" class="btn btn-info btn-large" value="Submit">
                 </div>

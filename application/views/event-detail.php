@@ -49,10 +49,14 @@ if($row->short_heading!=''){
    
            
 <?php if(isset($row)){ echo $row->description;} ?>
-
-        <center>   <a href="contact/registration" class="btnCustom">APPLY NOW</a></center> 
+<form name="" action="contact/registration" method="post">
+<div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read, understand and agreed with all CPPEx Global terms and conditions.</div>
+</br></br>
+        <center>   <!--<a href="contact/registration" class="btnCustom">APPLY NOW</a>-->
+         <button class="btnCustom" type="submit">APPLY NOW</button>
+        </center> 
               </div>
         </section>
-        
+  </form>      
         
 <?php include_once"footer.php"; ?>

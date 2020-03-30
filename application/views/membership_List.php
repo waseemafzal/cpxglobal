@@ -15,7 +15,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container"> 
-<h4>Membersip List</h4>
+<h4>MEMBERSHIP LIST</h4>
  <table class="table table-bordered " style="border:1px solid #ccc" >
 	<tbody>
 		<tr style="background-color:#3f4045 !important; color:#fff">

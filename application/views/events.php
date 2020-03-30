@@ -16,7 +16,7 @@ include_once"header.php";
            
 
 <div class="container">
- <h4>Training Details</h4>
+ <h4>TRAINING DETAILS</h4>
 <table class="table   table-bordered ">
 	<tbody>
 		<tr style="background-color:#3f4045 !important; color:#fff">
@@ -33,13 +33,13 @@ include_once"header.php";
 			Training Date
 			</th>
 			<th colspan="1" rowspan="1">
-			Registration Start
+			Registration Started
 			</th>
 			<th colspan="1" rowspan="1">
 			Registration Closed
 			</th>
 			<th colspan="1" rowspan="1">
-			Fee
+			Fees
 			</th>
 			<th colspan="1" rowspan="1">
 			More Details
@@ -53,7 +53,7 @@ include_once"header.php";
 		?>
 		<tr>
 			<td colspan="1" rowspan="1">
-			<?php echo $row->event_id;?>
+			<?php echo $row->course_id;?>
 			</td>
 			<td colspan="1" rowspan="1">
 			<?php echo $row->title;?>

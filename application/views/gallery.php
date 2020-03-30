@@ -3,7 +3,7 @@ include_once"header.php";
 
 ?>
 <style>
-.thumbnail{background-color: #f30100;
+.thumbnail{background-color: #ddd;
     border: 1px solid #f30100;}
 </style>
 <link href='fancybox/jquery.fancybox.css' media='all' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@ include_once"header.php";
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1>GALLERY
+                    <h1>GALLERY 
 </h1>
 </div>
             </div><!-- End row -->
@@ -45,16 +45,21 @@ include_once"header.php";
         
         
 <?php include_once"footer.php"; ?>
-<script src="fancybox/jquery.fancybox.js"></script>
+<!--/*<script src="fancybox/jquery.fancybox.js"></script>*/-->
 
 <script>
 $(document).ready(function() {
-    $("#single_1").fancybox({
+	//alert('---=========');
+    /*$("#single_1").fancybox({
           helpers: {
               title : {
                   type : 'float'
               }
           }
-      });
+      });*/
+	  
+	/*	$("#single_1").fancybox().hover(function() {
+			alert('---');
+		});*/
 });
 </script>
