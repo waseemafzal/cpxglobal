@@ -96,7 +96,7 @@ if (strlen($post_description) > 10)
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 Edit
             </a>
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo$row->id;?>','blogpost');">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo$row->id;?>','news');">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 Delete
             </a>

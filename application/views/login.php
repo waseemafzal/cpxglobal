@@ -58,7 +58,7 @@ include_once"header.php";
                           <div class="control-group">
                             <!-- Button -->
                             <div class="controls">
-                              <button class="btn btn-success" type="button" id="login-btn">Login</button>
+                              <button class="btnCustom" type="button" id="login-btn">Login</button>
                                <span id="logindiv"></span>
                             </div>
                           </div>
@@ -83,7 +83,7 @@ include_once"header.php";
      <div class="control-group">
                             <!-- Button -->
                             <div class="controls">
-                              <button class="btn btn-success" id="forgotpasswordsbt" type="button">Submit</button>
+                              <button class="btnCustom" id="forgotpasswordsbt" type="button">Submit</button>
                                 <span id="forgotUpdiv"></span>
                             </div>
                           </div>
@@ -131,7 +131,7 @@ include_once"header.php";
      
                         <div>
                         <!--  <button class="btn btn-primary" id="signupbtn__" type="submit">Create Account</button>-->
-                          	<button type="button" id="signupbtn__" class="btn btn-primary">  SignUp  </button>
+                          	<button type="button" id="signupbtn__" class="btnCustom">  SignUp  </button>
                           <span id="signUpdiv"></span>
                         </div>
                       </form>

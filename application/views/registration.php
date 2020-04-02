@@ -72,14 +72,14 @@ include_once"header.php";
 
 </tbody>
 </table>
-<a class="btn btn-info add_button pull-right"><i class="fa fa-plus"></i> Add More</a>
+<a class="btnCustom add_button "><i class="fa fa-plus"></i> Add More</a>
 </div>
 </div>
 
 
 
 
-<div class="col-xs-12"><h3>Company detail</h3></div>
+<div class="col-xs-12"><h3>Company details</h3></div>
 <div class="col-md-4 col-xs-12">
 <label>Company <span class="text-danger">*</span></label>
 <input type="text" class="form-control"  required="required" name="company_detail[name]" />
@@ -96,7 +96,7 @@ include_once"header.php";
 <label>Country</label>
 <input type="text" class="form-control"  required="required" name="company_detail[country]" />
 </div>
-<div class="col-xs-12"><h3>Finance Department detail</h3></div>
+<div class="col-xs-12"><h3>Finance Department details</h3></div>
 <div class="col-md-6 col-xs-12"> 
 
 

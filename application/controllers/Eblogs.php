@@ -58,8 +58,53 @@ $config['last_tagl_close'] = "</li>";
 		$aData['page_title'] ='blog detail';
 	$q =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id  where b.id='".$id."'");
 		$aData['row'] =$q->row();
+		$aData['comments'] =$this->db->query("SELECT p.* FROM blogpost_comments p where p.blog_id='".$id."' and status=1");
+		
 		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
 		$this->load->view('blogs-detail',$aData);
 	}
+	
+	
+	
+		function saveComment(){ 
+		extract($_POST);
+		
+		
+		if($saved==true){
+setcookie("cppexuser", $name, time() + (86400 * 90), "/");
+setcookie("cppexemail", $email, time() + (86400 * 90), "/");
+			}
+			unset($_POST['submit'],$_POST['saved'],$_POST['id']);
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('name', 'name', 'trim|required');
+		$this->form_validation->set_rules('email', 'email', 'trim|required');
+		$this->form_validation->set_rules('body', 'comment', 'trim|required');
+		if ($this->form_validation->run()==false){
+			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
+			echo json_encode($arr);
+		}else{
+				
+			$result = $this->crud->saveRecord('',$_POST,'blogpost_comments');
+			
+			
+		switch($result){
+			case 1:
+			$arr = array('status' => 1,'message' => "Thanks for your comment, it will publish after approval !");
+			echo json_encode($arr);
+			break;
+			case 0:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;
+			default:
+			$arr = array('status' => 0,'message' => "Not Saved!");
+			echo json_encode($arr);
+			break;	
+		}
+	}	
+
+	}
+
+	
 	
 }

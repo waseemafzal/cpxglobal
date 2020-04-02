@@ -29,8 +29,9 @@
        <th>Blog Desc</th>
        
         <th>Type</th>
-        <th>img/vido</th>
-        <th>created on</th>
+        <th>Img/vido</th>
+        <th>Comments</th>
+        <th>Created on</th>
        
         <th>Actions</th>
     </tr>
@@ -90,15 +91,16 @@ if (strlen($post_description) > 10)
          </td>
         	 
           <td class="center"><?php echo $row->created_on ?></td>
+          <td class="center"><a href="blogpost_comments/index/<?php echo $row->id;?>"><i class="fa fa-comment pull-left"></i> Comments(<?php echo count_where('blogpost_comments',array('blog_id'=>$row->id)) ?>)</a></td>
             
     <td class="center">
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-info" href="blogpost/edit/<?php echo $row->id;?>">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Edit'));?>" class="btn btn-xs btn-info" href="blogpost/edit/<?php echo $row->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
-                Edit
+                
             </a>
-            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo$row->id;?>','blogpost');">
+            <a data-toggle="tooltip" title=" <?php echo ucwords(this_lang('Delete'));?>" class="btn btn-xs btn-danger" href="javascript:void(0)" onClick="deleteRecord('<?php echo$row->id;?>','blogpost');">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
-                Delete
+                
             </a>
         </td>
     </tr>

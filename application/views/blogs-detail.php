@@ -95,31 +95,66 @@ include_once"header.php";
     <div class="post_info clearfix">
       <div class="post-left">
         <ul>
+        <?php 
+		$author='Admin';
+		if($row->author!=''){ 
+		  echo $author = $row->author;
+		  }
+		 
+		  ?>
           <li><i class="icon-calendar-empty"></i>On <span><?=date('F , j Y',strtotime($row->created_on))?></span></li>
-<!--          <li><i class="icon-user"></i>By <a href="" title="Posts by John Smith" rel="author">Admin</a></li>
--->      </div>
-      <div class="post-right"><i class="icon-comment"></i>0 comment</div>
+          <li><i class="icon-user"></i>By <a href="" title="<?=$author ?>" rel="author"><?=$author ?></a></li>
+      </div>
+      <div class="post-right"><i class="icon-comment"></i><?php echo count_where('blogpost_comments',array('blog_id'=>$row->id)) ?> comment</div>
     </div>
     <h2><?php echo $row->post_title;?></h2><br>
     <?php 
 		echo $row->post_description;	
 		?>
+        
+         <?php
+	if($comments->num_rows()>0){
+		echo '<hr><h4><i class="fa fa-comment"></i> Comments</h4>';
+		foreach($comments->result() as $commentRow){
+		?>
+        <div class="col-xs-12 col-md-12">
+        <span class="fa fa-user"></span><b> <?php echo ucfirst($commentRow->name) ?></b> <span ><i class="fa fa-clock"></i> <?php  echo date('F,j,Y',strtotime($commentRow->created_on)) ?></span>
+        </div>
+		<div class="col-md-12">
+       <p> <?php echo ucfirst($commentRow->body) ?></p>
+        </div>
+		<?php }
+		
+		}
+		
+	?>
   </div>
-              <hr>
-<div class="sharethis-inline-share-buttons pull-left"></div>
-  
-              <h4></h4>
-
-              
-<div class="commentsform hidden">
+              <?php
+			  if($comments->num_rows()>0){
+			  echo '<div class="clearfix">&nbsp;</div><hr>';
+			  }
+			   ?>
+<div class="commentsform ">
     <div id="addcomments">
+   
         <div id="respond" class="comment-respond">
                     	<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/learn/cum-sociis-natoque-penatibus-et-magnis-dis-parturient-montes/#respond" style="display:none;">Cancel reply</a></small></h3><form action="http://demo.vegatheme.com/learn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><textarea id="comment" class="form-control" name="comment" placeholder="Message..." cols="45" rows="8"></textarea></p><p class="comment-form-author"><input id="author" class="form-control" name="author" type="text" value="" placeholder="Enter Name" size="30"></p>
-<p class="comment-form-email"><input id="email" class="form-control" name="email" type="email" value="" placeholder="Enter Email" size="30"></p>
-<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="28" id="comment_post_ID">
-<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		<h3 id="reply-title" class="comment-reply-title">Leave a comment </h3>
+       <?php
+	   $cppexuser='';
+	   $cppexemail='';
+if(isset($_COOKIE['cppexuser'])) {
+    $cppexuser=$_COOKIE['cppexuser'];
+}
+if(isset($_COOKIE['cppexemail'])) {
+    $cppexemail=$_COOKIE['cppexemail'];
+}
+?>
+        <form  method="post" id="form_add_update" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><textarea id="comment" class="form-control" name="body" placeholder="Message..." cols="45" rows="8"></textarea></p><p class="comment-form-author"><input id="author" class="form-control" name="name" type="text" value="<?=$cppexuser?>" placeholder="Enter Name" size="30"></p>
+<p class="comment-form-email"><input id="email" class="form-control" name="email" type="email" value="<?=$cppexemail?>" placeholder="Enter Email" size="30"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="saved" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+ <div class="alert hidden"></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="btnCustom" value="Post Comment"> <input type="hidden" name="blog_id" value="<?=lasturi()?>" id="blog_id">
 </p></form>	</div><!-- #respond -->
 	        </div>
     </div>
@@ -134,3 +169,65 @@ include_once"header.php";
 </section>        
         
 <?php include_once"footer.php"; ?>
+<script>
+	 $('#form_add_update').on("submit",function(e) {
+		e.preventDefault();
+			 var formData = new FormData();
+	
+	var other_data = $('#form_add_update').serializeArray();
+    $.each(other_data,function(key,input){
+        formData.append(input.name,input.value);
+    });   
+	
+	// ajax start
+		    $.ajax({
+			type: "POST",
+			url: "<?php echo base_url().'eblogs/saveComment'; ?>",
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			dataType: 'JSON',
+			beforeSend: function() {
+			$('#loader').removeClass('hidden');
+		//	$('#form_add_update .btn_au').addClass('hidden');
+			},
+			success: function(data) {
+			$('#loader').addClass('hidden');
+			$('#form_add_update .btn_au').removeClass('hidden');
+			//alert(data.status);
+			//var obj = jQuery.parseJSON(data);
+            if (data.status == 1)
+            {   
+				$(".alert").addClass('alert-success');
+				$(".alert").html(data.message);
+				$(".alert").removeClass('hidden');
+				setTimeout(function(){
+				$(".alert").addClass('hidden');
+				$('#form_add_update')[0].reset();
+				},3000);
+            }
+           else if (data.status ==0)
+            {  
+			$(".alert").addClass('alert-danger');
+				$(".alert").html(data.message);
+				$(".alert").removeClass('hidden');
+				setTimeout(function(){
+				$(".alert").addClass('hidden');
+				},3000);
+            }
+			else if (data.status == "validation_error")
+            {  
+			$(".alert").addClass('alert-warning');
+				$(".alert").html(data.message);
+				$(".alert").removeClass('hidden');
+				
+            }
+			
+           }
+	 });
+
+	//ajax end    
+    });
+
+</script>

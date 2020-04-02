@@ -3,11 +3,10 @@ include_once"header.php";
 ?>
     <style>
 .column {
-float: left;
-    width: 20%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+	margin-bottom:10px;
+ 
 }
+
 #main-features h2, #main-features_green h2 {
     text-transform: uppercase;
     color: #fff;
@@ -16,6 +15,7 @@ float: left;
     margin-top: 8px;
     padding-top: 0;
    letter-spacing:0px;
+   
 }
 @media screen and (max-width: 650px) {
   .column {
@@ -34,7 +34,7 @@ box-shadow:0px 1px 4px -1px #f30100;
 }
 .card img{
 	height: 200px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 22px 22px 0 0;
 }
 .containerCard::after, .row::after {
   content: "";
@@ -44,6 +44,7 @@ box-shadow:0px 1px 4px -1px #f30100;
 
 .title {
     margin: 10px 0 0 0;
+    text-align: center;
 }
 
 .button {
@@ -86,7 +87,7 @@ box-shadow:0px 1px 4px -1px #f30100;
 		  $img  = base_url().'uploads/'.$team->post_banner;
 		  
   ?>
-        <div class="column">
+        <div class="col-md-3 col-xs-6 col-sm-6 col-lg-3 column">
         <div class="card">
           <img src="<?php echo $img;?>" alt="<?php echo $team->title;?>" style="width:100%">
           <div class="containerCard">

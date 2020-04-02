@@ -3,7 +3,7 @@ include_once"header.php";
 ?>
 <style>
 .post img {
-    height: 300px;
+    height: 200px;
     width: 100%;
 }
 </style>
@@ -125,7 +125,7 @@ if($data->num_rows()>0){
          
           <li><i class="icon-tags"></i>Category  <a  rel="tag"><?php echo $row->category;?></a></li>
       </div>
-      <div class="post-right "><!--<i class="icon-comment"></i>0 comment-->
+      <div class="post-left "><!--<i class="icon-comment"></i>0 comment-->
       
       <i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">
           <?php if($row->author!=''){ 
@@ -134,6 +134,7 @@ if($data->num_rows()>0){
 		  else{ echo 'Admin';};
 		  ?>
           </a></div>
+          <div class="post-right"><i class="icon-comment"></i><?php echo count_where('blogpost_comments',array('blog_id'=>$row->id)) ?> comment</div>
     </div>
     <h4><a href="eblogs/detail/<?=$row->id;?>"><?php echo $row->post_title;?></a></h4>
     <p><?php 

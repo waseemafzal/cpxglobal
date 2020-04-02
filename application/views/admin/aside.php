@@ -511,6 +511,7 @@
                  <li><a href="imageurl"><i class="fa fa-th"></i> <span> Get Image URL</span></a></li>
                   
 
+                <li><a href="teams"><i class="fa fa-users"></i> <span>Team</span></a></li>
                 <li><a href="blogpost"><i class="fa fa-th"></i> <span>Blogs</span></a></li>
                 <li><a href="pressRelease"><i class="fa fa-th"></i> <span>News </span></a></li>
 

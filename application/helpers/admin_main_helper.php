@@ -2067,7 +2067,12 @@ $res=$CI->db->query($q);
 return $res->row()->total;
 	}
 
-	function count_tbl_where($tableName,$condition,$value)
+	function count_where($tableName,$value)
+	{
+		$CI =& get_instance();
+		return $CI->db->where($value)->count_all_results($tableName);
+	}
+function count_tbl_where($tableName,$condition,$value)
 	{
 		$CI =& get_instance();
 		return $CI->db->where($condition, $value)->count_all_results($tableName);

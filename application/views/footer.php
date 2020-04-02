@@ -1,4 +1,10 @@
-<div class="clearfix">&nbsp;</div>        <footer>
+<div class="sharethis-wrap" style="background:#f7f7f7 !important;padding: 15px 0;">
+<div class="container" >
+ <div class="sharethis-inline-share-buttons pull-right"></div>
+
+</div>
+</div>
+       <footer>
             <div class="top-footer" style="padding: 0;">
                 <div class="container">
                 
@@ -29,7 +35,7 @@
             </div>
             <div class="container " id="nav-footer">
                 <div class="row text-left">
-                    <div class="col-md-2 col-sm-6 columns" id="firstF">
+                    <div class="col-md-2 col-sm-6 col-xs-6 columns" id="firstF">
                         <div class="widget widget_text" id="text-2">
                             <h4>About Us</h4>
                             <div class="textwidget">
@@ -54,7 +60,7 @@
                             </div>
                         </div>
                     </div><!-- end col-lg-3 -->
-                    <div class="col-md-2 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 col-xs-6 columns">
                         <div class="widget widget_text" id="text-3">
                             <h4> Services</h4>
                             <div class="textwidget">
@@ -78,7 +84,7 @@
                             </div>
                         </div>
                     </div><!-- end col-lg-3 -->
-                    <div class="col-md-2 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 col-xs-6 col-xs-6 columns">
                         <div class="widget widget_text" id="text-4">
                             <h4>Information</h4>
                             <div class="textwidget">
@@ -101,7 +107,7 @@
                         </div>
                     </div><!-- end col-lg-3 -->
                     <!-- end col-lg-3 -->
-                    <div class="col-md-2 col-sm-6 columns">
+                    <div class="col-md-2 col-sm-6 col-xs-6 columns">
                         <div class="widget widget_text" id="text-4">
                             <h4>CONTACT</h4>
                             <div class="textwidget">

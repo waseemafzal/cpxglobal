@@ -2,7 +2,7 @@
 include_once"header.php";
 ?>
 <style>
-.Section>h3{    color: #fff !important;
+.Section h3{    color: #fff !important;
     text-align: center;
     background: #3f4045;
     padding: 7px 6px;
@@ -44,7 +44,7 @@ input[type="radio"], input[type="checkbox"] {
             <form id="form_add_update" name="form_add_update" method="post" action="">
             
 <section id="personalDetail" class="Section">
-<h3>Participant's details</h3>
+<div class="col-md-12"><h3>Participant's details</h3></div>
         
         <div class="col-md-4 col-xs-12">
         <label>Date</label>
@@ -75,7 +75,7 @@ input[type="radio"], input[type="checkbox"] {
             <label> Company Name</label>
             <input class="form-control" required name="particpient_detail[company_name]" />
         </div>
-<h3>Product details</h3>
+<div class="col-md-12"><h3>Product details</h3></div>
         <div class="col-md-4 col-xs-12">
         <label>Product Services</label>
         <select class="form-control" name="product_detail[product_service]">
@@ -95,8 +95,8 @@ input[type="radio"], input[type="checkbox"] {
         <label>Subject / Title</label>
         <input type="text" class="form-control"  required="required"  name="product_detail[subject]" />
         </div>
- <h3>Instructions</h3>
-
+ <div class="col-md-12"><h3>Instructions</h3></div>
+<div class="col-md-12">
 <p style="font-style:italic">Please indicate your impressson of the items listed below, if it was highly favourable, choose 5. If not so favorable, give your opinion-choose from 4 to 1</p>
  <!--<h3>Training Materials </h3>-->
 <table class="table">
@@ -256,6 +256,7 @@ input[type="radio"], input[type="checkbox"] {
     <td><input type="radio"  name="instruction_venue_procedure[regulartraining]"  value="5"></td>
 </tr>
 </table>
+</div>
 <div class="col-md-6 col-xs-12">
     <label>What did you like most about this training? <span class="text-danger">*</span></label>
     <input class="form-control"  required="required" name="like_and_suggestion[mostlike]" />

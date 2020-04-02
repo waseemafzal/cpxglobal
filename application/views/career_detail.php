@@ -16,35 +16,25 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
 }
 .jobinfo>p{ margin-bottom:0px;}
 </style>
-        <section id="sub-header" style="background-size: 100%;background-position: 50%;" >
-        <div id="tintBG">
+        <section id="sub-header" style="background:url('<?=base_url()?>frontend/Career.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1 id="title"><?php 
-                if(isset($row)){ 
-                echo $row->post_title;
-                } 
-                ?><?php 
-                if(isset($row)){ 
-                echo $row->post_title;
-                } 
-                ?></h1>
-
+                    <h1>career
+</h1>
 </div>
             </div><!-- End row -->
         </div><!-- End container -->
-        </div>
       </section>
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
             <div class="jobinfo">
-            <p><b>Job Title </b> :  <?php 
+            <h4>  <?php 
                 if(isset($row)){ 
                 echo $row->post_title;
                 } 
-                ?></p>
+                ?></h4>
             <p><b>Date </b> : <?php 
                 if(isset($row)){ 
                 echo date('F , j ,Y',strtotime($row->created_on));
@@ -70,7 +60,7 @@ $post_banner=base_url().'uploads/default_banner.jpg';}
                 } 
                 ?>
           <div class="clearfix">&nbsp;</div>
-<a id="btnApply" class="btn btn-info pull-right">APPLY NOW</a>
+<a id="btnApply" class="btnCustom">APPLY NOW</a>
               </div>
         </section>
         

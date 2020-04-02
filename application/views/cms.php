@@ -72,10 +72,10 @@ if($row->short_heading!=''){
             <div class="<?=$mainContainer?> ">
 
 <?php if(isset($row)){ echo $row->post_description;} ?>
-<div class="sharethis-inline-share-buttons pull-right"></div>
             </div>
             
               </div>
+              
         </section>
         
         

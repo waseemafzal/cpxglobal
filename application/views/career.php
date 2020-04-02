@@ -32,7 +32,7 @@ include_once"header.php";
     <th>Position</th>
     <th>Location</th>
     <th>Date of posting</th>
-    <th>Last date</th>
+    <th>Date of closing</th>
     <th>Detail</th>
     
 </tr>
@@ -46,7 +46,7 @@ if($data->num_rows()>0){
     <td><?=$job->company_location?></td>
     <td><?php if($job->created_on!='') echo date('F,j,Y',strtotime($job->created_on))?></td>
     <td><?php if($job->created_on!='') 
-	echo date('F j y',strtotime('+30 days',strtotime($job->created_on))) . PHP_EOL;
+	echo date('F,j,Y',strtotime('+30 days',strtotime($job->created_on))) . PHP_EOL;
 	?></td>
     <td align="center"><a href="career/detail/<?=$job->id?>"><i class="fa fa-plus"></i></a></td>
 </tr>

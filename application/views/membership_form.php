@@ -43,7 +43,7 @@ top: 4%;}
                 <div class="page-alert" style="display: block;"> </div>
                	<div id="registrationDetail" style="display:block;">
                 	<section id="personalDetail" class="formSection">
-        <div class="col-xs-12"><h4>Personal Detail</h4></div>
+        <div class="col-xs-12"><h4>Personal Details</h4></div>
         <div class="col-md-4 col-xs-12">
         <label>First Name <span class="text-danger">*</span></label>
         <input class="form-control"  required="required" name="name" /> 	
@@ -75,7 +75,7 @@ top: 4%;}
         </section>
                     <section id="companySection" class="formSection">
                              
-                        <div class="col-xs-12"> <h4>Company Detail</h4></div>
+                        <div class="col-xs-12"> <h4>Company Details</h4></div>
                         
                         <div class="col-md-4 col-xs-12">
                         <label>Company Name</label>

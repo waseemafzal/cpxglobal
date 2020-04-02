@@ -3,7 +3,7 @@ include_once"header.php";
 
 ?>
        <style>
-
+.sharethis-wrap{ display:none;}
 .slick-slide {
     margin: 0px 20px;
 }
@@ -201,7 +201,9 @@ include_once"header.php";
 		   #slider4 li img{ height:200px !important;}         
 		   .sTitle{}
   .sDesc{}   
-          
+          .carousel-inner {}
+          .carousel-inner .item{ z-index:1px;}
+          .carousel-inner .active{z-index:2px;}
 </style> 
 
 <section class="vc_rows wpb_rows vc_rows-fluid vc-row-full-width">
@@ -317,7 +319,7 @@ $j++;
  <div class="col-md-3 col-course">
                                     <h4 class="topTitle"><?php
                                     if($cat=='NEWS'){
-										echo 'CONSULTANCY';
+										echo 'MEMBERSHIP';
 										}else{
 										echo $cat;
 											
@@ -403,7 +405,10 @@ $j++;
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?=$news->post_title;?> </a></h4>
+                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?php $post_title = $news->post_title;
+	if (strlen($post_title) > 10)
+   echo substr($post_title, 0, 60) . '...';
+														?> </a></h4>
                                                         <p>
                                                         <?php 
 		$post_description = strip_tags($news->post_description);

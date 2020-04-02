@@ -70,7 +70,7 @@ select.form-control{
     background: #f4524d!important;
     color: #fff!important;
 	}
-	form label{ text-transform:uppercase;}
+	form label{ text-transform:capitalize;}
 .btn:hover{
 	color: #fff;
 	background-color:#f30100	
@@ -123,14 +123,18 @@ select.form-control{
 		}
 		
 		.btnCustom:hover{
-	color: #fff;	
+	color: #000;	
 	}
 .btnCustom{ 
-background-color:#f30100;
-   border: 1px solid #f30100;
+background-color: #f30100;
+    border: 1px solid #000;
     padding: 5px 25px;
-	font-weight:bold;
-    color: #000;}
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+	cursor:pointer;
+    float: right;}
+	#nav-footer .columns{}
     </style>
     <link href='frontend/css/common-skeleton.min8f82.css?ver=4.10' id='tribe-common-skeleton-style-css' media='all' rel='stylesheet' type='text/css'>
     <link href='frontend/css/tooltip.min8f82.css?ver=4.10' id='tribe-tooltip-css' media='all' rel='stylesheet' type='text/css'>
@@ -212,6 +216,9 @@ background-color:#f30100;
     </script>
      
     <style type="text/css">
+	ul.top-nav li {
+    color: #fff !important;
+}
     .tax-module .lesson-container h1{
        font-size: 20px;
     }
@@ -224,7 +231,8 @@ background-color:#f30100;
     .col-item .info .rating{
        color: #FC0;
     }
-	p{color:#595959 !important;}
+	footer .textwidget li,small{ color:#fff!important;}
+	p,div ul li{color:#595959 !important;}
 	ul#top_nav, ul.top-nav {
     margin: 22px 0 0 35px;
 	float:left;
@@ -278,9 +286,10 @@ ul#follow_us li {
     margin-right: 5px!important;
 }
 td{ color:#595959 !important}
+.carousel-caption{ z-index:1 !important}
 @media only screen and (min-width: 768px) {
 	#firstF{
-	    margin: 0 0 0 4%;	
+	    margin: 0 0 0 6%;	
 		}
   .menu {
     margin: 0 0 0 25px;

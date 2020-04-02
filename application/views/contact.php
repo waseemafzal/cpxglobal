@@ -103,7 +103,7 @@ form label{
     padding-top: 20px !important;
     background-color: #80808066 !important;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 166px;
     width: 100%;
 }
@@ -134,7 +134,7 @@ form label{
            <div class="container"><div class="row">
            <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-offset-2 vc_col-md-8"><div class="vc_column-inner">
            <div class="wpb_wrapper">
-      <select  onChange="getDirection(this.value)"id="slect" >
+      <select style="color:#595959 !important"  onChange="getDirection(this.value)"id="slect" >
       <option >Select</option>
       <option value="USA">USA</option>
       <option value="EUROPE">Europe</option>
@@ -151,6 +151,7 @@ form label{
   </div></div></div></div>
   </section>
             </div>
+           <div class="clearfix">&nbsp;</div>
         <div class="container">
             
            <div class="col-md-4 col-xs-12">
@@ -213,14 +214,12 @@ form label{
 <li><a href="httpss://linkedin.com/CPPExGlobal"><i class=" icon-linkedin"></i>linkedin.com/CPPEx Global</a></li>
 <li><a href="httpss://youtube.com/CPPExGlobal"><i class=" icon-youtube"></i>youtube.com/CPPEx Global</a></li>
 </ul>
-<hr>
-<h4>Apply for a course</h4>
+<hr style="margin-bottom:4px">
 <p>The CPPEx Global helpline offers guidance and advice about the Training & consultancy 
 services. This service is available from 9.30am – 5.00pm (as per local time) Monday to Friday by 
 calling in Head Office or Branch offices. Outside of these hours please complete the form above, 
-or email your questions to enquiry@cppexglobal.org . The CPPEx Global welcomes feedback on 
+or email your questions to info@cppexglobal.org  The CPPEx Global welcomes feedback on 
 any aspects of the operation of training and consultancy services.</p>
-<p><a class="register" href="contact/registration">Apply</a></p>
 
 		</div>
            </div>
