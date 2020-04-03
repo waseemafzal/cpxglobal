@@ -10,6 +10,7 @@ include_once"header.php";
     clear: both;
     display: inline-block;
     width: 100%;
+	text-transform: uppercase;
 	}
 input[type="radio"], input[type="checkbox"] {
 	
@@ -25,7 +26,8 @@ input[type="radio"], input[type="checkbox"] {
     width: 100%;
     margin-bottom: 20px;
     border: 2px solid lightgray;
-}
+}thead>tr>td{ text-transform:capitalize;}
+	
 </style>
         <section id="sub-header" style="background:url(frontend/feedback.jpg)">
         <div class="container">
@@ -40,7 +42,7 @@ input[type="radio"], input[type="checkbox"] {
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-            <h4> <?php echo strtoupper('Online feedback form');?></h4>
+            <div class="col-md-12"><h4> <?php echo strtoupper('Online feedback form');?></h4></div>
             <form id="form_add_update" name="form_add_update" method="post" action="">
             
 <section id="personalDetail" class="Section">

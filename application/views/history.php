@@ -198,7 +198,7 @@ include_once"header.php";
 	margin-top:10px;
 	}
         </style>
-        <section id="sub-header" style="background:url(frontend/history.jpg)">
+        <section id="sub-header" style="background:url(http://project.cyphersol.com/cpxglobal/uploads/cmsimage/3682486280088.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -209,8 +209,10 @@ include_once"header.php";
         </div><!-- End container -->
       </section>
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
-            
-<div class="container">
+            <div class="container">
+            <img src="frontend/history.jpeg" class="img-responsive">
+            </div>
+<div class="container hidden">
     <div class="page-header">
         <h2 id="timeline">CPPEx GLOBAL IN THE COURSE OF TIME</h2>
     </div>

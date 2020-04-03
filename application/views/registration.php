@@ -10,12 +10,13 @@ include_once"header.php";
     clear: both;
     display: inline-block;
     width: 100%;
+	text-transform: uppercase;
 	}
 	input.form-control, textarea.form-control{height: auto;
     margin: 0;
     padding: 5px 10px;}
 	.table td{ margin:0; padding:0}
-	thead>tr>td{ text-transform:uppercase;}
+	thead>tr>td{ text-transform:capitalize;}
 	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
  
      border-top: none !important; 
@@ -171,9 +172,18 @@ Discount
 </ul>
 
 <!--<div class="col-xs-12"><input type="checkbox" required="required" value="1"> I have read, understand and agreed to the above</div>-->
-<div class="col-md-12 col-xs-12">
-                  <input type="checkbox" required="required" ><span  style="            position: absolute;
-    top: 7%;left: 3%;">  I have read, understand and agreed to the above</span>
+<div class="col-md-12 col-xs-12" style="
+    margin: 18px 0 0 0;
+">
+                  <input type="checkbox" required="required" style="
+    float: left;
+"><span style="
+    /* top: 7%; */
+    /* left: 3%; */
+    margin: 3px 0  0 0;
+    display: inline;
+    ">  I have read,
+understand and agreed with all CPPEx Global terms and conditions.</span>
                
                 </div>
 </div>

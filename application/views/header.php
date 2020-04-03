@@ -287,6 +287,38 @@ ul#follow_us li {
 }
 td{ color:#595959 !important}
 .carousel-caption{ z-index:1 !important}
+.carousel-caption h3,p{ text-transform:capitalize !important;}
+@media only screen and (max-width: 768px) {
+	.contactPage #slect {
+    width: 60%;
+    padding: 12px 5px;
+    float: left;
+    border-radius: 0;
+}
+.carousel-indicators{ display:none;}
+
+.carousel-caption h3,p{ text-transform:capitalize !important;}
+
+#sub-header h1 {
+    font-size: 25px;
+}
+.contactPage .input-group-btn{display: inline-block;}
+.carousel-caption {
+    
+    top: -6%!important;
+}
+#mobnav-btn {
+    position: absolute;
+    top: -28px;}
+	.carousel-caption h3 {
+    line-height: normal!important;
+    letter-spacing: 0px!important;
+    font-weight: normal;
+    font-size: 18px!important;
+	margin: 0;
+    color: #fff !important;
+}
+}
 @media only screen and (min-width: 768px) {
 	#firstF{
 	    margin: 0 0 0 6%;	

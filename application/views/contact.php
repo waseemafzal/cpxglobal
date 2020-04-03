@@ -119,7 +119,7 @@ form label{
         </div><!-- End container -->
       </section>
      
-<section style="padding-top: 0px !important;" class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
+<section style="padding-top: 0px !important;" class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 contactPage" id="main-features">
      
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.2825426358527!2d-75.02054198526999!3d39.485534219667585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c732633a6b5ea5%3A0x76467bbc01e883c8!2s807%20E%20Landis%20Ave%2C%20Vineland%2C%20NJ%2008360%2C%20USA!5e0!3m2!1sen!2s!4v1582635745886!5m2!1sen!2s"  height="250" frameborder="0" style="border:0;" class="col-xs-12 col-md-12 USA" allowfullscreen=""></iframe>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.4139915730757!2d-47.467489885546165!3d-23.445526863208645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f59ef6749dd1%3A0x7ada188965a4cb6d!2sR.%20Tereza%20de%20Jesus%20Pinto%2C%20170%20-%20Jardim%20Santa%20Catarina%2C%20Sorocaba%20-%20SP%2C%2018078-698%2C%20Brazil!5e0!3m2!1sen!2s!4v1582889224980!5m2!1sen!2s" class="col-xs-12 col-md-12 AMERICA hidden"  height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -324,7 +324,7 @@ any aspects of the operation of training and consultancy services.</p>
                 </div>
                 
                 <!--<input type="submit" name="btnSubmit" class="register pull-right" value="Submit">-->
-                <input type="submit" class="register pull-right" value="Submit">
+                <input type="submit" class="btnCustom" value="Submit">
                
                 </section>
 			</form>
