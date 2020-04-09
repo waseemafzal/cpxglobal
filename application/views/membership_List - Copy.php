@@ -1,13 +1,6 @@
 <?php 
 include_once"header.php";
 ?>
-
-        <link rel="stylesheet" href=" https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
-
-
         <section id="sub-header">
         <div class="container">
             <div class="row">
@@ -23,10 +16,9 @@ include_once"header.php";
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container"> 
 <h4>MEMBERSHIP LIST</h4>
-
-          <table id="dtTable" class="table  table-bordered" style="width:100%;border:1px solid #ccc">
-        <thead>
-        <tr style="background-color:#3f4045 !important; color:#fff">
+ <table class="table table-bordered " style="border:1px solid #ccc" >
+	<tbody>
+		<tr style="background-color:#3f4045 !important; color:#fff">
 			<th colspan="1" rowspan="1">
 			 Sr. No 
 			</th>
@@ -56,10 +48,7 @@ include_once"header.php";
 			 More Details 
 			</th>
 		</tr>
-           
-        </thead>
-        <tbody>
-           <?php 
+		 <?php 
 		  if(count($membershipList) > 0 )
 		  {
 		   $counter = 1;	  
@@ -132,44 +121,10 @@ include_once"header.php";
 	     }
 	   }
 	   ?> 
-          
-        </tbody>
-        <tfoot>
-            <tr>
-              <tr style="background-color:#3f4045 !important; color:#fff">
-			<th colspan="1" rowspan="1">
-			 Sr. No 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Membership ID 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Customer ID 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Membership Class 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Organization 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Representative 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Email 
-			</th>
-			<th colspan="1" rowspan="1">
-			 Location 
-			</th>
-			
-			<th colspan="1" rowspan="1">
-			 More Details 
-			</th>
-		</tr>
-        </tfoot>
-    </table>
-       
-		</div>
+		
+	</tbody>
+</table>
+
         </section>
         
 <!------------------------------->
@@ -202,10 +157,6 @@ include_once"header.php";
         
 <?php include_once"footer.php"; ?>
 <script type="text/javascript">
- $(document).ready(function() {
-    $('#dtTable').DataTable();
-} );
-
 function getinfod(id)
 {
 
