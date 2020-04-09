@@ -48,23 +48,7 @@ background-color: #fff;
                    
                      <div class="clearfix">&nbsp;</div>
                   
-					<div class="col-xs-12 col-md-3 hidden">
-                      <label >  Status</label>
-                      <?php if(isset($row)){ 
-					  $openSelect='';
-					  $closeSelect='';
-					  if($row->status==1){
-						 $openSelect='selected="selected"'; 
-						 }
-					  if($row->status==0){
-						 $closeSelect='selected="selected"'; 
-						 }
-					  } ?>
-<select class="form-control" name="status">
-<option <?php echo $openSelect ?> value="1">open</option>
-<option <?php echo $closeSelect ?> value="0">close</option>
-</select>
-                    </div>
+					
                      
                     <div class="col-xs-12 col-md-4">
                       <label >  Email</label>
@@ -81,25 +65,9 @@ background-color: #fff;
                     
                    
 					<div class="clearfix">&nbsp;</div>
-					<div class="col-xs-12 col-md-4">
-                      <label >  Service Fee <small>(in USD)</small></label>
-<input type="text" value="<?php if(isset($row)){ echo $row->service_fee;} ?>" class="form-control"  name="service_fee">
-                    </div>
-                    
-                    
-                   
-					<div class="col-xs-12 col-md-3">
-                      <label >  Perenetage <small>(in USD)</small></label>
-<input type="radio" value="0" class=""  <?php if(isset($row) AND $row->processing_fee_type==0){ echo 'checked="checked"';} ?>  name="processing_fee_type">
-                    </div>
-                    
-                    
-					<div class="col-xs-12 col-md-3">
-                      <label >  Fix price <small>(in USD)</small></label>
-<input type="radio" value="1" class="" <?php if(isset($row) AND $row->processing_fee_type==1){ echo 'checked="checked"';} ?> name="processing_fee_type">
-                    </div>
 					
-					
+                    
+      			
                      <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-12">
                       <label >  Message</label>

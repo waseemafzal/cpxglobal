@@ -260,15 +260,15 @@ input[type="radio"], input[type="checkbox"] {
 </table>
 </div>
 <div class="col-md-6 col-xs-12">
-    <label>What did you like most about this training? <span class="text-danger">*</span></label>
+    <label class="sentence">What did you like most about this training? <span class="text-danger">*</span></label>
     <input class="form-control"  required="required" name="like_and_suggestion[mostlike]" />
 </div>
 <div class="col-md-6 col-xs-12">
-    <label>What aspects of the training could be improved? <span class="text-danger">*</span></label>
+    <label class="sentence">What aspects of the training could be improved? <span class="text-danger">*</span></label>
     <input class="form-control"  required="required" name="like_and_suggestion[improvementneeded]"/>
 </div>
 <div class="col-md-12 col-xs-12">
-    <label>What additional technical training would you like to have in the future? <span class="text-danger">*</span>
+    <label class="sentence">What additional technical training would you like to have in the future? <span class="text-danger">*</span>
 </label>
     <input class="form-control"  required="required"  name="like_and_suggestion[futuretraining]" />
      </br>

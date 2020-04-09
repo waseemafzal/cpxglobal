@@ -75,7 +75,7 @@ echo json_encode($arr);
 		$PrimaryID = $_POST['id'];
 		unset($_POST['action'],$_POST['id']);
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('description', 'description', 'trim|required');
+		$this->form_validation->set_rules('title', 'title', 'trim|required');
 		/*$this->form_validation->set_rules('start_date', 'start date', 'trim|required');
 		$this->form_validation->set_rules('end_date', 'end date', 'trim|required');*/
 		if ($this->form_validation->run()==false){

@@ -16,7 +16,7 @@ include_once"header.php";
            
 
 <div class="container">
- <h4>Upcoming events & trainings details</h4>
+ <h4 style="text-transform:uppercase">Upcoming events & trainings details</h4>
 <table class="table   table-bordered ">
 	<tbody>
 		<tr style="background-color:#3f4045 !important; color:#fff">

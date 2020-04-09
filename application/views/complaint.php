@@ -94,17 +94,17 @@ input[type="radio"], input[type="checkbox"] {
                 <input class="form-control" type="date"  name="other_address[dob]"/>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                <label>Have you contacted the regional representative?
+                <label class="sentence">Have you contacted the regional representative?
                 </label>
                 <input class="form-control" type="text" required  name="other_address[contacted]"/>
                 </div>
                 <div class="col-md-12 col-xs-12">
-                <label>What do you think should be done to resolve your complaint fairly?
+                <label class="sentence">What do you think should be done to resolve your complaint fairly?
                 </label>
                 <input class="form-control" type="text" required   name="other_address[think]"/>
                 </div>
                 <div class="col-md-12 col-xs-12">
-                <label>Summary of your complaint
+                <label class="sentence">Summary of your complaint
                 </label>
                 <textarea class="form-control" name="other_address[summary]" ></textarea>
                 </div>

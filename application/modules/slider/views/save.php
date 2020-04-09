@@ -59,49 +59,42 @@ background-color: #fff;
 <input  class="form-control" id="title"  placeholder="Title" value="<?php if(isset($row)){ echo $row->title;} ?>" name="title">
                     </div>
                      
-                     <div class="clearfix">&nbsp;</div>
                      <!-- <div class="col-xs-12 col-md-6">
                       <label> Slider Url </label>
 <input  class="form-control " id="url" autocomplete="off"  placeholder="www.publisher.com" value="<?php if(isset($row)){ echo $row->url;} ?>" name="url">
                     </div>-->
                     
-            <div class="clearfix">&nbsp;</div>
-                     <div class="col-xs-12 col-md-12">
-                                             <label for="exampleInputEmail1"> Description</label>
-                        <textarea class="form-control" rows="8" id="editor1" name="description"><?php if(isset($row)){ echo $row->description;} ?></textarea>
-
-                     </div>
-                     
-                              
+                            
            </div> 
       <div class="clearfix">&nbsp;</div>
-      <div class="clearfix">&nbsp;</div>
-                     
+                     <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Button Text </label>
                        
-<input  class="form-control"   placeholder="Read More" value="<?php if(isset($row)){ echo $row->btn_text;} ?>" name="btn_text"><div class="col-xs-12 col-md-6">
+<input  class="form-control"   placeholder="Read More" value="<?php if(isset($row)){ echo $row->btn_text;} ?>" name="btn_text">
+                   
+     
+                      </div>
+                  
+                 <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Button Link / Redirect Page link </label>
                        
 <input  class="form-control"    value="<?php if(isset($row)){ echo $row->link;} ?>" name="link">
                     </div>
                     <div class="clearfix">&nbsp;</div>
-      
       <div class="col-xs-12 col-md-6">
                       <label>  Image</label>
                    <input type="file" name="image" id="image"  /><div class="clearfix">&nbsp;</div>
                     <div class="clearfix">&nbsp;</div>
                    <?php if(isset($row)){ 
 				   echo '<img src="'.base_url().'uploads/'.$row->image.'" width="50">';
-				   }?> </div> <div class="clearfix">&nbsp;</div>
-                     <div class="clearfix">&nbsp;</div>
+				   }?> </div> 
+                    
+                    <div class="clearfix">&nbsp;</div><div class="clearfix">&nbsp;</div>
        <div class="col-xs-12 col-md-6">    
                      <button type="submit" class="btn btn-info">Submit</button>
                         <input type="hidden" id="id"  name="id" value="<?php if(isset($row)){ echo $row->id;} ?>">
-                      </div>
-                      </div>
-                  
-                    
+                      </div>    
                 </form>
                  </div>
                 <div class="clearfix">&nbsp;</div>
@@ -167,8 +160,8 @@ $.ajax({
 		formData.append("image", document.getElementById('image').files[0]);
 		}
 		
-		description = CKEDITOR.instances.editor1.getData();
-		formData.append("description", description);
+		/*description = CKEDITOR.instances.editor1.getData();
+		formData.append("description", description);*/
 	// ajax start
 		    $.ajax({
 			type: "POST",

@@ -182,7 +182,7 @@ Discount
     /* left: 3%; */
     margin: 3px 0  0 0;
     display: inline;
-    ">  I have read,
+    ">  &nbsp; &nbsp; I have read,
 understand and agreed with all CPPEx Global terms and conditions.</span>
                
                 </div>

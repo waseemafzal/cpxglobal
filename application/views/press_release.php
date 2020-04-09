@@ -1,6 +1,12 @@
 <?php 
 include_once"header.php";
 ?>
+<style>
+.post img {
+    height: 200px;
+    width: 100%;
+}
+</style>
         <section id="sub-header" >
         <div class="container">
             <div class="row">

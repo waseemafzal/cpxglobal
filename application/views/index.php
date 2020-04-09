@@ -7,7 +7,9 @@ include_once"header.php";
 .slick-slide {
     margin: 0px 20px;
 }
-
+.carousel-caption {
+   top: 37%;
+}
 .slick-slide img {
     width: 100%;
 }
@@ -124,10 +126,7 @@ include_once"header.php";
     font-size: 36px;
     margin-top: 0;
 }
-.carousel-caption{position: absolute;
-    left: 15%;
-    text-align: center;
-    top: 20%;}
+
 .carousel-caption h3{line-height: 48px;
     letter-spacing: 0px;
     font-weight: 600;
@@ -243,7 +242,7 @@ include_once"header.php";
       <img src="<?=$sliderimage?>"  style="width:100%" alt="<?=$slide->title?>">
       <div  class="carousel-caption" >
         <h3 class="sTitle"><?=$slide->title?></h3>
-        <p class="sDesc"><?=$slide->description?>
+        
         <br>
         <?php 
 		if($slide->btn_text!='' and $slide->link!=''){?>
@@ -286,17 +285,7 @@ $j++;
                 </div>
             </div>
         </section>
-        <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 hidden" id="main-features">
-            <div class="container">
-                <h2 align="center">WHO WE ARE</h2>
-                <p>CPPEx Global (Global Center of Printing & Packaging Excellence) strives for excellence because a training & consultancy provider is only as good as the training and consultancy services it offers. CPPEx Global endeavors to be known as a leader in technical training and consultancy services as an institution of excellence in vocational education throughout USA, operating with regional offices in Europe, South America, Middle East, and South Asia and planning to expand to other countries and continents in near future. 
-</p>
-                <p>CPPEx Global managed by a core team of professional trainers and experts who enable over 5,000 printing industrial professionals to enhance their technical skills in the field of manufacturing printing and packaging materials. We proudly bear the name of the preeminent from the institute's inception and today our experts helps to our global‘s clients to enhance their productivity and business performance by providing latest innovative solutions to keep clients plant at optimum efficiency. We offer a complete range of tailored training services and solutions that maximize your uptime, reduce your costs and help you reach and sustain your desired performance levels.
-</p>
-                <p>CPPEx Global also organizes international conferences, training workshops, consultancy services and technical seminars with strong support of the global printing & packaging Associations and industries. These technical events provide excellent opportunities for networking as well as informed discussion to industrial professionals on latest topics of colors, printing, packaging, digitalization and associated industries.
-</p>
-            </div>
-        </section>
+        
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1456394083594" id="main_content_gray">
             <div class="">
                 <div class="row">
@@ -393,9 +382,11 @@ $j++;
             <div class="carousel-inner">
                 <div class="item active">
                      <?php
+					 
 								if($recentNews->num_rows()>0){
 									foreach($recentNews->result() as $news){
-		$src=base_url().'uploads/'.$news->post_banner;
+										pre($recentNews->result());
+		$src=base_url().'uploads/'.$news->image;
 								?><div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
@@ -409,14 +400,7 @@ $j++;
 	if (strlen($post_title) > 10)
    echo substr($post_title, 0, 60) . '...';
 														?> </a></h4>
-                                                        <p>
-                                                        <?php 
-		$post_description = strip_tags($news->post_description);
-		//echo mb_substr($post_description,0,115,'UTF-8');
-if (strlen($post_description) > 10)
-   echo substr($post_description, 0, 150) . '...';		
-		?><a href="press_release/detail/<?=$news->id;?>" >Read more </a>
-                                                        </p>
+                                                       
                                                         
                                                         <div class="price pull-right">
                                                             <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>
@@ -520,7 +504,7 @@ if (strlen($post_description) > 10)
                      <?php
 								if($recentNews->num_rows()>0){
 									foreach($recentNews->result() as $news){
-		$src=base_url().'uploads/'.$news->post_banner;
+		$src=base_url().'uploads/'.$news->image;
 								?><div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
@@ -531,14 +515,7 @@ if (strlen($post_description) > 10)
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
                                                         <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?=$news->post_title;?> </a></h4>
-                                                        <p>
-                                                        <?php 
-		$post_description = strip_tags($news->post_description);
-		//echo mb_substr($post_description,0,115,'UTF-8');
-if (strlen($post_description) > 10)
-   echo substr($post_description, 0, 150) . '...';		
-		?><a href="press_release/detail/<?=$news->id;?>" >Read more </a>
-                                                        </p>
+                                                      
                                                         
                                                         <div class="price pull-right">
                                                             <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>

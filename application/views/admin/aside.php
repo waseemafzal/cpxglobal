@@ -523,8 +523,7 @@
 
                 <li class="hidden"><a href="course"><i class="fa fa-search"></i> <span>Courses</span></a></li>
 
-                <li><a href="setting/edit"><i class="fa fa-pencil"></i> <span>Footer Setting</span></a></li>
-
+               
                 <li><a href="subscribers"><i class="fa fa-users"></i> <span>Subscribers</span></a></li>
 
                 <li><a href="setting/edit"><i class="fa fa-pencil"></i> <span>Setting</span></a></li>

@@ -25,7 +25,8 @@ include_once"header.php";
 }
 .top-footer{ }
 .card {
-box-shadow:0px 1px 4px -1px #f30100;
+	text-align:center;
+
     border-radius: 20px;
     padding-bottom: 5px;}
 
@@ -33,8 +34,7 @@ box-shadow:0px 1px 4px -1px #f30100;
   padding: 0 16px;
 }
 .card img{
-	height: 200px;
-    border-radius: 22px 22px 0 0;
+	
 }
 .containerCard::after, .row::after {
   content: "";
@@ -63,6 +63,14 @@ box-shadow:0px 1px 4px -1px #f30100;
   background-color: #555;
 }
 .column{ margin-bottom:50px;}
+.follow_us li a {
+    border-color: #f301008c !important;
+}
+.follow_us li a i:hover {
+    color: #000 !important;
+}
+.follow_us li a i{color: #f301008c !important;}
+.follow_us{}
 </style>    
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
            
@@ -85,6 +93,7 @@ box-shadow:0px 1px 4px -1px #f30100;
 	
 	  foreach($aTeams->result() as $team)
 	  {
+		  explode('.',$team->post_banner);
 		  $img  = base_url().'uploads/'.$team->post_banner;
 		  
   ?>
@@ -94,7 +103,21 @@ box-shadow:0px 1px 4px -1px #f30100;
           <div class="containerCard">
             <h4><?php echo $team->title;?></h4>
             <p class="title"><?php echo $team->designation;?></p>
+            <ul id="follow_us" class="follow_us">
+                                    <li>
+                                        <a href="mailto:info@cppexglobal.org"><i class="fa fa-envelope"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="contact"><i class="fa fa-mobile"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="contact"><i class="fa fa-phone"></i></a>
+                                    </li><li>
+                                        <a href="contact"><i class="fa fa-at"></i></a>
+                                    </li>
+                                </ul>
           </div>
+          
         </div>
       </div>
 

@@ -312,10 +312,7 @@ td{ color:#595959 !important}
     font-size: 25px;
 }
 .contactPage .input-group-btn{display: inline-block;}
-.carousel-caption {
-    
-    top: -6%!important;
-}
+
 #mobnav-btn {
     position: absolute;
     top: -28px;}
@@ -345,7 +342,7 @@ td{ color:#595959 !important}
 }
 
 
-form .sentence {
+label.sentence {
     text-transform: inherit !important;
 }
     </style>

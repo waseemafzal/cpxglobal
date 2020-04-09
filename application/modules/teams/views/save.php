@@ -71,7 +71,7 @@ background-color: #fff;
                     </div>
 					   <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
-                      <label for="exampleInputEmail1"> Image</label>
+                      <label for="exampleInputEmail1"> Image <small>(300x300)</small></label>
                    <input type="file" name="image" id="image"  /><div class="clearfix">&nbsp;</div>
                     <div class="topBanner" style="background-color: rgb(0,0,0,0.7);">
                     

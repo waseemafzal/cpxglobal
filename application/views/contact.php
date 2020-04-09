@@ -107,6 +107,10 @@ form label{
     top: 166px;
     width: 100%;
 }
+.wpb_wrapper h4 {
+   
+    text-transform: uppercase;
+}
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">
