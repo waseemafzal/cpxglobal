@@ -112,9 +112,8 @@ $aData['page_title'] ='Learn Findmaids';
 	public function faq(){
 		
 $aData['page_title'] ='FAQ';
-$aData['data'] =$this->db->query('SELECT f.*,fc.cat as category FROM `faqs` as f
-join faq_cat as fc on fc.id=f.cat_id');
-		$this->load->view('faq',$aData);
+$aData['data'] =$this->db->query('SELECT f.* FROM `faqs` as f');
+		$this->load->view('faqs',$aData);
 	}
 
 	

@@ -12,7 +12,7 @@ class Awarddata extends MX_Controller {
 	public $view = "view";
 	public $tbl = 'tbl_awarddata';
 	public $tbl_customerdata = 'customerdata';
-	public $controllerName = 'Awarddata';
+	public $controllerName = 'awarddata';
 	
 	
 	

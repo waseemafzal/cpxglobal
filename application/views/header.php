@@ -50,6 +50,15 @@
     font-weight: normal;
 	margin-left:2px;
 }
+.quote-carousel .light small, .quote-carousel .light p {
+    color: #fff !important;
+    font-size: 13px;
+}
+.quote-carousel .light small, .quote-carousel .light small {
+    color: #fff !important;
+    font-size: 11px;
+}
+
 #sub-header h1{
    background: #f301008c;
     display: inline-block;
@@ -287,7 +296,7 @@ ul#follow_us li {
 }
 td{ color:#595959 !important}
 .carousel-caption{ z-index:1 !important}
-.carousel-caption h3,p{ text-transform:capitalize !important;}
+.carousel-caption h3{ text-transform:capitalize !important;}
 @media only screen and (max-width: 768px) {
 	.contactPage #slect {
     width: 60%;
@@ -333,6 +342,11 @@ td{ color:#595959 !important}
     z-index: 2;
     width: 100%;
 }
+}
+
+
+form .sentence {
+    text-transform: inherit !important;
 }
     </style>
 </head>

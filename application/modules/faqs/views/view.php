@@ -26,7 +26,7 @@
                 <table id="post_table" class="table table-striped table-bordered   responsive">
     <thead>
     <tr>
-        <th>Category </th>
+        <!--<th>Category </th>-->
         <th>Question</th>
                 <th>Answer</th>
  
@@ -46,7 +46,7 @@
 		*/
 		?>
 		<tr id="row_<?php echo$row->id;?>">
-        <td><?php echo $row->category;?></td>
+        <!--<td><?php echo $row->category;?></td>-->
         <td><?php echo html_cut($row->question, 100);?></td>
                 <td class="center"><?php echo html_cut($row->answer, 250) ?></td>
 

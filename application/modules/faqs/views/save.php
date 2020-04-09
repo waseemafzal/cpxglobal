@@ -47,7 +47,7 @@ background-color: #fff;
              <form id="form_add_update" name="form_add_update" role="form">
              <div class="col-xs-12"><div class="alert hidden"></div></div>
                     <div class="form-group wrap_form">
-                    <div class="col-xs-12 col-md-6">
+                    <?php /*?><div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Category </label>
                         <select class="form-control" name="cat_id" >
                        <?php 
@@ -63,7 +63,7 @@ background-color: #fff;
                        <option <?php echo $selected ?> value="<?php echo $op->id ?>"><?php echo $op->cat ?></option>
                        <?php } ?>
                        </select>
-                    </div>
+                    </div><?php */?>
 					 <div class="col-xs-12 col-md-6">
                                              <label > Question</label>
                        <input type="text" value="<?php if(isset($row)){ echo $row->question;} ?>" class="form-control" name="question">

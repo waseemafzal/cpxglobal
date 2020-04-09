@@ -167,8 +167,8 @@ $.ajax({
 		formData.append("image", document.getElementById('image').files[0]);
 		}
 		
-		//description = CKEDITOR.instances.editor1.getData();
-		//formData.append("description", description);
+		description = CKEDITOR.instances.editor1.getData();
+		formData.append("description", description);
 	// ajax start
 		    $.ajax({
 			type: "POST",

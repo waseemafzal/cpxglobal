@@ -54,6 +54,10 @@
                                             <a href="team"> Our Team</a>
                                         </li>
                                     <li>
+                                    <li>
+                                            <a href="faq"> Faq</a>
+                                        </li>
+                                    <li>
                                         <a href="contact">Contact</a>
                                     </li>
                                 </ul>
@@ -100,6 +104,9 @@
                                     </li>
                                     <li>
                                         <a href="GalleryYear/view/2019">Gallery </a>
+                                    </li>
+                                     <li>
+                                        <a href="press_release">Press Release </a>
                                     </li>
                                    
                                 </ul>

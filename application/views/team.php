@@ -62,6 +62,7 @@ box-shadow:0px 1px 4px -1px #f30100;
 .button:hover {
   background-color: #555;
 }
+.column{ margin-bottom:50px;}
 </style>    
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
            
@@ -91,7 +92,7 @@ box-shadow:0px 1px 4px -1px #f30100;
         <div class="card">
           <img src="<?php echo $img;?>" alt="<?php echo $team->title;?>" style="width:100%">
           <div class="containerCard">
-            <h2><?php echo $team->title;?></h2>
+            <h4><?php echo $team->title;?></h4>
             <p class="title"><?php echo $team->designation;?></p>
           </div>
         </div>

@@ -12,7 +12,7 @@ class Certificatedata extends MX_Controller {
 	public $view = "view";
 	public $tbl = 'tbl_certificate_data';
 	public $tbl_customerdata = 'customerdata';
-	public $controllerName = 'Certificatedata';
+	public $controllerName = 'certificatedata';
 	
 	
 	

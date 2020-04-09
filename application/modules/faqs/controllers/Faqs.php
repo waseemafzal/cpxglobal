@@ -51,7 +51,6 @@ join faq_cat as fc on fc.id=f.cat_id');
 		$PrimaryID = $_POST['id'];
 		unset($_POST['action'],$_POST['id']);
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('cat_id', 'category', 'trim|required');
 		$this->form_validation->set_rules('question', 'question', 'trim|required');
 		$this->form_validation->set_rules('answer', 'answer', 'trim|required');
 		if ($this->form_validation->run()==false){

@@ -28,7 +28,7 @@ class Eblogs extends CI_Controller {
 		
 			}
 		
-		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
+		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc");
 		
 					
         $config["base_url"] = base_url() . "eblogs/index";
@@ -48,7 +48,7 @@ $config['first_tag_open'] = "<li>";
 $config['first_tagl_close'] = "</li>";
 $config['last_tag_open'] = "<li>";
 $config['last_tagl_close'] = "</li>";
- $config["total_rows"] = $aData['data']->num_rows();
+ $config["total_rows"] = getcount('blogpost');
 		$this->pagination->initialize($config);
 		 $aData['links'] = $this->pagination->create_links();
 		$this->load->view('blogs',$aData);
@@ -60,7 +60,7 @@ $config['last_tagl_close'] = "</li>";
 		$aData['row'] =$q->row();
 		$aData['comments'] =$this->db->query("SELECT p.* FROM blogpost_comments p where p.blog_id='".$id."' and status=1");
 		
-		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
+		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc ");
 		$this->load->view('blogs-detail',$aData);
 	}
 	

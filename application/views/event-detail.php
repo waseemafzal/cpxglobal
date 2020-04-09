@@ -22,12 +22,13 @@ if(!is_file($post_banner)){
     font-size: 50px;
 }
 </style>
-        <section id="sub-header" style="background:url(<?=$post_banner?>);background-size: 100%;background-position: 50%; ">
+        <section id="sub-header" style="background:url(frontend/events.jpg)">
+       
         <div id="tintBG">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h1 id="title"><?php if(isset($row)){ echo $row->title;} ?>
+                    <h1 id="title">upcoming events & training
 </h1>
 <?php if(isset($row)){ 
 if($row->short_heading!=''){
@@ -46,7 +47,7 @@ if($row->short_heading!=''){
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-   
+   <h4><?php if(isset($row)){ echo $row->title;} ?></h4>
            
 <?php if(isset($row)){ echo $row->description;} ?>
 <form name="" action="contact/registration" method="post">
