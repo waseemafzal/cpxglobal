@@ -196,12 +196,9 @@ ul.sf-menu>li>a {
                                                 </li>
                                        <?php 
 											}
-									   }else{
+									   }
 									   ?> 
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                                    <a href="membership/form">Membership Form</a>
-                                                </li>
-                                       <?php }?>
+                                       
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership_List">Membership List</a>
                                         </li>

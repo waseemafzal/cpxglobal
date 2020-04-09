@@ -68,7 +68,7 @@ background-color: #fff;
          <div class="clearfix">&nbsp;</div>
                     <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Short Heading</label>
-                        <input type="text" class="form-control" id="short_heading"  placeholder="Title" name="short_heading" value="<?php if(isset($row)){ echo $row->short_heading;} ?>">
+                        <input type="text" class="form-control" id="short_heading"  placeholder="Title" name="short_heading" value="<?php //if(isset($row)){ echo $row->short_heading;} ?>">
 
                     </div>-->
                   
@@ -220,6 +220,7 @@ if($('#image').val()!=''){
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
 				},3000);
+				window.location='trainings';
             }
            else if (data.status ==0)
             {  
@@ -240,7 +241,7 @@ if($('#image').val()!=''){
 				},1000);
             }
 			else if (data.status == "validation_error")
-            {   alert(data.status);
+            {  // alert(data.status);
 			$(".alert").addClass('alert-warning');
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
