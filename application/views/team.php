@@ -65,12 +65,20 @@ include_once"header.php";
 .column{ margin-bottom:50px;}
 .follow_us li a {
     border-color: #f301008c !important;
+	width:23px!important;
+	height:21px!important;
+	line-height: 20px!important;
+    font-size: 10px!important;
 }
 .follow_us li a i:hover {
     color: #000 !important;
 }
-.follow_us li a i{color: #f301008c !important;}
 .follow_us{}
+.follow_us li a i {
+    color: #f301008c !important;
+    font-size: 12px;
+}
+    
 </style>    
         <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404" id="main-features">
            
@@ -91,10 +99,20 @@ include_once"header.php";
  	if($aTeams->num_rows()>0)
    {
 	
+	$i=0;
 	  foreach($aTeams->result() as $team)
 	  {
-		  explode('.',$team->post_banner);
-		  $img  = base_url().'uploads/'.$team->post_banner;
+		  $arr= explode('.',$team->post_banner);
+		  $img  ='uploads/'. $arr[0].'_thumb.'.$arr[1];
+		  $img  ='uploads/'. $arr[0].'_thumb.'.$arr[1];
+		  if(is_file($img)){
+			  
+			  }else{
+				  $img='uploads/'.$team->post_banner;
+				  }
+		 if($i%4==0){
+			 echo '<div class="clearfix">&nbsp;</div>';
+			 }
 		  
   ?>
         <div class="col-md-3 col-xs-6 col-sm-6 col-lg-3 column">
@@ -122,6 +140,7 @@ include_once"header.php";
       </div>
 
   <?php
+  $i++;
 	 }
   }
   ?>

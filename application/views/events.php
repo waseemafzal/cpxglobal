@@ -1,6 +1,11 @@
 <?php 
 include_once"header.php";
 ?>
+<link rel="stylesheet" href=" https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
         <section id="sub-header" style="background:url(frontend/events.jpg)">
         <div class="container">
             <div class="row">
@@ -17,7 +22,7 @@ include_once"header.php";
 
 <div class="container">
  <h4 style="text-transform:uppercase">Upcoming events & trainings details</h4>
-<table class="table   table-bordered ">
+<table id="dtTable" class="table   table-bordered ">
 	<tbody>
 		<tr style="background-color:#3f4045 !important; color:#fff">
 			<th colspan="1" rowspan="1">
@@ -92,5 +97,10 @@ include_once"header.php";
         
         
 <?php include_once"footer.php"; ?>
+<script>
+ $(document).ready(function() {
+    $('#dtTable').DataTable();
+} );
+</script>
 
 

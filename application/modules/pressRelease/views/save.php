@@ -134,7 +134,7 @@ background-color: #fff;
                       
                       <br>
                   <div id="add_images_wrap" class="col-xs-12 col-md-12 other_wrap" style="display:<?php echo $imageDisplay ?>">                      
-                    <label>Add  image</small></label>
+                    <label>Add  image <small>700x320</small></label>
                      <input type="file" name="file[]" class=" file"  id="file" accept=".png,.PNG,.JPG,.jpg,.jpeg,.JPEG,.gif"  >
                      
                      

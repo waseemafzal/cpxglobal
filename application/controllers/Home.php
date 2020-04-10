@@ -17,7 +17,7 @@ public $tbl_notify ="tbl_notify";
      	public function index()
 
 		{
-			$aData['recentNews'] =$this->db->query("select b.*,f.file as image  from news  as b left join post_images as f on f.post_id=b.id order by b.id desc limit 0,4");
+			$aData['recentNews'] =$this->db->query("select b.*,f.file as image  from news  as b  join post_images as f on f.post_id=b.id where b.post_type='image' order by b.id desc limit 0,4 ");
 			
 			$data = $this->db->select('*')->from('slider')->where('status',1)->get();
 		if($data->num_rows()>0){

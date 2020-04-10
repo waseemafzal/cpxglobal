@@ -37,7 +37,7 @@ top: 4%;}
             
      <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container">
-             <h4 class="headingform__">ONLINE MEMBERSHIP FORM</h4>
+             <div class="col-md-12"><h4 class="headingform__">ONLINE MEMBERSHIP FORM</h4></div>
      
               <form id="membsrshipcreate" name="form_add_update" role="form" enctype="multipart/form-data">
                 <div class="page-alert" style="display: block;"> </div>
@@ -137,7 +137,7 @@ top: 4%;}
                         </div>
         </section>
                     <section id="personalDetail" class="formSection">
-                        <div class="col-xs-12"> <h4>REFERRED BY:</h4></div>
+                        <div class="col-xs-12"> <h4>REFERRED BY</h4></div>
                         <div class="col-md-4 col-xs-12">
                         <label>Name</label>
                         <input class="form-control"  required="required" name="refferby_detail[reffredName]" />
@@ -186,7 +186,7 @@ top: 4%;}
                      
                 </section>
                     <section id="MEMBERSHIP_DUESDetail" class="formSection">
-                        <h4>MEMBERSHIP DUES:</h4>
+                        <h4>MEMBERSHIP DUES</h4>
                         <table class="table tale-striped" style="color: #fff; border:1px solid #999;">
                         <tr bgcolor="#CCCCCC">
                             <td><input name="membership_type" class="big-checkbox" value="4" type="radio"></td>

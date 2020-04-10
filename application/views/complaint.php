@@ -90,7 +90,7 @@ input[type="radio"], input[type="checkbox"] {
                 <input class="form-control"   name="other_address[product_service_involved]" />
                 </div>
                 <div class="col-md-4 col-xs-12">
-                <label>Date of training/consultancy/award</label>
+                <label class="sentence">Date of training / consultancy / award</label>
                 <input class="form-control" type="date"  name="other_address[dob]"/>
                 </div>
                 <div class="col-md-4 col-xs-12">

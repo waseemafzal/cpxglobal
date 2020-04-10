@@ -94,7 +94,6 @@ if($data->num_rows()>0){
           <li><i class="icon-user"></i>By <a href="" title="Posts by Admin" rel="author">Admin</a></li>
           <li><i class="icon-tags"></i>Category  <a  rel="tag"><?php echo $row->category;?></a></li>
       </div>
-      <div class="post-right hidden"><i class="icon-comment"></i>0 comment</div>
     </div>
     <h4><a href="press_release/detail/<?=$row->id;?>"><?php echo $row->post_title;?></a></h4>
     <p><?php 

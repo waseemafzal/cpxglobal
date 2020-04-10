@@ -6842,7 +6842,11 @@ public function setEmailTemplate($userName,$activationLink){
 							}
 						}
 						
-							$attachment = $_SERVER["DOCUMENT_ROOT"]."/uploads/".$_POST['attachmentt_email'];
+							//$attachment = $_SERVER["DOCUMENT_ROOT"]."/uploads/".$_POST['attachmentt_email'];
+							
+							$this->load->helper('path');
+$path = set_realpath('./uploads/');
+	$attachment = $path.$_POST['attachmentt_email'];
 							$htmlData = '';
 							$htmlData.='Dear User<br>';
 							$htmlData.=$_POST['rawHTML'];

@@ -88,8 +88,8 @@ define('ORDER_COMPLETED','Your submitted order has been accept by Buyer.');
 ***********/
 
 
-define('HEADING','skillsquared');
-define('FROM','noreply@skillsquared.com');
+define('HEADING','CPPex Global');
+define('FROM','noreply@cppexglobal.com');
 
 define('PAID',1);
 define('CANCELLEDPAYPAL',2);

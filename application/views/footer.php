@@ -17,7 +17,7 @@
 
                                 <div class="mc4wp-form-fields">
                                     <div class="form-inline">
-                                        <h3 style="font-size: 28px;">Subscribe to our Newsletter for Latest News.</h3> 
+                                        <h3 style="font-size: 28px;">Subscribe to our newsletter for latest news.</h3> 
                                         <input class="form-control sbcriber_id" id="email_newsletter" name="EMAIL" placeholder="Your Email" required type="email"> 
                                         <input class=" button_outline" id="submit-newsletter" type="button" value="Subscribe" onclick="subscribe__()">
                                     </div>

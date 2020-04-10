@@ -385,8 +385,10 @@ $j++;
 					 
 								if($recentNews->num_rows()>0){
 									foreach($recentNews->result() as $news){
-										pre($recentNews->result());
-		$src=base_url().'uploads/'.$news->image;
+										$src=	    setBlogImage($news->image);
+	if($news->image==''){
+	    $src=base_url().'uploads/defaultbanner.png';
+	}
 								?><div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
@@ -396,15 +398,13 @@ $j++;
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?php $post_title = $news->post_title;
+                                                        <h5 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?php $post_title = $news->post_title;
 	if (strlen($post_title) > 10)
-   echo substr($post_title, 0, 60) . '...';
-														?> </a></h4>
+   echo substr($post_title, 0, 30) . '...';
+														?> </a></h5>
                                                        
                                                         
-                                                        <div class="price pull-right">
-                                                            <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>
-                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
                                                 
@@ -414,97 +414,17 @@ $j++;
                                 
                                 <?php }}else{ ?>
                                     
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news1.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
-                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news2.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Industrial Wax Market Worth </a></h4>
-                                                        <p>According to a study analysis by Persistence Market Research, ever-expanding end-use industries will give a push to the industrial wax market. </p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">3 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news3.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
-                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news4.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Sun Chemical owner to buy BASF pigments business </a></h4>
-                                                        <p>DIC Corporation is to acquire BASF’s global pigments business and integrate it into subsidiary Sun Chemical in a deal worth €1.15bn (£1.04bn).</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h4>No data to show!</h4>
                                     <?php } ?>
                 </div>
                 <div class="item ">
                      <?php
 								if($recentNews->num_rows()>0){
 									foreach($recentNews->result() as $news){
-		$src=base_url().'uploads/'.$news->image;
+							$src=	    setBlogImage($news->image);
+	if($news->image==''){
+	    $src=base_url().'uploads/defaultbanner.png';
+	}
 								?><div class="col-md-3 col-course">
                                         <div class="col-item">
                                             <div class="photo">
@@ -514,12 +434,16 @@ $j++;
                                             <div class="info">
                                                 <div class="row">
                                                     <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?=$news->post_title;?> </a></h4>
+                                                        <h5 class="black-color"><a href="press_release/detail/<?=$news->id;?>"><?php 
+														$post_title = $news->post_title;
+	if (strlen($post_title) > 10)
+   echo substr($post_title, 0, 30) . '...';
+														?> </a></h5>
                                                       
                                                         
-                                                        <div class="price pull-right">
+                                                       <?php /*?> <div class="price pull-right">
                                                             <span class="course-price"><?=date('F j Y',strtotime($news->created_on));?> </span>
-                                                        </div>
+                                                        </div><?php */?>
                                                     </div>
                                                 </div>
                                                 
@@ -529,91 +453,7 @@ $j++;
                                 
                                 <?php }}else{ ?>
                                     
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news1.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
-                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news2.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Industrial Wax Market Worth </a></h4>
-                                                        <p>According to a study analysis by Persistence Market Research, ever-expanding end-use industries will give a push to the industrial wax market. </p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">3 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news3.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">EuPIA Updates Suitability </a></h4>
-                                                        <p>The European Printing Ink Association (EuPIA) updated its Suitability List of Photoinitiators and Photosynergists for Food Contact Materials</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-course">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <a href="news-detail.php"><img alt="" src="frontend/images/news4.jpg"></a>
-                                                
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="course_info col-md-12 col-sm-12">
-                                                        <h4 class="black-color"><a href="news-detail.php">Sun Chemical owner to buy BASF pigments business </a></h4>
-                                                        <p>DIC Corporation is to acquire BASF’s global pigments business and integrate it into subsidiary Sun Chemical in a deal worth €1.15bn (£1.04bn).</p>
-                                                        
-                                                        <div class="price pull-right">
-                                                            <span class="course-price">1 jan 2020 </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
+<h4>No data to show!</h4>                                    <?php } ?>
                 </div>
                 
             </div>
