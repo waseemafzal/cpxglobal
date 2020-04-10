@@ -1,12 +1,15 @@
 <?php 
 include_once"header.php";
 ?>
+
  <link rel="stylesheet" href=" https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
         
-        
+
+
+
         <section id="sub-header" style="background:url(frontend/events.jpg)">
         <div class="container">
             <div class="row">
@@ -20,7 +23,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container"> 
-<h4>Upcoming events & trainings details</h4>
+<h4>MEMBERSHIP LIST</h4>
 
           <table id="dtTable" class="table  table-bordered" style="width:100%;border:1px solid #ccc">
         <thead>
@@ -53,12 +56,13 @@ include_once"header.php";
            
         </thead>
         <tbody>
-		<?php
-        if(!empty($data->result())){
-        	foreach ($data->result() as $row)
-       	     {
-        ?>
-        <tr>
+           <?php
+	if(!empty($data->result())){
+	foreach ($data->result() as $row)
+	{
+		
+		?>
+		<tr>
 			<td colspan="1" rowspan="1">
 			<?php echo $row->course_id;?>
 			</td>
@@ -84,11 +88,11 @@ include_once"header.php";
 			<a href="events/detail/<?php echo $row->id;?>" ><i class="fa fa-plus"></i></a>
 			</td>
 		</tr>
-       <?php 
-	      $counter++;
-	     }
-	   }
-	   ?> 
+        <?php 
+		}
+	}
+		
+	?>
           
         </tbody>
        
@@ -99,11 +103,10 @@ include_once"header.php";
   
         
 <?php include_once"footer.php"; ?>
-
- <script type="text/javascript">
+<script>
  $(document).ready(function() {
     $('#dtTable').DataTable();
 } );
+</script>
 
-
-</script>     
+   

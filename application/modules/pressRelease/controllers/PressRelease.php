@@ -83,6 +83,8 @@ class PressRelease extends MX_Controller {
 					$config['upload_path']          = './uploads/';
 					$config['allowed_types']        = ALLOWED_TYPES;
 					$config['encrypt_name'] = TRUE;
+					$config['max_width']  = '700';
+$config['max_height']  = '320';
 					$this->load->library('upload');
 					$this->upload->initialize($config);
 					if (!$this->upload->do_upload('thumbnail')){

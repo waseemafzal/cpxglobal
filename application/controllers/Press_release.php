@@ -38,7 +38,7 @@ $config['last_tagl_close'] = "</li>";
 	
 		$aData['page_title'] ='Press release';
 		$aData['data'] =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id limit  ".$page." ,".$config["per_page"]."  ");
-		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
+		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc ");
 		$this->load->view('press_release',$aData);
 	}
 	
@@ -46,7 +46,7 @@ $config['last_tagl_close'] = "</li>";
 		$aData['page_title'] ='Press release';
 		$q =$this->db->query("select b.*,f.file as image from ".$this->tbl."  as b left join post_images as f on f.post_id=b.id  where b.id='".$id."'");
 		$aData['row'] =$q->row();
-		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc limit 0,3");
+		$aData['recentPost'] =$this->db->query("select b.post_title,b.created_on,b.id from ".$this->tbl."  as b order by id desc ");
 		$this->load->view('press_detail',$aData);
 	}
 	

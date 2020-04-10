@@ -59,57 +59,36 @@ class Teams extends MX_Controller {
 			echo json_encode($arr);
 		}else{
 			
-			/*echo "<pre>";
-			 print_r($_FILES);
-			echo "</pre>";
-			die();*/
-			//pre($_POST);
-			/********************upload image start***********************/
-		$imageName='';
-		$error='';
-		if(isset($_FILES['image']['name']))
-		{                
-			$info = pathinfo($_FILES['image']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['image']['tmp_name'], $target))
-			{
-				$_POST['post_banner'] =$newname ;
-			}
-		}
-		//firstimage secondimage
-		/*$imageName='';
-		$error='';
-		if(isset($_FILES['firstimage']['name']) &&  !empty($_FILES['firstimage']['name']))
-		{                
-			$info = pathinfo($_FILES['firstimage']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['firstimage']['tmp_name'], $target))
-			{
-				$_POST['firstimage'] =$newname ;
-			}
-		}
-		
-		
-		//$imageName='';
-		//$error='';
-		if(isset($_FILES['secondimage']['name']) && !empty($_FILES['secondimage']['name']))
-		{                
-			$info = pathinfo($_FILES['secondimage']['name']);
-			$ext = $info['extension']; // get the extension of the file
-			$newname = rand(5,3456)*date(time()).".".$ext; 
-			$target = 'uploads/'.$newname;
-			if(move_uploaded_file( $_FILES['secondimage']['tmp_name'], $target))
-			{
-				$_POST['secondimage'] =$newname ;
-			}
-		}*/
-		
-		
-		/********************upload image end***********************/
+			
+		/*--------------------------------------------------
+			|file uploading add/update
+			---------------------------------------------------*/
+				if (!empty($_FILES)){ 
+					$config['upload_path']          = './uploads/';
+					$config['allowed_types']        = ALLOWED_TYPES;
+					$config['max_size'] = 2000;
+					$config['max_height'] = 300;
+					$config['max_width'] = 300;
+					$config['encrypt_name'] = TRUE;
+					$this->load->library('upload');
+					$this->upload->initialize($config);
+					if (!$this->upload->do_upload('image')){
+					$arr = array('status' => 0,'message' => "Error ".$this->upload->display_errors());
+					echo json_encode($arr);exit;
+					}
+					else{
+					$upload_data = $this->upload->data();
+					$_POST['post_banner']= $upload_data['file_name'];  
+					$this->_createThumbnail($upload_data['file_name']);
+							
+					}
+					
+					
+				}else{
+					unset($_POST['image']);
+				}
+			
+				/********************upload image end***********************/
 	    $result = $this->crud->saveRecord($PrimaryID,$_POST,$this->tbl);
 		//	lq();
 			
@@ -177,5 +156,23 @@ class Teams extends MX_Controller {
 
 
 	
+		function _createThumbnail($filename)
+    {
+        $this->load->library('image_lib');
+        // Set your config up
+        $config['image_library']  = "gd2";
+        $config['allowed_types']  = ALLOWED_TYPES;
+        $config['source_image']   = "uploads/" . $filename;
+        $config['create_thumb']   = TRUE;
+        $config['maintain_ratio'] = false;
+        $config['width']          = "300";
+        $config['height']         = "300";
+        $this->image_lib->initialize($config);
+        // Do your manipulation
+        if (!$this->image_lib->resize()) {
+            echo $this->image_lib->display_errors();
+        }
+        $this->image_lib->clear();
+    }
 	
 }

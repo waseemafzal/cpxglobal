@@ -1,6 +1,10 @@
 <?php 
 include_once"header.php";
-?>
+?>        <link rel="stylesheet" href=" https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
         <section id="sub-header" style="background:url('<?=base_url()?>frontend/Career.jpg')">
         <div class="container">
             <div class="row">
@@ -26,7 +30,7 @@ include_once"header.php";
 <h4 align="center">Come work with us!</h4>
 <p align="center" style="
     text-align: center;
-">With offices all around the world, we're constantly hiring.</p><table class="table table-bordered " style="border:1px solid #ccc" >
+">With offices all around the world, we're constantly hiring.</p><table id="dtTable" class="table table-bordered " style="border:1px solid #ccc" >
 		<tr style="background-color:#3f4045 !important; color:#fff">
 	<th>Sr No</th>
     <th>Position</th>
@@ -58,3 +62,8 @@ if($data->num_rows()>0){
         
         
 <?php include_once"footer.php"; ?>
+<script>
+ $(document).ready(function() {
+    $('#dtTable').DataTable();
+} );
+</script>

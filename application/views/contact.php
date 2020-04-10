@@ -107,6 +107,10 @@ form label{
     top: 166px;
     width: 100%;
 }
+.wpb_wrapper h4 {
+   
+    text-transform: uppercase;
+}
 </style>
         <section class="hidden" id="sub-header" style="background:url('frontend/contactus.png')">
         <div class="container">
@@ -316,7 +320,7 @@ any aspects of the operation of training and consultancy services.</p>
     margin: 3px 8px 0 0px;
     display: inline-block;
     float: left;
-"> I read, understand and agreed with all terms and conditions!
+">  I have read, understand and agreed with all CPPEx Global terms and conditions.
                 </p>
                  </br>
                     <div class="page-alert" style="display: block;"></div>

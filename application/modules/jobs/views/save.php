@@ -177,10 +177,7 @@ background-color: #fff;
 				$(".alert").addClass('alert-success');
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
-				setTimeout(function(){
-				$(".alert").addClass('hidden');
-				$('#form_add_update')[0].reset();
-				},3000);
+				window.location='jobs';
             }
            else if (data.status ==0)
             {  

@@ -48,23 +48,7 @@ background-color: #fff;
                    
                      <div class="clearfix">&nbsp;</div>
                   
-					<div class="col-xs-12 col-md-3 hidden">
-                      <label >  Status</label>
-                      <?php if(isset($row)){ 
-					  $openSelect='';
-					  $closeSelect='';
-					  if($row->status==1){
-						 $openSelect='selected="selected"'; 
-						 }
-					  if($row->status==0){
-						 $closeSelect='selected="selected"'; 
-						 }
-					  } ?>
-<select class="form-control" name="status">
-<option <?php echo $openSelect ?> value="1">open</option>
-<option <?php echo $closeSelect ?> value="0">close</option>
-</select>
-                    </div>
+					
                      
                     <div class="col-xs-12 col-md-4"> 
                       <label >  Email</label>
@@ -78,6 +62,7 @@ background-color: #fff;
                       <label >  phone</label>
 <input type="text" value="<?php if(isset($row)){ echo $row->phone;} ?>" class="form-control"  name="phone">
                     </div>
+
                       <div class="clearfix">&nbsp;</div>
                       
                      <div class="col-xs-12 col-md-6">
@@ -134,8 +119,15 @@ background-color: #fff;
                    
 					<div class="clearfix">&nbsp;</div>
 					
+
+                    
+                   
+					<div class="clearfix">&nbsp;</div>
+
 					
-                     <div class="clearfix">&nbsp;</div>
+                    
+      			
+                    
                    
 					
                      <div class="col-xs-12 col-md-4" >
