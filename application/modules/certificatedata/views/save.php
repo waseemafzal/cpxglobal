@@ -132,7 +132,7 @@ background-color: #fff;
                     </div>
                      <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1">Expiration Date</label>
-                        <input type="text" class="form-control" id="expiration_date"  name="expiration_date" value="<?php if(isset($row)){ echo $row->expiration_date;} ?>" placeholder="YYYY-MM-DD">
+                        <input type="date" class="form-control" id="expiration_date"  name="expiration_date" value="<?php if(isset($row)){ echo $row->expiration_date;} ?>" placeholder="YYYY-MM-DD">
 
                     </div>
                     <div class="clearfix">&nbsp;</div> <div class="clearfix">&nbsp;</div>
@@ -249,6 +249,7 @@ background-color: #fff;
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
 				},3000);
+				window.location='certificatedata';
             }
            else if (data.status ==0)
             {  

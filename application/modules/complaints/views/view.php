@@ -56,7 +56,7 @@
          
         <td class="center">
         <?php if(!empty($row->userfile)):?>
-       	 <a href="<?php echo base_url();?>uploads/<?php echo $row->userfile; ?>"> <i class="fa fa-download"></i> Download</a>
+       	 <a download href="<?php echo base_url();?>uploads/<?php echo $row->userfile; ?>" > <i class="fa fa-download"></i> Download</a>
         <?php 
 		else:
 		echo 'Nil';

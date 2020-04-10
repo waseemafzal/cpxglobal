@@ -251,6 +251,7 @@ year*/
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
 				},3000);
+				window.location='awarddata';
             }
            else if (data.status ==0)
             {  

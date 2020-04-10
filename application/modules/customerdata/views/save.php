@@ -201,6 +201,7 @@ background-color: #fff;
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
 				},3000);
+				window.location='customerdata';
             }
            else if (data.status ==0)
             {  

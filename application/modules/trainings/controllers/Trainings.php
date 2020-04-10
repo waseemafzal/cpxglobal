@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			
 		}		
-			$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p  ".$where." ");
+			$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p  ".$where."  ORDER BY id DESC ");
 			//lq();
 			$this->load->view($this->view,$aData);
 	}

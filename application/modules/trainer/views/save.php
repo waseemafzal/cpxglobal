@@ -209,6 +209,7 @@ background-color: #fff;
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
 				},3000);
+				window.location='trainer';
             }
            else if (data.status ==0)
             {  
