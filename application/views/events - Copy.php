@@ -19,12 +19,13 @@ include_once"header.php";
       </section>
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
-            <div class="container"> 
-<h4>Upcoming events & trainings details</h4>
+           
 
-          <table id="dtTable" class="table  table-bordered" style="width:100%;border:1px solid #ccc">
-        <thead>
-        <tr style="background-color:#3f4045 !important; color:#fff">
+<div class="container">
+ <h4>Upcoming events & trainings details</h4>
+<table  id="dtTable"  class="table   table-bordered ">
+	<tbody>
+		<tr style="background-color:#3f4045 !important; color:#fff">
 			<th colspan="1" rowspan="1">
 			Course ID
 			</th>
@@ -50,15 +51,13 @@ include_once"header.php";
 			More Details
 			</th>
 		</tr>
-           
-        </thead>
-        <tbody>
-		<?php
-        if(!empty($data->result())){
-        	foreach ($data->result() as $row)
-       	     {
-        ?>
-        <tr>
+          <?php
+	if(!empty($data->result())){
+	foreach ($data->result() as $row)
+	{
+		
+		?>
+		<tr>
 			<td colspan="1" rowspan="1">
 			<?php echo $row->course_id;?>
 			</td>
@@ -84,17 +83,17 @@ include_once"header.php";
 			<a href="events/detail/<?php echo $row->id;?>" ><i class="fa fa-plus"></i></a>
 			</td>
 		</tr>
-       <?php 
-	      $counter++;
-	     }
-	   }
-	   ?> 
-          
-        </tbody>
-       
-    </table>
-       
-		</div>
+        <?php 
+		}
+	}
+		
+	?>
+        
+	</tbody>
+</table>
+</div>
+
+
         </section>
   
         

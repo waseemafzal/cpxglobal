@@ -15,6 +15,7 @@ class Events extends CI_Controller {
 		$aData['page_title'] ='Events '.$year;
 		$aData['year'] =$year;
 		$aData['data'] =$this->db->query("SELECT p.* FROM ".$this->tbl." as p where on_date like '%".$year."%' ");
+		
 		$this->load->view('events',$aData);
 	}
 	public function detail($id){

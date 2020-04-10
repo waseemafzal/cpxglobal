@@ -353,16 +353,22 @@ $j++;
 	  echo '<div class="clearfix">&nbsp;</div>';
 	  }
   $box++;
-  } ?>
+  }
+    $videohhome ='assets/homevideo.mp4';
+	  if(!empty($sObj->videohhome)) 
+	  {
+		  $videohhome = base_url().'uploads/'.$sObj->videohhome;
+	  }
+  ?>
                <div class="col-md-3 col-course">
                                     <h4 class="topTitle">Video</h4>
                                         
                                         <div class="col-item">
                                             <div class="photo">
- <video style="width:100%"  height="200" controls>
-  <source src="assets/homevideo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+                                                <video style="width:100%"  height="200" controls>
+                                                  <source src="<?php echo $videohhome;?>" type="video/mp4">
+                                                	Your browser does not support the video tag.
+                                                </video>
                                             </div>
                                             
                                         </div>

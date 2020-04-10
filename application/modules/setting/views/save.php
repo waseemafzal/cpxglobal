@@ -66,7 +66,7 @@ background-color: #fff;
 </select>
                     </div>
                      
-                    <div class="col-xs-12 col-md-4">
+                    <div class="col-xs-12 col-md-4"> 
                       <label >  Email</label>
 <input type="text" value="<?php if(isset($row)){ echo $row->email;} ?>" class="form-control"  name="email">
                     </div>
@@ -78,37 +78,67 @@ background-color: #fff;
                       <label >  phone</label>
 <input type="text" value="<?php if(isset($row)){ echo $row->phone;} ?>" class="form-control"  name="phone">
                     </div>
-                    
-                   
-					<div class="clearfix">&nbsp;</div>
-					<div class="col-xs-12 col-md-4">
-                      <label >  Service Fee <small>(in USD)</small></label>
-<input type="text" value="<?php if(isset($row)){ echo $row->service_fee;} ?>" class="form-control"  name="service_fee">
+                      <div class="clearfix">&nbsp;</div>
+                      
+                     <div class="col-xs-12 col-md-6">
+                      <label >  Timings</label>
+<input type="text" value="<?php if(isset($row)){ echo $row->timings;} ?>" class="form-control"  name="timings">
                     </div>
-                    
-                    
-                   
-					<div class="col-xs-12 col-md-3">
-                      <label >  Perenetage <small>(in USD)</small></label>
-<input type="radio" value="0" class=""  <?php if(isset($row) AND $row->processing_fee_type==0){ echo 'checked="checked"';} ?>  name="processing_fee_type">
-                    </div>
-                    
-                    
-					<div class="col-xs-12 col-md-3">
-                      <label >  Fix price <small>(in USD)</small></label>
-<input type="radio" value="1" class="" <?php if(isset($row) AND $row->processing_fee_type==1){ echo 'checked="checked"';} ?> name="processing_fee_type">
-                    </div>
+                    <div class="clearfix">&nbsp;</div>
 					
 					
                      <div class="clearfix">&nbsp;</div>
-                    <div class="col-xs-12 col-md-12">
-                      <label >  Message</label>
-<textarea class="form-control" rows="10" id="editor1" name="description"><?php if(isset($row)){ echo $row->description;} ?></textarea>
-                    </div>
-					   <div class="clearfix">&nbsp;</div>
+                   
+                   <h4>Social Settings</h4>
+                   </hr>
                   
+
+
+                <?php 
+				 if(isset($row->asocial_links)):
+					$asocial_links = json_decode($row->asocial_links);
+					$fb =  $asocial_links->fb;
+					$tw =  $asocial_links->tw;
+					$go =  $asocial_links->go;
+					$li =  $asocial_links->li;
+					$yo =  $asocial_links->yo;
+				 endif;
+				?>
+
+                   <div class="col-xs-12 col-md-4">
+                      <label >  Facebook</label>
+<input type="text" value="<?php if(isset($row)){ echo $fb;} ?>" class="form-control"  name="asocial_links[fb]">
+                    </div>
+                    
+                    <div class="col-xs-12 col-md-4">
+                      <label >  Twitter</label>
+<input type="text" value="<?php if(isset($row)){ echo $tw;} ?>" class="form-control"   name="asocial_links[tw]">
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                      <label >  Google</label>
+<input type="text" value="<?php if(isset($row)){ echo $go;} ?>" class="form-control"   name="asocial_links[go]">
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="col-xs-12 col-md-4">
+                      <label >  LinkedIn</label>
+<input type="text" value="<?php if(isset($row)){ echo $li;} ?>" class="form-control"   name="asocial_links[li]">
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                      <label >  Youtube</label>
+<input type="text" value="<?php if(isset($row)){ echo $yo;} ?>" class="form-control"  name="asocial_links[yo]">
+                    </div>
+                   
+                   
+                   
+                   
+                   
+					<div class="clearfix">&nbsp;</div>
 					
-                     <div class="col-xs-12 col-md-12" >
+					
+                     <div class="clearfix">&nbsp;</div>
+                   
+					
+                     <div class="col-xs-12 col-md-4" >
                       <label for="exampleInputEmail1"> App Logo</label>
                    <input type="file" name="image" id="image"  />
                    <div class="clearfix">&nbsp;</div>
@@ -122,7 +152,7 @@ background-color: #fff;
 				echo '<img width="100" class="img-responsive" src="'.$src.'" class="imgs"  >';
 			
 		 ?></div>
-                     <div class="col-xs-12 col-md-12 " >
+                     <div class="col-xs-12 col-md-4 " >
                       <label for="exampleInputEmail1"> Banner</label>
                    <input type="file" name="banner" id="banner"  />
                    <div class="clearfix">&nbsp;</div>
@@ -136,37 +166,29 @@ background-color: #fff;
 				echo '<img style="max-width:300px; height="50px"" class="img-responsive" src="'.$src1.'"    >';
 			
 		 ?></div>
+         
+         
+         <div class="col-xs-12 col-md-4 " >
+                      <label for="exampleInputEmail1"> Home Video</label>
+                   <input type="file" name="videohhome" id="videohhome"  />
+                   <div class="clearfix">&nbsp;</div>
+                   
+                   <?php 
+				   $src = base_url().'assets/nov.png';
+				if(!empty($row->videohhome))
+				{
+					$src=base_url().'assets/vid.png';
+				}
+				
+				echo '<img style="max-width:300px; height="50px"" class="img-responsive" src="'.$src.'"    >';
+			
+		 ?></div>
                    
   </div> 
 
- <div class="clearfix">&nbsp;</div>
-    <div class="clearfix">&nbsp;</div>
-      <h4>
-     		Paypal  Settings
-      </h4>
+     
       
-      
-    <div class="col-xs-12 col-md-3">
-        <label >  Mode Sanbox (Admin) </label>
-        <input type="radio" value="0" class=""  <?php if(isset($row) AND $row->paypal_mode_admin==0){ echo 'checked="checked"';} ?>  name="paypal_mode_admin">
-    </div>
-    <div class="col-xs-12 col-md-3">
-        <label >  Mode Live (Admin)</label>
-        <input type="radio" value="1" class="" <?php if(isset($row) AND $row->paypal_mode_admin==1){ echo 'checked="checked"';} ?> name="paypal_mode_admin">
-    </div>
-	      
-      <div class="clearfix">&nbsp;</div>
-      <hr/>
-      
-    <div class="col-xs-12 col-md-3">
-        <label >  Mode Sanbox (Front) </label>
-        <input type="radio" value="0" class=""  <?php if(isset($row) AND $row->paypal_mode_front==0){ echo 'checked="checked"';} ?>  name="paypal_mode_front">
-    </div>
     
-    <div class="col-xs-12 col-md-3">
-        <label >  Mode Live (Front)</label>
-        <input type="radio" value="1" class="" <?php if(isset($row) AND $row->paypal_mode_front==1){ echo 'checked="checked"';} ?> name="paypal_mode_front">
-    </div>
 
 
       <div class="clearfix">&nbsp;</div>
@@ -222,14 +244,20 @@ background-color: #fff;
 		if($('#banner').val()!=''){
 		formData.append("banner", document.getElementById('banner').files[0]);
 		}
+		
+		if($('#videohhome').val()!=''){
+		formData.append("videohhome", document.getElementById('videohhome').files[0]);
+		}
+		
+		
 	var other_data = $('#form_add_update').serializeArray();
     $.each(other_data,function(key,input){
         formData.append(input.name,input.value);
     });   
 	
-	post_description = CKEDITOR.instances.editor1.getData();
+	/*post_description = CKEDITOR.instances.editor1.getData();
 
-			formData.append("description", post_description);
+			formData.append("description", post_description);*/
 
 
 	// ajax start

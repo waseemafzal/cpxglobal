@@ -31,6 +31,7 @@
 		}else{
 			echo 'CPPEx Global,trainings';
 			}
+			
 	?>">
   
     <style data-type="vc_shortcodes-custom-css" type="text/css">
@@ -349,6 +350,22 @@ form .sentence {
     text-transform: inherit !important;
 }
     </style>
+    <?php $sObj = getSetting();
+	
+	  $imglogo ='frontend/images/logo.png';
+	  if(!empty($sObj->image)) 
+	  {
+		  $imglogo = base_url().'uploads/'.$sObj->image;
+	  }
+		if(isset($sObj->asocial_links)):
+			$asocial_links = json_decode($sObj->asocial_links);
+			$fb =  $asocial_links->fb;
+			$tw =  $asocial_links->tw;
+			$go =  $asocial_links->go;
+			$li =  $asocial_links->li;
+			$yo =  $asocial_links->yo;
+		endif;
+	  ?>
 </head>
 <body class="home page-template page-template-page-templates page-template-template-fullwidth-not-header page-template-page-templatestemplate-fullwidth-not-header-php page page-id-299 theme-learn woocommerce-no-js tribe-no-js wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
     <div class="wrapper">
@@ -356,7 +373,7 @@ form .sentence {
             <div class="">
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-5">
-                        <a class="logo" href="index.php"><img alt="" src="frontend/images/logo.png"></a>
+                        <a class="logo" href="index.php"><img alt="" src="<?php echo $imglogo;?>"></a>
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-7">
                         <div class="btn-login pull-right">
@@ -386,10 +403,10 @@ form .sentence {
                            </ul>
                         </div>
                         <ul class="top-nav">
-                            <li><i class="fa fa-clock-o"></i>Mon - Fri / 9:00AM – 05:00PM</li>
-                            <li class="hidden-info"><i class="fa fa-map-marker"></i> 807 E Landis Ave.Vineland,USA</li>
-                            <li><i class="fa fa-phone"></i> Whatsapp: ( +1 609 271 2476 ) </li>
-                        </ul>
+                            <li><i class="fa fa-clock-o"></i><?php if(!empty($sObj->timings)) echo $sObj->timings;?></li>
+                            <li class="hidden-info"><i class="fa fa-map-marker"></i>(<?php if(!empty($sObj->address)) echo $sObj->address;?> ) </li>
+                            <li><i class="fa fa-phone"></i> Whatsapp: (<?php if(!empty($sObj->phone)) echo $sObj->phone;?> ) </li>
+                        </ul> 
                     </div>
                 </div>
             </div>

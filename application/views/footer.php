@@ -143,24 +143,24 @@
                         <h4>Follow Us </h4>
                             <div class="textwidget">
                                 <ul id="follow_us">
-                                    <li>
-                                        <a href="https://www.facebook.com/CPPExGlobal"><i class="icon-facebook"></i></a>
+                                    <li> 
+                                        <a href="<?php if(!empty($fb )) echo $fb ;?>"><i class="icon-facebook"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/CPPExGlobal"><i class="icon-twitter"></i></a>
+                                        <a href="<?php if(!empty($tw )) echo $tw ;?>"><i class="icon-twitter"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-google"></i></a>
+                                        <a href="<?php if(!empty($go )) echo $go ;?>"><i class=" icon-google"></i></a>
                                     </li><li>
-                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-linkedin"></i></a>
+                                        <a href="<?php if(!empty($li )) echo $li ;?>"><i class=" icon-linkedin"></i></a>
                                     </li><li>
-                                        <a href="https://plus.google.com/CPPExGlobal"><i class=" icon-youtube"></i></a>
+                                        <a href="<?php if(!empty($yo )) echo $yo ;?>"><i class=" icon-youtube"></i></a>
                                     </li>
                                 </ul>
-                                <ul>
-                                    <li><strong class="phone"><i class="fa fa-phone"></i> +1 609 271 2476</strong><br>
-                                    <small <i class="fa fa-clock"></i> Mon - Fri / 9:00AM – 05:00PM</small></li>
-                                    <li>Questions? <a href="mailto:info@cppexglobal.org">info@cppexglobal.org</a>
+                                <ul>  
+                                    <li><strong class="phone"><i class="fa fa-phone"></i> (<?php if(!empty($sObj->phone)) echo $sObj->phone;?> ) </strong><br>
+                                    <small ><i class="fa fa-clock"></i><?php if(!empty($sObj->timings)) echo $sObj->timings;?> ) </small></li> 
+                                    <li>Questions? <a href="mailto:<?php if(!empty($sObj->email)) echo $sObj->email;?> ) "><?php if(!empty($sObj->email)) echo $sObj->email;?> ) </a> 
                                     </li>
                                 </ul>
                             </div>

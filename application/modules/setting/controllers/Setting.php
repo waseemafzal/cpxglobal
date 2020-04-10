@@ -60,16 +60,19 @@ class Setting extends MX_Controller {
 			break;	
 		}
 	}
-	function save(){ 
+	public function save()
+	{ 
+		
+		
 		extract($_POST);
 		$PrimaryID = $_POST['id'];
 		unset($_POST['action'],$_POST['id']);
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('description', 'description', 'trim|required');
-		if ($this->form_validation->run()==false){
-			$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
-			echo json_encode($arr);
-		}else{
+		//$this->form_validation->set_rules('description', 'description', 'trim|required');
+		//if ($this->form_validation->run()==false){
+			//$arr = array("status"=>"validation_error" ,"message"=> validation_errors());
+			//echo json_encode($arr);
+		//}else{
 			/*--------------------------------------------------
 			|Image uploading add/update
 			---------------------------------------------------*/
@@ -97,7 +100,22 @@ class Setting extends MX_Controller {
             } else {
                unset($_POST['banner']);
             }
-		
+			
+			if (isset($_FILES['videohhome']['name'])) {
+                $info = pathinfo($_FILES['videohhome']['name']);
+                $ext = $info['extension']; // get the extension of the file
+                $newname = rand(5, 3456) * date(time()) . "." . $ext;
+                $target = 'uploads/' . $newname;
+                if (move_uploaded_file($_FILES['videohhome']['tmp_name'], $target)) {
+                  $_POST['videohhome']=$newname;
+                }
+            } else {
+               unset($_POST['videohhome']);
+            }
+			
+			
+			
+		    $_POST['asocial_links']= json_encode($_POST['asocial_links']);
 		
 			$result = $this->crud->saveRecord(1,$_POST,$this->tbl);
 			
@@ -119,7 +137,7 @@ class Setting extends MX_Controller {
 			echo json_encode($arr);
 			break;	
 		}
-	}	
+	//}	
 
 	}
 	

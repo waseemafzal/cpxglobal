@@ -123,14 +123,12 @@ include_once"header.php";
 			</td>
             
 			<td align="center" colspan="1" rowspan="1">
-             <?php 
-			 if(!empty($instance->package_info_admin)):
-			 
-			 ?>
+            
 				<a  href="javascript:void(0);"  onclick="getinfod('<?php echo $instance->id;?>');"  data-toggle="modal" data-target="#infodata"><i class="fa fa-plus"></i></a>
-               <?php  endif;?> 
+              
                 
-                <div style="display:none;" id="dinfo_<?php echo $instance->id;?>"><?php echo $instance->package_info_admin;?></div>
+                <div style="display:none;" id="dinfo_<?php echo $instance->id;?>">
+				<?php if(!empty($instance->package_info_admin)) echo  $instance->package_info_admin; else echo 'No Special note from Admin.!';?></div>
 			</td>
 		</tr> 
        <?php 
