@@ -31,6 +31,7 @@ include_once"header.php";
 <p align="center" style="
     text-align: center;
 ">With offices all around the world, we're constantly hiring.</p><table id="dtTable" class="table table-bordered " style="border:1px solid #ccc" >
+    <thead>
 		<tr style="background-color:#3f4045 !important; color:#fff">
 	<th>Sr No</th>
     <th>Position</th>
@@ -40,6 +41,8 @@ include_once"header.php";
     <th>Detail</th>
     
 </tr>
+</thead>
+<tbody>
 <?php
 if($data->num_rows()>0){
 	foreach($data->result() as $job)
@@ -55,6 +58,7 @@ if($data->num_rows()>0){
     <td align="center"><a href="career/detail/<?=$job->id?>"><i class="fa fa-plus"></i></a></td>
 </tr>
 <?php } }?>
+</tbody>
 </table>
 
             </div>

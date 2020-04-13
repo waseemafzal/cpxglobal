@@ -149,8 +149,23 @@ public function student_membership(){
 			switch($result){
 			case 1:
 
+$name=$name. ' '.$middle_name. ' '.$last_name ;
+			
+			$htmlMessage='<p>Thank you very much for your application to join CPPEx GLOBAL membership platform. Your membership application will be reviewed by our membership executive team within 7 working days and will inform you the status within due processing time.
+</p>
+<p>In case of application approval, you will be eligible to enjoy our membership related benefits, monthly subscription to newsletter, access to member directly and online library of resources. 
+</p>
+<p>If you have any questions, comments, concerns, compliments or inquiries you may send an email to membership@cppexglobal.org or approach to our corporate membership office.
 
-			$arr = array('status' => 1,'message' => "Your information have been submit to us, Continue to complete Purchase.".'=='.$memship_id);
+</p>
+<p>We look forward to getting to know you!
+</p><p>Kind regards,
+</p>
+';
+
+			
+			$this->sendEmail(array('to'=>$email,'name'=>$name,'html'=>$htmlMessage));
+			$arr = array('status' => 1,'message' => "<h4>Thank you!!! Your Form has been successfully submitted!</h4><p>If you have any other other questions, feel free to call us during normal business hours: 9am to 5pm</p>".'=='.$memship_id);
 			echo json_encode($arr);
 			break;
 			case 2:
@@ -299,7 +314,106 @@ public function student_membership(){
 		 $this->load->view('payment-status',$data);
 		
 	}
-	 
+	 	  private function sendEmail($mailData){
+        $this->load->library('email');
+		$subject='Reply from CPPEx Global';
+		 if(isset($mailData['subject']) and $mailData['subject']!=''){
+			$subject=$mailData['subject'];
+		}
+        $to = $mailData['to'];
+        $from = 'info@cppexglobal.com';
+        $fromName = 'CPPEx Global';
+        $htmlContent =$this->setEmailTemplate($mailData);      
+  		if($this->crud->send_mail($to,$from,$fromName,$subject,$htmlContent)){
+			return true;
+		}
+    }
+    
 	
-	
+		public function setEmailTemplate($mail){
+			$userName='user';
+			$footerMessage='CPPEx GLOBAL</p>';
+		
+		$html='<p>Thanks for the feedback on your experience with our customer based services</p>';
+		 /* if(isset($mail['footerMessage']) and $mail['footerMessage']!=''){
+			$footerMessage=$mail['footerMessage'];
+			}*/
+       if(isset($mail['html']) and $mail['html']!=''){
+			$html=$mail['html'];
+				$html.='<p>Customer Service @ CPPEx GLOBAL</p>';
+			}
+	 if(isset($mail['name']) and $mail['name']!=''){
+			$userName=$mail['name'];
+				
+			}
+		$template='<table bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tbody>
+      <tr>
+         <td>
+            <div style="max-width:600px;margin:0 auto;font-size:16px;line-height:24px">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td>
+                           <table border="0" cellpadding="0" cellspacing="0"  width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td style="background-color:white;padding-top:30px;padding-bottom:30px">
+                                                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="center" style="padding-top:0;padding-bottom:20px"> <a > <img src="'.base_url().'frontend/images/logo.png" alt="" width="104" height="30" style="vertical-align:middle" class="CToWUd"> </a> </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td  style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:20px">
+                                                               <h3 style="margin-top:0;margin-bottom:0;font-family:"Montserrat",Helvetica,Arial,sans-serif!important;font-weight:700;font-size:20px;line-height:30px;color:#222"></h3>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Dear '.$userName.', </td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> '.$html.'</td>
+                                                         </tr>
+                                                        
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td align="center" width="100%" style="color:#656565;font-size:12px;line-height:24px;padding-bottom:30px;padding-top:30px">
+                           <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all" >
+                              '.$footerMessage.'
+                           </div>
+                           
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </td>
+      </tr>
+   </tbody>
+</table>';
+		return $template;
+		}
+
 }

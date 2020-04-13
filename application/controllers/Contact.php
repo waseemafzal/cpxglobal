@@ -97,62 +97,28 @@ class Contact extends CI_Controller {
 					'instruction_venue_procedure'=>json_encode($instruction_venue_procedure),
 					'like_and_suggestion'=>json_encode($like_and_suggestion),
 				);
-				/*********Email tempalate***************/
-				/*$aparticpient_detail = 	json_decode($particpient_detail);
-				$aproduct_detail = 	json_decode($product_detail);
-				$ainstruction_training = 	json_decode($instruction_training);
-				$ainstruction_department = 	json_decode($instruction_department);
-				$ainstruction_venue_procedure = 	json_decode($instruction_venue_procedure);
-				$alike_and_suggestion = 	json_decode($like_and_suggestion);*/
-				
-				/*$htmlContent .= '
-					<h2>Particpient Detail</h2>
-					<p><b>Name: </b>'.$aparticpient_detail->name.'</p>
-					<p><b>Start: </b>'.$aparticpient_detail->start.'</p>
-					<p><b>end: </b>'.$aparticpient_detail->end.'</p>
-					<p><b>Email: </b>'.$aparticpient_detail->email.'</p>
-					<p><b>Employee Name: </b>'.$aparticpient_detail->employee_name.'</p>
-					<p><b>Job Title: </b>'.$aparticpient_detail->job_title.'</p>
-					<p><b>Mobile: </b>'.$aparticpient_detail->mobile.'</p>
-					<p><b>Company Name: </b>'.$aparticpient_detail->company_name.'</p>
-				';
-				
-				$htmlContent .= '</hr>
-					<h2>Product Detail</h2>
-					<p><b>Product Service: </b>'.$aparticpient_detail->product_service.'</p>
-					<p><b>Trainer Name: </b>'.$aparticpient_detail->trainer_name.'</p>
-					<p><b>Subject: </b>'.$aparticpient_detail->subject.'</p>
-					
-				';
-				
-				$htmlContent .= '</hr>
-					<h2>Instruction Training</h2>
-					<p><b>The training met my expectations: </b>'.$aparticpient_detail->product_service.'</p>
-					<p><b>I will be able to apply the knowledge learned: </b>'.$aparticpient_detail->trainer_name.'</p>
-					<p><b>The training objectives for each topic were identified and followed: </b>'.$aparticpient_detail->subject.'</p>
-					<p><b>The curriculum content was organized and easy to follow: </b>'.$aparticpient_detail->subject.'</p>
-					<p><b>The materials distributed were pertinent and useful. : </b>'.$aparticpient_detail->subject.'</p>*/
-					
-				/*********Email tempalate***************/
-				
-				
-				
-				  	
 				if( $this->crud->saveRecord( '',$aFeedBack,$this->tbl_feedback ))
 				{
 				 $result=1;	
 				}
-				
-				
-			
-			
 			switch($result){
 			case 1:
 			$name=$_POST['particpient_detail']['employee_name'];
 			$email=$_POST['particpient_detail']['email'];
-			$this->sendEmail(array('to'=>$email,'name'=>$name));
-			
-			$arr = array('status' => 1,'message' => "Your feedback have been received us successfully.");
+			$htmlMessage.='<p>Thanks for the feedback on your experience with our customer based services. Our goal is to improve our service any way we can, and we appreciate your taking the time to fill out our feedback form. 
+
+</p>
+<p>Feedback like this helps us constantly improve our customer experiences by knowing what we are doing right and what we can work on. We sincerely appreciate your insight because it helps us build a better customer experience.
+</p><p>If you have any more questions, comments, or concerns or compliments, please feel welcome to reach back out as we would be more than happy to assist.
+</p>
+';
+$htmlMessage.='<p>We look forward to getting to know you!
+<p>';$htmlMessage.='<p>Kind regards,
+<p>';
+			$htmlMessage.='<br><br>';
+			$this->sendEmail(array('to'=>$email,'name'=>$name,'html'=>$htmlMessage));
+		
+			$arr = array('status' => 1,'message' => "<h4>Thank you!!! Your Form has been successfully submitted!</h4><p>If you have any other other questions, feel free to call us during normal business hours: 9am to 5pm</p>");
 			echo json_encode($arr);
 			break;
 			case 2:
@@ -176,6 +142,7 @@ class Contact extends CI_Controller {
 	 { 
 		
 		extract($_POST);
+		//pre($personal_detail);
 		$result=0;
 	    $PrimaryID = base64_decode($_POST['id']);
 		unset($_POST['action'],$_POST['id']);
@@ -198,7 +165,8 @@ class Contact extends CI_Controller {
 			}
 		
 	
-		   $price_now = ($totalPrice - $discounted_price);		   
+		   $price_now = ($totalPrice - $discounted_price);	
+		   	   
 		   $adata = array(
 				'no_of_persons'=>$no_of_persons,
 				'payment_total'=>$totalPrice,
@@ -225,10 +193,30 @@ class Contact extends CI_Controller {
 			//$arr = array('status' => 1,'message' => "Your information have been submit to us, Continue to complete Purchase.".'=='.$price_now);
 			$arr = array(
 			'status' => 1,
-			'message' => "Your information have been submit to us, Continue to complete Purchase.",
+			'message' => "<h4>Thank you!!! Your Form has been successfully submitted!</h4><p>If you have any other other questions, feel free to call us during normal business hours: 9am to 5pm</p>",
 			'bag' => array('register_id'=>$register_id,'price_now'=>$price_now)
 			);
+			/********************************/
+			$emailArr= $personal_detail['email'];
+			$nameArr= $personal_detail['name'];
+			$count=count($emailArr);
+			for ($i = 0; $i <= $count; $i++) {
+			$name=$nameArr[$i] ;
+			$email=$emailArr[$i];
+			$htmlMessage='<p>Thanks for registering your complaint with our customer services team and we are sorry that you are unhappy with our products or services. Letting us know means we can record your complaint and work with you to understand what’s happened and how we can put things right.
+</p>
+<p>We will acknowledge in writing, your complaint within maximum 5 days of receipt. If a complaint is missing any necessary information, you will be informed and allowed an additional 15 days to supply the missing information. If the required information is not submitted within that time, the request shall be closed.</p>
+<p>Your all information pertaining to the complaint will remain confidential!
+</p>
+<p>We look forward to getting to know you!
+</p><p>Kind regards,
+</p>
+';
+$this->sendEmail(array('to'=>$email,'name'=>$name,'html'=>$htmlMessage));
 			
+			}
+			
+			/***********************************/
 			echo json_encode($arr);
 			break;
 			case 2:
@@ -307,8 +295,15 @@ class Contact extends CI_Controller {
 			case 1:
 			$name=$_POST['firstname']. ' '.$_POST['lastname'];
 			$email=$_POST['email'];
-			$this->sendEmail(array('to'=>$email,'name'=>$name));
-			$arr = array('status' => 1,'message' => "Your information have been received us successfully.");
+			$htmlMessage.='<p>We have received your message and would like to thank you for writing to us. If your inquiry is urgent, please use the telephone number listed on our website to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.
+<p>';
+$htmlMessage.='<p>We look forward to getting to know you!
+<p>';$htmlMessage.='<p>Kind regards,
+<p>';
+			
+			$this->sendEmail(array('to'=>$email,'name'=>$name,'html'=>$htmlMessage));
+		
+			$arr = array('status' => 1,'message' => "<h4>Thank you!!! Your Form has been successfully submitted!</h4><p>If you have any other other questions, feel free to call us during normal business hours: 9am to 5pm</p>");
 			echo json_encode($arr);
 			break;
 			case 2:
@@ -381,8 +376,19 @@ class Contact extends CI_Controller {
 			case 1:
 			$name=$_POST['first_name']. ' '.$_POST['last_name'] ;
 			$email=$_POST['email'];
-			$this->sendEmail(array('to'=>$email,'name'=>$name));
-			$arr = array('status' => 1,'message' => "Your Complaint have been received us successfully.");
+			$htmlMessage='<p>Thanks for registering your complaint with our customer services team and we are sorry that you are unhappy with our products or services. Letting us know means we can record your complaint and work with you to understand what’s happened and how we can put things right.
+</p>
+<p>We will acknowledge in writing, your complaint within maximum 5 days of receipt. If a complaint is missing any necessary information, you will be informed and allowed an additional 15 days to supply the missing information. If the required information is not submitted within that time, the request shall be closed.</p>
+<p>Your all information pertaining to the complaint will remain confidential!
+</p>
+<p>We look forward to getting to know you!
+</p><p>Kind regards,
+</p>
+';
+
+			
+			$this->sendEmail(array('to'=>$email,'name'=>$name,'html'=>$htmlMessage));
+			$arr = array('status' => 1,'message' => "<h4>Thank you!!! Your Form has been successfully submitted!</h4><p>If you have any other other questions, feel free to call us during normal business hours: 9am to 5pm</p>");
 			echo json_encode($arr);
 			break;
 			case 2:
@@ -519,32 +525,36 @@ class Contact extends CI_Controller {
       
 	  
 	  private function sendEmail($mailData){
-        
-        
-        // Load the email library
         $this->load->library('email');
 		$subject='Reply from CPPEx Global';
-        if(isset($mailData['subject']) and $mailData['subject']!=''){
+		 if(isset($mailData['subject']) and $mailData['subject']!=''){
 			$subject=$mailData['subject'];
-			}
-        // Mail config
+		}
         $to = $mailData['to'];
         $from = 'info@cppexglobal.com';
         $fromName = 'CPPEx Global';
-        $subject = $subject;
-        
-        // Mail content
-        $htmlContent =$this->setEmailTemplate($mailData['name']);
-            
-  if($this->crud->send_mail($to,$from,$fromName,$subject,$htmlContent)
-			){
-				return true;
-				}
-        // Send email & return status
-        
+        $htmlContent =$this->setEmailTemplate($mailData);      
+  		if($this->crud->send_mail($to,$from,$fromName,$subject,$htmlContent)){
+			return true;
+		}
     }
     
-	public function setEmailTemplate($userName){
+	public function setEmailTemplate($mail){
+			$userName='user';
+			$footerMessage='CPPEx GLOBAL</p>';
+		
+		$html='<p>Thanks for the feedback on your experience with our customer based services</p>';
+		 /* if(isset($mail['footerMessage']) and $mail['footerMessage']!=''){
+			$footerMessage=$mail['footerMessage'];
+			}*/
+       if(isset($mail['html']) and $mail['html']!=''){
+			$html=$mail['html'];
+				$html.='<p>Customer Service @ CPPEx GLOBAL</p>';
+			}
+	 if(isset($mail['name']) and $mail['name']!=''){
+			$userName=$mail['name'];
+				
+			}
 		$template='<table bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" width="100%">
    <tbody>
       <tr>
@@ -573,46 +583,14 @@ class Contact extends CI_Controller {
                                                             </td>
                                                          </tr>
                                                          <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Hi '.$userName.', </td>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Dear '.$userName.', </td>
                                                          </tr>
+                                                         
                                                          <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Welcome to CPPEx Global! </td>
+                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> '.$html.'</td>
                                                          </tr>
-                                                         <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> Thanks for wroting to us. One of our representative will contact you within 3 business days. </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:20px"> We\'re thrilled to have you on board! </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:10px">
-                                                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                  <tbody>
-                                                                     <tr>
-                                                                        <td style="font-size:0;line-height:0">&nbsp;</td>
-                                                                     </tr>
-                                                                  </tbody>
-                                                               </table>
-                                                            </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:30px">
-                                                               <table style="text-align:center" width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                  <tbody>
-                                                                     <tr>
-                                                                        <td>
-                                                                           <div style="text-align:center;margin:0 auto">   </div>
-                                                                        </td>
-                                                                     </tr>
-                                                                  </tbody>
-                                                               </table>
-                                                            </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td   style="font-family:Helvetica,Arial,sans-serif!important;font-size:16px;line-height:24px;word-break:break-word;padding-left:20px;padding-right:20px;padding-top:30px">
-                                                               <div style="padding-top:10px">Thanks for your time,<br>The CPPEx Global Team</div>
-                                                            </td>
-                                                         </tr>
+                                                        
+                                                         
                                                       </tbody>
                                                    </table>
                                                 </td>
@@ -630,13 +608,11 @@ class Contact extends CI_Controller {
                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tbody>
                      <tr>
-                        <td align="center" width="100%" style="color:#656565;font-size:12px;line-height:24px;padding-bottom:30px;padding-top:30px"><a href="" style="color:#656565;text-decoration:underline" target="_blank" >Privacy Policy</a> &nbsp; | &nbsp; <a href="" style="color:#656565;text-decoration:underline" target="_blank" >Contact Support</a> 
+                        <td align="center" width="100%" style="color:#656565;font-size:12px;line-height:24px;padding-bottom:30px;padding-top:30px">
                            <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all" >
-                              807 E Landis Ave.Vineland, 08360 New JERSEY-USA
+                              '.$footerMessage.'
                            </div>
-                           <div style="font-family:Helvetica,Arial,sans-serif!important;word-break:break-all">
-                              © 2020 CPPEx Global 
-                           </div>
+                           
                         </td>
                      </tr>
                   </tbody>

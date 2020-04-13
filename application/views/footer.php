@@ -54,9 +54,7 @@
                                             <a href="team"> Our Team</a>
                                         </li>
                                     <li>
-                                    <li>
-                                            <a href="faq"> Faq</a>
-                                        </li>
+                                    
                                     <li>
                                         <a href="contact">Contact</a>
                                     </li>
@@ -105,9 +103,9 @@
                                     <li>
                                         <a href="GalleryYear/view/2019">Gallery </a>
                                     </li>
-                                     <li>
-                                        <a href="press_release">Press Release </a>
-                                    </li>
+                                    <li>
+                                            <a href="faq"> Faqs</a>
+                                        </li>
                                    
                                 </ul>
                             </div>
@@ -160,7 +158,7 @@
                                 <ul>  
                                     <li><strong class="phone"><i class="fa fa-phone"></i> (<?php if(!empty($sObj->phone)) echo $sObj->phone;?> ) </strong><br>
                                     <small ><i class="fa fa-clock"></i><?php if(!empty($sObj->timings)) echo $sObj->timings;?> ) </small></li> 
-                                    <li>Questions? <a href="mailto:<?php if(!empty($sObj->email)) echo $sObj->email;?> ) "><?php if(!empty($sObj->email)) echo $sObj->email;?> ) </a> 
+                                    <li>Questions? <a href="mailto:<?php if(!empty($sObj->email)) echo $sObj->email;?> ) "><?php if(!empty($sObj->email)) echo $sObj->email;?>  </a> 
                                     </li>
                                 </ul>
                             </div>

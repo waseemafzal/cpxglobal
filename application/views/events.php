@@ -23,7 +23,7 @@ include_once"header.php";
       <div class="clearfix">&nbsp;</div>
 <section class="vc_rows wpb_rows vc_rows-fluid vc_custom_1488790902404 " id="main-features">
             <div class="container"> 
-<h4>MEMBERSHIP LIST</h4>
+<h4>UPCOMING EVENTS & TRAININGS DETAILS</h4>
 
           <table id="dtTable" class="table  table-bordered" style="width:100%;border:1px solid #ccc">
         <thead>
@@ -38,13 +38,11 @@ include_once"header.php";
 			Location
 			</th>
 			<th colspan="1" rowspan="1">
-			Training Date
+			Registration  Start Date
 			</th>
+			
 			<th colspan="1" rowspan="1">
-			Training Start Date
-			</th>
-			<th colspan="1" rowspan="1">
-			Training End Date
+			Registration  End Date
 			</th>
 			<th colspan="1" rowspan="1">
 			Fees
@@ -75,11 +73,9 @@ include_once"header.php";
 			<td colspan="1" rowspan="1">
 			<?php echo $row->on_date;?>
 			</td>
+			
 			<td colspan="1" rowspan="1">
-			<?php echo $row->start_at;?>
-			</td>
-			<td colspan="1" rowspan="1">
-			<?php echo $row->end_at;?>
+			<?php echo $row->end_date;?>
 			</td>
 			<td colspan="1" rowspan="1">
 			<?php echo $row->fees;?>

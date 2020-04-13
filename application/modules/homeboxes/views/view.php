@@ -27,11 +27,7 @@
     <tr>
     <th>Category  </th>
         <th>Title </th>
-        <th>Description </th>
-        
-        
-        <th>Status  </th>
-        <th>Banner</th>
+         <th>Banner</th>
        
         <th>Redirect Url  </th>
         
@@ -47,23 +43,7 @@
 		<tr id="row_<?php echo$row->id;?>">
         <td><?php echo $row->category;?></td>
         <td><?php echo $row->title;?></td>
-        <td class="center"><?php echo html_cut($row->description,10); ?></td>
-        <td class="center">
-        <?PHP if($row->status==0){
-        $class="label-danger";
-        $text='Inactive';
-        }else{
-        $class="label-success";
-        $text='Active';
-        } 
-        ?> 
-        <span id="div_status_<?PHP echo $row->id;?>">
-        <a id="anchor_<?PHP echo $row->id;?>" href="javascript:void(0);"  
-        onclick="changeStatus('<?PHP echo $row->id;?>','<?PHP echo $row->status;?>','homeboxes');" >
-        <span class="label <?PHP echo $class;?>"><?PHP echo $text;?></span>
-        </a>
-        </span>   
-        </td>
+        
        <td class="center ">
 		<?php 
 		$src=base_url().'uploads/'.$row->image;

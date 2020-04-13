@@ -255,7 +255,7 @@ any aspects of the operation of training and consultancy services.</p>
                 <input class="form-control" required name="otherinfo[bussinuss_phone]" />
                 </div>
                 <div class="col-md-4 col-xs-12">
-                <label>What is your industry?</label>
+                <label  class="sentence">What is your industry?</label>
                     <select  name="otherinfo[industry]">
                         <option>----</option>
                         <option value="Printing Industry">Printing Industry</option>

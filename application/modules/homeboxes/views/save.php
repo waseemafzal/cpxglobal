@@ -52,7 +52,7 @@ background-color: #fff;
                  <div class="col-xs-12 col-md-6">
                       <label for="exampleInputEmail1"> Title </label>
                       <select name="category" class="form-control ">
-  <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","NEWS") ;
+  <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","MEMBERSHIP") ;
   foreach($cat as $key=>$cat){
 	  $s='selected="selected"';
 	  if(isset($row)){ 
@@ -77,11 +77,7 @@ background-color: #fff;
                      
                     
             <div class="clearfix">&nbsp;</div>
-                     <div class="col-xs-12 col-md-12">
-                                             <label for="exampleInputEmail1"> Description</label>
-                        <textarea class="form-control" rows="8" id="editor1" name="description"><?php if(isset($row)){ echo $row->description;} ?></textarea>
-
-                     </div>
+                     
                      
                               
            </div> 
@@ -134,17 +130,9 @@ background-color: #fff;
    
 
   <?php  getFooter(); ?>
-    <script src="bower_components/ckeditor/ckeditor.js"></script>
-
-  <script>
-    $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
     
-  })
-////////////
-
+  <script>
+   
 
 
 	

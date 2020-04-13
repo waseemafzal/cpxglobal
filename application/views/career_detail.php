@@ -96,9 +96,15 @@ $('#btnApply').click(function() {
       <div class="modal-body">
        
              <div class="col-xs-12"><div class="alert hidden"></div></div>
+        <div class="col-xs-12 col-md-6"><label > Name: <span class="text-danger">*</span> </label>
+        <input type="text" class="form-control" name="name" >
+        </div>
+        <div class="col-xs-12 col-md-6"><label> Email: <span class="text-danger">*</span> </label>
+          <input type="text" class="form-control" name="email" >
+        </div>
         <div class="col-xs-12 col-md-12">
         
-                      <label > Please Explain Yourself: <span class="text-danger">*</span> </label>
+                      <label class="sentence" > Please explain yourself: <span class="text-danger">*</span> </label>
                        
 <textarea class="form-control" rows="8" id="purposal" name="purposal"></textarea>                    </div>
       <div class="clearfix">&nbsp;</div>
@@ -158,6 +164,8 @@ function mySubmitFunction(e){
 				$(".alert").addClass('alert-success');
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
+				$(".alert").removeClass('alert-danger');
+				$(".alert").removeClass('alert-warning');
 				setTimeout(function(){
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();
