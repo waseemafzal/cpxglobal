@@ -244,8 +244,8 @@ background-color: #f30100;
 	footer .textwidget li,small{ color:#fff!important;}
 	p,div ul li{color:#595959 !important;}
 	ul#top_nav, ul.top-nav {
-    margin: 22px 0 0 0px;
-	
+    margin: 22px 0 0 35px;
+	float:left;
    
 }
 .btn-login {
@@ -297,11 +297,7 @@ ul#follow_us li {
 }
 td{ color:#595959 !important}
 .carousel-caption{ z-index:1 !important}
-.carousel-caption h3{ text-transform:capitalize !important;line-height: 48px;
-    letter-spacing: 0px;
-    font-weight: 600;
-    font-size: 20px;
-    color: #fff !important;}
+.carousel-caption h3{ text-transform:capitalize !important;}
 @media only screen and (max-width: 768px) {
 	.contactPage #slect {
     width: 60%;
@@ -350,10 +346,6 @@ td{ color:#595959 !important}
 label.sentence {
     text-transform: inherit !important;
 }
-ul#top_nav, ul.top-nav {
-   
-    float: none!important;
-}
     </style>
     <?php $sObj = getSetting();
 	
@@ -377,20 +369,11 @@ ul#top_nav, ul.top-nav {
         <header class="top-header">
             <div class="">
                 <div class="row">
-                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-5">
+                    <div class="col-md-3 col-sm-4 col-xs-5">
                         <a class="logo" href="index.php"><img alt="" src="<?php echo $imglogo;?>"></a>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-sm-8 col-xs-7" style="text-align:center">
-                        
-                        <ul class="top-nav">
-                            <li><i class="fa fa-clock-o"></i><?php if(!empty($sObj->timings)) echo $sObj->timings;?></li>
-                            <li class="hidden-info"><i class="fa fa-map-marker"></i>( <?php if(!empty($sObj->address)) echo $sObj->address;?> )  </li>
-                            <li><i class="fa fa-phone"></i> Whatsapp: (<?php if(!empty($sObj->phone)) echo $sObj->phone;?> ) </li>
-                        </ul> 
-                    </div>
-                      <div class="col-md-3 col-lg-3 col-sm-4 col-xs-5">
-                  
-                    <div class="btn-login">
+                    <div class="col-md-9 col-sm-8 col-xs-7">
+                        <div class="btn-login pull-right">
                         <ul class="top-nav" style="margin:0">
                      <li>   <a href="eblogs">Blogs</a> </li>
                                <li>       <a href="career"><i class="fa fa-briefcase"></i> Career</a>
@@ -416,7 +399,12 @@ ul#top_nav, ul.top-nav {
 						?>
                            </ul>
                         </div>
-                        </div>
+                        <ul class="top-nav">
+                            <li><i class="fa fa-clock-o"></i><?php if(!empty($sObj->timings)) echo $sObj->timings;?></li>
+                            <li class="hidden-info"><i class="fa fa-map-marker"></i>(<?php if(!empty($sObj->address)) echo $sObj->address;?> ) </li>
+                            <li><i class="fa fa-phone"></i> Whatsapp: (<?php if(!empty($sObj->phone)) echo $sObj->phone;?> ) </li>
+                        </ul> 
+                    </div>
                 </div>
             </div>
         </header><!-- End header -->

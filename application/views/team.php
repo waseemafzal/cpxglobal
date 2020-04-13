@@ -93,8 +93,7 @@ include_once"header.php";
       </section>
       <div class="clearfix">&nbsp;</div>
 <div class="container">
-<h2>OUR GLOBAL TEAM</h2>
-<p>.......... World class , Award winning and pretty awesome!</p>
+
 <div class="row">
   <?php 
  	if($aTeams->num_rows()>0)

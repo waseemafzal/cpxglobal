@@ -8,7 +8,7 @@ include_once"header.php";
     margin: 0px 20px;
 }
 .carousel-caption {
-   top: 17%;
+   top: 37%;
 }
 .slick-slide img {
     width: 100%;
@@ -130,7 +130,7 @@ include_once"header.php";
 .carousel-caption h3{line-height: 48px;
     letter-spacing: 0px;
     font-weight: 600;
-    font-size: 19px;
+    font-size: 48px;
 	color: #fff !important;
 	}
 .carousel-caption p{
@@ -299,7 +299,7 @@ $j++;
                                     </div>
                                 </div>
                                 <div class="row" id="HomeRoe">
-                                <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","MEMBERSHIP") ;
+                                <?php $cat =array("WHO WE ARE?","TRAINING","CONSULTING","CERTIFICATIONS","AWARDS","GALLARY","NEWS") ;
 								$box=1;
   foreach($cat as $key=>$cat){
 	  
@@ -307,10 +307,12 @@ $j++;
  
  <div class="col-md-3 col-course">
                                     <h4 class="topTitle"><?php
-                                    
+                                    if($cat=='NEWS'){
+										echo 'MEMBERSHIP';
+										}else{
 										echo $cat;
 											
-											
+											}
 									?></h4>
                                         
                                         <div class="col-item">
@@ -322,7 +324,7 @@ $j++;
 	foreach($inner->result() as $rsslides){
 		$src=base_url().'uploads/'.$rsslides->image;
 	?>
-        <li><img style="max-height:390; width:max-width:600px" src="<?=$src?>" alt="<?=$rsslides->title?>">
+        <li><img src="<?=$src?>" alt="<?=$rsslides->title?>">
         <p class="info"><a href="<?=$rsslides->url?>"><?=$rsslides->title?></a></p>
            </li>
         <?php 

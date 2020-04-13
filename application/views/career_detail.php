@@ -164,8 +164,6 @@ function mySubmitFunction(e){
 				$(".alert").addClass('alert-success');
 				$(".alert").html(data.message);
 				$(".alert").removeClass('hidden');
-				$(".alert").removeClass('alert-danger');
-				$(".alert").removeClass('alert-warning');
 				setTimeout(function(){
 				$(".alert").addClass('hidden');
 				$('#form_add_update')[0].reset();

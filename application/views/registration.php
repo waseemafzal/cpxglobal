@@ -39,7 +39,7 @@ include_once"header.php";
             <form id="membsrshipcreate" name="form_add_update" method="post" action="">
              <div class="page-alert" style="display: block;"> </div>
 				<section id="personalDetail" class="Section">
-<div class="col-xs-12"><h3>Personal Details <span></span>
+<div class="col-xs-12"><h3>Personal Detail <span></span>
 </h3></div>
 <div class="col-md-12">
 <div class="table-responsive">

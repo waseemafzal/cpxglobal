@@ -38,10 +38,6 @@ ul.sf-menu>li>a {
                                             <a href="contact"> Our Global Presence</a>
                                         </li>
                                       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-537" id="menu-item-537">
-                                            <a href="faq"> Faqs</a>
-                                        </li>
-                                        
-                                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-537" id="menu-item-537">
                                             <a href="press_release"> Press Release</a>
                                         </li>
                                         
@@ -195,14 +191,14 @@ ul.sf-menu>li>a {
 											array('user_id'=>$this->session->userdata('user_id'),'payment_status'=>1))==0)
 											{
 										?>	
-                                               
+                                               <li class="menu-item menu-item-type-post_type menu-item-object-page" >
+                                                    <a href="membership/form">Membership Form</a>
+                                                </li>
                                        <?php 
 											}
 									   }
 									   ?> 
-                                       <li class="menu-item menu-item-type-post_type menu-item-object-page" >
-                                                    <a href="membership/form">Membership Form</a>
-                                                </li>
+                                       
                                        <li class="menu-item menu-item-type-post_type menu-item-object-page" >
                                             <a href="membership_List">Membership List</a>
                                         </li>
